@@ -71,7 +71,7 @@
     - gsettings set com.gexperts.Tilix.Settings theme-variant 'dark'
     - gsettings set com.gexperts.Tilix.Settings use-tabs true
     #TODO  set tilix color scheme
-    #edit
+    #gedit
     - gsettings set org.gnome.gedit.preferences.editor scheme 'oblivion'
 #- TODO apply settings / reload gnome shell (or smth)
 
