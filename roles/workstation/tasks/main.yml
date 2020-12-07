@@ -1,0 +1,148 @@
+---
+
+
+#- name: get dotfiles
+#  git:
+#    repo: 'git@github.com:goloshubov/dotfiles.git'
+#    dest: ~/github/myDotfiles
+#    force: yes
+
+
+- name: sync files
+  synchronize:
+    src: files/
+    dest: ~/
+
+
+- name: vim-plug
+  get_url:
+    url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    dest: ~/.vim/autoload/plug.vim
+
+
+- name: install packages
+  become: true
+  package:
+    state: latest
+    name:
+      - ansible
+      - sshuttle
+      - wireguard-tools
+      - nmap-ncat
+      - bind-utils
+      - rsync
+      - tmux
+      - tilix
+      - git
+      - knock
+      - vim-enhanced
+      - vim-nerdtree
+      - awesome-vim-colorschemes
+      - mc
+      - curl
+      - wget
+      - htop
+      - powerline
+      - tmux-powerline
+      - vim-powerline
+      - gnome-tweaks
+      - chrome-gnome-shell
+      - gnome-shell-extension-dash-to-dock
+      - libdbusmenu
+      - gnome-shell-extension-launch-new-instance
+      - gnome-shell-extension-dash-to-dock
+      - gnome-shell-extension-appindicator
+      - gnome-shell-extension-user-theme
+      - gnome-shell-extension-workspace-indicator
+      - gnome-shell-extension-openweather
+      - gnome-shell-extension-pomodoro
+      - gnome-extensions-app
+      - virt-manager
+      - virt-viewer
+      - bijiben
+      - fedora-workstation-repositories
+      - dconf-editor
+      - lm_sensors
+
+- name: add user to libvirt group
+  become: yes
+  shell: usermod -a -G libvirt '{{ansible_user}}'
+
+- name: enable google-chrome repo
+  become: yes
+  shell: dnf config-manager --set-enabled google-chrome
+
+- name: install packages
+  become: true
+  package:
+    state: latest
+    name:
+      - google-chrome-stable
+
+- name: add flathub remote (flatpak)
+  become: yes
+  shell: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+- name: install flatpaks
+  flatpak:
+    name: '{{ item }}'
+    state: present
+    remote: flathub
+#    method: user
+  loop:
+    - com.github.tchx84.Flatseal
+    - com.github.johnfactotum.Foliate
+    - org.gnome.Geary
+    - org.gimp.GIMP
+    - org.inkscape.Inkscape
+    - org.kde.kdenlive
+    - us.zoom.Zoom
+    - com.skype.Client
+    - com.getferdi.Ferdi
+    - com.obsproject.Studio
+    - com.spotify.Client
+    - io.atom.Atom
+    - com.jgraph.drawio.desktop
+    - com.valvesoftware.Steam
+    - com.github.gi_lom.dialect
+    - org.videolan.VLC
+    - org.zotero.Zotero
+    - com.getpostman.Postman
+    - com.transmissionbt.Transmission
+    - net.xmind.XMind8
+    - net.xmind.ZEN
+    - com.skype.Client
+    - com.gitlab.newsflash
+    - com.github.xournalpp.xournalpp
+
+- name: set GNOME settings
+  shell: '{{ item }}'
+  loop:
+    #GNOME
+    - gsettings set org.gnome.desktop.background picture-uri 'file:///home/{{ ansible_user }}/Pictures/wallpapers/wallpaper.jpg'
+    - gsettings set org.gnome.desktop.peripherals.mouse natural-scroll true
+    - gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll true
+    - gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
+    - gsettings set org.gtk.Settings.FileChooser show-hidden true
+    - gsettings set org.gnome.nautilus.preferences show-delete-permanently true
+    - gsettings set org.gtk.Settings.FileChooser sort-directories-first true
+    - gsettings set org.gnome.nautilus.icon-view default-zoom-level 'small'
+    - gsettings set org.gnome.desktop.interface clock-show-weekday true
+    - gsettings set org.gnome.desktop.interface show-battery-percentage true
+    - gsettings set org.gnome.desktop.wm.preferences focus-mode 'sloppy'
+    - gsettings set org.gnome.shell favorite-apps "['com.gexperts.Tilix.desktop', 'firefox.desktop', 'google-chrome.desktop', 'io.atom.Atom.desktop', 'org.gnome.gedit.desktop', 'com.getferdi.Ferdi.desktop', 'org.gnome.Nautilus.desktop', 'net.xmind.ZEN.desktop', 'org.gnome.Notes.desktop', 'com.github.gi_lom.dialect.desktop', 'org.gnome.Calculator.desktop', 'virt-manager.desktop', 'com.spotify.Client.desktop']"
+    #Tilix
+    - gsettings set com.gexperts.Tilix.Settings terminal-title-show-when-single false
+    - gsettings set com.gexperts.Tilix.Settings terminal-title-style 'small'
+    - gsettings set com.gexperts.Tilix.Settings theme-variant 'dark'
+    - gsettings set com.gexperts.Tilix.Settings use-tabs true
+    #TODO  set tilix color scheme
+    #edit
+    - gsettings set org.gnome.gedit.preferences.editor scheme 'oblivion'
+
+
+#- TODO apply settings / reload gnome shell (or smth)
+
+
+
+...
