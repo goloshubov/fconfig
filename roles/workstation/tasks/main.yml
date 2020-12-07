@@ -26,11 +26,11 @@
   become: yes
   shell: usermod -a -G libvirt '{{ansible_user}}'
 
+#needs fedora-workstation-repositories installed first
 - name: enable google-chrome repo
   become: yes
   shell: dnf config-manager --set-enabled google-chrome
-
-- name: install packages
+- name: install google-chrome-stable
   become: true
   package:
     state: latest
