@@ -1,7 +1,74 @@
-[all:vars]
-ansible_connection=ssh
-filesrepo=git@github.com:goloshubov/dotfiles.git
-filesdir=~/github/dotfiles/
-
-[workstations]
-localhost ansible_host=localhost ansible_connection=local ansible_user=goloshubov
+all:
+  children:
+    workstations:
+      hosts:
+        localhost:
+  vars:
+    ansible_connection: local
+    ansible_user: goloshubov
+    filesrepo: 'git@github.com:goloshubov/dotfiles.git'
+    filesdir: '~/github/dotfiles/'
+    package_list:
+      - ansible
+      - sshuttle
+      - wireguard-tools
+      - nmap-ncat
+      - bind-utils
+      - rsync
+      - tmux
+      - tilix
+      - git
+      - knock
+      - vim-enhanced
+      - vim-nerdtree
+      - awesome-vim-colorschemes
+      - mc
+      - curl
+      - wget
+      - htop
+      - powerline
+      - tmux-powerline
+      - vim-powerline
+      - gnome-tweaks
+      - chrome-gnome-shell
+      - gnome-shell-extension-dash-to-dock
+      - libdbusmenu
+      - gnome-shell-extension-launch-new-instance
+      - gnome-shell-extension-dash-to-dock
+      - gnome-shell-extension-appindicator
+      - gnome-shell-extension-user-theme
+      - gnome-shell-extension-workspace-indicator
+      - gnome-shell-extension-openweather
+      - gnome-shell-extension-pomodoro
+      - gnome-extensions-app
+      - virt-manager
+      - virt-viewer
+      - bijiben
+      - fedora-workstation-repositories
+      - dconf-editor
+      - lm_sensors
+    flatpak_list:
+      - com.github.tchx84.Flatseal
+      - com.github.johnfactotum.Foliate
+      - org.gnome.Geary
+      - org.gimp.GIMP
+      - org.inkscape.Inkscape
+      - org.kde.kdenlive
+      - us.zoom.Zoom
+      - com.skype.Client
+      - com.getferdi.Ferdi
+      - com.obsproject.Studio
+      - com.spotify.Client
+      - io.atom.Atom
+      - com.jgraph.drawio.desktop
+      - com.valvesoftware.Steam
+      - com.github.gi_lom.dialect
+      - org.videolan.VLC
+      - org.zotero.Zotero
+      - com.getpostman.Postman
+      - com.transmissionbt.Transmission
+      - net.xmind.XMind8
+      - net.xmind.ZEN
+      - com.skype.Client
+      - com.gitlab.newsflash
+      - com.github.xournalpp.xournalpp
