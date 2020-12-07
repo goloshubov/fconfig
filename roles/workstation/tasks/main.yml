@@ -1,16 +1,15 @@
 ---
 
 
-#- name: get dotfiles
-#  git:
-#    repo: 'git@github.com:goloshubov/dotfiles.git'
-#    dest: ~/github/myDotfiles
-#    force: yes
-
+- name: get dotfiles
+  git:
+    repo: "{{ filesrepo }}"
+    dest: "{{ filesdir }}"
+    force: yes
 
 - name: sync files
   synchronize:
-    src: files/
+    src: "{{ filesdir }}/files/"
     dest: ~/
 
 

@@ -1,8 +1,7 @@
 [all:vars]
 ansible_connection=ssh
+filesrepo=git@github.com:goloshubov/dotfiles.git
+filesdir=~/github/dotfiles/
 
 [workstations]
 localhost ansible_host=localhost ansible_connection=local ansible_user=goloshubov
-
-#test
-
