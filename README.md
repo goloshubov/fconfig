@@ -4,7 +4,7 @@ wsconfig is an ansible playbook that initially sets up or updates configuration 
 Usage:
 ```bash
 $ git clone ...
-$ cd dotfiles
+$ cd wsconfig
 $ vim hosts
 
 $ ansible-playbook -i ./hosts apply.yml 
