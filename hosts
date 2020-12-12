@@ -73,4 +73,3 @@ all:
       - com.skype.Client
       - com.gitlab.newsflash
       - com.github.xournalpp.xournalpp
-      - org.jitsi.jitsi-meet
