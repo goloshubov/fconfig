@@ -83,7 +83,7 @@ all:
       - org.gnome.Nautilus.desktop
       - net.xmind.ZEN.desktop
       - org.gnome.Notes.desktop
-      - com.github.gi_lom.dialect.desktop
+#      - com.github.gi_lom.dialect.desktop
       - org.gnome.Calculator.desktop
       - virt-manager.desktop
 #      - com.spotify.Client.desktop
