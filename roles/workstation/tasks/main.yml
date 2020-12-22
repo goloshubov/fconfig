@@ -2,13 +2,13 @@
 
 - name: get dotfiles
   git:
-    repo: "{{ filesrepo }}"
-    dest: "{{ filesdir }}"
+    repo: "{{ files_repo }}"
+    dest: "{{ files_dir }}"
     force: yes
 
 - name: sync files
   synchronize:
-    src: "{{ filesdir }}/files/"
+    src: "{{ files_dir }}/files/"
     dest: ~/
 
 - name: vim-plug
@@ -64,7 +64,7 @@
     - gsettings set org.gnome.desktop.interface clock-show-weekday true
     - gsettings set org.gnome.desktop.interface show-battery-percentage true
     - gsettings set org.gnome.desktop.wm.preferences focus-mode 'sloppy'
-    - gsettings set org.gnome.shell favorite-apps "['com.gexperts.Tilix.desktop', 'firefox.desktop', 'google-chrome.desktop', 'io.atom.Atom.desktop', 'org.gnome.gedit.desktop', 'com.getferdi.Ferdi.desktop', 'org.gnome.Nautilus.desktop', 'net.xmind.ZEN.desktop', 'org.gnome.Notes.desktop', 'com.github.gi_lom.dialect.desktop', 'org.gnome.Calculator.desktop', 'virt-manager.desktop', 'com.spotify.Client.desktop']"
+    - gsettings set org.gnome.shell favorite-apps "{{ favorite_apps }}"
     #Tilix
     - gsettings set com.gexperts.Tilix.Settings terminal-title-show-when-single false
     - gsettings set com.gexperts.Tilix.Settings terminal-title-style 'small'

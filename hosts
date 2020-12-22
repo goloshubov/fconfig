@@ -6,8 +6,8 @@ all:
   vars:
     ansible_connection: local
     ansible_user: goloshubov
-    filesrepo: 'git@github.com:goloshubov/dotfiles.git'
-    filesdir: '~/github/dotfiles/'
+    files_repo: 'git@github.com:goloshubov/dotfiles.git'
+    files_dir: '~/github/dotfiles/'
     package_list:
       - ansible
       - google-chrome-stable
@@ -59,7 +59,7 @@ all:
       - com.skype.Client
       - com.getferdi.Ferdi
       - com.obsproject.Studio
-      - com.spotify.Client
+#      - com.spotify.Client
       - io.atom.Atom
       - com.jgraph.drawio.desktop
       - com.valvesoftware.Steam
@@ -73,3 +73,17 @@ all:
       - com.skype.Client
       - com.gitlab.newsflash
       - com.github.xournalpp.xournalpp
+    favorite_apps:
+      - com.gexperts.Tilix.desktop
+      - firefox.desktop
+      - google-chrome.desktop
+      - io.atom.Atom.desktop
+      - org.gnome.gedit.desktop
+      - com.getferdi.Ferdi.desktop
+      - org.gnome.Nautilus.desktop
+      - net.xmind.ZEN.desktop
+      - org.gnome.Notes.desktop
+      - com.github.gi_lom.dialect.desktop
+      - org.gnome.Calculator.desktop
+      - virt-manager.desktop
+#      - com.spotify.Client.desktop
