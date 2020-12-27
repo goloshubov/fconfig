@@ -18,6 +18,7 @@ all:
       - rsync
       - tmux
       - tilix
+      - tilix-nautilus
       - git
       - knock
       - vim-enhanced
