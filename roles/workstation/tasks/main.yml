@@ -49,30 +49,33 @@
 #    method: user
   loop: "{{ flatpak_list }}"
 
+
 - name: set GNOME settings
-  shell: '{{ item }}'
+  dconf:
+    key: '{{ item.key }}'
+    value: '{{ item.value }}'
   loop:
     #GNOME
-    - gsettings set org.gnome.desktop.background picture-uri 'file:///home/{{ ansible_user }}/Pictures/wallpapers/wallpaper.jpg'
-    - gsettings set org.gnome.desktop.peripherals.mouse natural-scroll true
-    - gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll true
-    - gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
-    - gsettings set org.gtk.Settings.FileChooser show-hidden true
-    - gsettings set org.gnome.nautilus.preferences show-delete-permanently true
-    - gsettings set org.gtk.Settings.FileChooser sort-directories-first true
-    - gsettings set org.gnome.nautilus.icon-view default-zoom-level 'small'
-    - gsettings set org.gnome.desktop.interface clock-show-weekday true
-    - gsettings set org.gnome.desktop.interface show-battery-percentage true
-    - gsettings set org.gnome.desktop.wm.preferences focus-mode 'sloppy'
-    - gsettings set org.gnome.shell favorite-apps "{{ favorite_apps }}"
+    - { key: "/org/gnome/desktop/background/picture-uri", value: "'file:///home/{{ ansible_user }}/Pictures/wallpapers/wallpaper.jpg'" }
+    - { key: "/org/gnome/desktop/peripherals/mouse/natural-scroll", value: "true" }
+    - { key: "/org/gnome/desktop/peripherals/touchpad/natural-scroll", value: "true" }
+    - { key: "/org/gnome/desktop/peripherals/touchpad/tap-to-click", value: "true" }
+    - { key: "/org/gtk/Settings/FileChooser/show-hidden", value: "true" }
+    - { key: "/org/gnome/nautilus/preferences/show-delete-permanently", value: "true" }
+    - { key: "/org/gtk/Settings/FileChooser/sort-directories-first", value: "true" }
+    - { key: "/org/gnome/nautilus/icon-view/default-zoom-level", value: "'small'" }
+    - { key: "/org/gnome/desktop/interface/clock-show-weekday", value: "true" }
+    - { key: "/org/gnome/desktop/interface/show-battery-percentage", value: "true" }
+    - { key: "/org/gnome/desktop/wm/preferences/focus-mode", value: "'sloppy'" }
+    - { key: "/org/gnome/shell/favorite-apps", value: "{{ favorite_apps }}" }
     #Tilix
-    - gsettings set com.gexperts.Tilix.Settings terminal-title-show-when-single false
-    - gsettings set com.gexperts.Tilix.Settings terminal-title-style 'small'
-    - gsettings set com.gexperts.Tilix.Settings theme-variant 'dark'
-    - gsettings set com.gexperts.Tilix.Settings use-tabs true
+    - { key: "/com/gexperts/Tilix/Settingsterminal-title-show-when-single", value: "false" }
+    - { key: "/com/gexperts/Tilix/Settingsterminal-title-style", value: "'small'" }
+    - { key: "/com/gexperts/Tilix/Settingstheme-variant", value: "'dark'" }
+    - { key: "/com/gexperts/Tilix/Settingsuse-tabs", value: "true" }
     #TODO  set tilix color scheme
     #gedit
-    - gsettings set org.gnome.gedit.preferences.editor scheme 'oblivion'
-#- TODO apply settings / reload gnome shell (or smth)
+    - { key: "/org/gnome/gedit/preferences/editor/scheme", value: "'oblivion'" }
+##- TODO apply settings / reload gnome shell (or smth)
 
 ...
