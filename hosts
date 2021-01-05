@@ -10,7 +10,6 @@ all:
     files_dir: '~/github/dotfiles/'
     package_list:
       - ansible
-      - google-chrome-stable
       - sshuttle
       - wireguard-tools
       - nmap-ncat
