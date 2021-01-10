@@ -57,7 +57,6 @@ all:
       - org.kde.kdenlive
       - us.zoom.Zoom
       - com.skype.Client
-      - com.getferdi.Ferdi
       - com.obsproject.Studio
 #      - com.spotify.Client
       - io.atom.Atom
@@ -70,9 +69,13 @@ all:
       - com.transmissionbt.Transmission
       - net.xmind.XMind8
       - net.xmind.ZEN
-      - com.skype.Client
       - com.gitlab.newsflash
       - com.github.xournalpp.xournalpp
+      - com.getferdi.Ferdi
+      - com.skype.Client
+      - org.signal.Signal
+      - org.telegram.desktop
+      - com.viber.Viber
     favorite_apps:
       - com.gexperts.Tilix.desktop
       - firefox.desktop
