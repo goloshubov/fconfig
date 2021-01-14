@@ -76,6 +76,7 @@ all:
       - org.signal.Signal
       - org.telegram.desktop
       - com.viber.Viber
+      - im.riot.Riot
     favorite_apps:
       - com.gexperts.Tilix.desktop
       - firefox.desktop
