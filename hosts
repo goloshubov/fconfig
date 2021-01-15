@@ -48,6 +48,7 @@ all:
       - fedora-workstation-repositories
       - dconf-editor
       - lm_sensors
+      - python3-psutil
     flatpak_list:
       - com.github.tchx84.Flatseal
       - com.github.johnfactotum.Foliate

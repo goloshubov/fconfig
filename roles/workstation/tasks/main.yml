@@ -5,11 +5,17 @@
     repo: "{{ files_repo }}"
     dest: "{{ files_dir }}"
     force: yes
+    accept_hostkey: yes
 
 - name: sync files
   synchronize:
     src: "{{ files_dir }}/files/"
     dest: ~/
+
+- name: create .vim directory
+  file:
+    path: ~/.vim/autoload/
+    state: directory
 
 - name: vim-plug
   get_url:
@@ -37,9 +43,13 @@
     name:
       - google-chrome-stable
 
+
 - name: add flathub remote (flatpak)
   become: yes
-  shell: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+  flatpak_remote:
+    name: flathub
+    state: present
+    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
 
 - name: install flatpaks
   flatpak:
