@@ -6,8 +6,8 @@ all:
   vars:
     ansible_connection: local
     ansible_user: goloshubov
-    files_repo: 'git@github.com:goloshubov/dotfiles.git'
-    files_dir: '~/github/dotfiles/'
+    files_repo: 'git@github.com:goloshubov/wsconfig_files.git'
+    files_dir: '~/github/wsconfig_files/'
     package_list:
       - ansible
       - sshuttle

@@ -7,10 +7,16 @@
     force: yes
     accept_hostkey: yes
 
-- name: sync files
+- name: sync home files
   synchronize:
-    src: "{{ files_dir }}/files/"
+    src: "{{ files_dir }}/home/"
     dest: ~/
+
+- name: sync etc files
+  become: true
+  synchronize:
+    src: "{{ files_dir }}/etc/"
+    dest: /etc/
 
 - name: create .vim directory
   file:
