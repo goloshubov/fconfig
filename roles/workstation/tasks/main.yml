@@ -17,6 +17,8 @@
   synchronize:
     src: "{{ files_dir }}/etc/"
     dest: /etc/
+    owner: no
+    group: no
 
 - name: create .vim directory
   file:
