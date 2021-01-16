@@ -79,7 +79,7 @@ all:
       - com.viber.Viber
       - im.riot.Riot
       - org.jitsi.jitsi-meet
-      - com.google.AndroidStudio
+#      - com.google.AndroidStudio
     favorite_apps:
       - com.gexperts.Tilix.desktop
       - firefox.desktop
