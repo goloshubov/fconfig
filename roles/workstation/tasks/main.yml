@@ -82,7 +82,8 @@
     - { key: "/org/gnome/nautilus/icon-view/default-zoom-level", value: "'small'" }
     - { key: "/org/gnome/desktop/interface/clock-show-weekday", value: "true" }
     - { key: "/org/gnome/desktop/interface/show-battery-percentage", value: "true" }
-    - { key: "/org/gnome/desktop/wm/preferences/focus-mode", value: "'sloppy'" }
+    #- { key: "/org/gnome/desktop/wm/preferences/focus-mode", value: "'sloppy'" }
+    - { key: "/org/gnome/desktop/wm/preferences/focus-mode", value: "'click'" }
     - { key: "/org/gnome/shell/favorite-apps", value: "{{ favorite_apps }}" }
     #Tilix
     - { key: "/com/gexperts/Tilix/Settingsterminal-title-show-when-single", value: "false" }
