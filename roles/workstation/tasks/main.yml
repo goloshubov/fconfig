@@ -1,34 +1,5 @@
 ---
 
-- name: get dotfiles
-  git:
-    repo: "{{ files_repo }}"
-    dest: "{{ files_dir }}"
-    force: yes
-    accept_hostkey: yes
-
-- name: sync home files
-  synchronize:
-    src: "{{ files_dir }}/home/"
-    dest: ~/
-
-- name: sync etc files
-  become: true
-  synchronize:
-    src: "{{ files_dir }}/etc/"
-    dest: /etc/
-    owner: no
-    group: no
-
-- name: create .vim directory
-  file:
-    path: ~/.vim/autoload/
-    state: directory
-
-- name: vim-plug
-  get_url:
-    url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    dest: ~/.vim/autoload/plug.vim
 
 - name: install packages
   become: true
@@ -96,5 +67,37 @@
     #gedit
     - { key: "/org/gnome/gedit/preferences/editor/scheme", value: "'oblivion'" }
 ##- TODO apply settings / reload gnome shell (or smth)
+
+
+
+- name: get dotfiles
+  git:
+    repo: "{{ files_repo }}"
+    dest: "{{ files_dir }}"
+    force: yes
+    accept_hostkey: yes
+
+- name: sync home files
+  synchronize:
+    src: "{{ files_dir }}/home/"
+    dest: ~/
+
+- name: sync etc files
+  become: true
+  synchronize:
+    src: "{{ files_dir }}/etc/"
+    dest: /etc/
+    owner: no
+    group: no
+
+- name: create .vim directory
+  file:
+    path: ~/.vim/autoload/
+    state: directory
+
+- name: vim-plug
+  get_url:
+    url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    dest: ~/.vim/autoload/plug.vim
 
 ...

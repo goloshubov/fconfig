@@ -49,6 +49,7 @@ all:
       - dconf-editor
       - lm_sensors
       - python3-psutil
+      - tuned
     flatpak_list:
       - com.github.tchx84.Flatseal
       - com.github.johnfactotum.Foliate
