@@ -90,7 +90,8 @@ all:
       - com.getferdi.Ferdi.desktop
       - org.gnome.Nautilus.desktop
       - net.xmind.ZEN.desktop
-      - org.gnome.Notes.desktop
+      - com.github.xournalpp.xournalpp.desktop
+#      - org.gnome.Notes.desktop
 #      - com.github.gi_lom.dialect.desktop
       - org.gnome.Calculator.desktop
       - virt-manager.desktop
