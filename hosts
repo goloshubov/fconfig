@@ -50,6 +50,7 @@ all:
       - lm_sensors
       - python3-psutil
       - tuned
+      - powertop
     flatpak_list:
       - com.github.tchx84.Flatseal
       - com.github.johnfactotum.Foliate
