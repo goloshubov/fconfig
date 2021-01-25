@@ -82,6 +82,7 @@ all:
       - im.riot.Riot
       - org.jitsi.jitsi-meet
 #      - com.google.AndroidStudio
+      - net.cozic.joplin_desktop
     favorite_apps:
       - com.gexperts.Tilix.desktop
       - firefox.desktop
