@@ -93,10 +93,7 @@ all:
       - com.getferdi.Ferdi.desktop
       - org.gnome.Nautilus.desktop
       - net.xmind.ZEN.desktop
-      - net.cozic.joplin_desktop
+      - net.cozic.joplin_desktop.desktop
       - com.github.xournalpp.xournalpp.desktop
-#      - org.gnome.Notes.desktop
-#      - com.github.gi_lom.dialect.desktop
       - org.gnome.Calculator.desktop
       - virt-manager.desktop
-#      - com.spotify.Client.desktop
