@@ -55,6 +55,7 @@ all:
       - apg
       - tango-icon-theme
       - parallel
+      - exa
     flatpak_list:
       - com.github.tchx84.Flatseal
       - com.github.johnfactotum.Foliate
