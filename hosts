@@ -97,7 +97,7 @@ all:
       - com.getferdi.Ferdi.desktop
       - org.gnome.Nautilus.desktop
       - net.xmind.ZEN.desktop
-#      - net.cozic.joplin_desktop.desktop
+      - net.cozic.joplin_desktop.desktop
       - com.github.xournalpp.xournalpp.desktop
       - org.gnome.Calculator.desktop
       - virt-manager.desktop
