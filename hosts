@@ -88,6 +88,7 @@ all:
       - org.jitsi.jitsi-meet
 #      - com.google.AndroidStudio
       - net.cozic.joplin_desktop
+      - kubectl
     favorite_apps:
       - com.gexperts.Tilix.desktop
       - firefox.desktop
