@@ -56,6 +56,7 @@ all:
       - tango-icon-theme
       - parallel
       - exa
+      - kubectl
     flatpak_list:
       - com.github.tchx84.Flatseal
       - com.github.johnfactotum.Foliate
@@ -88,7 +89,6 @@ all:
       - org.jitsi.jitsi-meet
 #      - com.google.AndroidStudio
       - net.cozic.joplin_desktop
-      - kubectl
     favorite_apps:
       - com.gexperts.Tilix.desktop
       - firefox.desktop
