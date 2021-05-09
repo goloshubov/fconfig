@@ -45,6 +45,7 @@ all:
       - gnome-extensions-app
       - virt-manager
       - virt-viewer
+      - libvirt-client
       - bijiben
       - fedora-workstation-repositories
       - dconf-editor
