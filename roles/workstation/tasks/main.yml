@@ -24,9 +24,15 @@
 
 - name: install packages
   become: true
-  package:
+#  package:
+  dnf:
     state: latest
     name: "{{ package_list }}"
+- name: install minikube packages
+  become: true
+  dnf:
+    name: https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm
+    disable_gpg_check: yes
 
 - name: add user to libvirt group
   become: yes
