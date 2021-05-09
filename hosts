@@ -97,6 +97,7 @@ all:
       - io.atom.Atom.desktop
       - org.gnome.gedit.desktop
       - com.getferdi.Ferdi.desktop
+      - org.telegram.desktop.desktop
       - org.gnome.Nautilus.desktop
       - net.xmind.ZEN.desktop
       - net.cozic.joplin_desktop.desktop
