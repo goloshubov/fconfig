@@ -7,7 +7,7 @@ all:
     ansible_connection: local
     ansible_user: goloshubov
     files_repo: 'git@github.com:goloshubov/wsconfig_files.git'
-    files_dir: '~/github/wsconfig_files/'
+    files_dir: '~/git/github/wsconfig_files/'
     package_list:
       - ansible
       - sshuttle
@@ -90,6 +90,7 @@ all:
       - org.jitsi.jitsi-meet
 #      - com.google.AndroidStudio
       - net.cozic.joplin_desktop
+      - com.github.debauchee.barrier
     favorite_apps:
       - com.gexperts.Tilix.desktop
       - firefox.desktop
