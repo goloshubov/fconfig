@@ -60,6 +60,7 @@ all:
       - kubectl
 #      - barrier
       - dnf-utils
+      - firefox-wayland
     flatpak_list:
       - com.github.tchx84.Flatseal
       - com.github.johnfactotum.Foliate
@@ -96,7 +97,8 @@ all:
     favorite_apps:
       - com.gexperts.Tilix.desktop
       - net.cozic.joplin_desktop.desktop
-      - firefox.desktop
+#      - firefox.desktop
+      - firefox-wayland.desktop
       - google-chrome.desktop
       - io.atom.Atom.desktop
       - org.gnome.gedit.desktop
