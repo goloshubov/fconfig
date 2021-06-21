@@ -20,7 +20,9 @@
     owner: no
     group: no
 
-
+- name: install rpmfussion-free repos
+  become: yes
+  shell: dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 
 - name: install packages
   become: true
