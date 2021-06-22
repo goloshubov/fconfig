@@ -8,7 +8,7 @@ Usage:
 ```bash
 $ git clone ...
 $ cd wsconfig
-$ vim hosts
+$ vim inventory
 
 $ ansible-playbook -i ./inventory apply.yml
 ```
