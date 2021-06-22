@@ -10,5 +10,5 @@ $ git clone ...
 $ cd wsconfig
 $ vim hosts
 
-$ ansible-playbook -i ./hosts apply.yml
+$ ansible-playbook -i ./inventory apply.yml
 ```

@@ -99,6 +99,10 @@ all:
 #      - com.google.AndroidStudio
       - net.cozic.joplin_desktop
       - com.github.debauchee.barrier
+    cargo_list:
+      - du-dust
+#      - exa
+#      - tealdeer
     favorite_apps:
       - com.gexperts.Tilix.desktop
       - net.cozic.joplin_desktop.desktop
@@ -115,8 +119,4 @@ all:
       - org.gnome.Calculator.desktop
       - virt-manager.desktop
       - org.gnome.Calendar.desktop
-    cargo_list:
-      - du-dust
-#      - exa
-#      - tealdeer
 
