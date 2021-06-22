@@ -117,3 +117,6 @@ all:
       - org.gnome.Calendar.desktop
     cargo_list:
       - du-dust
+#      - exa
+#      - tealdeer
+
