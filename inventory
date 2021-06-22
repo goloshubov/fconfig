@@ -66,6 +66,9 @@ all:
       - rust
       - cargo
       - toolbox
+      - jq
+#      - git-delta
+      - mtr
     flatpak_list:
       - com.github.tchx84.Flatseal
       - com.github.johnfactotum.Foliate
@@ -103,6 +106,9 @@ all:
       - du-dust
 #      - exa
 #      - tealdeer
+#      - httpie
+#      - xh
+#      - git-delta
     favorite_apps:
       - com.gexperts.Tilix.desktop
       - net.cozic.joplin_desktop.desktop
