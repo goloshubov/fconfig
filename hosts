@@ -65,6 +65,7 @@ all:
       - golang
       - rust
       - cargo
+      - toolbox
     flatpak_list:
       - com.github.tchx84.Flatseal
       - com.github.johnfactotum.Foliate
