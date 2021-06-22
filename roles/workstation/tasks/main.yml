@@ -67,6 +67,9 @@
 #    method: user
   loop: "{{ flatpak_list }}"
 
+- name: install cargo packages
+  shell: cargo install '{{ item }}'
+  loop: "{{ cargo_list }}"
 
 - name: configure GNOME
   dconf:

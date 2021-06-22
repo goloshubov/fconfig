@@ -115,4 +115,5 @@ all:
       - org.gnome.Calculator.desktop
       - virt-manager.desktop
       - org.gnome.Calendar.desktop
-
+    cargo_list:
+      - du-dust
