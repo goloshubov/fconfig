@@ -109,6 +109,7 @@ all:
 #      - httpie
 #      - xh
 #      - git-delta
+      - fd-find
     favorite_apps:
       - com.gexperts.Tilix.desktop
       - net.cozic.joplin_desktop.desktop
