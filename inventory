@@ -85,7 +85,7 @@ all:
       - com.valvesoftware.Steam
       - com.github.gi_lom.dialect
       - org.videolan.VLC
-      - org.zotero.Zotero
+#      - org.zotero.Zotero
       - com.getpostman.Postman
       - com.transmissionbt.Transmission
       - net.xmind.XMind8
@@ -94,10 +94,10 @@ all:
       - com.github.xournalpp.xournalpp
       - com.getferdi.Ferdi
       - com.skype.Client
-      - org.signal.Signal
+#      - org.signal.Signal
       - org.telegram.desktop
-      - com.viber.Viber
-      - im.riot.Riot
+#      - com.viber.Viber
+#      - im.riot.Riot
       - org.jitsi.jitsi-meet
 #      - com.google.AndroidStudio
       - net.cozic.joplin_desktop
