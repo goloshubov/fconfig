@@ -8,6 +8,7 @@ all:
     ansible_user: goloshubov
     files_repo: 'git@github.com:goloshubov/wsconfig_files.git'
     files_dir: '~/git/github/wsconfig_files/'
+
     package_list:
       - ansible
       - sshuttle
@@ -71,6 +72,7 @@ all:
       - mtr
       - wl-clipboard
       - openssl
+
     flatpak_list:
       - com.github.tchx84.Flatseal
       - com.github.johnfactotum.Foliate
@@ -104,6 +106,7 @@ all:
 #      - com.google.AndroidStudio
       - net.cozic.joplin_desktop
       - com.github.debauchee.barrier
+
     cargo_list:
       - du-dust
 #      - exa
@@ -112,6 +115,7 @@ all:
 #      - xh
 #      - git-delta
       - fd-find
+
     favorite_apps:
       - com.gexperts.Tilix.desktop
       - net.cozic.joplin_desktop.desktop

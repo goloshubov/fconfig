@@ -79,7 +79,7 @@
     value: '{{ item.value }}'
   loop:
     #GNOME
-    - { key: "/org/gnome/desktop/background/picture-uri", value: "'file:///home/{{ ansible_user }}/Pictures/wallpapers/wallpaper.jpg'" }
+#    - { key: "/org/gnome/desktop/background/picture-uri", value: "'file:///home/{{ ansible_user }}/Pictures/wallpapers/wallpaper.jpg'" }
     - { key: "/org/gnome/desktop/peripherals/mouse/natural-scroll", value: "true" }
     - { key: "/org/gnome/desktop/peripherals/touchpad/natural-scroll", value: "true" }
     - { key: "/org/gnome/desktop/peripherals/touchpad/tap-to-click", value: "true" }
