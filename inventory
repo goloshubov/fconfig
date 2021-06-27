@@ -75,6 +75,7 @@ all:
       - perf
       - bpftrace
       - bcc
+      - sysstat
 
     flatpak_list:
       - com.github.tchx84.Flatseal
