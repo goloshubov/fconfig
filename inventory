@@ -76,6 +76,7 @@ all:
       - bpftrace
       - bcc
       - sysstat
+      - hwloc-gui  #lstopo
 
     flatpak_list:
       - com.github.tchx84.Flatseal
