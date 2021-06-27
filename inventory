@@ -72,6 +72,9 @@ all:
       - mtr
       - wl-clipboard
       - openssl
+      - perf
+      - bpftrace
+      - bcc
 
     flatpak_list:
       - com.github.tchx84.Flatseal
