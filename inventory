@@ -93,7 +93,7 @@ all:
 #      - com.spotify.Client
       - io.atom.Atom
       - com.jgraph.drawio.desktop
-      - com.valvesoftware.Steam
+#      - com.valvesoftware.Steam
       - com.github.gi_lom.dialect
       - org.videolan.VLC
 #      - org.zotero.Zotero
