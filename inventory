@@ -79,6 +79,7 @@ all:
       - hwloc-gui  #lstopo
       - inotify-tools
       - fatrace
+      - minder
 
     flatpak_list:
       - com.github.tchx84.Flatseal
@@ -131,7 +132,7 @@ all:
       - google-chrome.desktop
       - io.atom.Atom.desktop
       - org.gnome.gedit.desktop
-      - com.getferdi.Ferdi.desktop
+#      - com.getferdi.Ferdi.desktop
       - org.telegram.desktop.desktop
       - org.gnome.Nautilus.desktop
       - net.xmind.ZEN.desktop
