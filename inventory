@@ -80,6 +80,8 @@ all:
       - inotify-tools
       - fatrace
       - minder
+      - podman
+      - skopeo
 
     flatpak_list:
       - com.github.tchx84.Flatseal
