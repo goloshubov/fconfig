@@ -1,7 +1,7 @@
-wsconfig is an ansible playbook that initially sets up or updates configuration of (fedora) Linux workstations in an easily reproducible way. It might help keeping the same configuration on a bunch of machines or on the only one. It can:
-- copy .dotfiles and configs. The files supposed to be in separate/private repo - 'filesrepo' inventory var (the repo's 'home' dir will be synced then with target's '~' dir, as well as 'etc' with '/etc/')
-- install apps - packages (dnf), flatpaks, cargo packages.
-- configure GNOME
+wsconfig is enhanced dotfiles written as an ansible playbook that syncs the configuration of (fedora) Linux workstations in an easily reproducible way. It helps to keep the same configuration on a bunch of machines or the only one. It does the following:
+- copying .dotfiles and configs. The files are supposed to be in separate/private repo - 'filesrepo' inventory var (the repo's 'home' goes to the ~, and 'etc' to the '/etc/')
+- installing apps - packages (dnf), flatpaks, cargo packages.
+- configuring GNOME
 \
 \
 Usage:
