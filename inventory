@@ -115,7 +115,9 @@ all:
       - org.jitsi.jitsi-meet
 #      - com.google.AndroidStudio
       - net.cozic.joplin_desktop
-      - com.github.debauchee.barrier
+#      - com.github.debauchee.barrier
+#      - de.haeckerfelix.Fragments      # bittorrent client
+      - org.libreoffice.LibreOffice
 
     cargo_list:
       - du-dust
