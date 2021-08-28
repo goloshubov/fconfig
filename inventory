@@ -122,7 +122,7 @@ all:
     cargo_list:
       - du-dust
 #      - exa
-#      - tealdeer
+      - tealdeer
 #      - httpie
 #      - xh
 #      - git-delta
