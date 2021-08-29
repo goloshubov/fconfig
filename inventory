@@ -129,7 +129,7 @@ all:
       - fd-find
 
     favorite_apps:
-      - com.gexperts.Tilix.desktop
+#      - com.gexperts.Tilix.desktop
       - org.gnome.Terminal.desktop
       - net.cozic.joplin_desktop.desktop
 #      - firefox.desktop
