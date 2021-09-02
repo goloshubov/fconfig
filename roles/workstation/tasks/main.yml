@@ -67,6 +67,9 @@
 #    method: user
   loop: "{{ flatpak_list }}"
 
+- name: Install pip packages
+  pip:
+    name: "{{ pip_list }}"
 
 - name: install cargo packages
   shell: cargo install '{{ item }}'
@@ -112,5 +115,9 @@
   get_url:
     url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     dest: ~/.vim/autoload/plug.vim
+
+
+
+
 
 ...

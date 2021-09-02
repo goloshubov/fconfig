@@ -146,3 +146,7 @@ all:
       - virt-manager.desktop
       - org.gnome.Calendar.desktop
 
+
+    pip_list:
+#      - youtube-dl 
+      - yt-dlp
