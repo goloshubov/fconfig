@@ -132,8 +132,8 @@ all:
 #      - com.gexperts.Tilix.desktop
       - org.gnome.Terminal.desktop
       - net.cozic.joplin_desktop.desktop
-#      - firefox.desktop
-      - firefox-wayland.desktop
+      - firefox.desktop
+#      - firefox-wayland.desktop
       - google-chrome.desktop
       - io.atom.Atom.desktop
       - org.gnome.gedit.desktop
