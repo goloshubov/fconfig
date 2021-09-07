@@ -127,6 +127,7 @@ all:
 #      - xh
 #      - git-delta
       - fd-find
+#      - apkeep    #download APK packages (apkpure, googleplay)
 
     favorite_apps:
 #      - com.gexperts.Tilix.desktop
