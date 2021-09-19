@@ -102,7 +102,7 @@ all:
 #      - org.zotero.Zotero
       - com.getpostman.Postman
       - com.transmissionbt.Transmission
-      - net.xmind.XMind8
+#      - net.xmind.XMind8
       - net.xmind.ZEN
       - com.gitlab.newsflash
       - com.github.xournalpp.xournalpp
