@@ -82,6 +82,8 @@ all:
       - minder
       - podman
       - skopeo
+#      - virtio-win
+
 
     flatpak_list:
       - com.github.tchx84.Flatseal
