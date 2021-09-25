@@ -26,6 +26,7 @@
 
 # virtio-win repo
 # sudo wget https://fedorapeople.org/groups/virt/virtio-win/virtio-win.repo   -O /etc/yum.repos.d/virtio-win.repo
+# + enable latest repo
 
 - name: install packages
   become: true
