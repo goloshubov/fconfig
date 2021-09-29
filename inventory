@@ -58,7 +58,8 @@ all:
       - tango-icon-theme
       - parallel
       - exa
-      - kubectl
+#      - kubectl
+      - kubernetes-client
 #      - barrier
       - dnf-utils
       - firefox-wayland
