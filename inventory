@@ -46,6 +46,7 @@ all:
       - gnome-extensions-app
       - virt-manager
       - virt-viewer
+      - virt-what
       - libvirt-client
       - bijiben
       - fedora-workstation-repositories

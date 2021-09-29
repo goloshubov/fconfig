@@ -80,6 +80,20 @@
   loop: "{{ cargo_list }}"
 
 
+- name: virt-what
+  become: yes
+  command: virt-what
+  register: vm_check
+- name: configure GNOME (natural-scrolling)
+  dconf:
+    key: '{{ item.key }}'
+    value: '{{ item.value }}'
+  loop:
+    #GNOME
+    - { key: "/org/gnome/desktop/peripherals/mouse/natural-scroll", value: "true" }
+    - { key: "/org/gnome/desktop/peripherals/touchpad/natural-scroll", value: "true" }
+  when: vm_check.stdout == ""
+
 - name: configure GNOME
   dconf:
     key: '{{ item.key }}'
@@ -87,8 +101,6 @@
   loop:
     #GNOME
 #    - { key: "/org/gnome/desktop/background/picture-uri", value: "'file:///home/{{ ansible_user }}/Pictures/wallpapers/wallpaper.jpg'" }
-    - { key: "/org/gnome/desktop/peripherals/mouse/natural-scroll", value: "true" }
-    - { key: "/org/gnome/desktop/peripherals/touchpad/natural-scroll", value: "true" }
     - { key: "/org/gnome/desktop/peripherals/touchpad/tap-to-click", value: "true" }
     - { key: "/org/gtk/Settings/FileChooser/show-hidden", value: "true" }
     - { key: "/org/gnome/nautilus/preferences/show-delete-permanently", value: "true" }
