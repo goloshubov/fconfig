@@ -93,6 +93,7 @@
     - { key: "/org/gnome/desktop/peripherals/mouse/natural-scroll", value: "true" }
     - { key: "/org/gnome/desktop/peripherals/touchpad/natural-scroll", value: "true" }
   when: vm_check.stdout == ""
+  #set natural-scrolling only if it's not a VM
 
 - name: configure GNOME
   dconf:
