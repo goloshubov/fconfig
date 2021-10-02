@@ -85,8 +85,9 @@ all:
       - podman
       - skopeo
 #      - virtio-win
-      - xdotool   #Fake keyboard/mouse input
-      - wtype     #xdotool type for Wayland
+#      - xdotool   #Fake keyboard/mouse input
+#      - wtype     #xdotool type for Wayland
+      - nethogs
 
 
     flatpak_list:
