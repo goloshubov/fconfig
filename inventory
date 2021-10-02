@@ -88,6 +88,7 @@ all:
 #      - xdotool   #Fake keyboard/mouse input
 #      - wtype     #xdotool type for Wayland
       - nethogs
+      - dnstop
 
 
     flatpak_list:
