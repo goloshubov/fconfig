@@ -126,6 +126,7 @@ all:
 #      - com.github.debauchee.barrier
 #      - de.haeckerfelix.Fragments      # bittorrent client
       - org.libreoffice.LibreOffice
+#      - com.belmoussaoui.Authenticator
 
     cargo_list:
       - du-dust
