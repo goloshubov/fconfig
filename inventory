@@ -131,6 +131,7 @@ all:
 #      - com.github.debauchee.barrier
 #      - de.haeckerfelix.Fragments      # bittorrent client
       - org.libreoffice.LibreOffice
+#      - com.belmoussaoui.Authenticator
 
     cargo_list:
       - du-dust
@@ -140,7 +141,8 @@ all:
 #      - xh
 #      - git-delta
       - fd-find
-#      - apkeep    #download APK packages (apkpure, googleplay)
+#      - apkeep    # download APK packages (apkpure, googleplay)
+#      - pup       # Command-line HTML parsing tool
 
     favorite_apps:
 #      - com.gexperts.Tilix.desktop
