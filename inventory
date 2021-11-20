@@ -90,8 +90,8 @@ all:
       - podman
       - skopeo
 #      - virtio-win
-#      - xdotool   #Fake keyboard/mouse input
-#      - wtype     #xdotool type for Wayland
+#      - xdotool   #Fake keyboard/mouse input for X11
+#      - ydotool   #Fake keyboard/mouse input for Wayland
       - nethogs
       - dnstop
 
