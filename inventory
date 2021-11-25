@@ -161,6 +161,7 @@ all:
       - org.gnome.Calculator.desktop
       - virt-manager.desktop
       - org.gnome.Calendar.desktop
+      - scrcpy.desktop
 
 
     pip_list:
