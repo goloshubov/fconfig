@@ -150,7 +150,7 @@ all:
       - net.cozic.joplin_desktop.desktop
       - firefox.desktop
 #      - firefox-wayland.desktop
-      - google-chrome.desktop
+#      - google-chrome.desktop
       - io.atom.Atom.desktop
       - org.gnome.gedit.desktop
 #      - com.getferdi.Ferdi.desktop
