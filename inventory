@@ -141,7 +141,7 @@ all:
       - yt-dlp
 
 
-cargo_list:
+    cargo_list:
       - du-dust
 #      - exa
       - tealdeer
