@@ -146,6 +146,10 @@ all:
 #      - apkeep    # download APK packages (apkpure, googleplay)
 #      - pup       # Command-line HTML parsing tool
 
+# TODO: add 'go get'
+    go_list:
+      - github.com/antonmedv/llama
+
     favorite_apps:
       - com.gexperts.Tilix.desktop
 #      - org.gnome.Terminal.desktop
