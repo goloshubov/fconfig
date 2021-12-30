@@ -42,12 +42,12 @@
 
 - name: add user to libvirt group
   become: yes
-  shell: usermod -a -G libvirt '{{ansible_user}}'
+  command: usermod -a -G libvirt '{{ansible_user}}'
 
 #needs fedora-workstation-repositories installed first
 - name: enable google-chrome repo
   become: yes
-  shell: dnf config-manager --set-enabled google-chrome
+  command: dnf config-manager --set-enabled google-chrome
 - name: install google-chrome-stable
   become: true
   package:
@@ -76,11 +76,11 @@
     name: "{{ pip_list }}"
 
 - name: install cargo packages
-  shell: cargo install '{{ item }}'
+  command: cargo install '{{ item }}'
   loop: "{{ cargo_list }}"
 
 - name: install go packages
-  shell: go get '{{ item }}'
+  command: go get '{{ item }}'
   loop: "{{ go_list }}"
 
 - name: virt-what
