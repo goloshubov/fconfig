@@ -135,7 +135,13 @@ all:
       - re.sonny.Tangram
       - com.rafaelmardojai.Blanket
 
-    cargo_list:
+
+    pip_list:
+#      - youtube-dl 
+      - yt-dlp
+
+
+cargo_list:
       - du-dust
 #      - exa
       - tealdeer
@@ -146,8 +152,10 @@ all:
 #      - apkeep    # download APK packages (apkpure, googleplay)
 #      - pup       # Command-line HTML parsing tool
 
+
     go_list:
       - github.com/antonmedv/llama
+
 
     favorite_apps:
       - com.gexperts.Tilix.desktop
@@ -168,7 +176,3 @@ all:
       - org.gnome.Calendar.desktop
       - scrcpy.desktop
 
-
-    pip_list:
-#      - youtube-dl 
-      - yt-dlp
