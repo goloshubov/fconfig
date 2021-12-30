@@ -132,6 +132,7 @@ all:
 #      - de.haeckerfelix.Fragments      # bittorrent client
       - org.libreoffice.LibreOffice
 #      - com.belmoussaoui.Authenticator
+      - re.sonny.Tangram
 
     cargo_list:
       - du-dust
