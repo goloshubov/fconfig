@@ -133,6 +133,7 @@ all:
       - org.libreoffice.LibreOffice
 #      - com.belmoussaoui.Authenticator
       - re.sonny.Tangram
+      - com.rafaelmardojai.Blanket
 
     cargo_list:
       - du-dust
@@ -146,8 +147,8 @@ all:
 #      - pup       # Command-line HTML parsing tool
 
     favorite_apps:
-#      - com.gexperts.Tilix.desktop
-      - org.gnome.Terminal.desktop
+      - com.gexperts.Tilix.desktop
+#      - org.gnome.Terminal.desktop
       - net.cozic.joplin_desktop.desktop
       - firefox.desktop
 #      - firefox-wayland.desktop
