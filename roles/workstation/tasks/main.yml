@@ -79,6 +79,9 @@
   shell: cargo install '{{ item }}'
   loop: "{{ cargo_list }}"
 
+- name: install go packages
+  shell: go get '{{ item }}'
+  loop: "{{ go_list }}"
 
 - name: virt-what
   become: yes
