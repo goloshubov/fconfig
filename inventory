@@ -94,6 +94,7 @@ all:
 #      - ydotool   #Fake keyboard/mouse input for Wayland
       - nethogs
       - dnstop
+      - the_silver_searcher
 
 
     flatpak_list:
@@ -155,6 +156,7 @@ all:
 
     go_list:
       - github.com/antonmedv/llama
+      - github.com/mikefarah/yq/v4
 
 
     favorite_apps:
