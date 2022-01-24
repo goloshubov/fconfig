@@ -95,6 +95,7 @@ all:
       - nethogs
       - dnstop
       - the_silver_searcher
+      - rdiff-backup
 
 
     flatpak_list:
