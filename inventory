@@ -136,6 +136,7 @@ all:
 #      - com.belmoussaoui.Authenticator
       - re.sonny.Tangram
       - com.rafaelmardojai.Blanket
+      - com.slack.Slack
 
 
     pip_list:
