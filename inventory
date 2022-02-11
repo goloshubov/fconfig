@@ -181,5 +181,4 @@ all:
       - org.gnome.Calendar.desktop
       - scrcpy.desktop
 #      - com.slack.Slack
-##
-##
+
