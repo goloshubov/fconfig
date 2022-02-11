@@ -96,6 +96,7 @@ all:
       - dnstop
       - the_silver_searcher
       - rdiff-backup
+      - python3-pytelegrambotapi
 
 
     flatpak_list:
