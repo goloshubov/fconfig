@@ -179,7 +179,7 @@ all:
       - com.github.xournalpp.xournalpp.desktop
       - org.gnome.Calculator.desktop
       - virt-manager.desktop
-      - org.gnome.Calendar.desktop
+#      - org.gnome.Calendar.desktop
       - scrcpy.desktop
 #      - com.slack.Slack
 
