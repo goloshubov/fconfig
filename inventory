@@ -169,7 +169,7 @@ all:
       - firefox.desktop
 #      - firefox-wayland.desktop
       - google-chrome.desktop
-      - io.atom.Atom.desktop
+#      - io.atom.Atom.desktop
       - org.gnome.gedit.desktop
 #      - com.getferdi.Ferdi.desktop
       - org.telegram.desktop.desktop
