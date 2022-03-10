@@ -86,7 +86,7 @@ all:
       - hwloc-gui  #lstopo
       - inotify-tools
       - fatrace
-      - minder
+#      - minder
       - podman
       - skopeo
 #      - virtio-win
