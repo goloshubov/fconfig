@@ -158,7 +158,7 @@ all:
 
 
     go_list:
-      - github.com/antonmedv/llama
+      - github.com/antonmedv/llama   #a terminal file manager
       - github.com/mikefarah/yq/v4
 
 
