@@ -10,6 +10,7 @@ all:
     files_dir: '~/git/github/wsconfig_files/'
 
     copr_list:
+      - mroche/cloud-native-utilities
       - zeno/scrcpy     # sudo dnf copr enable zeno/scrcpy
 
     package_list:
