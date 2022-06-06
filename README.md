@@ -11,4 +11,8 @@ $ cd wsconfig
 $ vim inventory
 
 $ ansible-playbook -i ./inventory apply.yml
+or
+$ ansible-playbook -i ./inventory apply.yml  --list-tags
+$ ansible-playbook -i ./inventory apply.yml --tags [tag1, tag2]
+
 ```

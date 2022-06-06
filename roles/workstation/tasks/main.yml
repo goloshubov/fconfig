@@ -6,11 +6,13 @@
     dest: "{{ files_dir }}"
     force: yes
     accept_hostkey: yes
+  tags: sync
 
 - name: sync home files
   synchronize:
     src: "{{ files_dir }}/home/"
     dest: ~/
+  tags: sync
 
 - name: sync etc files
   become: true
@@ -19,10 +21,14 @@
     dest: /etc/
     owner: no
     group: no
+  tags: sync
+
+
 
 - name: install rpmfussion-free repos
   become: yes
   shell: dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+  tags: package-repos
 
 # virtio-win repo
 # sudo wget https://fedorapeople.org/groups/virt/virtio-win/virtio-win.repo   -O /etc/yum.repos.d/virtio-win.repo
@@ -32,6 +38,7 @@
   become: true
   command: dnf copr enable '{{ item }}' -y
   loop:  "{{ copr_list }}"
+  tags: package-repos
 
 - name: install packages
   become: true
@@ -39,38 +46,46 @@
   dnf:
     state: latest
     name: "{{ package_list }}"
+  tags: packages
 - name: install minikube packages
   become: true
   dnf:
     name: https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm
     disable_gpg_check: yes
+  tags: packages
 
 - name: install yandex-disk
   become: true
   dnf:
     name: http://repo.yandex.ru/yandex-disk/yandex-disk-latest.x86_64.rpm
     disable_gpg_check: yes
+  tags: package-repos
 
 - name: add user to libvirt group
   become: yes
   command: usermod -a -G libvirt '{{ansible_user}}'
+  tags: configs
 
 #needs fedora-workstation-repositories installed first
 - name: enable google-chrome repo
   become: yes
   command: dnf config-manager --set-enabled google-chrome
+  tags: package-repos
 - name: install google-chrome-stable
   become: true
   package:
     state: latest
     name:
       - google-chrome-stable
+  tags: packages
+
 
 
 # overwrites existing flathub remote, with no filter.
 - name: add flathub remote (flatpak)
   become: yes
   command: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrep
+  tags: flatpak-repos
 #- name: add flathub remote (flatpak)
 #  become: yes
 #  flatpak_remote:
@@ -83,20 +98,32 @@
     name: '{{ item }}'
     state: present
     remote: flathub
+  tags: flatpaks
 #    method: user
   loop: "{{ flatpak_list }}"
+
+
 
 - name: Install pip packages
   pip:
     name: "{{ pip_list }}"
+  tags: pypi
+
+
 
 - name: install cargo packages
   command: cargo install '{{ item }}'
   loop: "{{ cargo_list }}"
+  tags: cargo
+
+
 
 - name: install go packages
   command: go install '{{ item }}'@latest
   loop: "{{ go_list }}"
+  tags: go
+
+
 
 - name: virt-what
   become: yes
@@ -111,6 +138,7 @@
     - { key: "/org/gnome/desktop/peripherals/mouse/natural-scroll", value: "true" }
     - { key: "/org/gnome/desktop/peripherals/touchpad/natural-scroll", value: "true" }
   when: vm_check.stdout == ""
+  tags: configs
   #set natural-scrolling only if it's not a VM
 
 - name: configure GNOME
@@ -139,7 +167,7 @@
     #gedit
     - { key: "/org/gnome/gedit/preferences/editor/scheme", value: "'oblivion'" }
 ##- TODO apply settings / reload gnome shell (or smth)
-
+  tags: configs
 
 ## configure vim
 #- name: create .vim directory
@@ -150,6 +178,7 @@
 #  get_url:
 #    url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 #    dest: ~/.vim/autoload/plug.vim
+#  tags: configs
 
 
 
