@@ -56,12 +56,16 @@
       - google-chrome-stable
 
 
+# overwrites existing flathub remote, with no filter.
 - name: add flathub remote (flatpak)
   become: yes
-  flatpak_remote:
-    name: flathub
-    state: present
-    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
+  command: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrep
+#- name: add flathub remote (flatpak)
+#  become: yes
+#  flatpak_remote:
+#    name: flathub
+#    state: present
+#    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
 
 - name: install flatpaks
   flatpak:
@@ -80,7 +84,7 @@
   loop: "{{ cargo_list }}"
 
 - name: install go packages
-  command: go get '{{ item }}'
+  command: go install '{{ item }}'@latest
   loop: "{{ go_list }}"
 
 - name: virt-what

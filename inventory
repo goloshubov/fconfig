@@ -96,6 +96,7 @@ all:
       - dnstop
       - the_silver_searcher
       - rdiff-backup
+      - python3-pip
       - python3-pytelegrambotapi
 
 
@@ -106,7 +107,7 @@ all:
       - org.gimp.GIMP
       - org.inkscape.Inkscape
       - org.kde.kdenlive
-      - us.zoom.Zoom
+#      - us.zoom.Zoom
       - com.skype.Client
       - com.obsproject.Studio
 #      - com.spotify.Client
@@ -123,12 +124,12 @@ all:
       - com.gitlab.newsflash
       - com.github.xournalpp.xournalpp
       - com.getferdi.Ferdi
-      - com.skype.Client
+#      - com.skype.Client
 #      - org.signal.Signal
       - org.telegram.desktop
 #      - com.viber.Viber
 #      - im.riot.Riot
-      - org.jitsi.jitsi-meet
+#      - org.jitsi.jitsi-meet
 #      - com.google.AndroidStudio
       - net.cozic.joplin_desktop
 #      - com.github.debauchee.barrier
@@ -160,7 +161,7 @@ all:
 
     go_list:
       - github.com/antonmedv/llama   #a terminal file manager
-      - github.com/mikefarah/yq/v4
+      - github.com/mikefarah/yq
 
 
     favorite_apps:
