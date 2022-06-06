@@ -121,6 +121,7 @@ all:
       - com.transmissionbt.Transmission
 #      - net.xmind.XMind8
 #      - net.xmind.ZEN
+      - net.xmind.XMind
       - com.gitlab.newsflash
       - com.github.xournalpp.xournalpp
       - com.getferdi.Ferdi
