@@ -172,7 +172,8 @@ all:
 #      - firefox-wayland.desktop
       - google-chrome.desktop
 #      - io.atom.Atom.desktop
-      - org.gnome.gedit.desktop
+#      - org.gnome.gedit.desktop
+      - org.gnome.TextEditor.desktop
 #      - com.getferdi.Ferdi.desktop
       - org.telegram.desktop.desktop
       - org.gnome.Nautilus.desktop
