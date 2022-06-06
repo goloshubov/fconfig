@@ -97,6 +97,11 @@ all:
       - python3-pip
       - python3-pytelegrambotapi
       - scrcpy    #from zeno/scrcpy copr
+      - cockpit
+      - cockpit-podman
+      - cockpit-machines
+      - cockpit-pcp
+      - cockpit-selinux
 
 
     flatpak_list:
