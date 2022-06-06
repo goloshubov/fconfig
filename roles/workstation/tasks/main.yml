@@ -40,6 +40,12 @@
     name: https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm
     disable_gpg_check: yes
 
+- name: install yandex-disk
+  become: true
+  dnf:
+    name: http://repo.yandex.ru/yandex-disk/yandex-disk-latest.x86_64.rpm
+    disable_gpg_check: yes
+
 - name: add user to libvirt group
   become: yes
   command: usermod -a -G libvirt '{{ansible_user}}'
