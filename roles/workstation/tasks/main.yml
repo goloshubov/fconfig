@@ -28,6 +28,11 @@
 # sudo wget https://fedorapeople.org/groups/virt/virtio-win/virtio-win.repo   -O /etc/yum.repos.d/virtio-win.repo
 # + enable latest repo
 
+- name: enable copr repos
+  become: true
+  command: dnf copr enable '{{ item }}' -y
+  loop:  "{{ copr_list }}"
+
 - name: install packages
   become: true
 #  package:

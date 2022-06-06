@@ -9,10 +9,8 @@ all:
     files_repo: 'git@github.com:goloshubov/wsconfig_files.git'
     files_dir: '~/git/github/wsconfig_files/'
 
-    #TODO: dnf copr repos
-    #dnf_copr_list:
-      #- zeno/scrcpy     # sudo dnf copr enable zeno/scrcpy
-
+    copr_list:
+      - zeno/scrcpy     # sudo dnf copr enable zeno/scrcpy
 
     package_list:
       - ansible
@@ -98,6 +96,7 @@ all:
       - rdiff-backup
       - python3-pip
       - python3-pytelegrambotapi
+      - scrcpy    #from zeno/scrcpy copr
 
 
     flatpak_list:
