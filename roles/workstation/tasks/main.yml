@@ -129,6 +129,7 @@
   become: yes
   command: virt-what
   register: vm_check
+  tags: [ configs, gnome ]
 - name: configure GNOME (natural-scrolling)
   dconf:
     key: '{{ item.key }}'
@@ -138,7 +139,7 @@
     - { key: "/org/gnome/desktop/peripherals/mouse/natural-scroll", value: "true" }
     - { key: "/org/gnome/desktop/peripherals/touchpad/natural-scroll", value: "true" }
   when: vm_check.stdout == ""
-  tags: configs
+  tags: [ configs, gnome ]
   #set natural-scrolling only if it's not a VM
 
 - name: configure GNOME
@@ -167,7 +168,7 @@
     #gedit
     - { key: "/org/gnome/gedit/preferences/editor/scheme", value: "'oblivion'" }
 ##- TODO apply settings / reload gnome shell (or smth)
-  tags: configs
+  tags: [ configs, gnome ]
 
 ## configure vim
 #- name: create .vim directory
