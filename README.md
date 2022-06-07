@@ -1,7 +1,7 @@
-wsconfig is a dotfiles like tool which also configures a (fedora) Linux workstation in an easily reproducible way. It can do the following:
-- copy .dotfiles and configs. The files are supposed to be in a separate/private repo - 'filesrepo' inventory var; the repo's './home' directory synchronizes with the user's home (~), the './etc' with the system '/etc/'.
-- install apps - packages (dnf), flatpaks, pip, cargo, go packages.
-- configure GNOME
+Apply configuration on a fedora workstation:
+- copy .dotfiles and configs. The files are supposed to be in a separate/private repo - 'filesrepo' inventory var; the repo's './home' directory will be synchronized with the user's home (~), the './etc' with the system '/etc/'.
+- install software - packages (dnf), flatpaks, pypi (pip), cargo, go packages.
+- set some GNOME settings
 \
 \
 Usage:
