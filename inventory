@@ -146,6 +146,7 @@ all:
       - com.rafaelmardojai.Blanket
 #      - com.slack.Slack
       - org.cockpit_project.CockpitClient
+      - com.github.jeromerobert.pdfarranger
 
 
     pip_list:
