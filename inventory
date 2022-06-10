@@ -116,7 +116,7 @@ all:
       - com.skype.Client
       - com.obsproject.Studio
 #      - com.spotify.Client
-      - io.atom.Atom
+#      - io.atom.Atom
       - com.jgraph.drawio.desktop
 #      - com.valvesoftware.Steam
       - com.github.gi_lom.dialect
