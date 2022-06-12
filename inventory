@@ -106,6 +106,7 @@ all:
       - vim-jedi
       - vim-go
       - golang-x-tools-gopls    #for vim-go
+      - vim-ansible
 
 
 
