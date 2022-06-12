@@ -103,6 +103,10 @@ all:
       - cockpit-machines
       - cockpit-pcp
       - cockpit-selinux
+      - vim-jedi
+      - vim-go
+      - golang-x-tools-gopls    #for vim-go
+
 
 
     flatpak_list:
