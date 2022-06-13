@@ -188,6 +188,8 @@ all:
       - org.gnome.TextEditor.desktop
 #      - com.getferdi.Ferdi.desktop
       - org.telegram.desktop.desktop
+      - re.sonny.Tangram.desktop
+#      - com.slack.Slack.desktop
       - org.gnome.Nautilus.desktop
 #      - net.xmind.ZEN.desktop
       - net.xmind.XMind.desktop
@@ -198,5 +200,4 @@ all:
       - org.cockpit_project.CockpitClient.desktop
 #      - org.gnome.Calendar.desktop
       - scrcpy.desktop
-#      - com.slack.Slack
 
