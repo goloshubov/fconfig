@@ -6,13 +6,13 @@
     dest: "{{ files_dir }}"
     force: yes
     accept_hostkey: yes
-  tags: sync
+  tags: configs
 
 - name: sync home files
   synchronize:
     src: "{{ files_dir }}/home/"
     dest: ~/
-  tags: sync
+  tags: configs
 
 - name: sync etc files
   become: true
@@ -21,7 +21,7 @@
     dest: /etc/
     owner: no
     group: no
-  tags: sync
+  tags: configs
 
 
 
