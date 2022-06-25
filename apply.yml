@@ -1,4 +1,5 @@
 ---
 - hosts: workstations
+  gather_facts: yes
   roles:
     - role: workstation

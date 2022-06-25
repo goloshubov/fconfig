@@ -1,5 +1,6 @@
 ---
 
+
 - name: get dotfiles
   git:
     repo: "{{ files_repo }}"
@@ -9,18 +10,26 @@
   tags: configs
 
 - name: sync home files
+  ignore_errors: yes
   synchronize:
-    src: "{{ files_dir }}/home/"
+    src: "{{ files_dir }}/{{ item }}/home/"
     dest: ~/
+  loop:
+    - "all"
+    - "byHostname/{{ ansible_facts['hostname'] }}"
   tags: configs
 
 - name: sync etc files
+  ignore_errors: yes
   become: true
   synchronize:
-    src: "{{ files_dir }}/etc/"
+    src: "{{ files_dir }}/{{ item }}/etc/"
     dest: /etc/
     owner: no
     group: no
+  loop:
+    - "all"
+    - "byHostname/{{ ansible_facts['hostname'] }}"
   tags: configs
 
 
