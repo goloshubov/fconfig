@@ -107,6 +107,7 @@ all:
       - vim-go
       - golang-x-tools-gopls    #for vim-go
       - vim-ansible
+      - ranger      # console file manager
 
 
 
