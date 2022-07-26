@@ -108,6 +108,7 @@ all:
       - golang-x-tools-gopls    #for vim-go
       - vim-ansible
       - ranger      # console file manager
+      - perl-Image-ExifTool
 
 
 
