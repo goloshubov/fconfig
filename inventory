@@ -47,6 +47,7 @@ all:
       - gnome-shell-extension-workspace-indicator
       - gnome-shell-extension-openweather
       - gnome-shell-extension-pomodoro
+      - gnome-shell-extension-just-perfection
       - gnome-extensions-app
       - virt-manager
       - virt-viewer
