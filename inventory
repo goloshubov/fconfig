@@ -27,7 +27,7 @@ all:
       - git
       - knock
       - vim-enhanced
-#      - vim-nerdtree
+      - vim-nerdtree
       - awesome-vim-colorschemes
       - mc
       - curl
