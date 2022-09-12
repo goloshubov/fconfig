@@ -137,7 +137,7 @@ all:
       - net.xmind.XMind
       - com.gitlab.newsflash
       - com.github.xournalpp.xournalpp
-      - com.getferdi.Ferdi
+#      - com.getferdi.Ferdi
 #      - com.skype.Client
 #      - org.signal.Signal
       - org.telegram.desktop
