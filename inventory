@@ -110,6 +110,7 @@ all:
       - vim-ansible
       - ranger      # console file manager
       - perl-Image-ExifTool
+      - terraform
 
 
 
