@@ -10,7 +10,7 @@ all:
     files_dir: '~/git/github/wsconfig_files/'
 
     copr_list:
-      - mroche/cloud-native-utilities
+      - mroche/cloud-native-utilities      # helm,knative-client,pack,packer,tektoncd-cli,terraform
       - zeno/scrcpy     # sudo dnf copr enable zeno/scrcpy
 
     package_list:
