@@ -110,7 +110,7 @@ all:
       - vim-ansible
       - ranger      # console file manager
       - perl-Image-ExifTool
-      - terraform
+      - terraform      # from mroche/cloud-native-utilities copr repo
 
 
 
