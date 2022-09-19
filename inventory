@@ -113,6 +113,7 @@ all:
       - perl-Image-ExifTool
       - terraform      # from mroche/cloud-native-utilities copr repo
       - xournalpp      # from luya/xournalpp copr repo, latest xournal++
+      - golang-github-docker-slim    # docker-slim tool
 
 
 
