@@ -14,7 +14,7 @@ all:
       - zeno/scrcpy     # sudo dnf copr enable zeno/scrcpy
       - luya/xournalpp  # latest xournal++
 
-    other_repos_list:  # TODO
+    other_repos_list:
 #      - https://fedorapeople.org/groups/virt/virtio-win/virtio-win.repo
       - https://download.docker.com/linux/fedora/docker-ce.repo
 
