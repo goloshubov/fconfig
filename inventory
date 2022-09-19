@@ -12,6 +12,7 @@ all:
     copr_list:
       - mroche/cloud-native-utilities      # helm,knative-client,pack,packer,tektoncd-cli,terraform
       - zeno/scrcpy     # sudo dnf copr enable zeno/scrcpy
+      - luya/xournalpp  # latest xournal++
 
     package_list:
       - ansible
@@ -111,6 +112,7 @@ all:
       - ranger      # console file manager
       - perl-Image-ExifTool
       - terraform      # from mroche/cloud-native-utilities copr repo
+      - xournalpp      # from luya/xournalpp copr repo, latest xournal++
 
 
 
@@ -137,7 +139,7 @@ all:
 #      - net.xmind.ZEN
       - net.xmind.XMind
       - com.gitlab.newsflash
-      - com.github.xournalpp.xournalpp
+#      - com.github.xournalpp.xournalpp
 #      - com.getferdi.Ferdi
 #      - com.skype.Client
 #      - org.signal.Signal
