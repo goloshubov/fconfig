@@ -158,6 +158,7 @@ all:
 #      - com.slack.Slack
       - org.cockpit_project.CockpitClient
       - com.github.jeromerobert.pdfarranger
+#      - rest.insomnia.Insomnia         # Open Source API Client (Postman alternative)
 
 
     pip_list:
