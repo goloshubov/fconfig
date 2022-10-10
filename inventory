@@ -122,6 +122,7 @@ all:
       - docker-ce-cli            # docker-ce  
       - containerd.io            # docker-ce 
       - docker-compose-plugin    # docker-ce  
+      - helix
 
 
 
