@@ -13,6 +13,7 @@ all:
       - mroche/cloud-native-utilities      # helm,knative-client,pack,packer,tektoncd-cli,terraform
       - zeno/scrcpy     # sudo dnf copr enable zeno/scrcpy
       - luya/xournalpp  # latest xournal++
+      - varlad/helix
 
     other_repos_list:
 #      - https://fedorapeople.org/groups/virt/virtio-win/virtio-win.repo
