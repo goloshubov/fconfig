@@ -123,7 +123,8 @@ all:
       - docker-ce-cli            # docker-ce  
       - containerd.io            # docker-ce 
       - docker-compose-plugin    # docker-ce  
-      - helix
+      - helix     # from varlad/helix copr repo
+      - crudini   # A utility for manipulating ini files
 
 
 
