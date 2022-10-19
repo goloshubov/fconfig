@@ -125,6 +125,7 @@ all:
       - docker-compose-plugin    # docker-ce  
       - helix     # from varlad/helix copr repo
       - crudini   # A utility for manipulating ini files
+      - pv        # monitor the progress of data through a pipe
 
 
 
