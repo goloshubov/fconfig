@@ -195,8 +195,7 @@ all:
       - github.com/antonmedv/llama   #a terminal file manager
       - github.com/mikefarah/yq
 
-
-    favorite_apps:
+    favorite_apps:     # dconf read /org/gnome/shell/favorite-apps
       - com.gexperts.Tilix.desktop
 #      - org.gnome.Terminal.desktop
       - net.cozic.joplin_desktop.desktop
@@ -214,7 +213,6 @@ all:
       - org.gnome.Nautilus.desktop
 #      - net.xmind.ZEN.desktop
       - net.xmind.XMind.desktop
-      - xmind.desktop
       - com.github.xournalpp.xournalpp.desktop
       - org.gnome.Calculator.desktop
       - virt-manager.desktop
