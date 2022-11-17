@@ -126,6 +126,7 @@ all:
       - helix     # from varlad/helix copr repo
       - crudini   # A utility for manipulating ini files
       - pv        # monitor the progress of data through a pipe
+      - bat       # A cat(1) clone with wings. (Rust)
 
 
 
@@ -164,7 +165,7 @@ all:
 #      - com.google.AndroidStudio
       - net.cozic.joplin_desktop
 #      - com.github.debauchee.barrier
-#      - de.haeckerfelix.Fragments      # bittorrent client
+      - de.haeckerfelix.Fragments      # bittorrent client
       - org.libreoffice.LibreOffice
 #      - com.belmoussaoui.Authenticator
       - re.sonny.Tangram
@@ -190,6 +191,7 @@ all:
       - fd-find
 #      - apkeep    # download APK packages (apkpure, googleplay)
 #      - pup       # Command-line HTML parsing tool
+#      - bat       # A cat(1) clone with wings. (Rust)      # already in package_list
 
 
     go_list:
