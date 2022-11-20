@@ -127,6 +127,7 @@ all:
       - crudini   # A utility for manipulating ini files
       - pv        # monitor the progress of data through a pipe
       - bat       # A cat(1) clone with wings. (Rust)
+      - grafana
 
 
 
