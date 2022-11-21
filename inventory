@@ -43,7 +43,6 @@ all:
       - tmux-powerline
       - vim-powerline
       - gnome-tweaks
-      - chrome-gnome-shell
       - gnome-shell-extension-dash-to-dock
       - libdbusmenu
       - gnome-shell-extension-launch-new-instance
