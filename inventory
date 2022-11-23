@@ -9,15 +9,18 @@ all:
     files_repo: 'git@github.com:goloshubov/wsconfig_files.git'
     files_dir: '~/git/github/wsconfig_files/'
 
+
     copr_list:
       - mroche/cloud-native-utilities      # helm,knative-client,pack,packer,tektoncd-cli,terraform
       - zeno/scrcpy     # sudo dnf copr enable zeno/scrcpy
       - luya/xournalpp  # latest xournal++
       - varlad/helix
 
+
     other_repos_list:
 #      - https://fedorapeople.org/groups/virt/virtio-win/virtio-win.repo
       - https://download.docker.com/linux/fedora/docker-ce.repo
+
 
     package_list:
       - ansible
@@ -127,7 +130,7 @@ all:
       - pv        # monitor the progress of data through a pipe
       - bat       # A cat(1) clone with wings. (Rust)
       - grafana
-
+#      - go-task
 
 
     flatpak_list:
@@ -197,6 +200,8 @@ all:
     go_list:
       - github.com/antonmedv/llama   #a terminal file manager
 #      - github.com/mikefarah/yq
+      - github.com/go-task/task/v3/cmd/task
+
 
     favorite_apps:     # dconf read /org/gnome/shell/favorite-apps
       - com.gexperts.Tilix.desktop
