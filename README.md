@@ -13,7 +13,7 @@ $ vim inventory
 # apply the configuration on the local workstation:
 $ ansible-playbook -i ./inventory apply.yml
 
-# or apply configuration partialy
+# or apply it partialy:
 $ ansible-playbook -i ./inventory apply.yml --list-tags
 $ ansible-playbook -i ./inventory apply.yml --tags "tag1, tag2"
 
