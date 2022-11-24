@@ -6,7 +6,7 @@ wsconfig is an ansible playbook that helps keeping one configuration on your (mu
 \
 Usage:
 ```bash
-$ git clone ...
+$ git clone https://github.com/goloshubov/wsconfig
 $ cd wsconfig
 $ vim inventory
 
