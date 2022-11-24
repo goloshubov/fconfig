@@ -8,6 +8,7 @@ Usage:
 ```bash
 $ git clone https://github.com/goloshubov/wsconfig
 $ cd wsconfig
+# edit inventory, edit ansible_user, files_repo and files_dir variables:
 $ vim inventory
 
 # apply the configuration on the local workstation:
