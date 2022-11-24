@@ -10,8 +10,10 @@ $ git clone ...
 $ cd wsconfig
 $ vim inventory
 
+# apply the configuration on the local workstation:
 $ ansible-playbook -i ./inventory apply.yml
-or
+
+# or apply configuration partialy
 $ ansible-playbook -i ./inventory apply.yml --list-tags
 $ ansible-playbook -i ./inventory apply.yml --tags "tag1, tag2"
 
