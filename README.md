@@ -15,6 +15,6 @@ $ ansible-playbook -i ./inventory apply.yml
 
 # or apply it partialy:
 $ ansible-playbook -i ./inventory apply.yml --list-tags
-$ ansible-playbook -i ./inventory apply.yml --tags "tag1, tag2"
+$ ansible-playbook -i ./inventory apply.yml --tags packages,flatpaks
 
 ```
