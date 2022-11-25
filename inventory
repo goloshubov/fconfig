@@ -12,7 +12,7 @@ all:
 
     copr_list:
       - mroche/cloud-native-utilities      # helm,knative-client,pack,packer,tektoncd-cli,terraform
-      - zeno/scrcpy     # sudo dnf copr enable zeno/scrcpy
+      - zeno/scrcpy
       - luya/xournalpp  # latest xournal++
       - varlad/helix
 
@@ -125,7 +125,7 @@ all:
       - docker-ce-cli            # docker-ce  
       - containerd.io            # docker-ce 
       - docker-compose-plugin    # docker-ce  
-      - helix     # from varlad/helix copr repo
+      - helix     # text editor. from varlad/helix copr repo
       - crudini   # A utility for manipulating ini files
       - pv        # monitor the progress of data through a pipe
       - bat       # A cat(1) clone with wings. (Rust)
