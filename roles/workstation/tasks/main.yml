@@ -133,24 +133,6 @@
 
 
 #---------------------------------GNOME--------------------------------------------
-# TODO:
-#- name: virt-what
-#  become: yes
-#  command: virt-what
-#  register: vm_check
-#  tags: [ configs, gnome ]
-#- name: configure GNOME (natural-scrolling)
-#  dconf:
-#    key: '{{ item.key }}'
-#    value: '{{ item.value }}'
-#  loop:
-#    #GNOME
-#    - { key: "/org/gnome/desktop/peripherals/mouse/natural-scroll", value: "true" }
-#    - { key: "/org/gnome/desktop/peripherals/touchpad/natural-scroll", value: "true" }
-#  when: vm_check.stdout == ""
-#  tags: [ configs, gnome ]
-#  #set natural-scrolling only if it's not a VM
-
 - name: configure GNOME
   dconf:
     key: '{{ item.key }}'
