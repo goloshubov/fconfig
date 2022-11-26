@@ -13,6 +13,12 @@ all:
     files_dir: '~/git/github/wsconfig_files/'
 
 
+    # add user to groups (after installing packages)
+    user_groups:
+      - libvirt
+      - docker
+
+
     copr_list:
       - mroche/cloud-native-utilities      # helm,knative-client,pack,packer,tektoncd-cli,terraform
       - zeno/scrcpy
@@ -25,9 +31,25 @@ all:
       - https://download.docker.com/linux/fedora/docker-ce.repo
 
 
+    direct_package_list:
+      - "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-37.noarch.rpm"
+      - "http://repo.yandex.ru/yandex-disk/yandex-disk-latest.x86_64.rpm"    #yandex-disk repository
+      - "https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm"
+
+
+    #third party repos
+    prerequisite_packages_list:
+      - fedora-workstation-repositories
+
+
+    setenabled_repo_list:
+      - google-chrome
+
+
     package_list:
       - ansible
       - sshuttle
+      - google-chrome-stable  # from google-chrome repo (fedora-workstation-repositories pkg)
       - wireguard-tools
       - nmap-ncat
       - bind-utils
@@ -65,7 +87,6 @@ all:
       - virt-what
       - libvirt-client
       - bijiben
-      - fedora-workstation-repositories
       - dconf-editor
       - lm_sensors
       - python3-psutil
