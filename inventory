@@ -19,6 +19,7 @@ all:
       - docker
 
 
+    #third party repos
     copr_list:
       - mroche/cloud-native-utilities      # helm,knative-client,pack,packer,tektoncd-cli,terraform
       - zeno/scrcpy
@@ -26,22 +27,25 @@ all:
       - varlad/helix
 
 
+    #third party repos
     other_repos_list:
 #      - https://fedorapeople.org/groups/virt/virtio-win/virtio-win.repo
       - https://download.docker.com/linux/fedora/docker-ce.repo
 
 
+    #third party repos and packages
     direct_package_list:
       - "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-37.noarch.rpm"
       - "http://repo.yandex.ru/yandex-disk/yandex-disk-latest.x86_64.rpm"    #yandex-disk repository
       - "https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm"
 
 
-    #third party repos
+    #third party repos and packages
     prerequisite_packages_list:
       - fedora-workstation-repositories
 
 
+    # enable repo if needed
     setenabled_repo_list:
       - google-chrome
 
@@ -226,7 +230,7 @@ all:
 #      - github.com/mikefarah/yq
       - github.com/go-task/task/v3/cmd/task
 
-
+    # dash/dock panel favorite apps 
     favorite_apps:     # dconf read /org/gnome/shell/favorite-apps
       - com.gexperts.Tilix.desktop
 #      - org.gnome.Terminal.desktop
