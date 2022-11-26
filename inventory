@@ -230,6 +230,7 @@ all:
 #      - github.com/mikefarah/yq
       - github.com/go-task/task/v3/cmd/task
 
+
     # dash/dock panel favorite apps 
     favorite_apps:     # dconf read /org/gnome/shell/favorite-apps
       - com.gexperts.Tilix.desktop
