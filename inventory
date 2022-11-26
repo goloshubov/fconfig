@@ -231,6 +231,7 @@ all:
 
     # TOOD: complete the list
     dconf_settings:
+      "/org/gnome/shell/favorite-apps": "{{ favorite_apps }}"
       "/org/gnome/desktop/peripherals/mouse/natural-scroll": "true"
       "/org/gnome/desktop/peripherals/touchpad/natural-scroll": "true"
 #      "/org/gnome/desktop/background/picture-uri": "'file:///home/{{ ansible_user }}/Pictures/wallpapers/wallpaper.jpg'"
@@ -243,7 +244,6 @@ all:
       "/org/gnome/desktop/interface/show-battery-percentage": "true"
 #      "/org/gnome/desktop/wm/preferences/focus-mode": "'sloppy'"
       "/org/gnome/desktop/wm/preferences/focus-mode": "'click'"
-      "/org/gnome/shell/favorite-apps": "{{ favorite_apps }}"
       "/com/gexperts/Tilix/Settingsterminal-title-show-when-single": "false"
       "/com/gexperts/Tilix/Settingsterminal-title-style": "'small'"
       "/com/gexperts/Tilix/Settingstheme-variant": "'dark'"
