@@ -157,30 +157,8 @@
 - name: configure GNOME
   dconf:
     key: '{{ item.key }}'
-    value: '{{ item.value }}'
-  loop:
-    #GNOME
-#    - { key: "/org/gnome/desktop/background/picture-uri", value: "'file:///home/{{ ansible_user }}/Pictures/wallpapers/wallpaper.jpg'" }
-    - { key: "/org/gnome/desktop/peripherals/touchpad/tap-to-click", value: "true" }
-    - { key: "/org/gtk/Settings/FileChooser/show-hidden", value: "true" }
-    - { key: "/org/gnome/nautilus/preferences/show-delete-permanently", value: "true" }
-    - { key: "/org/gtk/Settings/FileChooser/sort-directories-first", value: "true" }
-    - { key: "/org/gnome/nautilus/icon-view/default-zoom-level", value: "'small'" }
-    - { key: "/org/gnome/desktop/interface/clock-show-weekday", value: "true" }
-    - { key: "/org/gnome/desktop/interface/show-battery-percentage", value: "true" }
-    #- { key: "/org/gnome/desktop/wm/preferences/focus-mode", value: "'sloppy'" }
-    - { key: "/org/gnome/desktop/wm/preferences/focus-mode", value: "'click'" }
-    - { key: "/org/gnome/shell/favorite-apps", value: "{{ favorite_apps }}" }
-    #Tilix
-    - { key: "/com/gexperts/Tilix/Settingsterminal-title-show-when-single", value: "false" }
-    - { key: "/com/gexperts/Tilix/Settingsterminal-title-style", value: "'small'" }
-    - { key: "/com/gexperts/Tilix/Settingstheme-variant", value: "'dark'" }
-    - { key: "/com/gexperts/Tilix/Settingsuse-tabs", value: "true" }
-    #TODO  set tilix color scheme
-    #gedit
-    - { key: "/org/gnome/gedit/preferences/editor/scheme", value: "'oblivion'" }
-##- TODO apply settings / reload gnome shell (or smth)
+    value: '{{ item.value }}'    
+  loop: "{{ lookup('ansible.builtin.dict', dconf_settings) }}"
   tags: [ configs, gnome ]
-
 
 ...

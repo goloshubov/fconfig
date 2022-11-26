@@ -228,3 +228,23 @@ all:
 #      - org.gnome.Calendar.desktop
       - scrcpy.desktop
 
+
+    dconf_settings:
+#      "/org/gnome/desktop/background/picture-uri": "'file:///home/{{ ansible_user }}/Pictures/wallpapers/wallpaper.jpg'"
+      "/org/gnome/desktop/peripherals/touchpad/tap-to-click": "true"
+      "/org/gtk/Settings/FileChooser/show-hidden": "true"
+      "/org/gnome/nautilus/preferences/show-delete-permanently": "true"
+      "/org/gtk/Settings/FileChooser/sort-directories-first": "true"
+      "/org/gnome/nautilus/icon-view/default-zoom-level": "'small'"
+      "/org/gnome/desktop/interface/clock-show-weekday": "true"
+      "/org/gnome/desktop/interface/show-battery-percentage": "true"
+#      "/org/gnome/desktop/wm/preferences/focus-mode": "'sloppy'"
+      "/org/gnome/desktop/wm/preferences/focus-mode": "'click'"
+      "/org/gnome/shell/favorite-apps": "{{ favorite_apps }}"
+      "/com/gexperts/Tilix/Settingsterminal-title-show-when-single": "false"
+      "/com/gexperts/Tilix/Settingsterminal-title-style": "'small'"
+      "/com/gexperts/Tilix/Settingstheme-variant": "'dark'"
+      "/com/gexperts/Tilix/Settingsuse-tabs": "true"
+      "/org/gnome/gedit/preferences/editor/scheme": "'oblivion'"
+     
+
