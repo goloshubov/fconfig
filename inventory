@@ -231,8 +231,8 @@ all:
       - github.com/go-task/task/v3/cmd/task
 
 
-    # dash/dock panel favorite apps 
-    favorite_apps:     # dconf read /org/gnome/shell/favorite-apps
+    # dash/dock panel favorite apps ($ dconf read /org/gnome/shell/favorite-apps)
+    favorite_apps:
       - com.gexperts.Tilix.desktop
 #      - org.gnome.Terminal.desktop
       - net.cozic.joplin_desktop.desktop
