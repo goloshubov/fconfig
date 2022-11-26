@@ -255,7 +255,6 @@ all:
 
     # TOOD: complete the dconf_settings dictionary somehow:
     # newmachine$ dconf dump / > dump0
-    # confugre all gnome settings
-    # $ dconf dump / > dump1
-    # diff dump0 dump1
+    # configured$ dconf dump / > dump1
+    # $ diff dump0 dump1
 
