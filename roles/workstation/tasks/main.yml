@@ -40,7 +40,6 @@
   loop:  "{{ copr_list }}"
   tags: package-repos
 
-# FIXME (no ansible module for this yet)
 - name: install other repos
   become: yes
   command: dnf config-manager --add-repo '{{ item }}' -y
