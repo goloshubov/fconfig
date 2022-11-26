@@ -229,6 +229,7 @@ all:
       - scrcpy.desktop
 
 
+    # TOOD: complete the list
     dconf_settings:
       "/org/gnome/desktop/peripherals/mouse/natural-scroll": "true"
       "/org/gnome/desktop/peripherals/touchpad/natural-scroll": "true"
