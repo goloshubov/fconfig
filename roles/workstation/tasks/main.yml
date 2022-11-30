@@ -38,13 +38,13 @@
   become: true
   command: dnf copr enable '{{ item }}' -y
   loop:  "{{ copr_list }}"
-  tags: package-repos
+  tags: [ software, package-repos ]
 
 - name: install other repos
   become: yes
   command: dnf config-manager --add-repo '{{ item }}' -y
   loop: "{{ other_repos_list }}"
-  tags: package-repos
+  tags: [ software, package-repos ]
 
 - name: install packages (direct link)
   become: true
@@ -52,7 +52,7 @@
   dnf:
     state: latest
     name: "{{ direct_package_list }}"
-  tags: [ package-repos, packages ]
+  tags: [ software, package-repos, packages ]
 
 - name: install prerequisite packages (repos)
   become: true
@@ -60,13 +60,13 @@
   dnf:
     state: latest
     name: "{{ prerequisite_packages_list }}"
-  tags: [ package-repos, packages ]
+  tags: [ software, package-repos, packages ]
 
 - name: enable repos
   become: yes
   command: dnf config-manager --set-enabled "{{ item }}"
   loop: "{{ setenabled_repo_list }}"
-  tags: package-repos 
+  tags: [ software, package-repos ]
 
 - name: install packages
   become: true
@@ -74,7 +74,7 @@
   dnf:
     state: latest
     name: "{{ package_list }}"
-  tags: packages
+  tags: [ software, packages ]
 
 
 #---------------------------------misc--------------------------------------------
@@ -90,7 +90,7 @@
 - name: add flathub remote (flatpak)
   become: yes
   command: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrep
-  tags: flatpak-repos
+  tags: [software, flatpak-repos ]
 #- name: add flathub remote (flatpak)
 #  become: yes
 #  flatpak_remote:
@@ -103,7 +103,7 @@
     name: '{{ item }}'
     state: present
     remote: flathub
-  tags: flatpaks
+  tags: [software, flatpaks ]
 #    method: user
   loop: "{{ flatpak_list }}"
 
@@ -113,7 +113,7 @@
 - name: Install pip packages
   pip:
     name: "{{ pip_list }}"
-  tags: [ pypi, pip ]
+  tags: [ software, pypi, pip ]
 
 
 
@@ -121,7 +121,7 @@
 - name: install cargo packages
   command: cargo install '{{ item }}'
   loop: "{{ cargo_list }}"
-  tags: cargo
+  tags: [software, cargo ]
 
 
 
@@ -129,7 +129,7 @@
 - name: install go packages
   command: go install '{{ item }}'@latest
   loop: "{{ go_list }}"
-  tags: go
+  tags: [software, go ]
 
 
 #---------------------------------GNOME--------------------------------------------
