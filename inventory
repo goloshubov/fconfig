@@ -51,7 +51,6 @@ all:
 
 
     package_list:
-      - ansible
       - sshuttle
       - google-chrome-stable  # from google-chrome repo (fedora-workstation-repositories pkg)
       - wireguard-tools
@@ -159,6 +158,11 @@ all:
       - bat       # A cat(1) clone with wings. (Rust)
       - grafana
 #      - go-task
+      - gcc
+      - java-17-openjdk 
+      - maven
+      - python3-devel
+      - python3-pip
 
 
     flatpak_list:
@@ -210,6 +214,12 @@ all:
     pip_list:
 #      - youtube-dl 
       - yt-dlp
+      - Jinja2
+      - ansible
+      - ansible-rulebook
+      - ansible-runner
+      - wheel
+      
 
 
     cargo_list:

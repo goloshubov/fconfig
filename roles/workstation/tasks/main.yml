@@ -113,7 +113,7 @@
 - name: Install pip packages
   pip:
     name: "{{ pip_list }}"
-  tags: pypi
+  tags: [ pypi, pip ]
 
 
 
