@@ -238,7 +238,7 @@ all:
       - net.cozic.joplin_desktop.desktop
       - firefox.desktop
 #      - firefox-wayland.desktop
-      - google-chrome.desktop
+#      - google-chrome.desktop
       - com.gitlab.newsflash.desktop
 #      - io.atom.Atom.desktop
 #      - org.gnome.gedit.desktop
@@ -246,7 +246,7 @@ all:
 #      - com.getferdi.Ferdi.desktop
       - org.telegram.desktop.desktop
       - re.sonny.Tangram.desktop
-#      - com.slack.Slack.desktop
+      - com.slack.Slack.desktop
       - org.gnome.Nautilus.desktop
 #      - net.xmind.ZEN.desktop
       - net.xmind.XMind.desktop
