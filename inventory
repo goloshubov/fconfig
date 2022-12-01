@@ -219,6 +219,7 @@ all:
       - ansible-rulebook
       - ansible-runner
       - wheel
+      - aiohttp   # required for ansible.eda plugins (event_source/webhook.py)
       
 
     cargo_list:
