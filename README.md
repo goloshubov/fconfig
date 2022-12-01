@@ -12,10 +12,10 @@ $ cd wsconfig
 $ vim inventory
 
 # apply the configuration on the local workstation:
-$ ansible-playbook -i ./inventory apply.yml
+$ ansible-playbook -i ./inventory.yml apply.yml
 
 # or apply it partialy:
-$ ansible-playbook -i ./inventory apply.yml --list-tags
-$ ansible-playbook -i ./inventory apply.yml --tags packages,flatpaks
+$ ansible-playbook -i ./inventory.yml apply.yml --list-tags
+$ ansible-playbook -i ./inventory.yml apply.yml --tags packages,flatpaks
 
 ```
