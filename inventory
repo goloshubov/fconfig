@@ -221,7 +221,6 @@ all:
       - wheel
       
 
-
     cargo_list:
       - du-dust
 #      - exa
@@ -239,6 +238,10 @@ all:
       - github.com/antonmedv/llama   #a terminal file manager
 #      - github.com/mikefarah/yq
       - github.com/go-task/task/v3/cmd/task
+
+
+    ansible_galaxy_collection_list:
+      - ansible.eda
 
 
     # dash/dock panel favorite apps ($ dconf read /org/gnome/shell/favorite-apps)
