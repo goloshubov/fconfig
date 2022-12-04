@@ -303,8 +303,8 @@ all:
     # $ dconf load -f /<path> < wsconfig_files__git_repo/{all|byHosname/<name>}/home/dconf/dumpfile
     # var might look like: "<path>": "<dumpfile_in_wsconfig_files_repo>" (whether it in the 'all' or the 'byHostname' dir)
     # an example (needs testing):
-    dconf_dumps:
-      "/org/gnome/nautilus/": "nautilus"
-      "/org/gnome/shell/extensions/": "gnome-extensions"
+#    dconf_dumps:
+#      "/org/gnome/nautilus/": "nautilus"
+#      "/org/gnome/shell/extensions/": "gnome-extensions"
 
 
