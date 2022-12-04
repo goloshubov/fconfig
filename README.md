@@ -20,7 +20,6 @@ $ ansible-playbook -i ./inventory.yml apply.yml --tags packages,flatpaks
 
 ```
 
-
 ---
 Regarding dconf dump files:
 
@@ -40,3 +39,66 @@ The playbook applies dconf settings in the following order:
 1. dconf dumps, all dir
 2. dconf dumps, byHostname dir
 3. dconf, inventory (dconf_settings)
+
+---
+example files_repo dir structure (with some files):
+```
+.
+├── all
+│   ├── etc
+│   │   ├── sysctl.d
+│   │   │   ├── mitigations.conf
+│   │   │   └── sysrq.conf
+│   │   ├── udev
+│   │   │   └── rules.d
+│   │   │       └── 51-android.rules
+│   │   └── yum.repos.d
+│   │       └── kubernetes.repo
+│   └── home
+│       ├── .ansible.cfg
+│       ├── .bashrc
+│       ├── bin
+│       │   ├── script.sh
+│       ├── .config
+│       │   ├── helix
+│       │   │   └── config.toml
+│       │   ├── powerline
+│       │   │   └── config.json
+│       │   └── xournalpp
+│       │       └── toolbar.ini
+│       ├── dconf
+│       │   └── org__gnome__shell__extensions__dash-to-dock
+│       ├── .local
+│       │   └── share
+│       │       ├── applications
+│       │       │   └── scrcpy.desktop
+│       │       └── nautilus
+│       │           └── scripts
+│       │               ├── inHelix
+│       │               └── inVim
+│       ├── Pictures
+│       │   └── wallpapers
+│       │       └── wallpaper.jpg
+│       ├── .screenrc
+│       ├── .tmux.conf
+│       ├── .var
+│       │   └── app
+│       │       └── com.github.xournalpp.xournalpp
+│       │           └── config
+│       │               └── xournalpp
+│       │                   └── toolbar.ini
+│       └── .vimrc
+├── byHostname
+│   ├── ws
+│   │   └── etc
+│   │       └── tuned
+│   │           └── ws-amdgpu
+│   │               └── tuned.conf
+│   └── x390yoga
+│       ├── etc
+│       │   ├── default
+│       │   │   └── grub
+│       │   └── modprobe.d
+│       │       └── wacom.conf
+│       └── home
+```
