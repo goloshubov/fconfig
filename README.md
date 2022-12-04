@@ -39,4 +39,4 @@ it will be used to load dconf dump by the path of /org/gnome/shell/extensions/da
 The playbook applies dconf settings in the following order:
 1. dconf dumps, all dir
 2. dconf dumps, byHostname dir
-3. dconf from dconf_settings var
+3. dconf, inventory (dconf_settings)
