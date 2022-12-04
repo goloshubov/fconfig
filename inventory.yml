@@ -272,6 +272,7 @@ all:
 #      - org.gnome.Calendar.desktop
       - scrcpy.desktop
 
+
     # dconf dump files might be used as well (see README)
     dconf_settings:
       "/org/gnome/shell/favorite-apps": "{{ favorite_apps }}"
