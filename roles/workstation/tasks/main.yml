@@ -29,7 +29,6 @@
   register: hosthomedir
   tags: [dotfiles, configs]
 - name: sync home dir (byHostname)
-  ignore_errors: yes
   synchronize:
     src: "{{ files_dir }}/byHostname/{{ ansible_facts['hostname'] }}/home/"
     dest: ~/
@@ -185,7 +184,6 @@
   register: all_dconfdumps
   tags: [ configs, gnome ]
 - name: configure GNOME. Load dconf dumps, 'all' dir
-#  ignore_errors: yes
   shell: "dconf load -f  /{{ item.path | basename | regex_replace('__','/') }}/ <  {{ files_dir}}/all/home/dconf/{{ item.path | basename }}" 
   loop: "{{ all_dconfdumps.files }}"
   tags: [ configs, gnome ]
@@ -196,7 +194,6 @@
   register: all_dconfdumps
   tags: [ configs, gnome ]
 - name: configure GNOME. Load dconf dumps, 'byHostname' dir
-#  ignore_errors: yes
   shell: "dconf load -f  /{{ item.path | basename | regex_replace('__','/') }}/ <  {{ files_dir}}/byHostname/{{ ansible_facts['hostname'] }}/home/dconf/{{ item.path | basename }}" 
   loop: "{{ all_dconfdumps.files }}"
   tags: [ configs, gnome ]
