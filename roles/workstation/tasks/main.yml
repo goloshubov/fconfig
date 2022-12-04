@@ -13,33 +13,33 @@
 - name: check home dir (all) 
   ansible.builtin.stat:
     path: "{{ files_dir }}/all/home/"
-  register: allhomedir
+  register: all_homedir
   tags: [dotfiles, configs]
 - name: sync home dir (all)
   synchronize:
     src: "{{ files_dir }}/all/home/"
     dest: ~/
-  when: allhomedir.stat.islnk is defined
+  when: all_homedir.stat.islnk is defined
   tags: [dotfiles, configs]
 
 # byHostname/<hostname>/home dir
 - name: check home dir (byHostname) 
   ansible.builtin.stat:
     path: "{{ files_dir }}/byHostname/{{ ansible_facts['hostname'] }}/home/"
-  register: hosthomedir
+  register: host_homedir
   tags: [dotfiles, configs]
 - name: sync home dir (byHostname)
   synchronize:
     src: "{{ files_dir }}/byHostname/{{ ansible_facts['hostname'] }}/home/"
     dest: ~/
-  when: hosthomedir.stat.islnk is defined
+  when: host_homedir.stat.islnk is defined
   tags: [dotfiles, configs]
 
 # all/etc dir
 - name: check etc dir (all)
   ansible.builtin.stat:
     path: "{{ files_dir }}/all/etc/"
-  register: alletcdir
+  register: all_etcdir
   tags: [dotfiles, configs]
 - name: sync etc dir (all)
   become: true
@@ -48,14 +48,14 @@
     dest: /etc/
     owner: false
     group: false
-  when: alletcdir.stat.islnk is defined
+  when: all_etcdir.stat.islnk is defined
   tags: [dotfiles, configs]
 
 # byHostname/<hostname>/etc dir
 - name: check etc dir (byHostname)
   ansible.builtin.stat:
     path: "{{ files_dir }}/byHostname/{{ ansible_facts['hostname'] }}/etc/"
-  register: hostetcdir
+  register: host_etcdir
   tags: [dotfiles, configs]
 - name: sync etc dir (byHostname)
   become: true
@@ -64,7 +64,7 @@
     dest: /etc/
     owner: false
     group: false
-  when: hostetcdir.stat.islnk is defined
+  when: host_etcdir.stat.islnk is defined
   tags: [dotfiles, configs]
 
 
@@ -189,11 +189,11 @@
   ansible.builtin.find:
     paths: "{{ files_dir }}/byHostname/{{ ansible_facts['hostname'] }}/home/dconf/"
     file_type: file
-  register: all_dconfdumps
+  register: host_dconfdumps
   tags: [ configs, gnome ]
 - name: configure GNOME. Load dconf dumps, 'byHostname' dir
   shell: "dconf load -f  /{{ item.path | basename | regex_replace('__','/') }}/ <  {{ files_dir}}/byHostname/{{ ansible_facts['hostname'] }}/home/dconf/{{ item.path | basename }}" 
-  loop: "{{ all_dconfdumps.files }}"
+  loop: "{{ host_dconfdumps.files }}"
   tags: [ configs, gnome ]
 
 - name: configure GNOME (dconf, inventory keys,values)
