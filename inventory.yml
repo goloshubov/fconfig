@@ -8,7 +8,7 @@ all:
     ansible_user: goloshubov
 
     
-    # git repository with .dotfiles and configs
+    # git repository with .dotfiles, configs, dconf dumps
     files_repo: 'git@github.com:goloshubov/wsconfig_files.git'
     files_dir: '~/git/github/wsconfig_files'
 
