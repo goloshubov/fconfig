@@ -148,12 +148,12 @@
   loop: "{{ lookup('ansible.builtin.dict', dconf_settings) }}"
   tags: [ configs, gnome ]
 
-- name: configure GNOME (dconf dumps, all)
+- name: configure GNOME (dconf load dumps the 'all' directory)
   ignore_errors: yes
   command: dconf load -f '{{ item.key }}' < "{{ files_dir }}/all/home/dconf/{{ item.value }}"
   loop: "{{ lookup('ansible.builtin.dict', dconf_dumps) }}"
   tags: [ configs, gnome ]
-- name: configure GNOME (dconf dumps, byHostname)
+- name: configure GNOME (dconf load dumps from the 'byHostname' directory)
   ignore_errors: yes
   command: dconf load -f '{{ item.key }}' < "{{ files_dir }}/byHostname/{{ ansible_facts['hostname']}}/home/dconf/{{ item.value }}"
   loop: "{{ lookup('ansible.builtin.dict', dconf_dumps) }}"
