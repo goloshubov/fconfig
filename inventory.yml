@@ -273,6 +273,19 @@ all:
       - scrcpy.desktop
 
 
+    # TODO: complete the dconf_settings dictionary somehow
+    # or consider using dconf dumps instead / in addition
+    # on configured machine:
+    # $ dconf dump /<path>/ > wsconfig_files__git_repo/{all|byHosname/<name>}/home/dconf/dumpfile
+    # then it might be loaded in the playbook:
+    # $ dconf load -f /<path> < wsconfig_files__git_repo/{all|byHosname/<name>}/home/dconf/dumpfile
+    # var might look like: "<path>": "<dumpfile_in_wsconfig_files_repo>" (whether it in the 'all' or the 'byHostname' dir)
+    # an example (needs testing):
+#    dconf_dumps:
+#      "/org/gnome/nautilus/": "nautilus"
+#      "/org/gnome/shell/extensions/": "gnome-extensions"
+
+
     dconf_settings:
       "/org/gnome/shell/favorite-apps": "{{ favorite_apps }}"
       "/org/gnome/desktop/peripherals/mouse/natural-scroll": "true"
@@ -293,18 +306,4 @@ all:
       "/com/gexperts/Tilix/Settingsuse-tabs": "true"
       "/org/gnome/gedit/preferences/editor/scheme": "'oblivion'"
       "/org/gnome/shell/extensions/dash-to-dock/show-mounts": "false"
-
-
-    # TODO: complete the dconf_settings dictionary somehow
-    # or consider using dconf dumps instead / in addition
-    # on configured machine:
-    # $ dconf dump /<path>/ > wsconfig_files__git_repo/{all|byHosname/<name>}/home/dconf/dumpfile
-    # then it might be loaded in the playbook:
-    # $ dconf load -f /<path> < wsconfig_files__git_repo/{all|byHosname/<name>}/home/dconf/dumpfile
-    # var might look like: "<path>": "<dumpfile_in_wsconfig_files_repo>" (whether it in the 'all' or the 'byHostname' dir)
-    # an example (needs testing):
-#    dconf_dumps:
-#      "/org/gnome/nautilus/": "nautilus"
-#      "/org/gnome/shell/extensions/": "gnome-extensions"
-
 
