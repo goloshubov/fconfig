@@ -294,8 +294,8 @@ all:
       "/org/gnome/gedit/preferences/editor/scheme": "'oblivion'"
       "/org/gnome/shell/extensions/dash-to-dock/show-mounts": "false"
 
-    # TOOD: complete the dconf_settings dictionary somehow:
-    # newmachine$ dconf dump / > dump0
-    # configured$ dconf dump / > dump1
-    # $ diff dump0 dump1
+    # TOOD: complete the dconf_settings dictionary somehow
+    # or consider using dconf dumps instead
+    # configuredmachine$ dconf dump /<path>/ > dumpfile
+    # $ dconf load -f /<path> < dumpfile
 
