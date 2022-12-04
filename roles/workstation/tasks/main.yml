@@ -7,30 +7,66 @@
     dest: "{{ files_dir }}"
     force: yes
     accept_hostkey: yes
-  tags: [dofiles, configs]
+  tags: [dotfiles, configs]
 
-- name: sync home files
+# all/home dir
+- name: check home dir (all) 
+  ansible.builtin.stat:
+    path: "{{ files_dir }}/all/home/"
+  register: allhomedir
+  tags: [dotfiles, configs]
+- name: sync home dir (all)
+  synchronize:
+    src: "{{ files_dir }}/all/home/"
+    dest: ~/
+  when: allhomedir.stat.islnk is defined
+  tags: [dotfiles, configs]
+
+# byHostname/<hostname>/home dir
+- name: check home dir (byHostname) 
+  ansible.builtin.stat:
+    path: "{{ files_dir }}/byHostname/{{ ansible_facts['hostname'] }}/home/"
+  register: hosthomedir
+  tags: [dotfiles, configs]
+- name: sync home dir (byHostname)
   ignore_errors: yes
   synchronize:
-    src: "{{ files_dir }}/{{ item }}/home/"
+    src: "{{ files_dir }}/byHostname/{{ ansible_facts['hostname'] }}/home/"
     dest: ~/
-  loop:
-    - "all"
-    - "byHostname/{{ ansible_facts['hostname'] }}"
-  tags: [dofiles, configs]
+  when: hosthomedir.stat.islnk is defined
+  tags: [dotfiles, configs]
 
-- name: sync etc files
-  ignore_errors: yes
+# all/etc dir
+- name: check etc dir (all)
+  ansible.builtin.stat:
+    path: "{{ files_dir }}/all/etc/"
+  register: alletcdir
+  tags: [dotfiles, configs]
+- name: sync etc dir (all)
   become: true
   synchronize:
-    src: "{{ files_dir }}/{{ item }}/etc/"
+    src: "{{ files_dir }}/all/etc/"
     dest: /etc/
-    owner: no
-    group: no
-  loop:
-    - "all"
-    - "byHostname/{{ ansible_facts['hostname'] }}"
-  tags: [dofiles, configs]
+    owner: false
+    group: false
+  when: alletcdir.stat.islnk is defined
+  tags: [dotfiles, configs]
+
+# byHostname/<hostname>/etc dir
+- name: check etc dir (byHostname)
+  ansible.builtin.stat:
+    path: "{{ files_dir }}/byHostname/{{ ansible_facts['hostname'] }}/etc/"
+  register: hostetcdir
+  tags: [dotfiles, configs]
+- name: sync etc dir (byHostname)
+  become: true
+  synchronize:
+    src: "{{ files_dir }}/byHostname/{{ ansible_facts['hostname'] }}/etc/"
+    dest: /etc/
+    owner: false
+    group: false
+  when: hostetcdir.stat.islnk is defined
+  tags: [dotfiles, configs]
 
 
 #---------------------------------packages--------------------------------------------
@@ -141,18 +177,32 @@
   tags: [software, ansible]
 
 #---------------------------------GNOME--------------------------------------------
-- name: configure GNOME (dconf load dumps, 'all' dir)
-  ignore_errors: yes
-  command: dconf load -f '{{ item.key }}' < "{{ files_dir }}/all/home/dconf/{{ item.value }}"
-  loop: "{{ lookup('ansible.builtin.dict', dconf_dumps) }}"
+# load dconf dump files first, if any
+- name: find dconf dump files in 'all' dir
+  ansible.builtin.find:
+    paths: "{{ files_dir }}/all/home/dconf/"
+    file_type: file
+  register: all_dconfdumps
   tags: [ configs, gnome ]
-- name: configure GNOME (dconf load dumps, 'byHostname' dir)
-  ignore_errors: yes
-  command: dconf load -f '{{ item.key }}' < "{{ files_dir }}/byHostname/{{ ansible_facts['hostname']}}/home/dconf/{{ item.value }}"
-  loop: "{{ lookup('ansible.builtin.dict', dconf_dumps) }}"
+- name: configure GNOME. Load dconf dumps, 'all' dir
+#  ignore_errors: yes
+  shell: "dconf load -f  /{{ item.path | basename | regex_replace('__','/') }}/ <  {{ files_dir}}/all/home/dconf/{{ item.path | basename }}" 
+  loop: "{{ all_dconfdumps.files }}"
+  tags: [ configs, gnome ]
+- name: find dconf dump files in 'byHostname' dir
+  ansible.builtin.find:
+    paths: "{{ files_dir }}/byHostname/{{ ansible_facts['hostname'] }}/home/dconf/"
+    file_type: file
+  register: all_dconfdumps
+  tags: [ configs, gnome ]
+- name: configure GNOME. Load dconf dumps, 'byHostname' dir
+#  ignore_errors: yes
+  shell: "dconf load -f  /{{ item.path | basename | regex_replace('__','/') }}/ <  {{ files_dir}}/byHostname/{{ ansible_facts['hostname'] }}/home/dconf/{{ item.path | basename }}" 
+  loop: "{{ all_dconfdumps.files }}"
   tags: [ configs, gnome ]
 
-- name: configure GNOME (dconf)
+
+- name: configure GNOME (dconf, inventory keys,values)
   dconf:
     key: '{{ item.key }}'
     value: '{{ item.value }}'    
