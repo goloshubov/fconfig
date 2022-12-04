@@ -102,3 +102,9 @@ example files_repo (git repository) dir structure (with some files):
 │       │       └── wacom.conf
 │       └── home
 ```
+ chage the inventory.yml vars:
+ ```bash
+ # git repository with .dotfiles and config
+ files_repo: 'git@github.com:goloshubov/wsconfig_files.git'
+ files_dir: '~/git/github/wsconfig_files'
+```
