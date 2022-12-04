@@ -30,10 +30,11 @@ $ dconf dump <path> > dumpfile
 expected that dumps are located in the files_repo's directories:\
 all/dconf/, byHosname/\<hostname\>/dconf/\
 with the file names like '\<path>\' (used when creating dconf dump files) but where '/' replaced with '__' and without the first and the last '/'\
-e.g. when filename is:\
-org__gnome__shell__extensions__dash-to-dock\
-it will be used to load dconf dump by the path of /org/gnome/shell/extensions/dash-to-dock/\
-#$ dconf load -f /org/gnome/shell/extensions/dash-to-dock/ < ~/\<files_dir\>/all/dconf/org__gnome__shell__extensions__dash-to-dock
+e.g.\
+$ dconf dump /org/gnome/shell/extensions/dash-to-dock/ > ~/\<files_dir\>/all/dconf/org__gnome__shell__extensions__dash-to-dock\
+where filename is: org__gnome__shell__extensions__dash-to-dock\
+the dump file will be used in the playbook then, to load dconf dump:\
+$ dconf load -f /org/gnome/shell/extensions/dash-to-dock/ < ~/\<files_dir\>/all/dconf/org__gnome__shell__extensions__dash-to-dock\
 \
 The playbook applies dconf settings in the following order:
 1. dconf dumps, all dir
