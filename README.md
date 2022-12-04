@@ -29,7 +29,7 @@ $ dconf dump <path> > dumpfile
 ```
 expected that dumps are located in the files_repo's directories:\
 all/home/dconf/, byHosname/\<hostname\>/home/dconf/\
-with the file names like '\<path>\' (used when creating dconf dump files) but where '/' replaced with '__' and withoud first and last '/'\
+with the file names like '\<path>\' (used when creating dconf dump files) but where '/' replaced with '__' and without the first and the last '/'\
 e.g. when filename is:\
 org__gnome__shell__extensions__dash-to-dock\
 it will be used to load dconf dump by the path of /org/gnome/shell/extensions/dash-to-dock/\
