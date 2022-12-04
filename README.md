@@ -41,7 +41,7 @@ The playbook applies dconf settings in the following order:
 3. dconf, inventory (dconf_settings)
 
 ---
-example files_repo dir structure (with some files):
+example files_repo (git repository) dir structure (with some files):
 ```
 .
 ├── all
