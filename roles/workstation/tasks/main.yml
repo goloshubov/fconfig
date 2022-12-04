@@ -143,7 +143,6 @@
   loop: "{{ flatpak_list }}"
 
 
-
 #---------------------------------pypi--------------------------------------------
 - name: Install pip packages
   pip:
@@ -151,13 +150,11 @@
   tags: [ software, pypi, pip ]
 
 
-
 #---------------------------------cargo--------------------------------------------
 - name: install cargo packages
   command: cargo install '{{ item }}'
   loop: "{{ cargo_list }}"
   tags: [software, cargo ]
-
 
 
 #---------------------------------go--------------------------------------------
@@ -174,6 +171,7 @@
     name: '{{ item }}'
   loop: "{{ ansible_galaxy_collection_list }}"
   tags: [software, ansible]
+
 
 #---------------------------------GNOME--------------------------------------------
 # load dconf dump files first, if any
@@ -197,7 +195,6 @@
   shell: "dconf load -f  /{{ item.path | basename | regex_replace('__','/') }}/ <  {{ files_dir}}/byHostname/{{ ansible_facts['hostname'] }}/home/dconf/{{ item.path | basename }}" 
   loop: "{{ all_dconfdumps.files }}"
   tags: [ configs, gnome ]
-
 
 - name: configure GNOME (dconf, inventory keys,values)
   dconf:
