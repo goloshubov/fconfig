@@ -7,7 +7,7 @@
     dest: "{{ files_dir }}"
     force: yes
     accept_hostkey: yes
-  tags: configs
+  tags: [dofiles, configs]
 
 - name: sync home files
   ignore_errors: yes
@@ -17,7 +17,7 @@
   loop:
     - "all"
     - "byHostname/{{ ansible_facts['hostname'] }}"
-  tags: configs
+  tags: [dofiles, configs]
 
 - name: sync etc files
   ignore_errors: yes
@@ -30,7 +30,7 @@
   loop:
     - "all"
     - "byHostname/{{ ansible_facts['hostname'] }}"
-  tags: configs
+  tags: [dofiles, configs]
 
 
 #---------------------------------packages--------------------------------------------
@@ -141,11 +141,22 @@
   tags: [software, ansible]
 
 #---------------------------------GNOME--------------------------------------------
-- name: configure GNOME
+- name: configure GNOME (dconf)
   dconf:
     key: '{{ item.key }}'
     value: '{{ item.value }}'    
   loop: "{{ lookup('ansible.builtin.dict', dconf_settings) }}"
+  tags: [ configs, gnome ]
+
+- name: configure GNOME (dconf dumps, all)
+  ignore_errors: yes
+  command: dconf load -f '{{ item.key }}' < "{{ files_dir }}/all/home/dconf/{{ item.value }}"
+  loop: "{{ lookup('ansible.builtin.dict', dconf_dumps) }}"
+  tags: [ configs, gnome ]
+- name: configure GNOME (dconf dumps, byHostname)
+  ignore_errors: yes
+  command: dconf load -f '{{ item.key }}' < "{{ files_dir }}/byHostname/{{ ansible_facts['hostname']}}/home/dconf/{{ item.value }}"
+  loop: "{{ lookup('ansible.builtin.dict', dconf_dumps) }}"
   tags: [ configs, gnome ]
 
 ...

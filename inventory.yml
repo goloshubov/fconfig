@@ -10,7 +10,7 @@ all:
     
     # git repository with .dotfiles and configs
     files_repo: 'git@github.com:goloshubov/wsconfig_files.git'
-    files_dir: '~/git/github/wsconfig_files/'
+    files_dir: '~/git/github/wsconfig_files'
 
 
     # add user to groups (after installing packages)
@@ -294,8 +294,17 @@ all:
       "/org/gnome/gedit/preferences/editor/scheme": "'oblivion'"
       "/org/gnome/shell/extensions/dash-to-dock/show-mounts": "false"
 
-    # TOOD: complete the dconf_settings dictionary somehow
-    # or consider using dconf dumps instead
-    # configuredmachine$ dconf dump /<path>/ > dumpfile
-    # $ dconf load -f /<path> < dumpfile
+
+    # TODO: complete the dconf_settings dictionary somehow
+    # or consider using dconf dumps instead / in addition
+    # on configured machine:
+    # $ dconf dump /<path>/ > wsconfig_files__git_repo/{all|byHosname/<name>}/home/dconf/dumpfile
+    # then it might be loaded in the playbook:
+    # $ dconf load -f /<path> < wsconfig_files__git_repo/{all|byHosname/<name>}/home/dconf/dumpfile
+    # var might look like: "<path>": "<dumpfile_in_wsconfig_files_repo>" (whether it in the 'all' or the 'byHostname' dir)
+    # an example (needs testing):
+    dconf_dumps:
+      "/org/gnome/nautilus/": "nautilus"
+      "/org/gnome/shell/extensions/": "gnome-extensions"
+
 
