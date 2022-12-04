@@ -19,3 +19,22 @@ $ ansible-playbook -i ./inventory.yml apply.yml --list-tags
 $ ansible-playbook -i ./inventory.yml apply.yml --tags packages,flatpaks
 
 ```
+
+Regarding GNOME:
+The playbook will load dconf setting using dconf dump files you created earlier
+```bash
+$ dconf dump <path> > dumpfile
+```
+expected that dump files are located in the files_repo's directory:
+all/home/dconf/ or byHosname/<hostname>/home/dconf/
+with the file names like '<path>' (you used when creating dconf dump files) but where '/' replaced with '__' and withoud first and last '/'
+e.g. when filename is:
+org__gnome__shell__extensions__dash-to-dock
+it will be used to load dconf by the path of /org/gnome/shell/extensions/dash-to-dock/
+```bash
+#playbook load dump files like#$ dconf load -f <path> < dumpfile
+```
+dump files loaded before dconf_settings, order:
+1. dconf dumps, all
+2. dconf dumps, byHostname
+3. dconf from dconf_settings var (might overwrite what were laoded with dump files)
