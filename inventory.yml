@@ -239,6 +239,7 @@ all:
       - github.com/antonmedv/llama   #a terminal file manager
 #      - github.com/mikefarah/yq
       - github.com/go-task/task/v3/cmd/task
+#     - github.com/ericchiang/pup    #html parser      
 
 
     ansible_galaxy_collection_list:
