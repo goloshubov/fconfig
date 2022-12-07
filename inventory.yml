@@ -163,6 +163,7 @@ all:
       - maven
       - python3-devel
       - python3-pip
+      - hadolint  # Dockerfile linter
 
 
     flatpak_list:
