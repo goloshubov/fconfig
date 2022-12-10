@@ -164,6 +164,7 @@ all:
       - python3-devel
       - python3-pip
       - hadolint  # Dockerfile linter
+      - gitg
 
 
     flatpak_list:
