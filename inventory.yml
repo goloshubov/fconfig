@@ -164,7 +164,8 @@ all:
       - python3-devel
       - python3-pip
       - hadolint  # Dockerfile linter
-      - gitg
+      - gitg   #git gui
+      - meld   #diff gui
 
 
     flatpak_list:
