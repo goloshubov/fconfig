@@ -186,7 +186,7 @@ all:
       - app.drey.Dialect
       - org.videolan.VLC
 #      - org.zotero.Zotero
-      - com.getpostman.Postman
+#      - com.getpostman.Postman
       - com.transmissionbt.Transmission
 #      - net.xmind.XMind8
 #      - net.xmind.ZEN
