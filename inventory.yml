@@ -155,6 +155,7 @@ all:
       - helix     # text editor. from varlad/helix copr repo
       - crudini   # A utility for manipulating ini files
       - pv        # monitor the progress of data through a pipe
+      - progress  # Linux tool to show progress for cp, mv, dd, ... (formerly known as cv) 
       - bat       # A cat(1) clone with wings. (Rust)
       - grafana
 #      - go-task
