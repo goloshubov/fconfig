@@ -23,7 +23,7 @@ $ ansible-playbook -i ./inventory.yml apply.yml --tags packages,flatpaks
 ---
 Regarding dconf dump files:
 
-The playbook loads dconf dump files you created before:
+The playbook can load dconf dump files you created before:
 ```bash
 $ dconf dump <path> > dumpfile
 ```
