@@ -167,6 +167,7 @@ all:
       - hadolint  # Dockerfile linter
       - gitg   #git gui
       - meld   #diff gui
+      - ShellCheck   # shell script static analysis tool
 
 
     flatpak_list:
