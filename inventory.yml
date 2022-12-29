@@ -168,6 +168,7 @@ all:
       - gitg   #git gui
       - meld   #diff gui
       - ShellCheck   # shell script static analysis tool
+      - colorized-logs
 
 
     flatpak_list:
