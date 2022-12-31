@@ -304,5 +304,11 @@ all:
       "/org/gnome/shell/extensions/dash-to-dock/force-straight-corner": "false"
 #      "/org/gnome/shell/extensions/dash-to-dock/force-straight-corner": "true"
       "/org/gnome/shell/extensions/dash-to-dock/apply-custom-theme": "false"
+      "/org/gnome/shell/extensions/just-perfection/dash-icon-size": "32"
+      "/org/gnome/shell/extensions/just-perfection/events-button": "false"
+      "/org/gnome/shell/extensions/just-perfection/workspace-switcher-should-show": "true"
+      "/org/gnome/shell/extensions/just-perfection/workspace-switcher-size": "15"
+      "/org/gnome/shell/extensions/just-perfection/workspace-wrap-around": "true"
+      "/org/gnome/shell/extensions/just-perfection/world-clock": "false"
 
 ...
