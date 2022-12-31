@@ -74,17 +74,21 @@ all:
       - tmux-powerline
       - vim-powerline
       - gnome-tweaks
+      - gnome-extensions-app
+      - gnome-shell-extension-apps-menu
+      - gnome-shell-extension-just-perfection
+      - gnome-shell-extension-background-logo
       - gnome-shell-extension-dash-to-dock
-      - libdbusmenu
-      - gnome-shell-extension-launch-new-instance
-      - gnome-shell-extension-dash-to-dock
+      - gnome-shell-extension-pomodoro
       - gnome-shell-extension-appindicator
+      - gnome-shell-extension-launch-new-instance
       - gnome-shell-extension-user-theme
       - gnome-shell-extension-workspace-indicator
       - gnome-shell-extension-openweather
-      - gnome-shell-extension-pomodoro
-      - gnome-shell-extension-just-perfection
-      - gnome-extensions-app
+      - gnome-shell-extension-openweather
+      - gnome-shell-extension-window-list
+      - gnome-shell-extension-places-menu
+      - libdbusmenu   # for dash-to-dock
       - virt-manager
       - virt-viewer
       - virt-what
