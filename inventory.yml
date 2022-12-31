@@ -173,6 +173,7 @@ all:
       - meld   #diff gui
       - ShellCheck   # shell script static analysis tool
       - colorized-logs
+      - clide  # colorize ASCII text
 
 
     flatpak_list:
