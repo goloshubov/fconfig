@@ -244,7 +244,7 @@ all:
 #      - apkeep    # download APK packages (apkpure, googleplay)
 #      - pup       # Command-line HTML parsing tool
 #      - bat       # A cat(1) clone with wings. (Rust)      # already in package_list
-
+      - tomato-toml  # crudini-like tool but for toml
 
     go_list:
       - github.com/antonmedv/llama   #a terminal file manager
