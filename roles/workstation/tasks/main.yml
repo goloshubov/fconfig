@@ -111,6 +111,31 @@
     name: "{{ package_list }}"
   tags: [ software, packages ]
 
+# ----- repo_tweaks -----
+- name: repo_tweaks. delete mutally excluesive value (metalink|baseurl)
+  become: yes
+  community.general.ini_file:
+    path: '{{ item.path }}'
+    section: '{{ item.section }}'
+    option: '{{ ( item.option == "baseurl" ) | ternary("metalink", "baseurl") }}'
+    state: absent
+    backup: true
+  when: (item.option == "metalink" or item.option == "baseurl") and 
+         item.value != "{{ lookup('ansible.builtin.ini', item.option, section=item.section, file=item.path) }}"
+  loop: "{{ repo_tweaks }}"
+  tags: [ software, packages, repo_tweaks ]
+- name: repo_tweaks. set new value
+  become: yes
+  community.general.ini_file:
+    path: '{{ item.path }}'
+    section: '{{ item.section }}'
+    option: '{{ item.option }}'
+    value: '{{ item.value }}'
+    backup: true
+  when: item.value != "{{ lookup('ansible.builtin.ini', item.option, section=item.section, file=item.path) }}"
+  loop: "{{ repo_tweaks }}"
+  tags: [ software, packages, repo_tweaks ]
+
 
 #---------------------------------misc--------------------------------------------
 - name: add user to group
