@@ -326,22 +326,27 @@ all:
           section: "fedora",
           option: "baseurl",
           value: "https://mirror.yandex.ru/fedora/linux/releases/$releasever/Everything/$basearch/os/" }
+
       - { path: "/etc/yum.repos.d/fedora-updates.repo",
           section: "updates",
           option: "baseurl",  
           value: "https://mirror.yandex.ru/fedora/linux/updates/$releasever/Everything/$basearch/" }
+
       - { path: "/etc/yum.repos.d/fedora-modular.repo",
           section: "fedora-modular",
           option: "baseurl",  
           value: "https://mirror.yandex.ru/fedora/linux/releases/$releasever/Modular/$basearch/os/" }
+
       - { path: "/etc/yum.repos.d/fedora-updates-modular.repo",
           section: "updates-modular",
           option: "baseurl",  
           value: "https://mirror.yandex.ru/fedora/linux/updates/$releasever/Modular/$basearch/" }
+
       - { path: "/etc/yum.repos.d/rpmfusion-free.repo",
           section: "rpmfusion-free",
           option: "baseurl",  
           value: "https://mirror.yandex.ru/fedora/rpmfusion/free/fedora/releases/$releasever/Everything/$basearch/os/" }
+
       - { path: "/etc/yum.repos.d/rpmfusion-free-updates.repo",
           section: "rpmfusion-free-updates",
           option: "baseurl",  
