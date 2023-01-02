@@ -112,7 +112,7 @@
   tags: [ software, packages ]
 
 # ----- repo_tweaks -----
-- name: repo_tweaks. delete mutally excluesive value (metalink|baseurl)
+- name: repo_tweaks. delete mutually exclusive value (metalink|baseurl)
   become: yes
   community.general.ini_file:
     path: '{{ item.path }}'
