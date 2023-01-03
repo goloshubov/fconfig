@@ -5,7 +5,7 @@ all:
         localhost:
   vars:
     ansible_connection: local
-    username: goloshubov
+    ansible_user: goloshubov
 
     
     # git repository with .dotfiles, configs, dconf dumps
@@ -291,7 +291,7 @@ all:
       "/org/gnome/shell/favorite-apps": "{{ favorite_apps }}"
       "/org/gnome/desktop/peripherals/mouse/natural-scroll": "true"
       "/org/gnome/desktop/peripherals/touchpad/natural-scroll": "true"
-#      "/org/gnome/desktop/background/picture-uri": "'file:///home/{{ username }}/Pictures/wallpapers/wallpaper.jpg'"
+#      "/org/gnome/desktop/background/picture-uri": "'file:///home/{{ ansible_user }}/Pictures/wallpapers/wallpaper.jpg'"
       "/org/gnome/desktop/peripherals/touchpad/tap-to-click": "true"
       "/org/gtk/Settings/FileChooser/show-hidden": "true"
       "/org/gnome/nautilus/preferences/show-delete-permanently": "true"
