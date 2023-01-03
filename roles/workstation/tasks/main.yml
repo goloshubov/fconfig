@@ -140,7 +140,7 @@
 #---------------------------------misc--------------------------------------------
 - name: add user to group
   become: yes
-  command: usermod -a -G '{{ item }}'  '{{ansible_user}}'
+  command: usermod -a -G '{{ item }}'  '{{ username }}'
   loop: "{{ user_groups }}"
   tags: configs
 
