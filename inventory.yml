@@ -36,7 +36,7 @@ all:
     #third party repos and packages
     direct_package_list:
       - "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-37.noarch.rpm"
-      - "http://repo.yandex.ru/yandex-disk/yandex-disk-latest.x86_64.rpm"    #yandex-disk repository
+#      - "http://repo.yandex.ru/yandex-disk/yandex-disk-latest.x86_64.rpm"    #yandex-disk repository
       - "https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm"
 
 
