@@ -320,36 +320,32 @@ all:
       "/org/gnome/shell/extensions/just-perfection/workspace-wrap-around": "true"
       "/org/gnome/shell/extensions/just-perfection/world-clock": "false"
 
-
+    
+    repo_mirror: "https://mirror.yandex.ru"
     repo_tweaks:
       - { path: "/etc/yum.repos.d/fedora.repo",
           section: "fedora",
           option: "baseurl",
-          value: "https://mirror.yandex.ru/fedora/linux/releases/$releasever/Everything/$basearch/os/" }
-
+          value: "{{ repo_mirror }}/fedora/linux/releases/$releasever/Everything/$basearch/os/" }
       - { path: "/etc/yum.repos.d/fedora-updates.repo",
           section: "updates",
           option: "baseurl",  
-          value: "https://mirror.yandex.ru/fedora/linux/updates/$releasever/Everything/$basearch/" }
-
+          value: "{{ repo_mirror }}/fedora/linux/updates/$releasever/Everything/$basearch/" }
       - { path: "/etc/yum.repos.d/fedora-modular.repo",
           section: "fedora-modular",
           option: "baseurl",  
-          value: "https://mirror.yandex.ru/fedora/linux/releases/$releasever/Modular/$basearch/os/" }
-
+          value: "{{ repo_mirror }}/fedora/linux/releases/$releasever/Modular/$basearch/os/" }
       - { path: "/etc/yum.repos.d/fedora-updates-modular.repo",
           section: "updates-modular",
           option: "baseurl",  
-          value: "https://mirror.yandex.ru/fedora/linux/updates/$releasever/Modular/$basearch/" }
-
+          value: "{{ repo_mirror }}/fedora/linux/updates/$releasever/Modular/$basearch/" }
       - { path: "/etc/yum.repos.d/rpmfusion-free.repo",
           section: "rpmfusion-free",
           option: "baseurl",  
-          value: "https://mirror.yandex.ru/fedora/rpmfusion/free/fedora/releases/$releasever/Everything/$basearch/os/" }
-
+          value: "{{ repo_mirror }}/fedora/rpmfusion/free/fedora/releases/$releasever/Everything/$basearch/os/" }
       - { path: "/etc/yum.repos.d/rpmfusion-free-updates.repo",
           section: "rpmfusion-free-updates",
           option: "baseurl",  
-          value: "https://mirror.yandex.ru/fedora/rpmfusion/free/fedora/updates/$releasever/$basearch/" }
+          value: "{{ repo_mirror }}/fedora/rpmfusion/free/fedora/updates/$releasever/$basearch/" }
 
 ...
