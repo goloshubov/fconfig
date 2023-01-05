@@ -120,6 +120,7 @@
     option: '{{ ( item.option == "baseurl" ) | ternary("metalink", "baseurl") }}'
     state: absent
     backup: true
+    no_extra_spaces: true
   when: (item.option == "metalink" or item.option == "baseurl")
      and item.value != "{{ lookup('ansible.builtin.ini', item.option, section=item.section, file=item.path) }}"
   loop: "{{ repo_tweaks }}"
@@ -132,6 +133,7 @@
     option: '{{ item.option }}'
     value: '{{ item.value }}'
     backup: true
+    no_extra_spaces: true
   when: item.value != "{{ lookup('ansible.builtin.ini', item.option, section=item.section, file=item.path) }}"
   loop: "{{ repo_tweaks }}"
   tags: [ software, packages, repo_tweaks ]
