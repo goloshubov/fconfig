@@ -148,17 +148,19 @@
 
 
 #---------------------------------flatpaks--------------------------------------------
-# overwrites existing flathub remote, with no filter.
+- name: flatpak. add (enable) flathub remote
+  become: yes
+  command: flatpak remote-modify --enable --no-filter flathub
+#  shell: "flatpak remote-modify --enable --no-filter flathub || flatpak remote-add flathub https://flathub.org/repo/flathub.flatpakrepo"
+  tags: [software, flatpak-repos ]
+
 - name: add flathub remote (flatpak)
   become: yes
-  command: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrep
+  flatpak_remote:
+    name: flathub
+    state: present
+    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
   tags: [software, flatpak-repos ]
-#- name: add flathub remote (flatpak)
-#  become: yes
-#  flatpak_remote:
-#    name: flathub
-#    state: present
-#    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
 
 - name: install flatpaks
   flatpak:
