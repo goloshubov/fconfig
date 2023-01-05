@@ -321,7 +321,7 @@ all:
       "/org/gnome/shell/extensions/just-perfection/world-clock": "false"
 
     
-    repo_mirror: "http://mirror.yandex.ru"
+    repo_mirror: "https://mirror.yandex.ru"
     repo_tweaks:
       - { path: "/etc/yum.repos.d/fedora.repo",
           section: "fedora",
