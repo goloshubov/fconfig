@@ -176,6 +176,10 @@ all:
       - clide  # colorize ASCII text
 
 
+    flatpak_repos:
+      - https://flathub.org/repo/flathub.flatpakrepo
+
+
     flatpak_list:
       - com.github.tchx84.Flatseal
       - com.github.johnfactotum.Foliate
