@@ -160,6 +160,7 @@
   tags: [software, flatpak-repos ]
   loop: "{{ flatpak_repos }}"
 
+# fix for fedora where the flathub repo is disabled and filtered by default.
 - name: flatpak. enable flathub remote
   become: yes
   command: flatpak remote-modify --enable --no-filter flathub
