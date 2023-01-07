@@ -40,7 +40,7 @@
       when: (item.option == "metalink" or item.option == "baseurl")
          and item.value != "{{ lookup('ansible.builtin.ini', item.option, section=item.section, file=item.path) }}"
       loop: "{{ yum_repos_tweaks }}"
-      tags: [ package-repos, repo-tweaks ]
+      tags: [ package-repos, package-repos-tweaks ]
     
     - name: repo_tweaks. set new value
       community.general.ini_file:
@@ -52,7 +52,7 @@
         no_extra_spaces: true
       when: item.value != "{{ lookup('ansible.builtin.ini', item.option, section=item.section, file=item.path) }}"
       loop: "{{ yum_repos_tweaks }}"
-      tags: [ package-repos, repo-tweaks ]
+      tags: [ package-repos, package-repos-tweaks ]
     
     - name: install packages
       dnf:
