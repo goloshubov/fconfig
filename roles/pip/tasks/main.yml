@@ -4,7 +4,7 @@
 - name: Install pip packages
   pip:
     name: "{{ pip_list }}"
-  tags: [ software, pypi, pip ]
+  tags: [ software, pip ]
 
 
 ...

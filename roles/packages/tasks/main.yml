@@ -48,6 +48,7 @@
      and item.value != "{{ lookup('ansible.builtin.ini', item.option, section=item.section, file=item.path) }}"
   loop: "{{ yum_repos_tweaks }}"
   tags: [ software, packages, repo_tweaks ]
+
 - name: repo_tweaks. set new value
   become: yes
   community.general.ini_file:

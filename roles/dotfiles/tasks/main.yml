@@ -6,40 +6,40 @@
     dest: "{{ files_dir }}"
     force: yes
     accept_hostkey: yes
-  tags: [dotfiles, configs]
+  tags: [ dotfiles, configs ]
 
 # all/home dir
 - name: check home dir (all) 
   ansible.builtin.stat:
     path: "{{ files_dir }}/all/home/"
   register: all_homedir
-  tags: [dotfiles, configs]
+  tags: [ dotfiles, configs ]
 - name: sync home dir (all)
   synchronize:
     src: "{{ files_dir }}/all/home/"
     dest: ~/
   when: all_homedir.stat.islnk is defined
-  tags: [dotfiles, configs]
+  tags: [ dotfiles, configs ]
 
 # byHostname/<hostname>/home dir
 - name: check home dir (byHostname) 
   ansible.builtin.stat:
     path: "{{ files_dir }}/byHostname/{{ ansible_facts['hostname'] }}/home/"
   register: host_homedir
-  tags: [dotfiles, configs]
+  tags: [ dotfiles, configs ]
 - name: sync home dir (byHostname)
   synchronize:
     src: "{{ files_dir }}/byHostname/{{ ansible_facts['hostname'] }}/home/"
     dest: ~/
   when: host_homedir.stat.islnk is defined
-  tags: [dotfiles, configs]
+  tags: [ dotfiles, configs ]
 
 # all/etc dir
 - name: check etc dir (all)
   ansible.builtin.stat:
     path: "{{ files_dir }}/all/etc/"
   register: all_etcdir
-  tags: [dotfiles, configs]
+  tags: [ dotfiles, configs ]
 - name: sync etc dir (all)
   become: true
   synchronize:
@@ -48,14 +48,14 @@
     owner: false
     group: false
   when: all_etcdir.stat.islnk is defined
-  tags: [dotfiles, configs]
+  tags: [ dotfiles, configs ]
 
 # byHostname/<hostname>/etc dir
 - name: check etc dir (byHostname)
   ansible.builtin.stat:
     path: "{{ files_dir }}/byHostname/{{ ansible_facts['hostname'] }}/etc/"
   register: host_etcdir
-  tags: [dotfiles, configs]
+  tags: [ dotfiles, configs ]
 - name: sync etc dir (byHostname)
   become: true
   synchronize:
@@ -64,7 +64,7 @@
     owner: false
     group: false
   when: host_etcdir.stat.islnk is defined
-  tags: [dotfiles, configs]
+  tags: [ dotfiles, configs ]
 
 
 ...

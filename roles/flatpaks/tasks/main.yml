@@ -9,23 +9,23 @@
     name: flathub
     state: present
     flatpakrepo_url: '{{ item }}'
-  tags: [software, flatpak-repos ]
   loop: "{{ flatpak_repos }}"
+  tags: [ software, flatpak-repos ]
 
 # fix for fedora where the flathub repo is disabled and filtered by default.
 - name: flatpak. enable flathub remote
   become: yes
   command: flatpak remote-modify --enable --no-filter flathub
-  tags: [software, flatpak-repos ]
+  tags: [ software, flatpak-repos ]
 
 - name: install flatpaks
   flatpak:
     name: '{{ item }}'
     state: present
     remote: flathub
-  tags: [software, flatpaks ]
 #    method: user
   loop: "{{ flatpak_list }}"
+  tags: [ software, flatpaks ]
 
 
 ...

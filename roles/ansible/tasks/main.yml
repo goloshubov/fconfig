@@ -6,7 +6,7 @@
     type: collection
     name: '{{ item }}'
   loop: "{{ ansible_galaxy_collection_list }}"
-  tags: [software, ansible]
+  tags: [ software, ansible ]
 
 
 ...
