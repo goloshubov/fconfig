@@ -9,15 +9,15 @@ Usage:
 $ git clone https://github.com/goloshubov/fconfig
 $ cd fconfig
 # edit inventory, change ansible_user, files_repo and files_dir variables:
-$ vim inventory.yml
+$ vim inventory_workstations.yml
 
 # apply the configuration on the local workstation:
-$ ansible-playbook -i ./inventory.yml apply.yml
+$ ansible-playbook -i ./inventory_workstations.yml workstation.yml
 
 # or apply it partialy:
-$ ansible-playbook -i ./inventory.yml apply.yml --list-tags
-$ ansible-playbook -i ./inventory.yml apply.yml --tags dotfiles
-$ ansible-playbook -i ./inventory.yml apply.yml --tags packages,flatpaks
+$ ansible-playbook -i ./inventory_workstations.yml workstation.yml --list-tags
+$ ansible-playbook -i ./inventory_workstations.yml workstation.yml --tags dotfiles
+$ ansible-playbook -i ./inventory_workstations.yml workstation.yml --tags packages,flatpaks
 
 ```
 
@@ -118,7 +118,7 @@ an example:
 │       │       └── wacom.conf
 │       └── home
 ```
- chage the inventory.yml vars:
+ chage the inventory_workstations.yml vars:
  ```bash
  # git repository with .dotfiles and config
  files_repo: 'git@github.com:goloshubov/fconfig_files.git'

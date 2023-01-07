@@ -1,0 +1,73 @@
+---
+
+
+- name: enable copr repos
+  become: true
+  command: dnf copr enable '{{ item }}' -y
+  loop:  "{{ copr_list }}"
+  tags: [ software, package-repos ]
+
+- name: install other repos
+  become: yes
+  command: dnf config-manager --add-repo '{{ item }}' -y
+  loop: "{{ other_repos_list }}"
+  tags: [ software, package-repos ]
+
+- name: install packages (direct link)
+  become: true
+#  package:
+  dnf:
+    state: latest
+    name: "{{ direct_package_list }}"
+  tags: [ software, package-repos, packages ]
+
+- name: install prerequisite packages (repos)
+  become: true
+#  package:
+  dnf:
+    state: latest
+    name: "{{ prerequisite_packages_list }}"
+  tags: [ software, package-repos, packages ]
+
+- name: enable repos
+  become: yes
+  command: dnf config-manager --set-enabled "{{ item }}"
+  loop: "{{ setenabled_repo_list }}"
+  tags: [ software, package-repos ]
+
+- name: repo_tweaks. delete mutually exclusive value (metalink|baseurl)
+  become: yes
+  community.general.ini_file:
+    path: '{{ item.path }}'
+    section: '{{ item.section }}'
+    option: '{{ ( item.option == "baseurl" ) | ternary("metalink", "baseurl") }}'
+    state: absent
+    backup: true
+    no_extra_spaces: true
+  when: (item.option == "metalink" or item.option == "baseurl")
+     and item.value != "{{ lookup('ansible.builtin.ini', item.option, section=item.section, file=item.path) }}"
+  loop: "{{ yum_repos_tweaks }}"
+  tags: [ software, packages, repo_tweaks ]
+- name: repo_tweaks. set new value
+  become: yes
+  community.general.ini_file:
+    path: '{{ item.path }}'
+    section: '{{ item.section }}'
+    option: '{{ item.option }}'
+    value: '{{ item.value }}'
+    backup: true
+    no_extra_spaces: true
+  when: item.value != "{{ lookup('ansible.builtin.ini', item.option, section=item.section, file=item.path) }}"
+  loop: "{{ yum_repos_tweaks }}"
+  tags: [ software, packages, repo_tweaks ]
+
+- name: install packages
+  become: true
+#  package:
+  dnf:
+    state: latest
+    name: "{{ package_list }}"
+  tags: [ software, packages ]
+
+
+...

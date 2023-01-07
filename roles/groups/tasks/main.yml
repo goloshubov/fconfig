@@ -1,0 +1,11 @@
+---
+
+
+- name: add user to group
+  become: yes
+  command: usermod -a -G '{{ item }}'  '{{ansible_user}}'
+  loop: "{{ user_groups }}"
+  tags: configs
+
+
+...

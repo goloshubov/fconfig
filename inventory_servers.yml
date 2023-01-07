@@ -1,8 +1,12 @@
+# TODO
+
 all:
   children:
-    workstations:
+    servers:
       hosts:
         localhost:
+
+
   vars:
     ansible_connection: local
     ansible_user: goloshubov
