@@ -103,15 +103,6 @@
   loop: "{{ setenabled_repo_list }}"
   tags: [ software, package-repos ]
 
-- name: install packages
-  become: true
-#  package:
-  dnf:
-    state: latest
-    name: "{{ package_list }}"
-  tags: [ software, packages ]
-
-# ----- repo_tweaks -----
 - name: repo_tweaks. delete mutually exclusive value (metalink|baseurl)
   become: yes
   community.general.ini_file:
@@ -137,6 +128,14 @@
   when: item.value != "{{ lookup('ansible.builtin.ini', item.option, section=item.section, file=item.path) }}"
   loop: "{{ yum_repos_tweaks }}"
   tags: [ software, packages, repo_tweaks ]
+
+- name: install packages
+  become: true
+#  package:
+  dnf:
+    state: latest
+    name: "{{ package_list }}"
+  tags: [ software, packages ]
 
 
 #---------------------------------misc--------------------------------------------

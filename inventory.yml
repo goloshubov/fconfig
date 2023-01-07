@@ -50,6 +50,34 @@ all:
       - google-chrome
 
 
+    yum_repos_mirror: "https://mirror.yandex.ru"
+    yum_repos_tweaks:
+      - { path: "/etc/yum.repos.d/fedora.repo",
+          section: "fedora",
+          option: "baseurl",
+          value: "{{ yum_repos_mirror }}/fedora/linux/releases/$releasever/Everything/$basearch/os/" }
+      - { path: "/etc/yum.repos.d/fedora-updates.repo",
+          section: "updates",
+          option: "baseurl",  
+          value: "{{ yum_repos_mirror }}/fedora/linux/updates/$releasever/Everything/$basearch/" }
+      - { path: "/etc/yum.repos.d/fedora-modular.repo",
+          section: "fedora-modular",
+          option: "baseurl",  
+          value: "{{ yum_repos_mirror }}/fedora/linux/releases/$releasever/Modular/$basearch/os/" }
+      - { path: "/etc/yum.repos.d/fedora-updates-modular.repo",
+          section: "updates-modular",
+          option: "baseurl",  
+          value: "{{ yum_repos_mirror }}/fedora/linux/updates/$releasever/Modular/$basearch/" }
+      - { path: "/etc/yum.repos.d/rpmfusion-free.repo",
+          section: "rpmfusion-free",
+          option: "baseurl",  
+          value: "{{ yum_repos_mirror }}/fedora/rpmfusion/free/fedora/releases/$releasever/Everything/$basearch/os/" }
+      - { path: "/etc/yum.repos.d/rpmfusion-free-updates.repo",
+          section: "rpmfusion-free-updates",
+          option: "baseurl",  
+          value: "{{ yum_repos_mirror }}/fedora/rpmfusion/free/fedora/updates/$releasever/$basearch/" }
+
+
     package_list:
       - sshuttle
       - google-chrome-stable  # from google-chrome repo (fedora-workstation-repositories pkg)
@@ -323,33 +351,6 @@ all:
       "/org/gnome/shell/extensions/just-perfection/workspace-switcher-size": "15"
       "/org/gnome/shell/extensions/just-perfection/workspace-wrap-around": "true"
       "/org/gnome/shell/extensions/just-perfection/world-clock": "false"
-
     
-    yum_repos_mirror: "https://mirror.yandex.ru"
-    yum_repos_tweaks:
-      - { path: "/etc/yum.repos.d/fedora.repo",
-          section: "fedora",
-          option: "baseurl",
-          value: "{{ yum_repos_mirror }}/fedora/linux/releases/$releasever/Everything/$basearch/os/" }
-      - { path: "/etc/yum.repos.d/fedora-updates.repo",
-          section: "updates",
-          option: "baseurl",  
-          value: "{{ yum_repos_mirror }}/fedora/linux/updates/$releasever/Everything/$basearch/" }
-      - { path: "/etc/yum.repos.d/fedora-modular.repo",
-          section: "fedora-modular",
-          option: "baseurl",  
-          value: "{{ yum_repos_mirror }}/fedora/linux/releases/$releasever/Modular/$basearch/os/" }
-      - { path: "/etc/yum.repos.d/fedora-updates-modular.repo",
-          section: "updates-modular",
-          option: "baseurl",  
-          value: "{{ yum_repos_mirror }}/fedora/linux/updates/$releasever/Modular/$basearch/" }
-      - { path: "/etc/yum.repos.d/rpmfusion-free.repo",
-          section: "rpmfusion-free",
-          option: "baseurl",  
-          value: "{{ yum_repos_mirror }}/fedora/rpmfusion/free/fedora/releases/$releasever/Everything/$basearch/os/" }
-      - { path: "/etc/yum.repos.d/rpmfusion-free-updates.repo",
-          section: "rpmfusion-free-updates",
-          option: "baseurl",  
-          value: "{{ yum_repos_mirror }}/fedora/rpmfusion/free/fedora/updates/$releasever/$basearch/" }
 
 ...
