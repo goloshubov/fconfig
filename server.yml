@@ -4,9 +4,8 @@
 - hosts: servers
   gather_facts: yes
   roles:
-    - dotfiles
+#    - dotfiles
     - packages
-    - groups
 
 
 ...

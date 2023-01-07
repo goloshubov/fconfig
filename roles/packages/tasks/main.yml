@@ -28,7 +28,12 @@
       command: dnf config-manager --set-enabled "{{ item }}"
       loop: "{{ setenabled_repo_list }}"
       tags: package-repos
-    
+   
+    - debug:
+        msg: "debug->  value == {{ lookup('ansible.builtin.ini', item.option, section=item.section, file=item.path) }}"
+      loop: "{{ yum_repos_tweaks }}"
+      tags: [ package-repos, package-repos-tweaks ]
+      
     - name: repo_tweaks. delete mutually exclusive value (metalink|baseurl)
       community.general.ini_file:
         path: '{{ item.path }}'
@@ -38,7 +43,6 @@
         backup: true
         no_extra_spaces: true
       when: (item.option == "metalink" or item.option == "baseurl")
-         and item.value != "{{ lookup('ansible.builtin.ini', item.option, section=item.section, file=item.path) }}"
       loop: "{{ yum_repos_tweaks }}"
       tags: [ package-repos, package-repos-tweaks ]
     
@@ -50,7 +54,6 @@
         value: '{{ item.value }}'
         backup: true
         no_extra_spaces: true
-      when: item.value != "{{ lookup('ansible.builtin.ini', item.option, section=item.section, file=item.path) }}"
       loop: "{{ yum_repos_tweaks }}"
       tags: [ package-repos, package-repos-tweaks ]
     
