@@ -6,8 +6,8 @@ fconfig is an ansible playbook that helps keeping one configuration on your (mul
 \
 Usage:
 ```bash
-$ git clone https://github.com/goloshubov/wsconfig
-$ cd wsconfig
+$ git clone https://github.com/goloshubov/fconfig
+$ cd fconfig
 # edit inventory, change ansible_user, files_repo and files_dir variables:
 $ vim inventory.yml
 
@@ -121,6 +121,6 @@ an example:
  chage the inventory.yml vars:
  ```bash
  # git repository with .dotfiles and config
- files_repo: 'git@github.com:goloshubov/wsconfig_files.git'
- files_dir: '~/git/github/wsconfig_files'
+ files_repo: 'git@github.com:goloshubov/fconfig_files.git'
+ files_dir: '~/git/github/fconfig_files'
 ```
