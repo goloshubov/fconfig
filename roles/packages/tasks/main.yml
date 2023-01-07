@@ -58,7 +58,8 @@
       dnf:
         state: latest
         name: "{{ package_list }}"
-  
+ 
+
   tags: [ software, packages ]
   become: true
 

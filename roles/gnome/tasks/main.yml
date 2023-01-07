@@ -1,36 +1,35 @@
 ---
 
-# load dconf dump files first, if any
-- name: find dconf dump files in 'all' dir
-  ansible.builtin.find:
-    paths: "{{ files_dir }}/all/dconf/"
-    file_type: file
-  register: all_dconfdumps
-  tags: [ configs, gnome ]
+- block:
+    # load dconf dump files first, if any
+    - name: find dconf dump files in 'all' dir
+      ansible.builtin.find:
+        paths: "{{ files_dir }}/all/dconf/"
+        file_type: file
+      register: all_dconfdumps
+    
+    - name: configure GNOME. Load dconf dumps, 'all' dir
+      shell: "dconf load -f  /{{ item.path | basename | regex_replace('__','/') }}/ <  {{ files_dir}}/all/dconf/{{ item.path | basename }}" 
+      loop: "{{ all_dconfdumps.files }}"
+    
+    - name: find dconf dump files in 'byHostname' dir
+      ansible.builtin.find:
+        paths: "{{ files_dir }}/byHostname/{{ ansible_facts['hostname'] }}/dconf/"
+        file_type: file
+      register: host_dconfdumps
+    
+    - name: configure GNOME. Load dconf dumps, 'byHostname' dir
+      shell: "dconf load -f  /{{ item.path | basename | regex_replace('__','/') }}/ <  {{ files_dir}}/byHostname/{{ ansible_facts['hostname'] }}/dconf/{{ item.path | basename }}" 
+      loop: "{{ host_dconfdumps.files }}"
+    
+    
+    - name: configure GNOME (dconf, inventory keys,values)
+      dconf:
+        key: '{{ item.key }}'
+        value: '{{ item.value }}'    
+      loop: "{{ lookup('ansible.builtin.dict', dconf_settings) }}"
 
-- name: configure GNOME. Load dconf dumps, 'all' dir
-  shell: "dconf load -f  /{{ item.path | basename | regex_replace('__','/') }}/ <  {{ files_dir}}/all/dconf/{{ item.path | basename }}" 
-  loop: "{{ all_dconfdumps.files }}"
-  tags: [ configs, gnome ]
 
-- name: find dconf dump files in 'byHostname' dir
-  ansible.builtin.find:
-    paths: "{{ files_dir }}/byHostname/{{ ansible_facts['hostname'] }}/dconf/"
-    file_type: file
-  register: host_dconfdumps
-  tags: [ configs, gnome ]
-
-- name: configure GNOME. Load dconf dumps, 'byHostname' dir
-  shell: "dconf load -f  /{{ item.path | basename | regex_replace('__','/') }}/ <  {{ files_dir}}/byHostname/{{ ansible_facts['hostname'] }}/dconf/{{ item.path | basename }}" 
-  loop: "{{ host_dconfdumps.files }}"
-  tags: [ configs, gnome ]
-
-
-- name: configure GNOME (dconf, inventory keys,values)
-  dconf:
-    key: '{{ item.key }}'
-    value: '{{ item.value }}'    
-  loop: "{{ lookup('ansible.builtin.dict', dconf_settings) }}"
   tags: [ configs, gnome ]
 
 
