@@ -9,8 +9,8 @@ all:
 
     
     # git repository with .dotfiles, configs, dconf dumps
-    files_repo: 'git@github.com:goloshubov/wsconfig_files.git'
-    files_dir: '~/git/github/wsconfig_files'
+    files_repo: 'git@github.com:goloshubov/fconfig_files.git'
+    files_dir: '~/git/github/fconfig_files'
 
 
     # add user to groups (after installing packages)
