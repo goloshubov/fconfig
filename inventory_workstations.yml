@@ -52,7 +52,7 @@ all:
       - google-chrome
 
 
-    yum_repos_mirror: "https://mirror.yandex.ru"
+    yum_repos_mirror: "http://mirror.yandex.ru"
     yum_repos_tweaks:
       - { path: "/etc/yum.repos.d/fedora.repo",
           section: "fedora",
