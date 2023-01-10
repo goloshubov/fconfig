@@ -204,6 +204,7 @@ all:
       - ShellCheck   # shell script static analysis tool
       - colorized-logs
       - clide  # colorize ASCII text
+      - vlc
 
 
     flatpak_repos:
@@ -226,7 +227,7 @@ all:
 #      - com.valvesoftware.Steam
 #      - com.github.gi_lom.dialect
       - app.drey.Dialect
-      - org.videolan.VLC
+#      - org.videolan.VLC
 #      - org.zotero.Zotero
 #      - com.getpostman.Postman
       - com.transmissionbt.Transmission
