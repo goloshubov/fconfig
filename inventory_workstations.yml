@@ -19,6 +19,7 @@ all:
 #    repos_to_sync:
 #      "{{ files_repo }}": "{{ files_dir }}"
 #      "git@github.com:goloshubov/fconfig_files.git": "~/git/github/fconfig_files"
+#      "https://github.com/hashivim/vim-terraform.git": "~/.vim/pack/plugins/start/vim-terraform"
 
 
     # add user to groups (after installing packages)
