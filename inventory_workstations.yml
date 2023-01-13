@@ -15,6 +15,12 @@ all:
     files_dir: '~/git/github/fconfig_files'
 
 
+#    # TODO: universal list of repos to sync
+#    repos_to_sync:
+#      "{{ files_repo }}": "{{ files_dir }}"
+#      "git@github.com:goloshubov/fconfig_files.git": "~/git/github/fconfig_files"
+
+
     # add user to groups (after installing packages)
     user_groups:
       - libvirt
