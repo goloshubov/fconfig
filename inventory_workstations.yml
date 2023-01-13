@@ -213,6 +213,7 @@ all:
       - clide  # colorize ASCII text
       - vlc
       - yamllint
+      - pylint
 
 
     flatpak_repos:
