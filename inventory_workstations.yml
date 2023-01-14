@@ -283,10 +283,10 @@ all:
       - tomato-toml  # crudini-like tool but for toml
 
     go_list:
-      - github.com/antonmedv/llama   #a terminal file manager
-#      - github.com/mikefarah/yq
+      - github.com/antonmedv/llama   # terminal file manager
+      - github.com/mikefarah/yq      # jq like tool for YAML
       - github.com/go-task/task/v3/cmd/task
-#     - github.com/ericchiang/pup    #html parser      
+#     - github.com/ericchiang/pup    # html parser      
 
 
     ansible_galaxy_collection_list:
