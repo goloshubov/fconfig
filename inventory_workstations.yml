@@ -15,6 +15,17 @@ all:
     files_dir: '~/git/github/fconfig_files'
 
 
+#    # TODO: prerequisite. create directories 
+#    present_dirs:
+#      - "/path/to/create"
+
+#    # TODO: universal list of repos to sync
+#    repos_to_sync:
+#      "{{ files_repo }}": "{{ files_dir }}"
+#      "git@github.com:goloshubov/fconfig_files.git": "~/git/github/fconfig_files"
+#      "https://github.com/hashivim/vim-terraform.git": "~/.vim/pack/plugins/start/vim-terraform"
+
+
     # add user to groups (after installing packages)
     user_groups:
       - libvirt
@@ -80,9 +91,9 @@ all:
           value: "{{ yum_repos_mirror }}/fedora/rpmfusion/free/fedora/updates/$releasever/$basearch/" }
 
 
-    package_list:
-      - sshuttle
-      - google-chrome-stable  # from google-chrome repo (fedora-workstation-repositories pkg)
+    peackage_list:
+     # - sshuttle
+     # - google-chrome-stable  # from google-chrome repo (fedora-workstation-repositories pkg)
       - wireguard-tools
       - nmap-ncat
       - bind-utils
@@ -205,6 +216,8 @@ all:
       - colorized-logs
       - clide  # colorize ASCII text
       - vlc
+      - yamllint
+      - pylint
 
 
     flatpak_repos:
@@ -300,7 +313,7 @@ all:
 #      - org.gnome.Terminal.desktop
       - net.cozic.joplin_desktop.desktop
 #      - firefox-wayland.desktop
-#      - google-chrome.desktop
+      - google-chrome.desktop
       - com.gitlab.newsflash.desktop
       - firefox.desktop
       - com.github.xournalpp.xournalpp.desktop
