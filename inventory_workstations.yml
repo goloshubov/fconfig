@@ -91,7 +91,7 @@ all:
           value: "{{ yum_repos_mirror }}/fedora/rpmfusion/free/fedora/updates/$releasever/$basearch/" }
 
 
-    peackage_list:
+    package_list:
      # - sshuttle
      # - google-chrome-stable  # from google-chrome repo (fedora-workstation-repositories pkg)
       - wireguard-tools
