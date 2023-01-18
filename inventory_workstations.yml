@@ -280,6 +280,7 @@ all:
       - ansible-runner
       - wheel
       - aiohttp   # required for ansible.eda plugins (event_source/webhook.py)
+      - yq
       
 
     cargo_list:
@@ -297,7 +298,7 @@ all:
 
     go_list:
       - github.com/antonmedv/llama   # terminal file manager
-      - github.com/mikefarah/yq      # jq like tool for YAML
+#      - github.com/mikefarah/yq      # notice pip yq package
       - github.com/go-task/task/v3/cmd/task
 #     - github.com/ericchiang/pup    # html parser      
 
