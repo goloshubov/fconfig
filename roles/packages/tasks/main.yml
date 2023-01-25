@@ -17,6 +17,7 @@
       #package:
         state: latest
         name: "{{ direct_package_list }}"
+        disable_gpg_check: true
       tags: package-repos
     
     - name: install prerequisite packages (repos)
