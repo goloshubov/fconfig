@@ -314,9 +314,9 @@ all:
 #      - org.gnome.Terminal.desktop
       - net.cozic.joplin_desktop.desktop
 #      - firefox-wayland.desktop
-      - google-chrome.desktop
       - com.gitlab.newsflash.desktop
       - firefox.desktop
+      - google-chrome.desktop
       - com.github.xournalpp.xournalpp.desktop
       - net.xmind.XMind.desktop
 #      - io.atom.Atom.desktop
