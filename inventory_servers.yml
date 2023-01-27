@@ -5,6 +5,7 @@ all:
     servers:
       hosts:
         gw:
+        nfs:
 
 
   vars:
@@ -23,13 +24,14 @@ all:
 
 
     #third party repos
-    copr_list:
-      - varlad/helix
-
+#    copr_list:
+#      - mroche/cloud-native-utilities      # helm,knative-client,pack,packer,tektoncd-cli,terraform
+#      - varlad/helix
+      
 
     #third party repos
-    other_repos_list:
-      - "" 
+#    other_repos_list:
+#      - "" 
 
 
     #third party repos and packages
@@ -38,13 +40,12 @@ all:
 
 
     #third party repos and packages
-    prerequisite_packages_list:
-      - ""
+#    prerequisite_packages_list:
+#      - ""
 
 
     # enable repo if needed
-    setenabled_repo_list:
-      - ""
+#    setenabled_repo_list:
 
 
     yum_repos_mirror: "http://mirror.yandex.ru"
@@ -76,67 +77,66 @@ all:
 
 
     package_list:
-      - sshuttle
-      - wireguard-tools
-      - nmap-ncat
-      - bind-utils
-      - rsync
-      - tmux
-      - screen
-      - git
-      - knock
-      - vim-enhanced
-      - vim-nerdtree
-      - awesome-vim-colorschemes
-      - mc
-      - curl
-      - wget
-      - htop
-      - powerline
-      - tmux-powerline
-      - vim-powerline
-      - lm_sensors
-      - python3-psutil
-      - tuned
-      - powertop
-      - apg
-      - parallel
-      - exa
-      - dnf-utils
+#      - sshuttle
+#      - wireguard-tools
+#      - nmap-ncat
+#      - bind-utils
+#      - rsync
+#      - tmux
+#      - screen
+#      - git
+#      - knock
+#      - vim-enhanced
+#      - vim-nerdtree
+#      - awesome-vim-colorschemes
+#      - mc
+#      - curl
+#      - wget
+#      - htop
+#      - powerline
+#      - tmux-powerline
+#      - vim-powerline
+#      - lm_sensors
+#      - python3-psutil
+#      - tuned
+#      - powertop
+#      - apg
+#      - parallel
+#      - exa
+#      - dnf-utils
 #      - golang
 #      - rust
 #      - cargo
-      - toolbox
-      - jq
+#      - toolbox
+#      - jq
 #      - git-delta
-      - mtr
-      - openssl
-      - perf
-      - bpftrace
-      - bcc
-      - sysstat
+#      - mtr
+#      - openssl
+#      - perf
+#      - bpftrace
+#      - bcc
+#      - sysstat
 #      - fatrace
 #      - podman
 #      - skopeo
-      - nethogs
-      - dnstop
-      - the_silver_searcher
-      - rdiff-backup
-      - python3-pip
-      - python3-pytelegrambotapi
+#      - nethogs
+#      - dnstop
+#      - the_silver_searcher
+#      - rdiff-backup
+#      - python3-pip
+#      - python3-pytelegrambotapi
       - cockpit
-      - cockpit-podman
-      - cockpit-machines
-      - cockpit-pcp
+#      - cockpit-podman
+#      - cockpit-machines
+#      - cockpit-pcp
       - cockpit-selinux
-      - helix     # text editor. from varlad/helix copr repo
 #      - pv        # monitor the progress of data through a pipe
 #      - progress  # Linux tool to show progress for cp, mv, dd, ... (formerly known as cv) 
 #      - bat       # A cat(1) clone with wings. (Rust)
 #      - python3-devel
 #      - python3-pip
-      - colorized-logs
-      - clide  # colorize ASCII text
+#      - colorized-logs
+#      - clide  # colorize ASCII text
 
 
 ...

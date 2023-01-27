@@ -6,11 +6,13 @@
       command: dnf copr enable '{{ item }}' -y
       loop:  "{{ copr_list }}"
       tags: software, package-repos
+      when:  copr_listi is defined
     
     - name: install other repos
       command: dnf config-manager --add-repo '{{ item }}' -y
       loop: "{{ other_repos_list }}"
       tags: package-repos
+      when: other_repos_list is defined
     
     - name: install packages (direct link)
       dnf:
@@ -19,17 +21,20 @@
         name: "{{ direct_package_list }}"
         disable_gpg_check: true
       tags: package-repos
+      when: direct_package_list is defined
     
     - name: install prerequisite packages (repos)
       dnf:
         state: latest
         name: "{{ prerequisite_packages_list }}"
       tags: [ software, package-repos, packages ]
+      when: prerequisite_packages_list is defined
     
     - name: enable repos
       command: dnf config-manager --set-enabled "{{ item }}"
       loop: "{{ setenabled_repo_list }}"
       tags: package-repos
+      when: setenabled_repo_list is defined
    
     - name: repo_tweaks. delete mutually exclusive value (metalink|baseurl)
       community.general.ini_file:
@@ -39,7 +44,7 @@
         state: absent
         backup: true
         no_extra_spaces: true
-      when: (item.option == "metalink" or item.option == "baseurl")
+      when: yum_repos_tweaks is defined and (item.option == "metalink" or item.option == "baseurl")
       loop: "{{ yum_repos_tweaks }}"
       tags: [ package-repos, package-repos-tweaks ]
     
@@ -53,11 +58,13 @@
         no_extra_spaces: true
       loop: "{{ yum_repos_tweaks }}"
       tags: [ package-repos, package-repos-tweaks ]
+      when: yum_repos_tweaks is defined 
     
     - name: install packages
       dnf:
         state: latest
         name: "{{ package_list }}"
+      when: package_list is defined
  
 
   tags: [ software, packages ]
