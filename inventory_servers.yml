@@ -80,9 +80,9 @@ all:
 #      - sshuttle
 #      - wireguard-tools
 #      - nmap-ncat
-#      - bind-utils
+      - bind-utils
 #      - rsync
-#      - tmux
+      - tmux
 #      - screen
 #      - git
 #      - knock
@@ -93,12 +93,12 @@ all:
 #      - curl
 #      - wget
 #      - htop
-#      - powerline
-#      - tmux-powerline
-#      - vim-powerline
+      - powerline
+      - tmux-powerline
+      - vim-powerline
 #      - lm_sensors
 #      - python3-psutil
-#      - tuned
+      - tuned
 #      - powertop
 #      - apg
 #      - parallel
@@ -137,10 +137,6 @@ all:
 #      - python3-pip
 #      - colorized-logs
 #      - clide  # colorize ASCII text
-      - powerline-fonts
-      - powerline
-      - tmux-powerline
-      - vim-powerline
 
 
 ...
