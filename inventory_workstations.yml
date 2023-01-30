@@ -2,7 +2,9 @@ all:
   children:
     workstations:
       hosts:
-        localhost:
+        ws:
+        x390yoga:
+        x13yoga1:
 
 
   vars:
