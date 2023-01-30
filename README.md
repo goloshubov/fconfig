@@ -11,7 +11,7 @@ $ cd fconfig
 # edit inventory, change ansible_user, files_repo and files_dir variables:
 $ vim inventory_workstations.yml
 
-# apply the configuration on the local workstation:
+# apply the configuration:
 $ ansible-playbook -i ./inventory_workstations.yml workstation.yml
 
 # or apply it partialy:
