@@ -35,6 +35,7 @@
     
     # all/etc dir
     - name: check etc dir (all)
+      delegate_to: 127.0.0.1
       ansible.builtin.stat:
         path: "{{ files_dir }}/all/etc/"
       register: all_etcdir
@@ -49,6 +50,7 @@
     
     # byHostname/<hostname>/etc dir
     - name: check etc dir (byHostname)
+      delegate_to: 127.0.0.1
       ansible.builtin.stat:
         path: "{{ files_dir }}/byHostname/{{ ansible_facts['hostname'] }}/etc/"
       register: host_etcdir
