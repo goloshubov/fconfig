@@ -2,6 +2,7 @@
 
 - block:
     - name: get dotfiles
+      delegate_to: 127.0.0.1
       git:
         repo: "{{ files_repo }}"
         dest: "{{ files_dir }}"
@@ -10,6 +11,7 @@
     
     # all/home dir
     - name: check home dir (all) 
+      delegate_to: 127.0.0.1
       ansible.builtin.stat:
         path: "{{ files_dir }}/all/home/"
       register: all_homedir
@@ -21,6 +23,7 @@
     
     # byHostname/<hostname>/home dir
     - name: check home dir (byHostname) 
+      delegate_to: 127.0.0.1
       ansible.builtin.stat:
         path: "{{ files_dir }}/byHostname/{{ ansible_facts['hostname'] }}/home/"
       register: host_homedir

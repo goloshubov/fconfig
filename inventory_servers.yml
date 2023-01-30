@@ -137,6 +137,10 @@ all:
 #      - python3-pip
 #      - colorized-logs
 #      - clide  # colorize ASCII text
+      - powerline-fonts
+      - powerline
+      - tmux-powerline
+      - vim-powerline
 
 
 ...
