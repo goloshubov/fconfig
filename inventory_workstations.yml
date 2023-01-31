@@ -284,6 +284,7 @@ all:
       - wheel
       - aiohttp   # required for ansible.eda plugins (event_source/webhook.py)
       - yq
+      - kubernetes
       
 
     cargo_list:
@@ -309,6 +310,7 @@ all:
     ansible_galaxy_collection_list:
       - community.general
       - ansible.eda
+      - kubernetes.core
 
 
     # dash/dock panel favorite apps ($ dconf read /org/gnome/shell/favorite-apps)
