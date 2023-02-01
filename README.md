@@ -49,7 +49,7 @@ The playbook applies dotfiles in the following order:
 2. byType dir
 3. byHostname dir
 
- chage vars:
+mind the variables:
  ```bash
  # git repository with .dotfiles and config
  files_repo: 'git@github.com:goloshubov/fconfig_files.git'
