@@ -12,6 +12,8 @@ all:
     ansible_connection: local
     ansible_user: goloshubov
 
+    type: workstation
+
     
     # git repository with .dotfiles, configs, dconf dumps
     files_repo: 'git@github.com:goloshubov/fconfig_files.git'
