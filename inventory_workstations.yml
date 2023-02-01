@@ -285,6 +285,7 @@ all:
       - aiohttp   # required for ansible.eda plugins (event_source/webhook.py)
       - yq
       - kubernetes
+      - powerline-k8s
       
 
     cargo_list:

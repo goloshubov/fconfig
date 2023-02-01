@@ -4,6 +4,7 @@ all:
       hosts:
         gw:
         nfs:
+        kind:
 
 
   vars:
@@ -135,6 +136,18 @@ all:
 #      - python3-pip
 #      - colorized-logs
 #      - clide  # colorize ASCII text
+
+
+    pip_list:
+      - Jinja2
+      - ansible
+#      - ansible-rulebook
+#      - ansible-runner
+#      - wheel
+#      - aiohttp   # required for ansible.eda plugins (event_source/webhook.py)
+      - yq
+      - kubernetes
+      - powerline-k8s
 
 
 ...
