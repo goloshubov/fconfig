@@ -136,6 +136,7 @@ all:
 #      - python3-pip
 #      - colorized-logs
 #      - clide  # colorize ASCII text
+      - watchdog
 
 
     pip_list:
