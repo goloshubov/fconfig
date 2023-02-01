@@ -1,7 +1,7 @@
 fconfig is an ansible playbook that helps keeping one configuration on fedora machines (workstations and home lab servers), it can:
 - copy .dotfiles, configs. The files are supposed to be in a separate (and maybe private) repo - 'files_repo' inventory variable (https://github.com/goloshubov/fconfig_files). See files_repo's directory sturecture below.
 - install software: rpm packages (dnf), flatpaks, pypi (pip), cargo, go, ansible-galaxy collections.
-- change GNOME configuration (by loading dconf dump files and applying dconf key=value settings from the inventory)
+- configure GNOME desktop on workstations (by loading dconf dump files, applying dconf key=value settings from the inventory)
 \
 \
 Usage:
