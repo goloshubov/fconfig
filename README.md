@@ -10,7 +10,7 @@ $ git clone https://github.com/goloshubov/fconfig
 $ cd fconfig
 # edit inventory, change ansible_user, files_repo and files_dir variables:
 $ vim inventory_workstations.yml
-$ mkdir -p ~/git/github/fconfig_files
+$ mkdir -p ~/git/github/fconfig_files   # files_dir variable
 
 # apply the configuration:
 $ ansible-playbook -i ./inventory_workstations.yml workstation.yml
