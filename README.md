@@ -68,8 +68,8 @@ $ dconf load -f /org/gnome/shell/extensions/dash-to-dock/ < ~/\<files_dir\>/all/
 \
 The playbook applies dconf settings in the following order:
 1. dconf dumps, all dir
-2. dconf dumps, byHostname dir
-3. dconf dumps, byType dir
+2. dconf dumps, byType dir
+3. dconf dumps, byHostname dir
 4. dconf, inventory (dconf_settings)
 
 
