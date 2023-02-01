@@ -36,7 +36,12 @@ files_repo (git repository) directory structure:
 │   │   └── home
 ├── byType
 │   ├── server
+│   │   ├── etc
+│   │   └── home
 │   ├── workstation
+│   │   ├── dconf
+│   │   ├── etc
+│   │   └── home
 ```
  chage vars:
  ```bash
