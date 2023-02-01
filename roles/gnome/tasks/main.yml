@@ -7,7 +7,6 @@
         paths: "{{ files_dir }}/all/dconf/"
         file_type: file
       register: all_dconfdumps
-    
     - name: configure GNOME. Load dconf dumps, 'all' dir
       shell: "dconf load -f  /{{ item.path | basename | regex_replace('__','/') }}/ <  {{ files_dir}}/all/dconf/{{ item.path | basename }}" 
       loop: "{{ all_dconfdumps.files }}"
