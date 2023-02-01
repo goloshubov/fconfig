@@ -1,5 +1,5 @@
 fconfig is an ansible playbook that helps keeping one configuration on fedora machines (workstations and home lab servers), it can:
-- copy .dotfiles, configs. The files are supposed to be in a separate/private repo - 'files_repo' inventory variable. files_repo's sturecture is "all/{etc,home}/" and "byHostname/\<hostname\>/{etc,home}/", e.g. the 'all/home' directory files from that repo copied to the user's home (~), the 'all/etc' to the system '/etc/'. See the details below.
+- copy .dotfiles, configs. The files are supposed to be in a separate (and maybe private) repo - 'files_repo' inventory variable (https://github.com/goloshubov/fconfig_files). See files_repo's directory sturecture below.
 - install software: rpm packages (dnf), flatpaks, pypi (pip), cargo, go, ansible-galaxy collections.
 - change GNOME configuration (by loading dconf dump files and applying dconf key=value settings from the inventory)
 \
@@ -22,6 +22,29 @@ $ ansible-playbook -i ./inventory_workstations.yml workstation.yml --tags packag
 ```
 
 ---
+files_repo (git repository) directory structure:
+```
+.
+├── all
+│   ├── dconf
+│   ├── etc
+│   └── home
+├── byHostname
+│   ├── hostname
+│   │   ├── dconf
+│   │   ├── etc
+│   │   └── home
+├── byType
+│   ├── server
+│   ├── workstation
+```
+ chage vars:
+ ```bash
+ # git repository with .dotfiles and config
+ files_repo: 'git@github.com:goloshubov/fconfig_files.git'
+ files_dir: '~/git/github/fconfig_files'
+```
+---
 Regarding dconf dump files:
 
 The playbook can load dconf dump files you created before:
@@ -42,85 +65,4 @@ The playbook applies dconf settings in the following order:
 2. dconf dumps, byHostname dir
 3. dconf, inventory (dconf_settings)
 
----
-files_repo (git repository) dir structure:
-```
-.
-├── all
-│   ├── dconf
-│   ├── etc
-│   └── home
-├── byHostname
-│   ├── hostname
-│   │   ├── dconf
-│   │   ├── etc
-│   │   └── home
 
-```
-an example:
-```
-.
-├── all
-│   ├── dconf
-│   │   └── org__gnome__shell__extensions__dash-to-dock
-│   ├── etc
-│   │   ├── sysctl.d
-│   │   │   ├── mitigations.conf
-│   │   │   └── sysrq.conf
-│   │   ├── udev
-│   │   │   └── rules.d
-│   │   │       └── 51-android.rules
-│   │   └── yum.repos.d
-│   │       └── kubernetes.repo
-│   └── home
-│       ├── .ansible.cfg
-│       ├── .bashrc
-│       ├── bin
-│       │   ├── script.sh
-│       ├── .config
-│       │   ├── helix
-│       │   │   └── config.toml
-│       │   ├── powerline
-│       │   │   └── config.json
-│       │   └── xournalpp
-│       │       └── toolbar.ini
-│       ├── .local
-│       │   └── share
-│       │       ├── applications
-│       │       │   └── scrcpy.desktop
-│       │       └── nautilus
-│       │           └── scripts
-│       │               ├── inHelix
-│       │               └── inVim
-│       ├── Pictures
-│       │   └── wallpapers
-│       │       └── wallpaper.jpg
-│       ├── .screenrc
-│       ├── .tmux.conf
-│       ├── .var
-│       │   └── app
-│       │       └── com.github.xournalpp.xournalpp
-│       │           └── config
-│       │               └── xournalpp
-│       │                   └── toolbar.ini
-│       └── .vimrc
-├── byHostname
-│   ├── ws
-│   │   └── etc
-│   │       └── tuned
-│   │           └── ws-amdgpu
-│   │               └── tuned.conf
-│   └── x390yoga
-│       ├── etc
-│       │   ├── default
-│       │   │   └── grub
-│       │   └── modprobe.d
-│       │       └── wacom.conf
-│       └── home
-```
- chage the inventory_workstations.yml vars:
- ```bash
- # git repository with .dotfiles and config
- files_repo: 'git@github.com:goloshubov/fconfig_files.git'
- files_dir: '~/git/github/fconfig_files'
-```
