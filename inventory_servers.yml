@@ -122,7 +122,7 @@ all:
 #      - dnstop
 #      - the_silver_searcher
 #      - rdiff-backup
-#      - python3-pip
+      - python3-pip
 #      - python3-pytelegrambotapi
       - cockpit
 #      - cockpit-podman
