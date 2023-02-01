@@ -12,7 +12,6 @@ $ cd fconfig
 $ vim inventory_workstations.yml
 # mkdir -p ~/git/github/fconfig_files
 
-
 # apply the configuration:
 $ ansible-playbook -i ./inventory_workstations.yml workstation.yml
 
