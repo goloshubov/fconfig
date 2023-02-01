@@ -44,6 +44,11 @@ files_repo (git repository) directory structure:
 │   │   ├── etc
 │   │   └── home
 ```
+The playbook applies dotfiles in the following order:
+1. all dir
+2. byType dir
+3. byHostname dir
+
  chage vars:
  ```bash
  # git repository with .dotfiles and config
