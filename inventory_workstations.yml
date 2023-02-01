@@ -215,7 +215,7 @@ all:
       - hadolint  # Dockerfile linter
       - gitg   #git gui
       - meld   #diff gui
-      - ShellCheck   # shell script static analysis tool
+      - ShellCheck   # shell script static analysis tool (bash linter)
       - colorized-logs
       - clide  # colorize ASCII text
       - vlc
