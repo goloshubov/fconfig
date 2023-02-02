@@ -10,7 +10,9 @@ all:
   vars:
     ansible_user: goloshubov
 
-    type: server
+    type: 
+      - server
+      - k8s
 
     
     # git repository with .dotfiles, configs, dconf dumps
