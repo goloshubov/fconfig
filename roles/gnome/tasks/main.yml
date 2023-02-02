@@ -11,6 +11,15 @@
       shell: "dconf load -f  /{{ item.path | basename | regex_replace('__','/') }}/ <  {{ files_dir}}/all/dconf/{{ item.path | basename }}" 
       loop: "{{ all_dconfdumps.files }}"
     
+    - name: find dconf dump files in 'byType' dir
+      ansible.builtin.find:
+        paths: "{{ files_dir }}/byType/{{ type }}/dconf/"
+        file_type: file
+      register: type_dconfdumps
+    - name: configure GNOME. Load dconf dumps, 'byType' dir
+      shell: "dconf load -f  /{{ item.path | basename | regex_replace('__','/') }}/ <  {{ files_dir}}/byType/{{ type }}/dconf/{{ item.path | basename }}" 
+      loop: "{{ type_dconfdumps.files }}"
+
     - name: find dconf dump files in 'byHostname' dir
       ansible.builtin.find:
         paths: "{{ files_dir }}/byHostname/{{ ansible_facts['hostname'] }}/dconf/"
@@ -20,14 +29,6 @@
       shell: "dconf load -f  /{{ item.path | basename | regex_replace('__','/') }}/ <  {{ files_dir}}/byHostname/{{ ansible_facts['hostname'] }}/dconf/{{ item.path | basename }}" 
       loop: "{{ host_dconfdumps.files }}"
     
-    - name: find dconf dump files in 'byType' dir
-      ansible.builtin.find:
-        paths: "{{ files_dir }}/byType/{{ type }}/dconf/"
-        file_type: file
-      register: type_dconfdumps
-    - name: configure GNOME. Load dconf dumps, 'byType' dir
-      shell: "dconf load -f  /{{ item.path | basename | regex_replace('__','/') }}/ <  {{ files_dir}}/byType/{{ type }}/dconf/{{ item.path | basename }}" 
-      loop: "{{ type_dconfdumps.files }}"
     
     - name: configure GNOME (dconf, inventory keys,values)
       dconf:

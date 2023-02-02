@@ -44,7 +44,12 @@ files_repo (git repository) directory structure:
 │   │   ├── etc
 │   │   └── home
 ```
- chage vars:
+The playbook applies dotfiles in the following order:
+1. all dir
+2. byType dir
+3. byHostname dir
+
+mind the variables:
  ```bash
  # git repository with .dotfiles and config
  files_repo: 'git@github.com:goloshubov/fconfig_files.git'
@@ -68,8 +73,8 @@ $ dconf load -f /org/gnome/shell/extensions/dash-to-dock/ < ~/\<files_dir\>/all/
 \
 The playbook applies dconf settings in the following order:
 1. dconf dumps, all dir
-2. dconf dumps, byHostname dir
-3. dconf dumps, byType dir
+2. dconf dumps, byType dir
+3. dconf dumps, byHostname dir
 4. dconf, inventory (dconf_settings)
 
 
