@@ -1,18 +1,25 @@
-all:
-  children:
-    servers:
-      hosts:
-        gw:
-        nfs:
-        kind:
+common:
+  hosts:
+    gw:
+    nfs:
+k8s:
+  hosts:
+    kind:
+  vars:
+    type: 
+      - server
+      - k8s
 
+servers:
+  children:
+    common:
+    k8s:
 
   vars:
     ansible_user: goloshubov
 
     type: 
       - server
-      - k8s
 
     
     # git repository with .dotfiles, configs, dconf dumps

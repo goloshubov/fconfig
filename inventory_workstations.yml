@@ -12,7 +12,9 @@ all:
     ansible_connection: local
     ansible_user: goloshubov
 
-    type: workstation
+    type:
+      - workstation
+      - k8s
 
     
     # git repository with .dotfiles, configs, dconf dumps
