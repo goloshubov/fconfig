@@ -15,22 +15,10 @@ all:
     type:
       - workstation
       - k8s
-
     
     # git repository with .dotfiles, configs, dconf dumps
     files_repo: 'git@github.com:goloshubov/fconfig_files.git'
     files_dir: '~/git/github/fconfig_files'
-
-
-#    # TODO: prerequisite. create directories 
-#    present_dirs:
-#      - "/path/to/create"
-
-#    # TODO: universal list of repos to sync
-#    repos_to_sync:
-#      "{{ files_repo }}": "{{ files_dir }}"
-#      "git@github.com:goloshubov/fconfig_files.git": "~/git/github/fconfig_files"
-#      "https://github.com/hashivim/vim-terraform.git": "~/.vim/pack/plugins/start/vim-terraform"
 
 
     # add user to groups (after installing packages)
@@ -365,13 +353,13 @@ all:
       "/com/gexperts/Tilix/Settingstheme-variant": "'dark'"
       "/com/gexperts/Tilix/Settingsuse-tabs": "true"
 #      "/org/gnome/gedit/preferences/editor/scheme": "'oblivion'"
-#      "/org/gnome/shell/extensions/dash-to-dock/show-mounts": "false"
-#      "/org/gnome/shell/extensions/dash-to-dock/force-straight-corner": "false"
-#      "/org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size": "32"
-#      "/org/gnome/shell/extensions/dash-to-dock/intellihide-mode": "'FOCUS_APPLICATION_WINDOWS'"
-#      "/org/gnome/shell/extensions/dash-to-dock/show-trash": "false"
-#      "/org/gnome/shell/extensions/dash-to-dock/show-mounts": "false"
-#      "/org/gnome/shell/extensions/dash-to-dock/apply-custom-theme": "false"
+      "/org/gnome/shell/extensions/dash-to-dock/show-mounts": "false"
+      "/org/gnome/shell/extensions/dash-to-dock/force-straight-corner": "false"
+      "/org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size": "32"
+      "/org/gnome/shell/extensions/dash-to-dock/intellihide-mode": "'FOCUS_APPLICATION_WINDOWS'"
+      "/org/gnome/shell/extensions/dash-to-dock/show-trash": "false"
+      "/org/gnome/shell/extensions/dash-to-dock/show-mounts": "false"
+      "/org/gnome/shell/extensions/dash-to-dock/apply-custom-theme": "false"
       "/org/gnome/shell/extensions/just-perfection/dash-icon-size": "32"
       "/org/gnome/shell/extensions/just-perfection/events-button": "false"
       "/org/gnome/shell/extensions/just-perfection/workspace-switcher-should-show": "true"
