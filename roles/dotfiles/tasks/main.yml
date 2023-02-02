@@ -37,6 +37,12 @@
       when: all_etcdir.stat.islnk is defined
 
 
+    # byType/<type>/{home,etc} dirs
+    - include_tasks: byType.yml
+      when: type is defined
+      loop: "{{ type }}"
+
+
     # byHostname/<hostname>/home dir
     - name: check home dir (byHostname) 
       delegate_to: 127.0.0.1
@@ -63,13 +69,6 @@
         owner: false
         group: false
       when: host_etcdir.stat.islnk is defined
-
-
-    # byType/<type>/{home,etc} dirs
-    - include_tasks: byType.yml
-      when: type is defined
-      loop: "{{ type }}"
-
 
   tags: [ dotfiles, configs ]
 
