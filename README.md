@@ -49,11 +49,11 @@ The playbook applies dotfiles in the following order:
 ---
 Regarding dconf dump files:
 
-The playbook can load dconf dump files you created before:
+The playbook can load dconf dump files from dconf directories (if any). To save dconf dump:
 ```bash
 $ dconf dump <path> > dumpfile
 ```
-expected that dumps are located in the files_repo's directories:\
+expected that dumps are located in the dconf files_repo's directories:\
 all/dconf/, byType/\<type\>/dconf/ and byHosname/\<hostname\>/dconf/\
 with the file names like '\<path>\' (used when creating dconf dump files) but where '/' replaced with '__' and without the first and the last '/'\
 e.g.\
