@@ -19,6 +19,10 @@ all:
     # git repository with .dotfiles, configs, dconf dumps
     files_repo: 'git@github.com:goloshubov/fconfig_files.git'
     files_dir: '~/git/github/fconfig_files'
+    #TODO: files_repo list:
+    #files_repo: 
+    #  'git@github.com:goloshubov/fconfig_files.git': '~/git/github/fconfig_files'
+    #  'git@github.com:goloshubov/fconfig_files_2.git': '~/git/github/fconfig_files_2'
 
 
     # add user to groups (after installing packages)
