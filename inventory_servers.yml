@@ -4,6 +4,7 @@ all:
       hosts:
         gw:
         nfs:
+
     k8s-cli:
       hosts:
         kind:
@@ -12,10 +13,6 @@ all:
       children:
         infra:
         k8s-cli:
-
-    _common_:   #FIXME: 'all' group should be enough, but it's not in host's group list
-      children:
-        servers:
 
 
   vars:
