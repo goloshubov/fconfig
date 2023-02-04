@@ -31,15 +31,12 @@ files_repos.repo  (git repository) directory structure:
 │   ├── etc
 │   └── home
 ├── byHostname
-│   ├── hostname
+│   ├── <hostname>
 │   │   ├── dconf
 │   │   ├── etc
 │   │   └── home
 ├── byType
-│   ├── server
-│   │   ├── etc
-│   │   └── home
-│   ├── workstation
+│   ├── <typename>
 │   │   ├── dconf
 │   │   ├── etc
 │   │   └── home
