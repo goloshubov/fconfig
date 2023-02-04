@@ -1,23 +1,13 @@
 ---
 
 - block:
-    # load dconf dump files first, if any
-    - name: find dconf dump files in 'all' dir
+    - name: find dconf dump files in 'byGroup' dir
       ansible.builtin.find:
-        paths: "{{ files_dir }}/all/dconf/"
-        file_type: file
-      register: all_dconfdumps
-    - name: configure GNOME. Load dconf dumps, 'all' dir
-      shell: "dconf load -f  /{{ item.path | basename | regex_replace('__','/') }}/ <  {{ files_dir}}/all/dconf/{{ item.path | basename }}" 
-      loop: "{{ all_dconfdumps.files }}"
-    
-    - name: find dconf dump files in 'byType' dir
-      ansible.builtin.find:
-        paths: "{{ files_dir }}/byType/{{ type }}/dconf/"
+        paths: "{{ files_dir }}/byGroup/{{ type }}/dconf/"
         file_type: file
       register: type_dconfdumps
-    - name: configure GNOME. Load dconf dumps, 'byType' dir
-      shell: "dconf load -f  /{{ item.path | basename | regex_replace('__','/') }}/ <  {{ files_dir}}/byType/{{ type }}/dconf/{{ item.path | basename }}" 
+    - name: configure GNOME. Load dconf dumps, 'byGroup' dir
+      shell: "dconf load -f  /{{ item.path | basename | regex_replace('__','/') }}/ <  {{ files_dir}}/byGroup/{{ type }}/dconf/{{ item.path | basename }}" 
       loop: "{{ type_dconfdumps.files }}"
 
     - name: find dconf dump files in 'byHostname' dir

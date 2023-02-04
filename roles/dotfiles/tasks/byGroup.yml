@@ -1,0 +1,30 @@
+---
+
+# byGroup/<group>/home dir
+- name: check home dir (byGroup) 
+  delegate_to: 127.0.0.1
+  ansible.builtin.stat:
+    path: "{{ item[0].localpath }}/byGroup/{{ item[1] }}/home/"
+  register: type_homedir
+- name: sync home dir (byGroup)
+  synchronize:
+    src: "{{ item[0].localpath }}/byGroup/{{ item[1] }}/home/"
+    dest: ~/
+  when: type_homedir.stat.islnk is defined
+# byGroup/<group>/etc dir
+- name: check etc dir (byGroup)
+  delegate_to: 127.0.0.1
+  ansible.builtin.stat:
+    path: "{{ item[0].localpath }}/byGroup/{{ item[1] }}/etc/"
+  register: type_etcdir
+  tags: [ dotfiles, configs ]
+- name: sync etc dir (byGroup)
+  become: true
+  synchronize:
+    src: "{{ item[0].localpath }}/byGroup/{{ item[1] }}/etc/"
+    dest: /etc/
+    owner: false
+    group: false
+  when: type_etcdir.stat.islnk is defined
+
+...

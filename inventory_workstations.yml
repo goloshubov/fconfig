@@ -7,18 +7,22 @@ all:
 #        x390yoga:
 #        x13yoga1:
 
+    k8s-cli:
+      hosts:
+        localhost:
+
+    common:
+      children:
+        common:
+        k8s:
+
 
   vars:
     ansible_connection: local
     ansible_user: goloshubov
 
 
-    type:
-      - workstation
-      - k8s
-
-
-    files_repos: 
+    files_repos:
       - { repo: 'git@github.com:goloshubov/fconfig_files.git', localpath: '~/git/github/fconfig_files' }
       #- { repo: 'git@github.com:goloshubov/fconfig_files2.git', localpath: '~/git/github/fconfig_files2' }
 

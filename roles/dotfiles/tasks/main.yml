@@ -11,13 +11,9 @@
       loop: "{{ files_repos }}"
    
 
-    # all/{home,etc} dirs
-    - include_tasks: all.yml
-      loop: "{{ files_repos }}"
-
     # byType/<type>/{home,etc} dirs
-    - include_tasks: byType.yml
-      loop: "{{ files_repos | product (type) | list }}"
+    - include_tasks: byGroup.yml
+      loop: "{{ files_repos | product (group_names) | list }}"
 
     # byHostname/<hostname>/{home,etc} dirs
     - include_tasks: byHostname.yml

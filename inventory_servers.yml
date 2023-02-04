@@ -1,26 +1,25 @@
-common:
-  hosts:
-    gw:
-    nfs:
-k8s:
-  hosts:
-    kind:
-  vars:
-    type: 
-      - server
-      - k8s
-
-servers:
+all:
   children:
+    infra:
+      hosts:
+        gw:
+        nfs:
+    k8s-cli:
+      hosts:
+        kind:
+
+    servers:
+      children:
+        infra:
+        k8s:
+
     common:
-    k8s:
+      children:
+        servers:
+
 
   vars:
     ansible_user: goloshubov
-
-
-    type: 
-      - server
 
 
     files_repos:
