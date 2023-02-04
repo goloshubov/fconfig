@@ -8,8 +8,8 @@ all:
 #        x13yoga1:
 
     k8s-cli:
-      hosts:
-        localhost:
+      children:
+        workstations:
 
 
   vars:
