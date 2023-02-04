@@ -11,7 +11,7 @@ all:
     servers:
       children:
         infra:
-        k8s:
+        k8s-cli:
 
     common:
       children:

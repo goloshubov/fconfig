@@ -13,8 +13,8 @@ all:
 
     common:
       children:
-        common:
-        k8s:
+        workstations:
+        k8s-cli:
 
 
   vars:
