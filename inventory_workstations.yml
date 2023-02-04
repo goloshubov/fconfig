@@ -11,7 +11,7 @@ all:
       hosts:
         localhost:
 
-    common:
+    _common_:   #FIXME: 'all' group should be enough, but it's not in host's group list
       children:
         workstations:
         k8s-cli:
