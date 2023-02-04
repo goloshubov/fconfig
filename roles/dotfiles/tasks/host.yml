@@ -1,0 +1,30 @@
+---
+
+# host/<hostname>/home dir
+- name: check home dir (host) 
+  delegate_to: 127.0.0.1
+  ansible.builtin.stat:
+    path: "{{ item.localpath }}/host/{{ inventory_hostname }}/home/"
+  register: host_homedir
+- name: sync home dir (host)
+  synchronize:
+    src: "{{ item.localpath }}/host/{{ inventory_hostname }}/home/"
+    dest: ~/
+  when: host_homedir.stat.islnk is defined
+# host/<hostname>/etc dir
+- name: check etc dir (host)
+  delegate_to: 127.0.0.1
+  ansible.builtin.stat:
+    path: "{{ item.localpath }}/host/{{ inventory_hostname }}/etc/"
+  register: host_etcdir
+  tags: [ dotfiles, configs ]
+- name: sync etc dir (host)
+  become: true
+  synchronize:
+    src: "{{ item.localpath }}/host/{{ inventory_hostname }}/etc/"
+    dest: /etc/
+    owner: false
+    group: false
+  when: host_etcdir.stat.islnk is defined
+
+...

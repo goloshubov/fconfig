@@ -25,20 +25,20 @@ $ ansible-playbook -i ./inventory_workstations.yml workstation.yml --tags packag
 files_repos.repo  (git repository) directory structure:
 ```
 .
-├── byGroup
+├── group
 │   ├── <groupname>
 │   │   ├── dconf
 │   │   ├── etc
 │   │   └── home
-├── byHostname
+├── host
 │   ├── <hostname>
 │   │   ├── dconf
 │   │   ├── etc
 │   │   └── home
 ```
 The playbook applies dotfiles in the following order:
-1. byGroup dir
-2. byHostname dir
+1. group dir
+2. host dir
 
 ---
 Regarding dconf dump files:
@@ -48,17 +48,17 @@ The playbook can load dconf dump files from dconf directories (if any). To save 
 $ dconf dump <path> > dumpfile
 ```
 expected that dumps are located in the dconf files_repo's directories:\
-byGroup/\<groupname\>/dconf/ and byHosname/\<hostname\>/dconf/\
+group/\<groupname\>/dconf/ and byHosname/\<hostname\>/dconf/\
 with the file names like '\<path>\' (used when creating dconf dump files) but where '/' replaced with '__' and without the first and the last '/'\
 e.g.\
-$ dconf dump /org/gnome/shell/extensions/dash-to-dock/ > ~/\<files_dir\>/byGroup/workstation/dconf/org__gnome__shell__extensions__dash-to-dock\
+$ dconf dump /org/gnome/shell/extensions/dash-to-dock/ > ~/\<files_dir\>/group/workstation/dconf/org__gnome__shell__extensions__dash-to-dock\
 where filename is: org__gnome__shell__extensions__dash-to-dock\
 the dump file will be used in the playbook then, to load dconf dump:\
-$ dconf load -f /org/gnome/shell/extensions/dash-to-dock/ < ~/\<files_dir\>/byGroup/workstation/dconf/org__gnome__shell__extensions__dash-to-dock\
+$ dconf load -f /org/gnome/shell/extensions/dash-to-dock/ < ~/\<files_dir\>/group/workstation/dconf/org__gnome__shell__extensions__dash-to-dock\
 \
 The playbook applies dconf settings in the following order:
-1. dconf dumps, byGroup dir
-2. dconf dumps, byHostname dir
+1. dconf dumps, group dir
+2. dconf dumps, host dir
 3. dconf, inventory (dconf_settings)
 
 

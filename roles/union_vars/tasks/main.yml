@@ -1,0 +1,21 @@
+---
+
+- name: include group vars in order to union specific vars (package_list)
+  include_vars:
+    file: "union_vars/group/{{ item }}.yml"
+    name: "{{ item }}"
+  loop: "{{ group_names }}"
+- name: union package_list
+  set_fact:
+    package_list: "{{ package_list | default([]) | union(item) }}"
+  loop: "{{ group_names | map('extract', hostvars[inventory_hostname], 'package_list') | list }}"
+
+- name: include host vars in order to union specific vars (package_list)
+  include_vars:
+    file: "union_vars/host/{{ inventory_hostname }}.yml"
+    name: "{{ inventory_hostname }}"
+- name: union package_list
+  set_fact:
+    package_list: "{{ package_list | default([]) | union( hostvars[inventory_hostname][inventory_hostname]['package_list'] ) }}"
+
+...

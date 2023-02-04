@@ -4,6 +4,7 @@
 - hosts: workstations
   gather_facts: yes
   roles:
+    - include_vars
     - dotfiles
     - packages
     - groups

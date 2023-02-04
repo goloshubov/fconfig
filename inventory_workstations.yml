@@ -2,10 +2,9 @@ all:
   children:
     workstations:
       hosts:
-        localhost:
-#        ws:
-#        x390yoga:
-#        x13yoga1:
+        ws:
+        x390yoga:
+        x13yoga1:
 
     k8s-cli:
       children:
