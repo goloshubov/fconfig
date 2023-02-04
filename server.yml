@@ -5,9 +5,9 @@
   gather_facts: no
   roles:
     - union_vars
-#    - dotfiles
-#    - packages
-#    - pip
+    - dotfiles
+    - packages
+    - pip
 
 
 ...
