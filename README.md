@@ -8,9 +8,8 @@ Usage:
 ```bash
 $ git clone https://github.com/goloshubov/fconfig
 $ cd fconfig
-# edit inventory, change ansible_user, files_repos variables:
-$ vim inventory_workstations.yml
-$ mkdir -p ~/git/github/fconfig_files   # files_repos.localpath variables
+$ vim inventory_workstations.yml        # edit inventory, change ansible_user, files_repos variables
+$ mkdir -p ~/git/github/fconfig_files   # create dirs (files_repos.localpath variables)
 
 # apply the configuration:
 $ ansible-playbook -i ./inventory_workstations.yml workstation.yml
