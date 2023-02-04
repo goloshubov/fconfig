@@ -4,71 +4,24 @@
     - name: get dotfiles
       delegate_to: 127.0.0.1
       git:
-        repo: "{{ files_repo }}"
-        dest: "{{ files_dir }}"
+        repo: "{{ item.repo }}"
+        dest: "{{ item.localpath }}"
         force: yes
         accept_hostkey: yes
+      loop: "{{ files_repos }}"
    
 
-    # all/home dir
-    - name: check home dir (all) 
-      delegate_to: 127.0.0.1
-      ansible.builtin.stat:
-        path: "{{ files_dir }}/all/home/"
-      register: all_homedir
-    - name: sync home dir (all)
-      synchronize:
-        src: "{{ files_dir }}/all/home/"
-        dest: ~/
-      when: all_homedir.stat.islnk is defined
-    # all/etc dir
-    - name: check etc dir (all)
-      delegate_to: 127.0.0.1
-      ansible.builtin.stat:
-        path: "{{ files_dir }}/all/etc/"
-      register: all_etcdir
-    - name: sync etc dir (all)
-      become: true
-      synchronize:
-        src: "{{ files_dir }}/all/etc/"
-        dest: /etc/
-        owner: false
-        group: false
-      when: all_etcdir.stat.islnk is defined
-
+    # all/{home,etc} dirs
+    - include_tasks: all.yml
+      loop: "{{ files_repos }}"
 
     # byType/<type>/{home,etc} dirs
     - include_tasks: byType.yml
-      when: type is defined
-      loop: "{{ type }}"
+      loop: "{{ files_repos | product (type) | list }}"
 
-
-    # byHostname/<hostname>/home dir
-    - name: check home dir (byHostname) 
-      delegate_to: 127.0.0.1
-      ansible.builtin.stat:
-        path: "{{ files_dir }}/byHostname/{{ ansible_facts['hostname'] }}/home/"
-      register: host_homedir
-    - name: sync home dir (byHostname)
-      synchronize:
-        src: "{{ files_dir }}/byHostname/{{ ansible_facts['hostname'] }}/home/"
-        dest: ~/
-      when: host_homedir.stat.islnk is defined
-    # byHostname/<hostname>/etc dir
-    - name: check etc dir (byHostname)
-      delegate_to: 127.0.0.1
-      ansible.builtin.stat:
-        path: "{{ files_dir }}/byHostname/{{ ansible_facts['hostname'] }}/etc/"
-      register: host_etcdir
-      tags: [ dotfiles, configs ]
-    - name: sync etc dir (byHostname)
-      become: true
-      synchronize:
-        src: "{{ files_dir }}/byHostname/{{ ansible_facts['hostname'] }}/etc/"
-        dest: /etc/
-        owner: false
-        group: false
-      when: host_etcdir.stat.islnk is defined
+    # byHostname/<hostname>/{home,etc} dirs
+    - include_tasks: byHostname.yml
+      loop: "{{ files_repos }}"
 
   tags: [ dotfiles, configs ]
 
