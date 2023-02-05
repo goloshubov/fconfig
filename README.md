@@ -3,7 +3,7 @@ Ansible playbook that helps keeping one configuration on my fedora linux worksta
 Features:
 - sync .dotfiles and configs
   - The files are supposed to be in separate (and maybe private) git repositories - 'files_repos' inventory variable (an example is https://github.com/goloshubov/fconfig_files). See files_repo's directory structure below.
-- install software:
+- install software (from the lists):
   - rpm packages (dnf). The final package_list can be obtained by combining (union) various package_list variables from 'union_vars/{group,host}/*'.
   - flatpaks
   - pip packages
