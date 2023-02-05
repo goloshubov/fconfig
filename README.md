@@ -5,7 +5,7 @@ Features:
   - The files are supposed to be in separate (and maybe private) git repositories - 'files_repos' inventory variable (an example is https://github.com/goloshubov/fconfig_files). See files_repo's directory structure below.
 - install software (from the lists):
   - rpm packages (dnf). 
-    - The final package_list can be obtained by combining (union) various package_list variables from 'union_vars/{group,host}/*'.
+    - The final package_list is a merge of inventory's and 'union_vars/{group,host}/*' package_list variables.
     - direct package URL
     - enable repos
     - copr repos
