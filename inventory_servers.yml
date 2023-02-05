@@ -86,7 +86,7 @@ all:
 
 # NOTE: package_list vars in corresponding host/group var files will be merged:
 # + union_vars/group/all.yml
-# + union_vars/group/server.yml
+# + union_vars/group/servers.yml
     package_list:
 #      - sshuttle
 #      - wireguard-tools
