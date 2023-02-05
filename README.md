@@ -67,7 +67,7 @@ The playbook can load dconf dump files from dconf directories (if any). To save 
 ```bash
 $ dconf dump <path> > dumpfile
 ```
-expected that dumps are located in the dconf files_repo's 'group/\<groupname\>/dconf/' and 'host/\<hostname\>/dconf/' directories with file names like '\<path\>' (used when creating dconf dump files) but '/' replaced with '__' and without the first and the last '/'\:
+expected that dump files are located in the 'dconf' files_repo's directories - 'group/\<groupname\>/dconf/' and 'host/\<hostname\>/dconf/' with file names like '\<path\>' (used when creating dconf dump files) but '/' replaced with '__' and without the first and the last '/'\:
 ```
 $ dconf dump /org/gnome/shell/extensions/dash-to-dock/ > ~/<files_dir>/group/workstation/dconf/org__gnome__shell__extensions__dash-to-dock
 ```
