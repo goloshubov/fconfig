@@ -4,7 +4,13 @@ Features:
 - sync .dotfiles and configs
   - The files are supposed to be in separate (and maybe private) git repositories - 'files_repos' inventory variable (an example is https://github.com/goloshubov/fconfig_files). See files_repo's directory structure below.
 - install software (from the lists):
-  - rpm packages (dnf). The final package_list can be obtained by combining (union) various package_list variables from 'union_vars/{group,host}/*'.
+  - rpm packages (dnf). 
+    - The final package_list can be obtained by combining (union) various package_list variables from 'union_vars/{group,host}/*'.
+    - direct package URL
+    - enable repos
+    - copr repos
+    - direct repo URL
+    - set mirror for particular repos
   - flatpaks
   - pip packages
   - cargo packages
