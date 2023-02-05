@@ -4,7 +4,7 @@ Features:
 - sync .dotfiles and configs
   - The files are supposed to be in separate (and maybe private) git repositories - 'files_repos' inventory variable (an example is https://github.com/goloshubov/fconfig_files). See files_repo's directory structure below.
 - install software:
-  - rpm packages (dnf). The final package_list can be merged by using different package_list variables from 'union_vars/{group,host}/*'.
+  - rpm packages (dnf). The final package_list can be obtained by combining various package_list variables from 'union_vars/{group,host}/*'.
   - flatpaks
   - pip packages
   - cargo packages
