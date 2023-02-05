@@ -19,6 +19,7 @@ Features:
 - configure GNOME desktop on workstations 
   - load dconf dump files
   - apply dconf key=value settings from the inventory
+- add user to groups
 
 Usage:
 ```bash
