@@ -20,4 +20,7 @@
   set_fact:
     package_list: "{{ package_list | default([]) | union( hostvars[inventory_hostname][inventory_hostname]['package_list'] ) }}"
 
+- debug:
+    msg: "package_list:  {{ package_list }}"
+
 ...

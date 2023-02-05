@@ -61,4 +61,24 @@ The playbook applies dconf settings in the following order:
 2. dconf dumps, host dir
 3. dconf, inventory (dconf_settings)
 
+---
+vars override / merge note:
+
+'Here is the order of precedence from least to greatest (the last listed variables override all other variables)'
+...
+inventory group_vars/all
+inventory group_vars/*
+inventory file
+inventory host_vars/*
+...
+
+The union_vars role adds merge option for some variables (package_list):
++ union_vars/{group,host}/*
+
+Meaning that the package_list var from the inventory will be merged with all corresponding union_vars/{group,host}/<name>.yml var files, eg:
++ union_vars/group/all.yml
++ union_vars/group/workstations.yml
++ union_vars/host/x390yoga.yml
+
+This might be usefull to split package list by corresponding group or host names (and to avoid using hash_behaviour).
 

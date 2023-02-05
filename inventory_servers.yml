@@ -55,101 +55,17 @@ all:
 #    setenabled_repo_list:
 
 
-    yum_repos_mirror: "http://mirror.yandex.ru"
-    yum_repos_tweaks:
-      - { path: "/etc/yum.repos.d/fedora.repo",
-          section: "fedora",
-          option: "baseurl",
-          value: "{{ yum_repos_mirror }}/fedora/linux/releases/$releasever/Everything/$basearch/os/" }
-      - { path: "/etc/yum.repos.d/fedora-updates.repo",
-          section: "updates",
-          option: "baseurl",  
-          value: "{{ yum_repos_mirror }}/fedora/linux/updates/$releasever/Everything/$basearch/" }
-      - { path: "/etc/yum.repos.d/fedora-modular.repo",
-          section: "fedora-modular",
-          option: "baseurl",  
-          value: "{{ yum_repos_mirror }}/fedora/linux/releases/$releasever/Modular/$basearch/os/" }
-      - { path: "/etc/yum.repos.d/fedora-updates-modular.repo",
-          section: "updates-modular",
-          option: "baseurl",  
-          value: "{{ yum_repos_mirror }}/fedora/linux/updates/$releasever/Modular/$basearch/" }
-      - { path: "/etc/yum.repos.d/rpmfusion-free.repo",
-          section: "rpmfusion-free",
-          option: "baseurl",  
-          value: "{{ yum_repos_mirror }}/fedora/rpmfusion/free/fedora/releases/$releasever/Everything/$basearch/os/" }
-      - { path: "/etc/yum.repos.d/rpmfusion-free-updates.repo",
-          section: "rpmfusion-free-updates",
-          option: "baseurl",  
-          value: "{{ yum_repos_mirror }}/fedora/rpmfusion/free/fedora/updates/$releasever/$basearch/" }
+# NOTE: already defined in group_vars/all.yml, re-define here to override
+#    yum_repos_mirror:
+#    yum_repos_tweaks:
 
 
-
-# NOTE: package_list vars in corresponding host/group var files will be merged:
+# NOTE: package_list union (merge) in case union_vars role used
+# package_list from this inventory will be merged with all corresponding union_vars/{group,host}/<name>.yml var files:
 # + union_vars/group/all.yml
 # + union_vars/group/servers.yml
-    package_list:
-#      - sshuttle
-#      - wireguard-tools
-#      - nmap-ncat
-      - bind-utils
-#      - rsync
-      - tmux
-#      - screen
-#      - git
-#      - knock
-#      - vim-enhanced
-#      - vim-nerdtree
-#      - awesome-vim-colorschemes
-#      - mc
-#      - curl
-#      - wget
-#      - htop
-      - powerline
-      - tmux-powerline
-      - vim-powerline
-#      - lm_sensors
-#      - python3-psutil
-      - tuned
-#      - powertop
-#      - apg
-#      - parallel
-#      - exa
-#      - dnf-utils
-#      - golang
-#      - rust
-#      - cargo
-#      - toolbox
-#      - jq
-#      - git-delta
-#      - mtr
-#      - openssl
-#      - perf
-#      - bpftrace
-#      - bcc
-#      - sysstat
-#      - fatrace
-#      - podman
-#      - skopeo
-#      - nethogs
-#      - dnstop
-#      - the_silver_searcher
-#      - rdiff-backup
-      - python3-pip
-#      - python3-pytelegrambotapi
-      - cockpit
-#      - cockpit-podman
-#      - cockpit-machines
-#      - cockpit-pcp
-      - cockpit-selinux
-#      - pv        # monitor the progress of data through a pipe
-#      - progress  # Linux tool to show progress for cp, mv, dd, ... (formerly known as cv) 
-#      - bat       # A cat(1) clone with wings. (Rust)
-#      - python3-devel
-#      - python3-pip
-#      - colorized-logs
-#      - clide  # colorize ASCII text
-      - watchdog
-      - nano
+#    package_list:
+#      - watchdog
 
 
     pip_list:

@@ -1,0 +1,129 @@
+package_list:
+  - sshuttle
+  - google-chrome-stable  # from google-chrome repo (fedora-workstation-repositories pkg)
+  - wireguard-tools
+  - nmap-ncat
+  - bind-utils
+  - rsync
+  - tmux
+  - screen
+  - tilix
+  - tilix-nautilus
+  - git
+  - knock
+  - vim-enhanced
+  - vim-nerdtree
+  - awesome-vim-colorschemes
+  - mc
+  - curl
+  - wget
+  - htop
+  - powerline
+  - tmux-powerline
+  - vim-powerline
+  - gnome-tweaks
+  - gnome-extensions-app
+  - gnome-shell-extension-apps-menu
+  - gnome-shell-extension-just-perfection
+  - gnome-shell-extension-background-logo
+  - gnome-shell-extension-dash-to-dock
+  - gnome-shell-extension-pomodoro
+  - gnome-shell-extension-appindicator
+  - gnome-shell-extension-launch-new-instance
+  - gnome-shell-extension-user-theme
+  - gnome-shell-extension-workspace-indicator
+  - gnome-shell-extension-openweather
+  - gnome-shell-extension-openweather
+  - gnome-shell-extension-window-list
+  - gnome-shell-extension-places-menu
+  - libdbusmenu   # for dash-to-dock
+  - virt-manager
+  - virt-viewer
+  - virt-what
+  - libvirt-client
+  - bijiben
+  - dconf-editor
+  - lm_sensors
+  - python3-psutil
+  - tuned
+  - powertop
+  - apg
+  - tango-icon-theme
+  - parallel
+  - exa
+  #- kubectl
+  - kubernetes-client
+  #- barrier
+  - dnf-utils
+  - firefox-wayland
+  - ffmpeg
+  - golang
+  - rust
+  - cargo
+  - toolbox
+  - jq
+  #- git-delta
+  - mtr
+  - wl-clipboard
+  - openssl
+  - perf
+  - bpftrace
+  - bcc
+  - sysstat
+  - hwloc-gui  #lstopo
+  - inotify-tools
+  - fatrace
+  #- minder
+  - podman
+  - skopeo
+  #- virtio-win
+  #- xdotool   #Fake keyboard/mouse input for X11
+  #- ydotool   #Fake keyboard/mouse input for Wayland
+  - nethogs
+  - dnstop
+  - the_silver_searcher
+  - rdiff-backup
+  - python3-pip
+  - python3-pytelegrambotapi
+  - scrcpy    #from zeno/scrcpy copr
+  - cockpit
+  - cockpit-podman
+  - cockpit-machines
+  - cockpit-pcp
+  - cockpit-selinux
+  - vim-jedi
+  - vim-go
+  - golang-x-tools-gopls    #for vim-go
+  - vim-ansible
+  - ranger      # console file manager
+  - perl-Image-ExifTool
+  - terraform      # from mroche/cloud-native-utilities copr repo
+  - xournalpp      # from luya/xournalpp copr repo, latest xournal++
+  - golang-github-docker-slim    # docker-slim tool
+  - docker-ce                # docker-ce   
+  - docker-ce-cli            # docker-ce  
+  - containerd.io            # docker-ce 
+  - docker-compose-plugin    # docker-ce  
+  - helix     # text editor. from varlad/helix copr repo
+  - crudini   # A utility for manipulating ini files
+  - pv        # monitor the progress of data through a pipe
+  - progress  # Linux tool to show progress for cp, mv, dd, ... (formerly known as cv) 
+  - bat       # A cat(1) clone with wings. (Rust)
+  #- grafana
+  #- go-task
+  - gcc
+  - java-17-openjdk 
+  - maven
+  - python3-devel
+  - python3-pip
+  - hadolint  # Dockerfile linter
+  - gitg   #git gui
+  - meld   #diff gui
+  - ShellCheck   # shell script static analysis tool (bash linter)
+  - colorized-logs
+  - clide  # colorize ASCII text
+  - vlc
+  - yamllint
+  - pylint
+
+...

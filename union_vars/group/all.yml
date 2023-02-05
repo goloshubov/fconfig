@@ -1,3 +1,78 @@
-# TODO:
 package_list:
-  - vim
+  - nmap-ncat
+  - bind-utils
+  - rsync
+  - tmux
+  - screen
+  - git
+  - vim-enhanced
+  - vim-nerdtree
+  - awesome-vim-colorschemes
+  - mc
+  - curl
+  - wget
+  - htop
+  - powerline
+  - tmux-powerline
+  - vim-powerline
+  - lm_sensors
+  - python3-psutil
+  - tuned
+  - powertop
+  - apg
+  - parallel
+  - exa
+  - dnf-utils
+  - golang
+  - rust
+  - cargo
+  - jq
+  - mtr
+  - openssl
+  - perf
+  - bpftrace
+  - bcc
+  - sysstat
+  - inotify-tools
+  #- podman
+  #- skopeo
+  - nethogs
+  - dnstop
+  - the_silver_searcher
+  - rdiff-backup
+  - python3-pip
+  #- python3-pytelegrambotapi
+  - cockpit
+  - cockpit-podman
+  - cockpit-machines
+  - cockpit-pcp
+  - cockpit-selinux
+  - vim-jedi
+  - vim-go
+  - golang-x-tools-gopls    #for vim-go
+  - vim-ansible
+  - ranger      # console file manager
+  #- terraform      # from mroche/cloud-native-utilities copr repo
+  #- golang-github-docker-slim    # docker-slim tool
+  #- helix     # text editor. from varlad/helix copr repo
+  - crudini   # A utility for manipulating ini files
+  - pv        # monitor the progress of data through a pipe
+  - progress  # Linux tool to show progress for cp, mv, dd, ... (formerly known as cv) 
+  - bat       # A cat(1) clone with wings. (Rust)
+  #- go-task
+  - gcc
+  - java-17-openjdk 
+  - maven
+  - python3-devel
+  - python3-pip
+  - hadolint  # Dockerfile linter
+  - gitg   #git gui
+  - meld   #diff gui
+  - ShellCheck   # shell script static analysis tool (bash linter)
+  - colorized-logs
+  - clide  # colorize ASCII text
+  - vlc
+  - yamllint
+  - pylint
+
+...
