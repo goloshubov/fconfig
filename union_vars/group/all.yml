@@ -43,8 +43,8 @@ package_list:
   - python3-pip
   #- python3-pytelegrambotapi
   - cockpit
-  - cockpit-podman
-  - cockpit-machines
+#  - cockpit-podman
+#  - cockpit-machines
   - cockpit-pcp
   - cockpit-selinux
   - vim-jedi
