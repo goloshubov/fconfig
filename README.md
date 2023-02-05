@@ -107,8 +107,8 @@ The union_vars role adds merge option for some variables (package_list):
 Meaning that the last listed package_list var will be merged with package_list vars from all corresponding union_vars/{group,host}/\<name\>.yml files, e.g.:
 ```
 + union_vars/group/all.yml
-+ union_vars/group/workstations.yml
-+ union_vars/host/x390yoga.yml
++ union_vars/group/<groupname>.yml
++ union_vars/host/<hostname>.yml
 ```
 
 This might be usefull to split package list by corresponding group or host names (and to avoid using hash_behaviour).
