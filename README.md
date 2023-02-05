@@ -16,11 +16,11 @@ Features:
   - cargo packages
   - go packages
   - ansible-galaxy collections
-- TODO: add roles for services/apps configuration.
+- add user to groups
 - configure GNOME desktop on workstations 
   - load dconf dump files
   - apply dconf key=value settings from the inventory
-- add user to groups
+- TODO: configure other services/apps.
 
 Usage:
 ```bash
