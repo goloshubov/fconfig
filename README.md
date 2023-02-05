@@ -1,4 +1,4 @@
-Ansible playbook that helps keeping one configuration on my fedora linux workstations and servers.
+Ansible playbook that helps keeping one configuration on my fedora linux workstations (and servers).
 
 Features:
 - sync .dotfiles and configs
@@ -16,6 +16,7 @@ Features:
   - cargo packages
   - go packages
   - ansible-galaxy collections
+- TODO: add roles for services/apps configuration.
 - configure GNOME desktop on workstations 
   - load dconf dump files
   - apply dconf key=value settings from the inventory
