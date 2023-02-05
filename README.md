@@ -85,7 +85,7 @@ The union_vars role adds merge option for some variables (package_list):
 + include_vars for union_vars/{group,host}/*
 ```
 
-Meaning that the package_list var from the inventory will be merged with all corresponding union_vars/{group,host}/<name>.yml var files, eg:
+Meaning that the package_list var from the inventory will be merged with all corresponding union_vars/{group,host}/\<name\>.yml var files, eg:
 ```
 + union_vars/group/all.yml
 + union_vars/group/workstations.yml
