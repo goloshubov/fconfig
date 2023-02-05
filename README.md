@@ -1,9 +1,19 @@
-Ansible playbook that helps keeping one configuration on my fedora linux workstations and servers by doing the following:
-- copy .dotfiles, configs. The files are supposed to be in separate (and maybe private) git repos - 'files_repos' inventory variable (an example is https://github.com/goloshubov/fconfig_files). See files_repo's directory structure below.
-- install software: rpm packages (dnf), flatpaks, pypi (pip), cargo, go, ansible-galaxy collections.
-- configure GNOME desktop on workstations (by loading dconf dump files, applying dconf key=value settings from the inventory)
-\
-\
+Ansible playbook that helps keeping one configuration on my fedora linux workstations and servers.
+
+Features:
+- sync .dotfiles and configs
+  - The files are supposed to be in separate (and maybe private) git repositories - 'files_repos' inventory variable (an example is https://github.com/goloshubov/fconfig_files). See files_repo's directory structure below.
+- install software:
+  - rpm packages (dnf). The final package_list can be merged by using different package_list variables from union_vars.
+  - flatpaks
+  - pip packages
+  - cargo packages
+  - go packages
+  - ansible-galaxy collections
+- configure GNOME desktop on workstations 
+  - load dconf dump files
+  - apply dconf key=value settings from the inventory
+
 Usage:
 ```bash
 $ git clone https://github.com/goloshubov/fconfig
