@@ -37,8 +37,10 @@ files_repos.repo  (git repository) directory structure:
 │   │   └── home
 ```
 The playbook applies dotfiles in the following order:
+```
 1. group dir
 2. host dir
+```
 
 ---
 Regarding dconf dump files:
@@ -47,38 +49,48 @@ The playbook can load dconf dump files from dconf directories (if any). To save 
 ```bash
 $ dconf dump <path> > dumpfile
 ```
-expected that dumps are located in the dconf files_repo's directories:\
-group/\<groupname\>/dconf/ and byHosname/\<hostname\>/dconf/\
-with the file names like '\<path>\' (used when creating dconf dump files) but where '/' replaced with '__' and without the first and the last '/'\
-e.g.\
-$ dconf dump /org/gnome/shell/extensions/dash-to-dock/ > ~/\<files_dir\>/group/workstation/dconf/org__gnome__shell__extensions__dash-to-dock\
-where filename is: org__gnome__shell__extensions__dash-to-dock\
-the dump file will be used in the playbook then, to load dconf dump:\
-$ dconf load -f /org/gnome/shell/extensions/dash-to-dock/ < ~/\<files_dir\>/group/workstation/dconf/org__gnome__shell__extensions__dash-to-dock\
-\
+expected that dumps are located in the dconf files_repo's directories:
+group/<groupname>/dconf/ and byHosname/<hostname>/dconf/
+with the file names like '<path>' (used when creating dconf dump files) but where '/' replaced with '__' and without the first and the last '/'\
+e.g.
+```
+$ dconf dump /org/gnome/shell/extensions/dash-to-dock/ > ~/<files_dir>/group/workstation/dconf/org__gnome__shell__extensions__dash-to-dock
+```
+where filename is: org__gnome__shell__extensions__dash-to-dock. The dump file will be used in the playbook then, to load dconf dump:
+```
+$ dconf load -f /org/gnome/shell/extensions/dash-to-dock/ < ~/<files_dir>/group/workstation/dconf/org__gnome__shell__extensions__dash-to-dock
+```
 The playbook applies dconf settings in the following order:
-1. dconf dumps, group dir
-2. dconf dumps, host dir
-3. dconf, inventory (dconf_settings)
+```
+1. group dir
+2. host dir
+3. inventory (dconf_settings)
+```
 
 ---
 vars override / merge note:
 
 'Here is the order of precedence from least to greatest (the last listed variables override all other variables)'
+```
 ...
 inventory group_vars/all
 inventory group_vars/*
 inventory file
 inventory host_vars/*
 ...
+```
 
 The union_vars role adds merge option for some variables (package_list):
-+ union_vars/{group,host}/*
+```
++ include_vars for union_vars/{group,host}/*
+```
 
 Meaning that the package_list var from the inventory will be merged with all corresponding union_vars/{group,host}/<name>.yml var files, eg:
+```
 + union_vars/group/all.yml
 + union_vars/group/workstations.yml
 + union_vars/host/x390yoga.yml
+```
 
 This might be usefull to split package list by corresponding group or host names (and to avoid using hash_behaviour).
 
