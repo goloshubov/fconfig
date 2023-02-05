@@ -86,6 +86,9 @@ all:
           value: "{{ yum_repos_mirror }}/fedora/rpmfusion/free/fedora/updates/$releasever/$basearch/" }
 
 
+# NOTE: package_list vars in corresponding host/group var files will be merged:
+# + union_vars/group/all.yml
+# + union_vars/group/workstations.yml
     package_list:
      # - sshuttle
      # - google-chrome-stable  # from google-chrome repo (fedora-workstation-repositories pkg)
