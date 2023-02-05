@@ -104,7 +104,7 @@ The union_vars role adds merge option for some variables (package_list):
 + include_vars for union_vars/{group,host}/*
 ```
 
-Meaning that the last listed package_list var will be merged with all corresponding package_list vars from union_vars/{group,host}/\<name\>.yml files, e.g.:
+Meaning that the last listed package_list var will be merged with package_list vars from all corresponding union_vars/{group,host}/\<name\>.yml files, e.g.:
 ```
 + union_vars/group/all.yml
 + union_vars/group/workstations.yml
