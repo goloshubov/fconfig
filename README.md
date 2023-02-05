@@ -5,7 +5,7 @@ Features:
   - The files are supposed to be in separate (and maybe private) git repositories - 'files_repos' inventory variable (an example is https://github.com/goloshubov/fconfig_files). See files_repo's directory structure below.
 - install software (from the lists):
   - rpm packages (dnf). 
-    - The final package_list is a merge of inventory's (or '{group,host}_vars) package_list and 'union_vars/{group,host}/*' package_list variables. See vars override / merge note below.
+    - The final package_list is a merge of inventory's and 'union_vars/{group,host}/*' package_list variables. See vars override / merge note below.
     - direct package URL
     - enable repos
     - copr repos
@@ -91,10 +91,10 @@ vars override / merge note:
 'Here is the order of precedence from least to greatest (the last listed variables override all other variables)'
 ```
 ...
-inventory group_vars/all
-inventory group_vars/*
+group_vars/all
+group_vars/*
 inventory file
-inventory host_vars/*
+host_vars/*
 ...
 ```
 
@@ -103,7 +103,7 @@ The union_vars role adds merge option for some variables (package_list):
 + include_vars for union_vars/{group,host}/*
 ```
 
-Meaning that the package_list var from the inventory will be merged with all corresponding union_vars/{group,host}/\<name\>.yml var files, eg:
+Meaning that the (last listed ^^) package_list var will be merged with all corresponding union_vars/{group,host}/\<name\>.yml var files, eg:
 ```
 + union_vars/group/all.yml
 + union_vars/group/workstations.yml
