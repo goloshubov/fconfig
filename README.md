@@ -88,6 +88,7 @@ The playbook applies dconf settings in the following order:
 ---
 vars override / merge note:
 
+According to ansible documentation,
 'Here is the order of precedence from least to greatest (the last listed variables override all other variables)'
 ```
 ...
