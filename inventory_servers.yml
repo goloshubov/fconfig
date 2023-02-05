@@ -16,15 +16,13 @@ all:
 
 
   vars:
-    ansible_user: goloshubov
-
-
     files_repos:
       - { repo: 'git@github.com:goloshubov/fconfig_files.git', localpath: '~/git/github/fconfig_files' }
       #- { repo: 'git@github.com:goloshubov/fconfig_files2.git', localpath: '~/git/github/fconfig_files2' }
 
 
 #    # add user to groups (after installing packages)
+#    user_name: goloshubov
 #    user_groups:
 #      - libvirt
 #      - docker

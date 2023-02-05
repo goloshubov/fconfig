@@ -13,7 +13,6 @@ all:
 
   vars:
     ansible_connection: local
-    ansible_user: goloshubov
 
 
     files_repos:
@@ -22,6 +21,7 @@ all:
 
 
     # add user to groups (after installing packages)
+    user_name: goloshubov
     user_groups:
       - libvirt
       - docker
@@ -193,7 +193,7 @@ all:
       "/org/gnome/shell/favorite-apps": "{{ favorite_apps }}"
       "/org/gnome/desktop/peripherals/mouse/natural-scroll": "true"
       "/org/gnome/desktop/peripherals/touchpad/natural-scroll": "true"
-#      "/org/gnome/desktop/background/picture-uri": "'file:///home/{{ ansible_user }}/Pictures/wallpapers/wallpaper.jpg'"
+#      "/org/gnome/desktop/background/picture-uri": "'file:///home/username/Pictures/wallpapers/wallpaper.jpg'"
       "/org/gnome/desktop/peripherals/touchpad/tap-to-click": "true"
       "/org/gtk/Settings/FileChooser/show-hidden": "true"
       "/org/gnome/nautilus/preferences/show-delete-permanently": "true"

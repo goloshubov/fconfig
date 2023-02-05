@@ -26,7 +26,7 @@ Usage:
 ```bash
 $ git clone https://github.com/goloshubov/fconfig
 $ cd fconfig
-$ vim inventory_workstations.yml        # edit inventory, change ansible_user, files_repos variables
+$ vim inventory_workstations.yml        # edit inventory, change user_name, files_repos variables, etc
 $ mkdir -p ~/git/github/fconfig_files   # create dirs (files_repos.localpath variables)
 
 # apply the configuration:
