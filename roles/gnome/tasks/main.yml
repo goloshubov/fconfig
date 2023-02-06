@@ -15,6 +15,12 @@
       include_tasks: dconf.yml
       loop: "{{ type_dconfdumps.results }}"
 
+    - name: Apply dconf  key-value settings
+      dconf:
+        key: '{{ item.key }}'
+        value: '{{ item.value }}'    
+      loop: "{{ lookup('ansible.builtin.dict', dconf_settings) }}"
+
     - name: Find dconf dump files in 'host' dir
       ansible.builtin.find:
         paths: "{{ item.localpath }}/host/{{ inventory_hostname }}/dconf/"
@@ -24,11 +30,5 @@
     - name: Load dconf dumps, 'host' dir
       include_tasks: dconf.yml
       loop: "{{ host_dconfdumps.results }}"
-
-    - name: Apply dconf  key-value settings
-      dconf:
-        key: '{{ item.key }}'
-        value: '{{ item.value }}'    
-      loop: "{{ lookup('ansible.builtin.dict', dconf_settings) }}"
 
 ...

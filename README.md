@@ -82,8 +82,8 @@ $ dconf load -f /org/gnome/shell/extensions/dash-to-dock/ < ~/<files_dir>/group/
 The playbook applies dconf settings in the following order:
 ```
 1. group dir
-2. host dir
 3. inventory (dconf_settings)
+2. host dir
 ```
 
 ---
