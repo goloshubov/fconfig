@@ -1,6 +1,5 @@
 ---
 
-
 - name: Apply workstation configuration
   hosts: workstations
   gather_facts: no
@@ -15,6 +14,5 @@
     - go
     - ansible
     - gnome
-
 
 ...

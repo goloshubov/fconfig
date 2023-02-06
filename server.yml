@@ -1,6 +1,5 @@
 ---
 
-
 - name: Apply server configuration
   hosts: servers
   gather_facts: no
@@ -9,6 +8,5 @@
     - dotfiles
     - packages
     - pip
-
 
 ...
