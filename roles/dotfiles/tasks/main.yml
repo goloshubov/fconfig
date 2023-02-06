@@ -1,6 +1,6 @@
 ---
 
-- name: dotfiles tasks
+- name: The dotfiles role's tasks
   tags:
     - dotfiles
     - configs
