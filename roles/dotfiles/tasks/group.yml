@@ -10,7 +10,7 @@
   synchronize:
     src: "{{ item[0].localpath }}/group/{{ item[1] }}/home/"
     dest: ~/
-  when: group_homedir.stat.existis
+  when: group_homedir.stat.exists
 # group/<group>/etc dir
 - name: Check etc dir (group)
   delegate_to: 127.0.0.1
