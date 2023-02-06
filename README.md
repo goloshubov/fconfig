@@ -5,7 +5,7 @@ Features:
   - The files are supposed to be in separate (and maybe private) git repositories - 'files_repos' inventory variable (an example is https://github.com/goloshubov/fconfig_files). See files_repo's directory structure below.
 - install software (from the lists):
   - rpm packages (dnf). 
-    - Splited package list. The final package_list merged with 'union_vars/{group,host}/*'. See vars override / merge note below.
+    - Splitted package list support. The final package_list can be merged with 'union_vars/{group,host}/*'. See vars override / merge note below.
     - direct package URL
     - enable repos
     - copr repos
@@ -67,14 +67,11 @@ The playbook can load dconf dump files from dconf directories (if any). To save 
 ```bash
 $ dconf dump <path> > dumpfile
 ```
-expected that dumps are located in the dconf files_repo's directories:
-group/<groupname>/dconf/ and byHosname/<hostname>/dconf/
-with the file names like '<path>' (used when creating dconf dump files) but where '/' replaced with '__' and without the first and the last '/'\
-e.g.
+expected that dump files are located in the 'dconf' files_repo's directories - 'group/\<groupname\>/dconf/' and 'host/\<hostname\>/dconf/' with file names like '\<path\>' (used when creating dconf dump files) but '/' replaced with '__' and without the first and the last '/'\:
 ```
 $ dconf dump /org/gnome/shell/extensions/dash-to-dock/ > ~/<files_dir>/group/workstation/dconf/org__gnome__shell__extensions__dash-to-dock
 ```
-where filename is: org__gnome__shell__extensions__dash-to-dock. The dump file will be used in the playbook then, to load dconf dump:
+where filename is: 'org__gnome__shell__extensions__dash-to-dock'. It will be loaded in 'gnome' role:
 ```
 $ dconf load -f /org/gnome/shell/extensions/dash-to-dock/ < ~/<files_dir>/group/workstation/dconf/org__gnome__shell__extensions__dash-to-dock
 ```
