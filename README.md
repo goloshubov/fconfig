@@ -20,7 +20,11 @@ Features:
 - configure GNOME desktop on workstations 
   - load dconf dump files
   - apply dconf key-value settings
-- TODO: configure other services/apps.
+
+TODO/consideration:
+- configure other services/apps
+- debian/ubuntu support
+- merge support for other package lists (flatpak,pip,cargo,go)
 
 Usage:
 ```bash
