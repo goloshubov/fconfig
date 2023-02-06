@@ -5,7 +5,9 @@
   become: yes
   command: usermod -a -G '{{ item }}'  '{{ user_name }}'
   loop: "{{ user_groups }}"
-  tags: configs
+  tags:
+    - groups
+    - configs
 
 
 ...
