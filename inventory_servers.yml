@@ -5,7 +5,7 @@ all:
         gw:
         nfs:
 
-    k8s_cli:
+    k8s:
       hosts:
         kind:
 
