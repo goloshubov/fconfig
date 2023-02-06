@@ -5,26 +5,29 @@
     - configs
     - gnome
   block:
-    - name: find dconf dump files in 'group' dir
+    - name: Find dconf dump files in 'group' dir
       ansible.builtin.find:
-        paths: "{{ files_dir }}/group/{{ type }}/dconf/"
+        paths: "{{ item[0].localpath }}/group/{{ item[1] }}/dconf/"
         file_type: file
       register: type_dconfdumps
-    - name: configure GNOME. Load dconf dumps, 'group' dir
-      shell: "dconf load -f  /{{ item.path | basename | regex_replace('__','/') }}/ <  {{ files_dir}}/group/{{ type }}/dconf/{{ item.path | basename }}" 
-      loop: "{{ type_dconfdumps.files }}"
+      loop: "{{ files_repos | product(group_names) | list }}"
+    - name: Load dconf dumps, 'group' dir
+      include_tasks: dconf.yml
+      loop: "{{ type_dconfdumps.results }}"
 
-    - name: find dconf dump files in 'host' dir
+    - name: Find dconf dump files in 'host' dir
       ansible.builtin.find:
-        paths: "{{ files_dir }}/host/{{ inventory_hostname }}/dconf/"
+        paths: "{{ item.localpath }}/host/{{ inventory_hostname }}/dconf/"
         file_type: file
       register: host_dconfdumps
-    - name: configure GNOME. Load dconf dumps, 'host' dir
-      shell: "dconf load -f  /{{ item.path | basename | regex_replace('__','/') }}/ <  {{ files_dir}}/host/{{ inventory_hostname }}/dconf/{{ item.path | basename }}" 
-      loop: "{{ host_dconfdumps.files }}"
+      loop: "{{ files_repos }}"
+    - debug:
+        msg: "{{ host_dconfdumps }}"
+    - name: Load dconf dumps, 'host' dir
+      include_tasks: dconf.yml
+      loop: "{{ host_dconfdumps.results }}"
 
-
-    - name: configure GNOME (dconf, inventory keys,values)
+    - name: Apply dconf  key-value settings
       dconf:
         key: '{{ item.key }}'
         value: '{{ item.value }}'    
