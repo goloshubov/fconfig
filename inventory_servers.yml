@@ -9,10 +9,14 @@ all:
       hosts:
         kind:
 
+    k8s_cli:
+      children:
+        k8s:
+
     servers:
       children:
         infra:
-        k8s_cli:
+        k8s:
 
 
   vars:
