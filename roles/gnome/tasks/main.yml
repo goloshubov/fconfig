@@ -21,8 +21,6 @@
         file_type: file
       register: host_dconfdumps
       loop: "{{ files_repos }}"
-    - debug:
-        msg: "{{ host_dconfdumps }}"
     - name: Load dconf dumps, 'host' dir
       include_tasks: dconf.yml
       loop: "{{ host_dconfdumps.results }}"
