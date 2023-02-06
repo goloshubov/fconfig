@@ -1,3 +1,5 @@
+---
+
 yum_repos_mirror: "http://mirror.yandex.ru"
 yum_repos_tweaks:
   - { path: "/etc/yum.repos.d/fedora.repo",
@@ -24,3 +26,5 @@ yum_repos_tweaks:
       section: "rpmfusion-free-updates",
       option: "baseurl",  
       value: "{{ yum_repos_mirror }}/fedora/rpmfusion/free/fedora/updates/$releasever/$basearch/" }
+
+...

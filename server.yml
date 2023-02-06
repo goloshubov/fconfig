@@ -1,7 +1,8 @@
 ---
 
 
-- hosts: servers
+- name: Apply server configuration
+  hosts: servers
   gather_facts: no
   roles:
     - union_vars  # merge package_list

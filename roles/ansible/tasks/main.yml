@@ -1,12 +1,14 @@
 ---
 
 
-- name: install ansible-galaxy collections
+- name: Install ansible-galaxy collections
   community.general.ansible_galaxy_install:
     type: collection
     name: '{{ item }}'
   loop: "{{ ansible_galaxy_collection_list }}"
-  tags: [ software, ansible ]
+  tags:
+    - software
+    - ansible
 
 
 ...

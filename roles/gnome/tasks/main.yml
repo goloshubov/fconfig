@@ -18,16 +18,17 @@
     - name: configure GNOME. Load dconf dumps, 'host' dir
       shell: "dconf load -f  /{{ item.path | basename | regex_replace('__','/') }}/ <  {{ files_dir}}/host/{{ inventory_hostname }}/dconf/{{ item.path | basename }}" 
       loop: "{{ host_dconfdumps.files }}"
-    
-    
+
+
     - name: configure GNOME (dconf, inventory keys,values)
       dconf:
         key: '{{ item.key }}'
         value: '{{ item.value }}'    
       loop: "{{ lookup('ansible.builtin.dict', dconf_settings) }}"
 
-
-  tags: [ configs, gnome ]
+  tags:
+    - configs
+    - gnome
 
 
 ...
