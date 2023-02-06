@@ -1,6 +1,10 @@
 ---
 
-- block:
+- name: The union_vars role's tasks
+  tags:
+    - sowtware
+    - packages
+  block:
     - name: Check files exist
       stat:
         path: "./union_vars/group/{{ item }}.yml"
@@ -35,9 +39,5 @@
       set_fact:
         package_list: "{{ package_list | default([]) | union( hostvars[inventory_hostname][inventory_hostname].package_list ) }}"
       when: union_vars_host.stat.exists and hostvars[inventory_hostname][inventory_hostname].package_list is defined
-
-  tags:
-    - sowtware
-    - packages
 
 ...

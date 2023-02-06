@@ -1,17 +1,17 @@
 ---
 
-
-- block:
+- name: Packages tasks
+  tags: 
+    - software
+    - packages
+  become: true
+  block:
     - include_tasks: redhat.yml
 #      when: ansible_os_family == "RedHat"
 #
 #    - include_tasks: debian.yml
 #      when: ansible_os_family == "Debian"
  
-  tags: 
-    - software
-    - packages
-  become: true
 
 
 ...

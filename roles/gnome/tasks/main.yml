@@ -1,6 +1,10 @@
 ---
 
-- block:
+- name: GNOME tasks
+  tags:
+    - configs
+    - gnome
+  block:
     - name: find dconf dump files in 'group' dir
       ansible.builtin.find:
         paths: "{{ files_dir }}/group/{{ type }}/dconf/"
@@ -25,10 +29,5 @@
         key: '{{ item.key }}'
         value: '{{ item.value }}'    
       loop: "{{ lookup('ansible.builtin.dict', dconf_settings) }}"
-
-  tags:
-    - configs
-    - gnome
-
 
 ...
