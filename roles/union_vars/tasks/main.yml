@@ -15,7 +15,6 @@
         path: "union_vars/host/{{ inventory_hostname }}.yml"
       register: union_vars_host
   
-  
     - name: Include groups vars to merge specific vars (package_list)
       include_vars:
         file: "{{ item.stat.path }}"
@@ -27,7 +26,6 @@
         file: "union_vars/host/{{ inventory_hostname }}.yml"
         name: "{{ inventory_hostname }}"
       when: union_vars_host.stat.exists
-  
   
     # package_list
     - name: Merge package_list (groups)
