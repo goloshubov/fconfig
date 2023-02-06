@@ -1,26 +1,45 @@
 ---
 
-- name: include groups vars to merge specific vars (package_list)
-  include_vars:
-    file: "union_vars/group/{{ item }}.yml"
-    name: "{{ item }}"
-  loop: "{{ ['all'] | union(group_names) }}"
-- name: include host vars to merge specific vars (package_list)
-  include_vars:
-    file: "union_vars/host/{{ inventory_hostname }}.yml"
-    name: "{{ inventory_hostname }}"
+
+- block:
+  - name: check files exist
+    stat:
+      path: "./union_vars/group/{{ item }}.yml"
+    register: union_vars_group
+    loop: "{{ ['all'] | union(group_names) }}"
+  - name: check files exist
+    stat:
+      path: "union_vars/host/{{ inventory_hostname }}.yml"
+    register: union_vars_host
 
 
-# package_list
-- name: merge package_list (groups)
-  set_fact:
-    package_list: "{{ package_list | default([]) | union(item) }}"
-  loop: "{{ ['all'] | union (group_names) | map('extract', hostvars[inventory_hostname], 'package_list') | list }}"
-- name: merge package_list (host)
-  set_fact:
-    package_list: "{{ package_list | default([]) | union( hostvars[inventory_hostname][inventory_hostname]['package_list'] ) }}"
+  - name: include groups vars to merge specific vars (package_list)
+    include_vars:
+      file: "{{ item.stat.path }}"
+      name: "{{ item.item }}"
+    when: item.stat.exists  == True
+    loop: "{{ union_vars_group.results }}"
+  - name: include host vars to merge specific vars (package_list)
+    include_vars:
+      file: "union_vars/host/{{ inventory_hostname }}.yml"
+      name: "{{ inventory_hostname }}"
+    when: union_vars_host.stat.exists == True
 
-- debug:
-    msg: "package_list:  {{ package_list }}"
+
+  # package_list
+  - name: merge package_list (groups)
+    set_fact:
+      package_list: "{{ package_list | default([]) | union ( hostvars[inventory_hostname][item.item].package_list ) }}"
+    when: item.stat.exists == True and hostvars[inventory_hostname][item.item].package_list is defined
+    loop: "{{ union_vars_group.results }}"
+  - name: merge package_list (host)
+    set_fact:
+      package_list: "{{ package_list | default([]) | union( hostvars[inventory_hostname][inventory_hostname].package_list ) }}"
+    when: union_vars_host.stat.exists == True and hostvars[inventory_hostname][inventory_hostname].package_list is defined
+
+  tags:
+    - sowtware
+    - packages
+
 
 ...

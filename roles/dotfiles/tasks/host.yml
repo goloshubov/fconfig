@@ -10,7 +10,7 @@
   synchronize:
     src: "{{ item.localpath }}/host/{{ inventory_hostname }}/home/"
     dest: ~/
-  when: host_homedir.stat.islnk is defined
+  when: host_homedir.stat.exists == True
 # host/<hostname>/etc dir
 - name: check etc dir (host)
   delegate_to: 127.0.0.1
@@ -25,6 +25,6 @@
     dest: /etc/
     owner: false
     group: false
-  when: host_etcdir.stat.islnk is defined
+  when: host_etcdir.stat.exists == True
 
 ...

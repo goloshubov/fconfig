@@ -67,7 +67,7 @@ all:
 # + union_vars/group/all.yml
 # + union_vars/group/workstations.yml
 #    package_list:
-#      - 
+#      - vim
 
 
     flatpak_repos:
