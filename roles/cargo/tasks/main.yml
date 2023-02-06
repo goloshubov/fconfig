@@ -1,12 +1,10 @@
 ---
 
-
-- name: install cargo packages
+- name: Install cargo packages
   command: cargo install '{{ item }}'
   loop: "{{ cargo_list }}"
   tags:
     - software
     - cargo
-
 
 ...

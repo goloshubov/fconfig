@@ -1,12 +1,10 @@
 ---
 
-
 - name: install go packages
   command: go install '{{ item }}'@latest
   loop: "{{ go_list }}"
   tags:
     - software
     - go
-
 
 ...

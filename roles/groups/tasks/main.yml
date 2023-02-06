@@ -1,13 +1,11 @@
 ---
 
-
-- name: add user to group
+- name: Add user to group
   become: yes
   command: usermod -a -G '{{ item }}'  '{{ user_name }}'
   loop: "{{ user_groups }}"
   tags:
     - groups
     - configs
-
 
 ...

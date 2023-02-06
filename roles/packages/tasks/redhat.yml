@@ -1,6 +1,5 @@
 ---
 
-
 - debug:
     msg: "package_list:  {{ package_list }}"
 
@@ -79,5 +78,4 @@
     name: "{{ package_list }}"
   when: package_list is defined
  
-
 ...
