@@ -3,45 +3,37 @@
 - debug:
     msg: "package_list:  {{ package_list }}"
 
-- name: enable copr repos
+- name: Enable copr repos
   command: dnf copr enable '{{ item }}' -y
   loop:  "{{ copr_list }}"
-  tags: 
-    - software
-    - package-repos
-  when:  copr_listi is defined
+  tags: package-repos
+  when: copr_list is defined
 
-- name: install other repos
+- name: Install other repos
   command: dnf config-manager --add-repo '{{ item }}' -y
   loop: "{{ other_repos_list }}"
-  tags:
-    - package-repos
+  tags: package-repos
   when: other_repos_list is defined
 
-- name: install packages (direct link)
+- name: Install packages (direct link)
   dnf:
     state: latest
     name: "{{ direct_package_list }}"
     disable_gpg_check: true
-  tags:
-    - package-repos
+  tags: package-repos
   when: direct_package_list is defined
 
-- name: install prerequisite packages (repos)
+- name: Install prerequisite packages (repos)
   dnf:
     state: latest
     name: "{{ prerequisite_packages_list }}"
-  tags:
-    - software
-    - package-repos
-    - packages
+  tags: package-repos
   when: prerequisite_packages_list is defined
 
-- name: enable repos
+- name: Enable repos
   command: dnf config-manager --set-enabled "{{ item }}"
   loop: "{{ setenabled_repo_list }}"
-  tags:
-    - package-repos
+  tags: package-repos
   when: setenabled_repo_list is defined
 
 - name: repo_tweaks. delete mutually exclusive value (metalink|baseurl)
@@ -72,7 +64,7 @@
     - package-repos-tweaks
   when: yum_repos_tweaks is defined 
 
-- name: install packages
+- name: Install packages
   dnf:
     state: latest
     name: "{{ package_list }}"

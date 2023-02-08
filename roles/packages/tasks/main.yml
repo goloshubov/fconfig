@@ -6,10 +6,11 @@
     - packages
   become: true
   block:
-    - include_tasks: redhat.yml
-#      when: ansible_os_family == "RedHat"
-#
-#    - include_tasks: debian.yml
-#      when: ansible_os_family == "Debian"
+    # we need import here (not include) to respect inner tags
+    - import_tasks: redhat.yml
+      when: ansible_os_family == "RedHat"
+
+    - import_tasks: debian.yml
+      when: ansible_os_family == "Debian"
 
 ...
