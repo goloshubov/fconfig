@@ -60,8 +60,9 @@ files_repos.repo  (git repository) directory structure:
 ```
 The playbook applies dotfiles in the following order:
 ```
-1. group dir
-2. host dir
+group/all
+group/*
+host/*
 ```
 
 ---
@@ -81,9 +82,10 @@ $ dconf load -f /org/gnome/shell/extensions/dash-to-dock/ < ~/<files_dir>/group/
 ```
 The playbook applies dconf settings in the following order:
 ```
-1. group dir
-3. inventory (dconf_settings)
-2. host dir
+group/all
+group/*
+inventory (dconf_settings)
+host/*
 ```
 
 ---
