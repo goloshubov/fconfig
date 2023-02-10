@@ -149,6 +149,7 @@ all:
 #      - pup       # Command-line HTML parsing tool
 #      - bat       # A cat(1) clone with wings. (Rust)      # already in package_list
       - tomato-toml  # crudini-like tool but for toml
+#      - coreutils
 
     go_list:
       - github.com/antonmedv/llama   # terminal file manager
