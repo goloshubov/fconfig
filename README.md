@@ -1,6 +1,7 @@
+# fconfig
 Ansible playbook that helps keeping one configuration on my fedora linux workstations (and servers).
 
-Features:
+## Features:
 - sync .dotfiles and configs
   - The files are supposed to be in separate (and maybe private) git repositories - 'files_repos' inventory variable (an example is https://github.com/goloshubov/fconfig_files). See files_repo's directory structure below.
 - install software (from the lists):
@@ -21,12 +22,12 @@ Features:
   - load dconf dump files
   - apply dconf key-value settings
 
-TODO/consideration:
+## TODO/consider:
 - configure other services/apps
 - debian/ubuntu support
 - merge support for other package lists (flatpak,pip,cargo,go)
 
-Usage:
+## Usage:
 ```bash
 $ git clone https://github.com/goloshubov/fconfig
 $ cd fconfig
@@ -43,7 +44,6 @@ $ ansible-playbook -i ./inventory_workstations.yml workstation.yml --tags packag
 
 ```
 
----
 files_repos.repo  (git repository) directory structure:
 ```
 .
@@ -65,8 +65,7 @@ group/*
 host/*
 ```
 
----
-Regarding dconf dump files:
+## dconf dump files
 
 The playbook can load dconf dump files from dconf directories (if any). To save dconf dump:
 ```bash
@@ -88,7 +87,8 @@ inventory file (dconf_settings)
 host/*/dconf/*
 ```
 
----
+
+## vars 
 vars override / merge note:
 
 According to ansible documentation,
