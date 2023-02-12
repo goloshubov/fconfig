@@ -76,5 +76,6 @@ package_list:
   - vlc
   - yamllint
   - pylint
+  - python3-ruamel-yaml
 
 ...
