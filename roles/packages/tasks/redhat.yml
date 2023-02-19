@@ -4,9 +4,13 @@
     msg: "package_list:  {{ package_list }}"
 
 - name: Enable copr repos
-  command: dnf copr enable '{{ item }}' -y
+  community.general.copr:
+    name: "{{ item }}"
+    state: enabled
   loop:  "{{ copr_list }}"
-  tags: package-repos
+  tags:
+    - package-repos
+    - package-repos-copr
   when: copr_list is defined
 
 - name: Install other repos
