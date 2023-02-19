@@ -7,9 +7,11 @@
     path: "{{ item.localpath }}/host/{{ inventory_hostname }}/home/"
   register: host_homedir
 - name: Sync home dir (host)
-  synchronize:
+  ansible.posix.synchronize:
     src: "{{ item.localpath }}/host/{{ inventory_hostname }}/home/"
     dest: ~/
+    checksum: true
+    times: false
   when: host_homedir.stat.exists
 # host/<hostname>/etc dir
 - name: Check etc dir (host)
@@ -19,11 +21,13 @@
   register: host_etcdir
 - name: Sync etc dir (host)
   become: true
-  synchronize:
+  ansible.posix.synchronize:
     src: "{{ item.localpath }}/host/{{ inventory_hostname }}/etc/"
     dest: /etc/
     owner: false
     group: false
+    checksum: true
+    times: false
   when: host_etcdir.stat.exists
 
 ...
