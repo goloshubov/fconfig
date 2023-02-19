@@ -2,8 +2,10 @@
 
 - name: Add user to group
   become: yes
-  command: usermod -a -G '{{ item }}'  '{{ user_name }}'
-  loop: "{{ user_groups }}"
+  ansible.builtin.user:
+    name: "{{ user_name }}"
+    groups: "{{ user_groups }}"
+    append: true
   tags:
     - groups
     - configs

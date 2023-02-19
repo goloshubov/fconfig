@@ -1,8 +1,9 @@
 ---
 
 - name: Install cargo packages
-  command: cargo install '{{ item }}'
-  loop: "{{ cargo_list }}"
+  community.general.cargo:
+    state: latest
+    name: "{{ cargo_list }}"
   tags:
     - software
     - cargo

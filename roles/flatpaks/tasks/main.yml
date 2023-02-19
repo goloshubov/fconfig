@@ -17,6 +17,7 @@
     - name: Enable flathub remote
       become: yes
       command: flatpak remote-modify --enable --no-filter flathub
+      changed_when: False
     
     - name: Install flatpaks
       flatpak:
