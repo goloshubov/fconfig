@@ -127,5 +127,6 @@ package_list:
   - vlc
   - yamllint
   - pylint
+  - transmission
 
 ...
