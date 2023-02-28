@@ -128,5 +128,6 @@ package_list:
   - yamllint
   - pylint
   - transmission
+  - python3-testinfra
 
 ...
