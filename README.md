@@ -31,16 +31,16 @@ Ansible playbook that helps keeping one configuration on my fedora linux worksta
 ```bash
 $ git clone https://github.com/goloshubov/fconfig
 $ cd fconfig
-# edit inventory, variables: inventory_workstations.yml group_vars/* union_vars/*
+# edit inventory, variables: inventory_workstations.ini group_vars/* union_vars/*
 $ mkdir -p ~/git/github/fconfig_files   # create dirs (files_repos.localpath variables)
 
 # apply the configuration:
-$ ansible-playbook -i ./inventory_workstations.yml workstation.yml
+$ ansible-playbook -i ./inventory_workstations.ini workstation.yml
 
 # or apply it partialy:
-$ ansible-playbook -i ./inventory_workstations.yml workstation.yml --list-tags
-$ ansible-playbook -i ./inventory_workstations.yml workstation.yml --tags dotfiles
-$ ansible-playbook -i ./inventory_workstations.yml workstation.yml --tags packages,flatpaks
+$ ansible-playbook -i ./inventory_workstations.ini workstation.yml --list-tags
+$ ansible-playbook -i ./inventory_workstations.ini workstation.yml --tags dotfiles
+$ ansible-playbook -i ./inventory_workstations.ini workstation.yml --tags packages,flatpaks
 
 ```
 
