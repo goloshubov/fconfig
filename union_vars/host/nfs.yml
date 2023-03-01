@@ -1,7 +1,0 @@
----
-
-# TEST
-package_list:
-  - cowsay
-
-...

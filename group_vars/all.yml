@@ -1,5 +1,10 @@
 ---
 
+files_repos:
+  - { repo: 'git@github.com:goloshubov/fconfig_files.git', localpath: '~/git/github/fconfig_files' }
+  #- { repo: 'git@github.com:goloshubov/fconfig_files2.git', localpath: '~/git/github/fconfig_files2' }
+
+
 yum_repos_mirror: "http://mirror.yandex.ru"
 yum_repos_tweaks:
   - { path: "/etc/yum.repos.d/fedora.repo",
