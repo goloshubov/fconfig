@@ -23,7 +23,7 @@ Ansible playbook that helps keeping one configuration on my fedora linux worksta
   - apply dconf key-value settings
 
 ## TODO/consider:
-- complete package_list var separation: union_vars/group/all.yml + group_vars/*
+- complete package_list var separation: union_vars/group/all.yml(common) + group_vars/*(group specific)
 - configure other services/apps
 - debian/ubuntu support
 - merge support for other package lists (flatpak,pip,cargo,go)
