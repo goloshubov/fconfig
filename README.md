@@ -36,7 +36,7 @@ $ cd fconfig
 $ mkdir -p ~/git/github/fconfig_files   # create dirs (files_repos.localpath variables)
 
 # apply configuration on local workstation
-$ ansible-playbook -i ./inventory_workstations.ini workstation.yml -e ansible_connection=local --limit <hostname> 
+$ ansible-playbook -i ./inventory_workstations.ini workstation.yml -e ansible_connection=local --limit $(hostname)
 
 # or on whole group
 $ ansible-playbook -i ./inventory_workstations.ini workstation.yml
