@@ -35,7 +35,10 @@ $ cd fconfig
 # edit inventory, variables: inventory_workstations.ini group_vars/* union_vars/*
 $ mkdir -p ~/git/github/fconfig_files   # create dirs (files_repos.localpath variables)
 
-# apply the configuration:
+# apply configuration on local workstation
+$ ansible-playbook -i ./inventory_workstations.ini workstation.yml -e ansible_connection=local --limit <hostname> 
+
+# or on whole group
 $ ansible-playbook -i ./inventory_workstations.ini workstation.yml
 
 # or apply it partialy:
