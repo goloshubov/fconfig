@@ -42,7 +42,7 @@ $ ansible-playbook -i ./inventory_workstations.ini workstation.yml -e ansible_co
 $ ansible-playbook -i ./inventory_workstations.ini workstation.yml
 
 # or apply it partialy:
-$ ansible-playbook -i ./inventory_workstations.ini workstation.yml --list-tags
+# ansible-playbook -i ./inventory_workstations.ini workstation.yml --list-tags
 $ ansible-playbook -i ./inventory_workstations.ini workstation.yml --tags dotfiles
 $ ansible-playbook -i ./inventory_workstations.ini workstation.yml --tags packages,flatpaks
 
