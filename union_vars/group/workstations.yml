@@ -129,5 +129,6 @@ package_list:
   - pylint
   - transmission
   - python3-testinfra
+  - webapp-manager     # from kylegospo/webapp-manage copr
 
 ...
