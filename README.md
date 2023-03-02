@@ -6,7 +6,7 @@ Ansible playbook that helps keeping one configuration on my fedora linux worksta
   - The files are supposed to be in separate (and maybe private) git repositories - 'files_repos' inventory variable (an example is https://github.com/goloshubov/fconfig_files). See files_repo's directory structure below.
 - install software (from the lists):
   - rpm packages (dnf). 
-    - Splitted package list support. The final package_list can be merged with 'union_vars/{group,host}/*'. See vars override / merge note below.
+    - Merge (split) package list support. See vars override / merge note below.
     - direct package URL
     - enable repos
     - copr repos
@@ -111,7 +111,7 @@ The union_vars role adds merge option for some variables (package_list):
 + include_vars for union_vars/{group,host}/*
 ```
 
-Meaning that the last listed package_list var will be merged with package_list vars from all corresponding union_vars/{group,host}/\<name\>.yml files:
+Meaning that he final package_list variable will be a merge of last listed variable from group_var or inventory and and corresponding variables from 'union_vars/{group,host}/*
 ```
 + union_vars/group/all.yml
 + union_vars/group/<groupname>.yml
