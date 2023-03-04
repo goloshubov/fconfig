@@ -76,6 +76,7 @@ files (configs and dotfiles) needs to be located in separate git repositories (o
             └── templates
 ```
 The etc/* and home/* dirs will be synced/templated with /etc/* and ~/* dirs on a appropriate machine (according to its inventory hostname and groupname).\
+Templates are stored with .j2 extension, deployed without it.\
 The dconf dir is a store for dconf dump files (GNOME configuration).
 
 The playbook applies dotfiles in the following order:
