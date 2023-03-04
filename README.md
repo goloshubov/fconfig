@@ -47,9 +47,9 @@ $ ansible-playbook -i ./inventory workstation.yml --tags dotfiles
 $ ansible-playbook -i ./inventory workstation.yml --tags packages,flatpaks
 $ ansible-playbook -i ./inventory workstation.yml --tags software --skip-tags cargo
 
-# or just use bash aliases (which are defined in dotfiles)
-# fconfig_local_ws
-# fconfig_local_ws_dotfiles
+# or just use bash aliases later (which are defined in dotfiles)
+$ fconfig_local_ws
+$ fconfig_local_ws_dotfiles
 ```
 
 ## files repos
