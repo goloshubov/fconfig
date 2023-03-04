@@ -7,12 +7,12 @@
   block:
     - name: Check files exist
       stat:
-        path: "inentory/union_vars/group/{{ item }}.yml"
+        path: "inventory/union_vars/group/{{ item }}.yml"
       register: union_vars_group
       loop: "{{ ['all'] | union(group_names) }}"
     - name: Check files exist
       stat:
-        path: "inentory/union_vars/host/{{ inventory_hostname }}.yml"
+        path: "inventory/union_vars/host/{{ inventory_hostname }}.yml"
       register: union_vars_host
   
     - name: Include groups vars to merge specific vars (package_list)
