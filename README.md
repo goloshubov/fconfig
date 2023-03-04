@@ -3,7 +3,8 @@ Ansible playbook that helps avoiding configuration drifts on my fedora linux wor
 
 ## Features:
 - sync .dotfiles and configs
-  - The files are supposed to be in separate (and maybe private) git repositories - 'files_repos' variable (an example is https://github.com/goloshubov/fconfig_files). See files_repo's directory structure below.
+  - files and templates support, recursive
+  - separate dotfiles git repositories. An example is https://github.com/goloshubov/fconfig_files See files_repo's directory structure below.
 - install software:
   - rpm packages (dnf). 
     - Merge (split) package list support. See vars override / merge note below.
@@ -85,6 +86,7 @@ group/all
 group/*
 host/*
 ```
+An example is https://github.com/goloshubov/fconfig_files
 
 ## dconf dump files
 
