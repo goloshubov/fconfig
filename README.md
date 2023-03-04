@@ -65,15 +65,15 @@ files (configs and dotfiles) needs to be located in separate git repositories (o
 │       └── home
 │           ├── files
 │           └── templates
-├── host
-│   └── <hostname>
-│       ├── dconf
-│       ├── etc
-│       │   ├── files
-│       │   └── templates
-│       └── home
-│           ├── files
-│           └── templates
+└── host
+    └── <hostname>
+        ├── dconf
+        ├── etc
+        │   ├── files
+        │   └── templates
+        └── home
+            ├── files
+            └── templates
 ```
 The etc/* and home/* dirs will be synced/templated with /etc/* and ~/* dirs on a appropriate machine (according to its inventory hostname and groupname).\
 The dconf dir is a store for dconf dump files (GNOME configuration).
