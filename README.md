@@ -49,7 +49,7 @@ $ ansible-playbook -i ./inventory workstation.yml --tags software --skip-tags ca
 ```
 
 ## files repos
-files (configs and dotfiles) needs to be located in separate git repositories (one or many). The list files_repos variable is defined in inventory/group_vars/all.yml. Here is expected repo directory structure, notice that all supported dirs (dconf, etc, home) are not mandatory:
+files (configs and dotfiles) needs to be located in separate git repositories (one or many). The files_repos variable is defined in inventory/group_vars/all.yml. Here is expected repo directory structure, notice that all supported dirs (dconf, etc, home) are not mandatory:
 ```
 .
 ├── group
