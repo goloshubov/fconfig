@@ -4,7 +4,7 @@
   hosts: all
   tasks:
     - debug:
-        msg: "host: {{ inventory_hostname }} groups: {{ group_names }}  tags: {{ hostvars[inventory_hostname].ansible_run_tags }}"
+        msg: "host: {{ inventory_hostname }} groups: {{ group_names }}  ansible_run_tags: {{ hostvars[inventory_hostname].ansible_run_tags }}"
       tags: always
 
 - name: confirmation
