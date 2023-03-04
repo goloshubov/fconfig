@@ -45,7 +45,7 @@ $ ansible-playbook -i ./inventory workstation.yml
 # ansible-playbook -i ./inventory workstation.yml --list-tags
 $ ansible-playbook -i ./inventory workstation.yml --tags dotfiles
 $ ansible-playbook -i ./inventory workstation.yml --tags packages,flatpaks
-
+$ ansible-playbook -i ./inventory workstation.yml --tags software --skip-tags cargo
 ```
 
 files_repos.repo  (git repository) directory structure:
