@@ -34,7 +34,6 @@
   when: group_etcdir.stat.exists
 
 
-
 # Templates
 # group/<group>/home/templates dir
 - name: Create directories. group,home,templates
@@ -52,7 +51,6 @@
     mode: '{{ item.mode }}'
   with_community.general.filetree: "{{ item[0].localpath }}/group/{{ item[1] }}/home/templates/"
   when: item.state == 'file'
-
 
 # group/<group>/etc/templates dir
 - name: Create directories. group,etc,templates

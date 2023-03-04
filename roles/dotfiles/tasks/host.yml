@@ -33,7 +33,6 @@
   when: host_etcdir.stat.exists
 
 
-
 # Templates
 # host/<hostname>/home/templates dir
 - name: Create directories. host,home,templates
@@ -51,7 +50,6 @@
     #mode: '{{ item.mode }}'
   with_community.general.filetree: "{{ item.localpath }}/host/{{ inventory_hostname }}/home/templates/"
   when: item.state == 'file'
-
 
 # host/<hostname>/etc/templates dir
 - name: Create directories. host,etc,templates
