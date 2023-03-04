@@ -106,12 +106,8 @@ host_vars/*
 ...
 ```
 
-The union_vars role adds merge option for some variables (package_list):
-```
-+ include_vars for union_vars/{group,host}/*
-```
-
-Meaning that he final package_list variable will be a merge of last listed variable from group_var or inventory and and corresponding variables from 'union_vars/{group,host}/*
+The union_vars role adds merge option for some variables (package_list for now).
+Meaning that the final package_list variable will be a merge of last listed variable from group_var or inventory and and corresponding variables from 'union_vars/{group,host}/*
 ```
 + union_vars/group/all.yml
 + union_vars/group/<groupname>.yml
