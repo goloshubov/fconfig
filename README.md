@@ -32,7 +32,7 @@ Ansible playbook that helps keeping one configuration on my fedora linux worksta
 ```bash
 $ git clone https://github.com/goloshubov/fconfig
 $ cd fconfig
-# edit inventory inventory/* and variables group_vars/*, union_vars/*
+# edit inventory in inventory/* and variables in group_vars/*, union_vars/*
 $ mkdir -p ~/git/github/fconfig_files   # create dirs (files_repos.localpath variables)
 
 # apply configuration on local workstation
