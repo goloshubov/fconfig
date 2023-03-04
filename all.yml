@@ -2,13 +2,15 @@
 
 - name: print info
   hosts: all
+  gather_facts: false
   tasks:
     - debug:
-        msg: "host: {{ inventory_hostname }} groups: {{ group_names }}  ansible_run_tags: {{ hostvars[inventory_hostname].ansible_run_tags }}"
+        msg: "host: {{ inventory_hostname }}; groups: {{ group_names }}; ansible_run_tags: {{ hostvars[inventory_hostname].ansible_run_tags }}"
       tags: always
 
 - name: confirmation
   hosts: localhost
+  gather_facts: false
   vars_prompt:
     - name: confirmation
       prompt: "run [ workstation, server ] playbooks on correspoding hosts/groups above?\ncontinue (y/n)?"
