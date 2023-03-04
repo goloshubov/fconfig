@@ -33,6 +33,7 @@
   when: host_etcdir.stat.exists
 
 
+
 # Templates
 # host/<hostname>/home/templates dir
 - name: Create directories. host,home,templates
