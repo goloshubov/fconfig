@@ -1,5 +1,5 @@
 # fconfig
-Ansible playbook that helps keeping one configuration on my fedora linux workstations (and servers).
+Ansible playbook that helps avoiding configuration drifts on my fedora linux workstations (and servers).
 
 ## Features:
 - sync .dotfiles and configs
