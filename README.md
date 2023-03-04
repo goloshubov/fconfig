@@ -93,8 +93,7 @@ host/*/dconf/*
 ```
 
 
-## vars 
-vars override / merge note:
+## vars, and the need of vars merge
 
 According to ansible documentation,
 'Here is the order of precedence from least to greatest (the last listed variables override all other variables)'
@@ -108,7 +107,7 @@ host_vars/*
 ```
 
 The union_vars role adds merge option for some variables (package_list for now).
-Meaning that the final package_list variable will be a merge of last listed variable from group_var or inventory and and corresponding variables from 'union_vars/{group,host}/*
+Meaning that the final package_list variable will be a merge of last listed variable from group_var or inventory and corresponding variables from 'union_vars/{group,host}/*
 ```
 + union_vars/group/all.yml
 + union_vars/group/<groupname>.yml
