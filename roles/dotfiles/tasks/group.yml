@@ -57,5 +57,4 @@
   #when: item.state == 'file'
   when: item.state == 'file' and not item.path | regex_search('.j2$')
 
-
 ...
