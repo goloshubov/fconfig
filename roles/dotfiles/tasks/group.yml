@@ -67,7 +67,7 @@
   ansible.builtin.template:
     src: '{{ item.src }}'
     dest: /etc/{{ item.path | splitext | first }}
-    mode: '{{ item.mode }}'
+    #mode: '{{ item.mode }}'
   with_community.general.filetree: "{{ item[0].localpath }}/group/{{ item[1] }}/etc/templates/"
   when: item.state == 'file'
 
