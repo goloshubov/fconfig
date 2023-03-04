@@ -54,6 +54,7 @@
 
 # host/<hostname>/etc/templates dir
 - name: Create directories. host,etc,templates
+  become: true
   ansible.builtin.file:
     path: /etc/{{ item.path }}
     state: directory
@@ -62,6 +63,7 @@
   when: item.state == 'directory'
 
 - name: Template files. host,etc,templates
+  become: true
   ansible.builtin.template:
     src: '{{ item.src }}'
     dest: /etc/{{ item.path | splitext | first }}
