@@ -1,6 +1,6 @@
 ---
 
-# Files:
+# Files
 # group/<group>/home/files dir
 - name: Check home dir (group)
   delegate_to: 127.0.0.1
