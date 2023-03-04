@@ -12,7 +12,7 @@
   hosts: localhost
   vars_prompt:
     - name: confirmation
-      prompt: continue play (y/n)?
+      prompt: continue (y/n)?
       private: false
   tasks:
     - name: check confirmation
