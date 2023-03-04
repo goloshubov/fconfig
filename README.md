@@ -24,7 +24,6 @@ Ansible playbook that helps avoiding configuration drifts on my fedora linux wor
 
 ## TODO/consider:
 - complete package_list var separation: inventory/union_vars/group/all.yml(common) + inventory/group_vars/*(group specific)
-- dotfiles templates support. probably by adding additional directory to files_repos, smth like group/\*/etc/{files,templates}/\*, and community.general.filetree lookup in templates dirs
 - configure other services/apps
 - merge support for other package lists (flatpak,pip,cargo,go)
 - debian/ubuntu support (?)
@@ -58,17 +57,25 @@ files (configs and dotfiles) needs to be located in separate git repositories (o
 ```
 .
 ├── group
-│   ├── <groupname>
-│   │   ├── dconf
-│   │   ├── etc
-│   │   └── home
+│   └── <groupname>
+│       ├── dconf
+│       ├── etc
+│       │   ├── files
+│       │   └── templates
+│       └── home
+│           ├── files
+│           └── templates
 ├── host
-│   ├── <hostname>
-│   │   ├── dconf
-│   │   ├── etc
-│   │   └── home
+│   └── <hostname>
+│       ├── dconf
+│       ├── etc
+│       │   ├── files
+│       │   └── templates
+│       └── home
+│           ├── files
+│           └── templates
 ```
-The etc/* and home/* dirs will be synced (one way) with /etc/* and ~/* dirs on a appropriate machine (according to its inventory hostname and groupname).\
+The etc/* and home/* dirs will be synced/templated with /etc/* and ~/* dirs on a appropriate machine (according to its inventory hostname and groupname).\
 The dconf dir is a store for dconf dump files (GNOME configuration).
 
 The playbook applies dotfiles in the following order:

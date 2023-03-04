@@ -4,12 +4,12 @@
 - name: Check home dir (host)
   delegate_to: 127.0.0.1
   ansible.builtin.stat:
-    path: "{{ item.localpath }}/host/{{ inventory_hostname }}/home/"
+    path: "{{ item.localpath }}/host/{{ inventory_hostname }}/home/files/"
   register: host_homedir
 
 - name: Sync home dir (host)
   ansible.posix.synchronize:
-    src: "{{ item.localpath }}/host/{{ inventory_hostname }}/home/"
+    src: "{{ item.localpath }}/host/{{ inventory_hostname }}/home/files/"
     dest: ~/
     checksum: true
     times: false
@@ -19,17 +19,54 @@
 - name: Check etc dir (host)
   delegate_to: 127.0.0.1
   ansible.builtin.stat:
-    path: "{{ item.localpath }}/host/{{ inventory_hostname }}/etc/"
+    path: "{{ item.localpath }}/host/{{ inventory_hostname }}/etc/files/"
   register: host_etcdir
 - name: Sync etc dir (host)
   become: true
   ansible.posix.synchronize:
-    src: "{{ item.localpath }}/host/{{ inventory_hostname }}/etc/"
+    src: "{{ item.localpath }}/host/{{ inventory_hostname }}/etc/files/"
     dest: /etc/
     owner: false
     group: false
     checksum: true
     times: false
   when: host_etcdir.stat.exists
+
+
+# Templates
+# host/<hostname>/home/templates dir
+- name: Create directories. host,home,templates
+  ansible.builtin.file:
+    path: ~/{{ item.path }}
+    state: directory
+    #mode: '{{ item.mode }}'
+  with_community.general.filetree: "{{ item.localpath }}/host/{{ inventory_hostname }}/home/templates/"
+  when: item.state == 'directory'
+
+- name: Template files. host,home,templates
+  ansible.builtin.template:
+    src: '{{ item.src }}'
+    dest: ~/{{ item.path | splitext | first }}
+    #mode: '{{ item.mode }}'
+  with_community.general.filetree: "{{ item.localpath }}/host/{{ inventory_hostname }}/home/templates/"
+  when: item.state == 'file'
+
+
+# host/<hostname>/etc/templates dir
+- name: Create directories. host,etc,templates
+  ansible.builtin.file:
+    path: /etc/{{ item.path }}
+    state: directory
+    #mode: '{{ item.mode }}'
+  with_community.general.filetree: "{{ item.localpath }}/host/{{ inventory_hostname }}/etc/templates/"
+  when: item.state == 'directory'
+
+- name: Template files. host,etc,templates
+  ansible.builtin.template:
+    src: '{{ item.src }}'
+    dest: /etc/{{ item.path | splitext | first }}
+    #mode: '{{ item.mode }}'
+  with_community.general.filetree: "{{ item.localpath }}/host/{{ inventory_hostname }}/etc/templates/"
+  when: item.state == 'file'
 
 ...
