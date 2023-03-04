@@ -34,7 +34,6 @@ Ansible playbook that helps avoiding configuration drifts on my fedora linux wor
 $ git clone https://github.com/goloshubov/fconfig
 $ cd fconfig
 # edit inventory in inventory/hosts* and variables in inventory/group_vars/*, inventory/union_vars/*
-$ mkdir -p ~/git/github/fconfig_files   # create dirs (files_repos.localpath variables)
 
 # apply configuration on local workstation
 $ ansible-playbook -i ./inventory workstation.yml -e ansible_connection=local --limit $(hostname)
@@ -48,7 +47,7 @@ $ ansible-playbook -i ./inventory workstation.yml --tags dotfiles
 $ ansible-playbook -i ./inventory workstation.yml --tags packages,flatpaks
 $ ansible-playbook -i ./inventory workstation.yml --tags software --skip-tags cargo
 
-# or just use bash aliases later (defined in dotfiles: https://github.com/goloshubov/fconfig_files/blob/main/group/all/home/files/.bashrc.d/aliases.sh)
+# use bash aliases later (defined in dotfiles: https://github.com/goloshubov/fconfig_files/blob/main/group/all/home/files/.bashrc.d/aliases.sh)
 $ fconfig_local_ws
 $ fconfig_local_ws_dotfiles
 ```
