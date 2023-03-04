@@ -2,7 +2,6 @@
 
 - name: print info
   hosts: all
-#  gather_facts: true
   tasks:
     - debug:
         msg: "host: {{ inventory_hostname }} groups: {{ group_names }}  tags: {{ hostvars[inventory_hostname].ansible_run_tags }}"
