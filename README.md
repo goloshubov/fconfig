@@ -24,6 +24,7 @@ Ansible playbook that helps avoiding configuration drifts on my fedora linux wor
 
 ## TODO/consider:
 - complete package_list var separation: inventory/union_vars/group/all.yml(common) + inventory/group_vars/*(group specific)
+- dotfiles templates support
 - configure other services/apps
 - debian/ubuntu support
 - merge support for other package lists (flatpak,pip,cargo,go)
