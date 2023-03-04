@@ -6,6 +6,7 @@
   ansible.builtin.stat:
     path: "{{ item.localpath }}/host/{{ inventory_hostname }}/home/"
   register: host_homedir
+
 - name: Sync home dir (host)
   ansible.posix.synchronize:
     src: "{{ item.localpath }}/host/{{ inventory_hostname }}/home/"
@@ -13,6 +14,7 @@
     checksum: true
     times: false
   when: host_homedir.stat.exists
+
 # host/<hostname>/etc dir
 - name: Check etc dir (host)
   delegate_to: 127.0.0.1

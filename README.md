@@ -48,7 +48,8 @@ $ ansible-playbook -i ./inventory workstation.yml --tags packages,flatpaks
 $ ansible-playbook -i ./inventory workstation.yml --tags software --skip-tags cargo
 ```
 
-files_repos.repo  (git repository) directory structure:
+## files_repos
+files_repos variable is defined in inventory/group_vars/all.yml. Here is the repository directory structure, notice that all dirs (dconf, etc, home) are not mandatory:
 ```
 .
 ├── group
