@@ -1,74 +1,61 @@
 ---
 
-# Files
-# group/<group>/home/files dir
-- name: Check home dir (group)
-  delegate_to: 127.0.0.1
-  ansible.builtin.stat:
-    path: "{{ item[0].localpath }}/group/{{ item[1] }}/home/files/"
-  register: group_homedir
-
-- name: Sync home dir (group)
-  ansible.posix.synchronize:
-    src: "{{ item[0].localpath }}/group/{{ item[1] }}/home/files/"
-    dest: ~/
-    checksum: true
-    times: false
-  when: group_homedir.stat.exists
-
-# group/<group>/etc/files dir
-- name: Check etc dir (group)
-  delegate_to: 127.0.0.1
-  ansible.builtin.stat:
-    path: "{{ item[0].localpath }}/group/{{ item[1] }}/etc/files/"
-  register: group_etcdir
-- name: Sync etc dir (group)
-  become: true
-  ansible.posix.synchronize:
-    src: "{{ item[0].localpath }}/group/{{ item[1] }}/etc/files/"
-    dest: /etc/
-    owner: false
-    group: false
-    checksum: true
-    times: false
-  when: group_etcdir.stat.exists
-
-
-# Templates
-# group/<group>/home/templates dir
-- name: Create directories. group,home,templates
+# Files and Templates
+# group/<group>/home/ dir
+- name: Create directories. group (home dir)
   ansible.builtin.file:
     path: ~/{{ item.path }}
     state: directory
     #mode: '{{ item.mode }}'
-  with_community.general.filetree: "{{ item[0].localpath }}/group/{{ item[1] }}/home/templates/"
+  with_community.general.filetree: "{{ item[0].localpath }}/group/{{ item[1] }}/home/"
   when: item.state == 'directory'
 
-- name: Template files. group,home,templates
+- name: Instatiate j2 template. group (home dir)
   ansible.builtin.template:
     src: '{{ item.src }}'
     dest: ~/{{ item.path | splitext | first }}
-    mode: '{{ item.mode }}'
-  with_community.general.filetree: "{{ item[0].localpath }}/group/{{ item[1] }}/home/templates/"
-  when: item.state == 'file'
+    #mode: '{{ item.mode }}'
+  with_community.general.filetree: "{{ item[0].localpath }}/group/{{ item[1] }}/home/"
+  when: item.state == 'file' and item.path | regex_search('.j2$')
 
-# group/<group>/etc/templates dir
-- name: Create directories. group,etc,templates
+- name: Copy files. group (home dir)
+  ansible.builtin.copy:
+    src: '{{ item.src }}'
+    dest: ~/{{ item.path }}
+    #mode: '{{ item.mode }}'
+  with_community.general.filetree: "{{ item[0].localpath }}/group/{{ item[1] }}/home/"
+  when: item.state == 'file' and not item.path | regex_search('.j2$')
+
+
+# group/<group>/etc/ dir
+- name: Create directories. group (etc dir)
   become: true
   ansible.builtin.file:
     path: /etc/{{ item.path }}
     state: directory
     #mode: '{{ item.mode }}'
-  with_community.general.filetree: "{{ item[0].localpath }}/group/{{ item[1] }}/etc/templates/"
+  with_community.general.filetree: "{{ item[0].localpath }}/group/{{ item[1] }}/etc/"
   when: item.state == 'directory'
 
-- name: Template files. group,etc,templates
+- name: Instatiate j2 templates. group (etc dir)
   become: true
   ansible.builtin.template:
     src: '{{ item.src }}'
     dest: /etc/{{ item.path | splitext | first }}
     #mode: '{{ item.mode }}'
+  with_community.general.filetree: "{{ item[0].localpath }}/group/{{ item[1] }}/etc/"
+  #when: item.state == 'file'
+  when: item.state == 'file' and item.path | regex_search('.j2$')
+
+- name: Copy files. group (etc dir)
+  become: true
+  ansible.builtin.copy:
+    src: '{{ item.src }}'
+    dest: /etc/{{ item.path }}
+    #mode: '{{ item.mode }}'
   with_community.general.filetree: "{{ item[0].localpath }}/group/{{ item[1] }}/etc/templates/"
-  when: item.state == 'file'
+  #when: item.state == 'file'
+  when: item.state == 'file' and not item.path | regex_search('.j2$')
+
 
 ...
