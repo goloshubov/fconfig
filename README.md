@@ -68,7 +68,7 @@ files (configs and dotfiles) needs to be located in separate git repositories (o
         ├── etc
         └── home
 ```
-The etc/* and home/* dirs will be recursively copied (or templated if it's .j2 file) to /etc/* and ~/* dirs respectively on a destination host according to its inventory host and group names.\
+The content of etc/* and home/* dirs will be recursively copied (or templated, for .j2 files) to /etc/* and ~/* dirs respectively on destination hosts according to hostnames and groups.\
 Templates are stored with .j2 extension, deployed without it.\
 The dconf dir is a store for dconf dump files (GNOME configuration).
 
