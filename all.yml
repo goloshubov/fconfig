@@ -5,7 +5,7 @@
 #  gather_facts: true
   tasks:
     - debug:
-        msg: "host: {{ inventory_hostname }} groups: {{ group_names }}  tags: {{ hostvars[inventory_hostname].tags | default('Not provided - meaning: all tagged+untagged tasks') }}"
+        msg: "host: {{ inventory_hostname }} groups: {{ group_names }}  tags: {{ hostvars[inventory_hostname].ansible_run_tags }}"
       tags: always
 
 - name: confirmation
