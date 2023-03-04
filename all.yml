@@ -1,26 +1,9 @@
 ---
 
-- name: print info
-  hosts: all
-  gather_facts: false
-  tasks:
-    - debug:
-        msg: "host: {{ inventory_hostname }}; groups: {{ group_names }}; ansible_run_tags: {{ hostvars[inventory_hostname].ansible_run_tags }}"
-      tags: always
-
+# interactive confirmation
+# add extra var 'confirm_answer' to avoid interactive mode: ... -e confirm_answer=y
 - name: confirmation
-  hosts: localhost
-  gather_facts: false
-  vars_prompt:
-    - name: confirmation
-      prompt: "run [ workstation, server ] playbooks on correspoding hosts/groups above?\ncontinue (y/n)?"
-      private: false
-  tasks:
-    - name: check confirmation
-      fail:
-        msg: "not y/Y"
-      when: confirmation != "y" and confirmation != "Y"
-      tags: always
+  import_playbook: confirmation.yml
 
 
 - name: workstations configuration
