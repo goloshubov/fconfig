@@ -67,7 +67,7 @@ files (configs and dotfiles) needs to be located in separate git repositories (o
 │   │   ├── etc
 │   │   └── home
 ```
-The etc/* and home/* dirs will be synced (one way) with /etc/* and ~/* dirs on a appropriate machine (according to its hostname and groupname).\
+The etc/* and home/* dirs will be synced (one way) with /etc/* and ~/* dirs on a appropriate machine (according to its inventory hostname and groupname).\
 The dconf dir is a store for dconf dump files (GNOME configuration).
 
 The playbook applies dotfiles in the following order:
