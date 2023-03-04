@@ -1,6 +1,5 @@
 ---
 
-# Files and Templates
 # group/<group>/home/ dir
 - name: Create directories. group (home dir)
   ansible.builtin.file:
