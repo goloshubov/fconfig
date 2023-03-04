@@ -1,6 +1,5 @@
 ---
 
-# Files and Templates
 # host/<hostname>/home/ dir
 - name: Create directories. host (home dir)
   ansible.builtin.file:
