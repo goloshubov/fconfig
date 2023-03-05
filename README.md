@@ -36,16 +36,16 @@ $ cd fconfig
 # edit inventory in inventory/hosts* and variables in inventory/group_vars/*, inventory/union_vars/*
 
 # apply configuration on local workstation
-$ ansible-playbook -i ./inventory workstation.yml -e ansible_connection=local --limit $(hostname)
+$ ansible-playbook -i ./hosts_workstations workstation.yml -e ansible_connection=local --limit $(hostname)
 
 # or on whole group
-$ ansible-playbook -i ./inventory workstation.yml
+$ ansible-playbook -i ./hosts_workstations workstation.yml
 
 # or apply it partialy:
-# ansible-playbook -i ./inventory workstation.yml --list-tags
-$ ansible-playbook -i ./inventory workstation.yml --tags dotfiles
-$ ansible-playbook -i ./inventory workstation.yml --tags packages,flatpaks
-$ ansible-playbook -i ./inventory workstation.yml --tags software --skip-tags cargo
+# ansible-playbook -i ./hosts_workstations workstation.yml --list-tags
+$ ansible-playbook -i ./hosts_workstations workstation.yml --tags dotfiles
+$ ansible-playbook -i ./hosts_workstations workstation.yml --tags packages,flatpaks
+$ ansible-playbook -i ./hosts_workstations workstation.yml --tags software --skip-tags cargo
 
 # use bash aliases later (defined in dotfiles: https://github.com/goloshubov/fconfig_files/blob/main/group/all/home/.bashrc.d/aliases.sh)
 $ fconfig_local_ws
