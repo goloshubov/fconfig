@@ -123,4 +123,4 @@ Meaning that the final package_list variable will be a merge of last listed vari
 + union_vars/host/<hostname>.yml
 ```
 
-This might be useful to split package list by corresponding group or host names. The variables will merged then during run time.
+This might be useful to split package list by corresponding group or host files. Then variables will merged during run time.
