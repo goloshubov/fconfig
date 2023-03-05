@@ -5,7 +5,7 @@
     - dotfiles
     - configs
   block:
-    - name: Create local repo dirs
+    - name: Create repos local dirs
       delegate_to: 127.0.0.1
       ansible.builtin.file:
         path: "{{ item.localpath }}"
