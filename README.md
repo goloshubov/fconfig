@@ -8,7 +8,7 @@ Ansible playbook that helps avoiding configuration drifts on my fedora linux wor
 - install software:
   - rpm packages (dnf). 
     - Merge (split) package list support. See vars override / merge note below.
-    - direct package URL
+    - direct package urls
     - dnf proxy
     - repos configuration
       - enable repos
