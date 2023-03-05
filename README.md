@@ -35,7 +35,7 @@ Ansible playbook that helps avoiding configuration drifts on my fedora linux wor
 ```bash
 $ git clone https://github.com/goloshubov/fconfig
 $ cd fconfig
-# edit inventory in inventory/hosts* and variables in inventory/group_vars/*, inventory/union_vars/*
+# edit inventory hosts* and variables inventory/group_vars/*, inventory/union_vars/*
 
 # apply configuration on local workstation
 $ ansible-playbook -i ./hosts_workstations workstation.yml -e ansible_connection=local --limit $(hostname)
