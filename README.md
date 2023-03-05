@@ -40,7 +40,7 @@ $ cd fconfig
 # apply configuration on local workstation (the most used case)
 $ ansible-playbook -i ./hosts_workstations workstation.yml -e ansible_connection=local --limit $(hostname)
 
-# or on whole group
+# or on whole group, 'servers' in this case
 $ ansible-playbook -i ./hosts_servers server.yml
 
 # or apply it partialy:
