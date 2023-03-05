@@ -3,16 +3,18 @@ Ansible playbook that helps avoiding configuration drifts on my fedora linux wor
 
 ## Features:
 - sync .dotfiles and configs
-  - files and templates support, recursively
-  - separate dotfiles git repositories. An example is https://github.com/goloshubov/fconfig_files See files_repo's directory structure below.
+  - files and templates support, recursively (filetree)
+  - separate dotfiles git repositories, public or private. An example is https://github.com/goloshubov/fconfig_files See files_repo's directory structure below.
 - install software:
   - rpm packages (dnf). 
     - Merge (split) package list support. See vars override / merge note below.
     - direct package URL
-    - enable repos
-    - copr repos
-    - direct repo URL
-    - set mirror for particular repos
+    - dnf proxy
+    - repos configuration
+      - enable repos
+      - copr repos
+      - direct repo urls
+      - set mirror for particular repos
   - flatpaks
   - pip packages
   - cargo packages
