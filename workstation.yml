@@ -4,8 +4,8 @@
   hosts: workstations
   gather_facts: yes
   roles:
-    - union_vars  # merge package_list
     - dotfiles
+    - union_vars  # merge package_list
     - packages
     - groups
     - flatpaks
