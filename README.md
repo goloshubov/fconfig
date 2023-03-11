@@ -48,7 +48,7 @@ $ ansible-playbook -i ./hosts_servers server.yml
 $ ansible-playbook -i ./hosts_servers server.yml --tags dotfiles
 $ ansible-playbook -i ./hosts_workstations workstation.yml --tags software --skip-tags cargo
 
-# use bash aliases later (defined in dotfiles: https://github.com/goloshubov/fconfig_files/blob/main/group/all/home/.bashrc.d/aliases.sh)
+# use bash aliases later (might be defined in dotfiles, e.g.: https://github.com/goloshubov/fconfig_files/blob/main/group/all/home/.bashrc.d/aliases.sh)
 $ fconfig_local_ws
 $ fconfig_local_ws_dotfiles
 ```
