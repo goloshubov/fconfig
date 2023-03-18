@@ -26,7 +26,7 @@ Ansible playbook that helps avoiding configuration drifts on my fedora linux wor
   - apply dconf key-value settings
 
 ## TODO/consider:
-- complete package_list var separation: inventory/union_vars/group/all.yml(common) + inventory/group_vars/*(group specific)
+- complete package_list var separation: union_vars/group/all.yml(common) + inventory/group_vars/*(group specific)
 - configure other services/apps
 - merge support for other package lists (flatpak,pip,cargo,go)
 - debian/ubuntu support (?)
