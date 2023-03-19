@@ -52,7 +52,7 @@
     src: '{{ item.src }}'
     dest: /etc/{{ item.path }}
     #mode: '{{ item.mode }}'
-  with_community.general.filetree: "{{ item[0].localpath }}/group/{{ item[1] }}/etc/templates/"
+  with_community.general.filetree: "{{ item[0].localpath }}/group/{{ item[1] }}/etc/"
   #when: item.state == 'file'
   when: item.state == 'file' and not item.path | regex_search('.j2$')
 
