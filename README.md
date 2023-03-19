@@ -46,7 +46,7 @@ $ ansible-playbook -i ./hosts_servers server.yml
 # or apply it partialy:
 # ansible-playbook -i ./hosts_servers server.yml --list-tags
 $ ansible-playbook -i ./hosts_servers server.yml --tags dotfiles
-$ ansible-playbook -i ./hosts_workstations workstation.yml --tags software --skip-tags gnome
+$ ansible-playbook -i ./hosts_workstations workstation.yml --tags software --skip-tags flatpaks
 
 # use bash aliases later which might be defined in dotfiles as well, e.g.: 
 # https://github.com/goloshubov/fconfig_files/blob/main/group/all/home/.bashrc.d/aliases.sh
