@@ -1,0 +1,8 @@
+---
+
+package_list:
+  - lirc
+  #- xdotool   #Fake keyboard/mouse input for X11
+  - ydotool   #Fake keyboard/mouse input for Wayland
+
+...
