@@ -177,7 +177,7 @@ package_list:
   - transmission
   - python3-testinfra
   - webapp-manager     # from kylegospo/webapp-manage copr
-  - python-xdot   # graphvz's dot viewer
+  - python-xdot   # graphviz's dot viewer
 
 
 flatpak_repos:
