@@ -314,7 +314,6 @@ dconf_settings:
   "/org/gnome/nautilus/icon-view/default-zoom-level": "'small'"
   "/org/gnome/desktop/interface/clock-show-weekday": "true"
   "/org/gnome/desktop/interface/show-battery-percentage": "true"
-  "/org/gnome/desktop/wm/preferences/focus-mode": "'click'"
   "/com/gexperts/Tilix/Settingsterminal-title-show-when-single": "false"
   "/com/gexperts/Tilix/Settingsterminal-title-style": "'small'"
   "/com/gexperts/Tilix/Settingstheme-variant": "'dark'"
