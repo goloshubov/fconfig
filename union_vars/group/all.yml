@@ -77,5 +77,6 @@ package_list:
   - yamllint
   - pylint
   - python3-ruamel-yaml
+  - smartmontools
 
 ...
