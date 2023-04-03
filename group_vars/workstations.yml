@@ -302,6 +302,8 @@ favorite_apps:
 # dconf dump files might be used as well (see README)
 dconf_settings:
   "/org/gnome/shell/favorite-apps": "{{ favorite_apps }}"
+  "/org/gnome/desktop/wm/preferences/focus-mode": "'sloppy'"
+  "/org/gnome/desktop/wm/preferences/auto-raise": "true"
   "/org/gnome/desktop/peripherals/mouse/natural-scroll": "true"
   "/org/gnome/desktop/peripherals/touchpad/natural-scroll": "true"
 #  "/org/gnome/desktop/background/picture-uri": "'file:///home/username/Pictures/wallpapers/wallpaper.jpg'"
@@ -312,7 +314,6 @@ dconf_settings:
   "/org/gnome/nautilus/icon-view/default-zoom-level": "'small'"
   "/org/gnome/desktop/interface/clock-show-weekday": "true"
   "/org/gnome/desktop/interface/show-battery-percentage": "true"
-#  "/org/gnome/desktop/wm/preferences/focus-mode": "'sloppy'"
   "/org/gnome/desktop/wm/preferences/focus-mode": "'click'"
   "/com/gexperts/Tilix/Settingsterminal-title-show-when-single": "false"
   "/com/gexperts/Tilix/Settingsterminal-title-style": "'small'"
