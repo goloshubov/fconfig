@@ -10,10 +10,12 @@
         path: "union_vars/group/{{ item }}.yml"
       register: union_vars_group
       loop: "{{ ['all'] | union(group_names) }}"
+      delegate_to: 127.0.0.1
     - name: Check files exist
       stat:
         path: "union_vars/host/{{ inventory_hostname }}.yml"
       register: union_vars_host
+      delegate_to: 127.0.0.1
   
     - name: Include groups vars to merge specific vars (package_list)
       include_vars:
@@ -21,11 +23,13 @@
         name: "{{ item.item }}"
       when: item.stat.exists
       loop: "{{ union_vars_group.results }}"
+      delegate_to: 127.0.0.1
     - name: Include host vars to merge specific vars (package_list)
       include_vars:
         file: "union_vars/host/{{ inventory_hostname }}.yml"
         name: "{{ inventory_hostname }}"
       when: union_vars_host.stat.exists
+      delegate_to: 127.0.0.1
   
     # package_list
     - name: Merge package_list (groups)

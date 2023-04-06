@@ -3,6 +3,7 @@
 - name: Apply server configuration
   hosts: servers
   gather_facts: yes
+  check_mode: "{{ lookup('ansible.builtin.env', 'FORCE_ANSIBLE_CHECK_MODE', default=force_check_mode|default('no')) }}"
   roles:
     - dotfiles
     - union_vars  # merge package_list
