@@ -52,7 +52,6 @@ $ ansible-playbook -i ./hosts_workstations workstation.yml --tags software --ski
 # https://github.com/goloshubov/fconfig_files/blob/main/group/all/home/.bashrc.d/aliases.sh
 $ fconfig_local_ws
 $ fconfig_local_ws_dotfiles
-$ fconfig_local_ws_dotfiles
 ```
 
 ## files repos
