@@ -35,24 +35,24 @@ Ansible playbook that helps avoiding configuration drifts on my fedora linux wor
 ```bash
 $ git clone https://github.com/goloshubov/fconfig
 $ cd fconfig
-# edit inventory hosts* and variables group_vars/*, union_vars/*
+# edit inventory inventories/hosts* and variables group_vars/*, union_vars/*
 
 # apply configuration on local workstation (the most used case)
-$ ansible-playbook -i ./hosts_workstations workstation.yml -e ansible_connection=local --limit $(hostname)
+$ ansible-playbook -i ./inventories workstation.yml -e ansible_connection=local --limit $(hostname)
 
 # or on whole group, 'servers' in this case
-$ ansible-playbook -i ./hosts_servers server.yml
+$ ansible-playbook -i ./inventories server.yml
 
 # or apply it partialy, by using tags:
 # list all tags first
-$ ansible-playbook -i ./hosts_servers server.yml --list-tags
+$ ansible-playbook -i ./inventories server.yml --list-tags
 # then dry-run
-$ ansible-playbook --check --diff -i ./hosts_servers server.yml --tags dotfiles
+$ ansible-playbook --check --diff -i ./inventories server.yml --tags dotfiles
 # the same as above
-$ ANSIBLE_DRY_RUN=True ansible-playbook -i ./hosts_servers server.yml --tags dotfiles
+$ ANSIBLE_DRY_RUN=True ansible-playbook -i ./inventories server.yml --tags dotfiles
 # and run only what needed
-$ ansible-playbook -i ./hosts_servers server.yml --tags dotfiles
-$ ansible-playbook -i ./hosts_workstations workstation.yml --tags software --skip-tags flatpaks
+$ ansible-playbook -i ./inventories server.yml --tags dotfiles
+$ ansible-playbook -i ./inventories workstation.yml --tags software --skip-tags flatpaks
 
 # bash aliases might be defined in dotfiles, e.g.: 
 # https://github.com/goloshubov/fconfig_files/blob/main/group/all/home/.bashrc.d/aliases.sh
