@@ -49,7 +49,7 @@ $ ANSIBLE_DRY_RUN=True ansible-playbook -i ./hosts_servers server.yml --tags dot
 $ ansible-playbook -i ./hosts_servers server.yml --tags dotfiles
 $ ansible-playbook -i ./hosts_workstations workstation.yml --tags software --skip-tags flatpaks
 
-# use bash aliases later which might be defined in dotfiles as well, e.g.: 
+# bash aliases might be defined in dotfiles, e.g.: 
 # https://github.com/goloshubov/fconfig_files/blob/main/group/all/home/.bashrc.d/aliases.sh
 $ fconfig_local_ws
 $ export ANSIBLE_DRY_RUN=True; fconfig_local_ws_dotfiles; unset ANSIBLE_DRY_RUN
