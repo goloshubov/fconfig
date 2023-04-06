@@ -5,8 +5,8 @@
 - name: Apply workstation configuration
   hosts: workstations
   gather_facts: yes
-  check_mode: "{{ lookup('ansible.builtin.env', 'ANSIBLE_DRY_RUN', default=ansible_check_mode|default('False')) }}"
-  diff:       "{{ lookup('ansible.builtin.env', 'ANSIBLE_DRY_RUN', default=ansible_check_mode|default('False')) }}"
+  check_mode: "{{ lookup('ansible.builtin.env', 'ANSIBLE_DRY_RUN', default=ansible_check_mode) }}"
+  diff:       "{{ lookup('ansible.builtin.env', 'ANSIBLE_DRY_RUN', default=ansible_check_mode) }}"
   roles:
     - dotfiles
     - union_vars  # merge package_list
