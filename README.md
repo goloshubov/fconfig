@@ -52,8 +52,8 @@ $ ansible-playbook -i ./hosts_workstations workstation.yml --tags software --ski
 # use bash aliases later which might be defined in dotfiles as well, e.g.: 
 # https://github.com/goloshubov/fconfig_files/blob/main/group/all/home/.bashrc.d/aliases.sh
 $ fconfig_local_ws
-$ fconfig_local_ws_dotfiles
 $ export ANSIBLE_DRY_RUN=True; fconfig_local_ws_dotfiles; unset ANSIBLE_DRY_RUN
+$ fconfig_local_ws_dotfiles
 ```
 
 ## files repos
