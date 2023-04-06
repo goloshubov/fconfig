@@ -296,7 +296,7 @@ favorite_apps:
   - virt-manager.desktop
 #  - org.cockpit_project.CockpitClient.desktop
 #  - org.gnome.Calendar.desktop
-  - scrcpy.desktop
+#  - scrcpy.desktop
 
 
 # dconf dump files might be used as well (see README)
