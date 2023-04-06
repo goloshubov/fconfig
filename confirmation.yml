@@ -9,7 +9,7 @@
       tags: always
 
 - name: confirmation
-  hosts: localhost
+  hosts: all
   gather_facts: false
   vars_prompt:
     - name: confirm_answer
@@ -21,5 +21,6 @@
         msg: "not y/Y"
       when: confirm_answer != "y" and confirm_answer != "Y"
       tags: always
+      run_once: true
 
 ...
