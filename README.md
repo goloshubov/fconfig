@@ -44,12 +44,13 @@ $ ansible-playbook -i ./hosts_workstations workstation.yml -e ansible_connection
 $ ansible-playbook -i ./hosts_servers server.yml
 
 # or apply it partialy, by using tags:
+# list all tags first
 $ ansible-playbook -i ./hosts_servers server.yml --list-tags
-# dry-run, check first
+# then dry-run
 $ ansible-playbook --check --diff -i ./hosts_servers server.yml --tags dotfiles
 # the same as above
 $ ANSIBLE_DRY_RUN=True ansible-playbook -i ./hosts_servers server.yml --tags dotfiles
-# run just particular tags
+# and run only what needed
 $ ansible-playbook -i ./hosts_servers server.yml --tags dotfiles
 $ ansible-playbook -i ./hosts_workstations workstation.yml --tags software --skip-tags flatpaks
 
