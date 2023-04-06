@@ -1,6 +1,6 @@
 ---
 
-#force_check_mode: no
+#dry_run: yes
 
 files_repos:
   - { repo: 'git@github.com:goloshubov/fconfig_files.git', localpath: '~/git/github/fconfig_files' }
