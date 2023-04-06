@@ -1,5 +1,7 @@
 ---
 
+- import_playbook: dry-run-note.yml
+
 # interactive confirmation
 # add extra var 'confirm_answer' to avoid interactive mode: ... -e confirm_answer=y
 - name: confirmation
