@@ -44,7 +44,7 @@ $ ansible-playbook -i ./hosts_workstations workstation.yml -e ansible_connection
 $ ansible-playbook -i ./hosts_servers server.yml
 
 # or apply it partialy (check first):
-# ansible-playbook -i ./hosts_servers server.yml --list-tags
+$ ansible-playbook -i ./hosts_servers server.yml --list-tags
 $ ANSIBLE_DRY_RUN=True ansible-playbook -i ./hosts_servers server.yml --tags dotfiles
 $ ansible-playbook -i ./hosts_servers server.yml --tags dotfiles
 $ ansible-playbook -i ./hosts_workstations workstation.yml --tags software --skip-tags flatpaks
