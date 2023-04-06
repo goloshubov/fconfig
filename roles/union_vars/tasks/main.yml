@@ -2,7 +2,7 @@
 
 - name: The union_vars role's tasks
   tags:
-    - sowtware
+    - software
     - packages
   block:
     - name: Check files exist
