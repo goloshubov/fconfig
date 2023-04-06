@@ -3,8 +3,6 @@
 - name: Dry-run notification
   hosts: all
   gather_facts: no
-  check_mode: "{{ lookup('ansible.builtin.env', 'ANSIBLE_DRY_RUN', default=ansible_check_mode) }}"
-  diff:       "{{ lookup('ansible.builtin.env', 'ANSIBLE_DRY_RUN', default=ansible_check_mode) }}"
   tags: always
   vars:
     is_check_mode: "{{ lookup('ansible.builtin.env', 'ANSIBLE_DRY_RUN', default=ansible_check_mode) }}"
