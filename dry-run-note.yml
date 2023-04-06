@@ -1,6 +1,6 @@
 
 
-- name: Dry run notification
+- name: Dry-run notification
   hosts: all
   gather_facts: no
   check_mode: "{{ lookup('ansible.builtin.env', 'ANSIBLE_DRY_RUN', default=ansible_check_mode) }}"
