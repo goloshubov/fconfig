@@ -9,15 +9,15 @@
   vars:
     is_check_mode: "{{ lookup('ansible.builtin.env', 'ANSIBLE_DRY_RUN', default=ansible_check_mode) }}"
   tasks:
-  - name: This task will be skipped in check mode
-    debug:
-      msg: "DRY RUN"
-    when: is_check_mode
-    run_once: true
-  - name: This task will be skipped in check mode
-    debug:
-      msg: "NOT A DRY RUN"
-    when: not is_check_mode
-    run_once: true
+    - name: This task will be skipped in check mode
+      debug:
+        msg: "DRY RUN"
+      when: is_check_mode
+      run_once: true
+    - name: This task will be skipped in check mode
+      debug:
+        msg: "NOT A DRY RUN"
+      when: not is_check_mode
+      run_once: true
 
 ...
