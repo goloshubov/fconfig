@@ -3,5 +3,8 @@ ws
 x390yoga
 x13yoga1
 
+[lirc]
+ws
+x13yoga1
 
-# NOTE: check group_vars/ and union_vars/ for vars
+# NOTE: check group_vars/, host_vars/ and union_vars/ for vars
