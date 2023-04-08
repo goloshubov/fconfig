@@ -36,6 +36,8 @@ dnf_proxy_port: 3128
 #      section: "rpmfusion-free-updates",
 #      option: "baseurl",  
 #      value: "{{ yum_repos_mirror }}/fedora/rpmfusion/free/fedora/updates/$releasever/$basearch/" }
+
+# original settings
 yum_repos_tweaks:
   - { path: "/etc/yum.repos.d/fedora.repo",
       section: "fedora",
