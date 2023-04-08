@@ -56,7 +56,6 @@ $ ansible-playbook -i ./inventories workstation.yml --tags software --skip-tags 
 
 # bash aliases might be defined in dotfiles, e.g.: 
 # https://github.com/goloshubov/fconfig_files/blob/main/group/all/home/.bashrc.d/aliases.sh
-$ export ANSIBLE_DRY_RUN=True; fconfig_local_ws_dotfiles; unset ANSIBLE_DRY_RUN
 $ fconfig_local_ws_dotfiles
 $ fconfig_local_ws
 ```
