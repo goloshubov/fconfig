@@ -48,8 +48,6 @@ $ ansible-playbook -i ./inventories server.yml
 $ ansible-playbook -i ./inventories server.yml --list-tags
 # then dry-run
 $ ansible-playbook --check --diff -i ./inventories server.yml --tags dotfiles
-# the same as above
-$ ANSIBLE_DRY_RUN=True ansible-playbook -i ./inventories server.yml --tags dotfiles
 # and run only what needed
 $ ansible-playbook -i ./inventories server.yml --tags dotfiles
 $ ansible-playbook -i ./inventories workstation.yml --tags software --skip-tags flatpaks
