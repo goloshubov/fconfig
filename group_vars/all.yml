@@ -10,35 +10,8 @@ dnf_proxy_host: 192.168.35.1
 dnf_proxy_port: 3128
 
 
-#yum_repos_mirror: "http://mirror.yandex.ru"
-#yum_repos_tweaks:
-#  - { path: "/etc/yum.repos.d/fedora.repo",
-#      section: "fedora",
-#      option: "baseurl",
-#      value: "{{ yum_repos_mirror }}/fedora/linux/releases/$releasever/Everything/$basearch/os/" }
-#  - { path: "/etc/yum.repos.d/fedora-updates.repo",
-#      section: "updates",
-#      option: "baseurl",  
-#      value: "{{ yum_repos_mirror }}/fedora/linux/updates/$releasever/Everything/$basearch/" }
-#  - { path: "/etc/yum.repos.d/fedora-modular.repo",
-#      section: "fedora-modular",
-#      option: "baseurl",  
-#      value: "{{ yum_repos_mirror }}/fedora/linux/releases/$releasever/Modular/$basearch/os/" }
-#  - { path: "/etc/yum.repos.d/fedora-updates-modular.repo",
-#      section: "updates-modular",
-#      option: "baseurl",  
-#      value: "{{ yum_repos_mirror }}/fedora/linux/updates/$releasever/Modular/$basearch/" }
-#  - { path: "/etc/yum.repos.d/rpmfusion-free.repo",
-#      section: "rpmfusion-free",
-#      option: "baseurl",  
-#      value: "{{ yum_repos_mirror }}/fedora/rpmfusion/free/fedora/releases/$releasever/Everything/$basearch/os/" }
-#  - { path: "/etc/yum.repos.d/rpmfusion-free-updates.repo",
-#      section: "rpmfusion-free-updates",
-#      option: "baseurl",  
-#      value: "{{ yum_repos_mirror }}/fedora/rpmfusion/free/fedora/updates/$releasever/$basearch/" }
-
-# original settings
-yum_repos_tweaks:
+# original repos settings
+yum_repos_tweaks_original:
   - { path: "/etc/yum.repos.d/fedora.repo",
       section: "fedora",
       option: "metalink",
@@ -63,5 +36,35 @@ yum_repos_tweaks:
       section: "rpmfusion-free-updates",
       option: "metalink",  
       value: "https://mirrors.rpmfusion.org/metalink?repo=free-fedora-updates-released-$releasever&arch=$basearch" }
+
+# custom repos settings (yandex mirror)
+yum_repos_mirror: "http://mirror.yandex.ru"
+yum_repos_tweaks_mirror:
+  - { path: "/etc/yum.repos.d/fedora.repo",
+      section: "fedora",
+      option: "baseurl",
+      value: "{{ yum_repos_mirror }}/fedora/linux/releases/$releasever/Everything/$basearch/os/" }
+  - { path: "/etc/yum.repos.d/fedora-updates.repo",
+      section: "updates",
+      option: "baseurl",
+      value: "{{ yum_repos_mirror }}/fedora/linux/updates/$releasever/Everything/$basearch/" }
+  - { path: "/etc/yum.repos.d/fedora-modular.repo",
+      section: "fedora-modular",
+      option: "baseurl",
+      value: "{{ yum_repos_mirror }}/fedora/linux/releases/$releasever/Modular/$basearch/os/" }
+  - { path: "/etc/yum.repos.d/fedora-updates-modular.repo",
+      section: "updates-modular",
+      option: "baseurl",
+      value: "{{ yum_repos_mirror }}/fedora/linux/updates/$releasever/Modular/$basearch/" }
+  - { path: "/etc/yum.repos.d/rpmfusion-free.repo",
+      section: "rpmfusion-free",
+      option: "baseurl",
+      value: "{{ yum_repos_mirror }}/fedora/rpmfusion/free/fedora/releases/$releasever/Everything/$basearch/os/" }
+  - { path: "/etc/yum.repos.d/rpmfusion-free-updates.repo",
+      section: "rpmfusion-free-updates",
+      option: "baseurl",
+      value: "{{ yum_repos_mirror }}/fedora/rpmfusion/free/fedora/updates/$releasever/$basearch/" }
+
+yum_repos_tweaks: "{{ yum_repos_tweaks_original }}"
 
 ...
