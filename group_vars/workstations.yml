@@ -332,5 +332,6 @@ dconf_settings:
   "/org/gnome/shell/extensions/just-perfection/workspace-switcher-size": "15"
   "/org/gnome/shell/extensions/just-perfection/workspace-wrap-around": "true"
   "/org/gnome/shell/extensions/just-perfection/world-clock": "false"
+  "/org/gnome/desktop/a11y/always-show-universal-access-status": "true"
 
 ...
