@@ -92,7 +92,6 @@ package_list:
   - virt-viewer
   - virt-what
   - libvirt-client
-  - bijiben
   - dconf-editor
   - lm_sensors
   - python3-psutil
