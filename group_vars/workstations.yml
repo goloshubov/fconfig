@@ -185,7 +185,7 @@ flatpak_repos:
 
 
 flatpak_list:
-  - com.google.Chrome.desktop
+  - com.google.Chrome
   - com.github.tchx84.Flatseal
   - com.github.johnfactotum.Foliate
   - org.gnome.Geary
