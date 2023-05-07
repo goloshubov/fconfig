@@ -279,10 +279,10 @@ favorite_apps:
 #  - org.gnome.Terminal.desktop
   - net.cozic.joplin_desktop.desktop
 #  - firefox-wayland.desktop
-  - com.gitlab.newsflash.desktop
   - firefox.desktop
+  - com.gitlab.newsflash.desktop
 #  - google-chrome.desktop
-  - com.google.Chrome.desktop
+#  - com.google.Chrome.desktop
   - com.github.xournalpp.xournalpp.desktop
   - net.xmind.XMind.desktop
 #  - io.atom.Atom.desktop
