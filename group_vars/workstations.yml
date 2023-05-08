@@ -87,6 +87,7 @@ package_list:
   - gnome-shell-extension-openweather
   - gnome-shell-extension-window-list
   - gnome-shell-extension-places-menu
+  - gnome-shell-extension-argos
   - libdbusmenu   # for dash-to-dock
   - virt-manager
   - virt-viewer
