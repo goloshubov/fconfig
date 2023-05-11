@@ -290,7 +290,7 @@ favorite_apps:
 #  - org.gnome.gedit.desktop
 #  - com.getferdi.Ferdi.desktop
   - org.telegram.desktop.desktop
-  - re.sonny.Tangram.desktop
+#  - re.sonny.Tangram.desktop
 #  - com.slack.Slack.desktop
   - org.gnome.Nautilus.desktop
   - org.gnome.TextEditor.desktop
