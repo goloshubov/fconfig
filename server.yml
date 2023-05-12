@@ -1,7 +1,5 @@
 ---
 
-- import_playbook: dry-run-note.yml
-
 - name: Apply server configuration
   hosts: servers
   gather_facts: yes
