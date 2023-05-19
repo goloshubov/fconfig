@@ -286,15 +286,13 @@ favorite_apps:
 #  - com.google.Chrome.desktop
   - com.github.xournalpp.xournalpp.desktop
   - net.xmind.XMind.desktop
-#  - io.atom.Atom.desktop
-#  - org.gnome.gedit.desktop
-#  - com.getferdi.Ferdi.desktop
   - org.telegram.desktop.desktop
 #  - re.sonny.Tangram.desktop
+#  - com.getferdi.Ferdi.desktop
 #  - com.slack.Slack.desktop
   - org.gnome.Nautilus.desktop
-  - org.gnome.TextEditor.desktop
-#  - net.xmind.ZEN.desktop
+#  - org.gnome.TextEditor.desktop
+  - org.gnome.gedit.desktop
   - org.gnome.Calculator.desktop
   - virt-manager.desktop
 #  - org.cockpit_project.CockpitClient.desktop
