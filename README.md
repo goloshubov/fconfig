@@ -46,8 +46,10 @@ $ ansible-playbook -i ./inventories server.yml
 # or apply it partialy, by using tags:
 # list all tags first
 $ ansible-playbook -i ./inventories server.yml --list-tags
+# or both tags and tasks
+# $ ansible-playbook -i ./inventories server.yml --list-tags --list-tasks
 # then dry-run
-$ ansible-playbook --check --diff -i ./inventories server.yml --tags dotfiles
+$ ansible-playbook -i ./inventories server.yml --tags dotfiles --check --diff -vv
 # and run only what needed
 $ ansible-playbook -i ./inventories server.yml --tags dotfiles
 $ ansible-playbook -i ./inventories workstation.yml --tags software --skip-tags flatpaks
