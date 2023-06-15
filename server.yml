@@ -3,8 +3,6 @@
 - name: Apply server configuration
   hosts: servers
   gather_facts: yes
-  check_mode: "{{ lookup('ansible.builtin.env', 'ANSIBLE_DRY_RUN', default=ansible_check_mode) }}"
-  diff:       "{{ lookup('ansible.builtin.env', 'ANSIBLE_DRY_RUN', default=ansible_check_mode) }}"
   roles:
     - dotfiles
     - union_vars  # merge package_list
