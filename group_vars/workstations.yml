@@ -246,6 +246,7 @@ pip_list:
   - yq
   - kubernetes
   - powerline-k8s
+  - awxkit
 
 
 cargo_list:
