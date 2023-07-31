@@ -196,7 +196,6 @@ flatpak_list:
   - org.inkscape.Inkscape
   - org.kde.kdenlive
 #  - us.zoom.Zoom
-  - com.skype.Client
   - com.obsproject.Studio
 #  - com.spotify.Client
 #  - io.atom.Atom
