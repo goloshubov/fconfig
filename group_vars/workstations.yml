@@ -173,7 +173,6 @@ package_list:
   - ShellCheck   # shell script static analysis tool (bash linter)
   - colorized-logs
   - clide  # colorize ASCII text
-  - vlc
   - yamllint
   - pylint
   - transmission
@@ -202,8 +201,8 @@ flatpak_list:
   - com.jgraph.drawio.desktop
 #  - com.valvesoftware.Steam
 #  - com.github.gi_lom.dialect
-  - app.drey.Dialect
-#  - org.videolan.VLC
+#  - app.drey.Dialect
+  - org.videolan.VLC
 #  - org.zotero.Zotero
 #  - com.getpostman.Postman
 #  - com.transmissionbt.Transmission   # have it in package_list
