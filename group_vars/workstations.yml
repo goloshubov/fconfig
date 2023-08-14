@@ -282,7 +282,7 @@ favorite_apps:
   - net.cozic.joplin_desktop.desktop
 #  - firefox-wayland.desktop
   - firefox.desktop
-  - com.gitlab.newsflash.desktop
+  - io.gitlab.news_flash.NewsFlash.desktop
 #  - google-chrome.desktop
 #  - com.google.Chrome.desktop
   - com.github.xournalpp.xournalpp.desktop
