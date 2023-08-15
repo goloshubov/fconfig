@@ -29,7 +29,6 @@ Ansible playbook that helps avoiding configuration drifts on my fedora linux wor
 - complete package_list var separation: union_vars/group/all.yml(common) + group_vars/*(group specific)
 - configure other services/apps
 - merge support for other package lists (flatpak,pip,cargo,go)
-- debian/ubuntu support (?)
 
 ## Usage:
 ```bash
