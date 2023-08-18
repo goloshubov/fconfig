@@ -1,5 +1,7 @@
 ---
 
+fedora_version: 38
+
 files_repos:
   - { repo: 'git@github.com:goloshubov/fconfig_files.git', localpath: '~/git/github/fconfig_files' }
   #- { repo: 'git@github.com:goloshubov/fconfig_files2.git', localpath: '~/git/github/fconfig_files2' }

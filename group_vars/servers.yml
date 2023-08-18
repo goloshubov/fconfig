@@ -18,7 +18,8 @@
 
 #third party repos and packages
 direct_package_list:
-  - "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-37.noarch.rpm"
+  - "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_version }}.noarch.rpm"
+#  - "https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_version }}.noarch.rpm"
 
 
     #third party repos and packages
