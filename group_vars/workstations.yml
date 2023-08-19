@@ -107,6 +107,7 @@ package_list:
   - exa
   #- kubectl
   - kubernetes-client
+  - helm
   #- barrier
   - dnf-utils
   - firefox-wayland
