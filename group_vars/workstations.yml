@@ -210,7 +210,7 @@ flatpak_list:
 #  - net.xmind.XMind8
 #  - net.xmind.ZEN
   - net.xmind.XMind
-  - com.gitlab.newsflash
+  - io.gitlab.news_flash.NewsFlash
 #  - com.github.xournalpp.xournalpp
 #  - com.getferdi.Ferdi
 #  - com.skype.Client
