@@ -266,10 +266,11 @@ cargo_list:
 #  - coreutils
 
 go_list:
-  - github.com/antonmedv/llama   # terminal file manager
+#  - github.com/antonmedv/llama   # terminal file manager
 #  - github.com/mikefarah/yq      # notice pip yq package
   - github.com/go-task/task/v3/cmd/task
 # - github.com/ericchiang/pup    # html parser
+  - golang.stackrox.io/kube-linter/cmd/kube-linter
 
 
 ansible_galaxy_collection_list:
