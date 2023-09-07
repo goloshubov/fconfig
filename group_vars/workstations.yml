@@ -182,6 +182,7 @@ package_list:
   - python3-pytest-testinfra
   - webapp-manager     # from kylegospo/webapp-manage copr
   - python-xdot   # graphviz's dot viewer
+  - grpcurl
 
 
 flatpak_repos:
