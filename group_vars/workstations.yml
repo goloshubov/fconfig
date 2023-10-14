@@ -297,8 +297,8 @@ favorite_apps:
 #  - com.getferdi.Ferdi.desktop
 #  - com.slack.Slack.desktop
   - org.gnome.Nautilus.desktop
-#  - org.gnome.TextEditor.desktop
-  - org.gnome.gedit.desktop
+  - org.gnome.TextEditor.desktop
+#  - org.gnome.gedit.desktop
   - org.gnome.Calculator.desktop
   - virt-manager.desktop
 #  - org.cockpit_project.CockpitClient.desktop
