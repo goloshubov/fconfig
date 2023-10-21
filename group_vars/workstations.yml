@@ -169,6 +169,7 @@ package_list:
   - maven
   - python3-devel
   - python3-pip
+  - python3-requests
   - hadolint  # Dockerfile linter
   - gitg   #git gui
   - meld   #diff gui
