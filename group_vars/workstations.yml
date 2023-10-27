@@ -188,6 +188,9 @@ package_list:
   - python-xdot   # graphviz's dot viewer
   - grpcurl
 
+package_absent_list:
+  - nano
+
 
 flatpak_repos:
   - https://flathub.org/repo/flathub.flatpakrepo
