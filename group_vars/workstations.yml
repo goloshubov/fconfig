@@ -12,7 +12,7 @@ user_groups:
 copr_list:
   - mroche/cloud-native-utilities      # helm,knative-client,pack,packer,tektoncd-cli,terraform
   - zeno/scrcpy
-  - luya/xournalpp  # latest xournal++
+#  - luya/xournalpp  # latest xournal++
   - varlad/helix
   - kylegospo/webapp-manager
 
