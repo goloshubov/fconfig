@@ -8,13 +8,16 @@ user_groups:
   - docker
 
 
-#third party repos
+#copr, third party repos
 copr_list:
   - mroche/cloud-native-utilities      # helm,knative-client,pack,packer,tektoncd-cli,terraform
   - zeno/scrcpy
-#  - luya/xournalpp  # latest xournal++
   - varlad/helix
   - kylegospo/webapp-manager
+
+# remove copr repos
+copr_absent_list:
+  - luya/xournalpp  # latest xournal++
 
 
 #third party repos

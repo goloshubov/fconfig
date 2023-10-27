@@ -18,6 +18,16 @@
         - package-repos
         - package-repos-copr
       when: copr_list is defined
+
+    - name: Remove copr repos
+      community.general.copr:
+        name: "{{ item }}"
+        state: absent
+      loop:  "{{ copr_absent_list }}"
+      tags:
+        - package-repos
+        - package-repos-copr
+      when: copr_absent_list is defined
     
     - name: Install other repos
       command: dnf config-manager --add-repo '{{ item }}' -y
