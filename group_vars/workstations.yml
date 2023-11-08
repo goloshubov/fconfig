@@ -249,10 +249,10 @@ pip_list:
   - yt-dlp
   - Jinja2
   - ansible
-  - ansible-rulebook
   - ansible-runner
+#  - aiohttp   # required for ansible.eda plugins (event_source/webhook.py)
+#  - ansible-rulebook
   - wheel
-  - aiohttp   # required for ansible.eda plugins (event_source/webhook.py)
   - yq
   - kubernetes
   - powerline-k8s
