@@ -78,6 +78,6 @@ package_list:
   - python3-ruamel-yaml
   - smartmontools
 #  - stunnel
-  - chisel  # fast TCP/UDP tunnel, transported over HTTP, secured via SSH
+#  - chisel  # fast TCP/UDP tunnel, transported over HTTP, secured via SSH
 
 ...
