@@ -257,7 +257,7 @@ pip_list:
   - kubernetes
   - powerline-k8s
   - awxkit
-  - tftui    # Terraform textual UI
+#  - tftui    # Terraform textual UI
 
 
 cargo_list:
