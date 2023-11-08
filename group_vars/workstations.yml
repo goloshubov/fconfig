@@ -187,6 +187,7 @@ package_list:
   - webapp-manager     # from kylegospo/webapp-manage copr
   - python-xdot   # graphviz's dot viewer
   - grpcurl
+  - python3-aiohttp  # dependency (ansible-rulebook, tftui)
 
 package_absent_list:
   - nano
@@ -250,14 +251,14 @@ pip_list:
   - Jinja2
   - ansible
   - ansible-runner
-#  - aiohttp   # required for ansible.eda plugins (event_source/webhook.py)
-#  - ansible-rulebook
+# - aiohttp   # required for ansible.eda plugins (event_source/webhook.py)  # replaced by package python3-aiohttp
+  - ansible-rulebook
   - wheel
   - yq
   - kubernetes
   - powerline-k8s
   - awxkit
-#  - tftui    # Terraform textual UI
+  - tftui    # Terraform textual UI
 
 
 cargo_list:
