@@ -73,7 +73,6 @@ package_list:
   - ShellCheck   # shell script static analysis tool (bash linter)
   - colorized-logs
   - clide  # colorize ASCII text
-  - vlc
   - yamllint
   - pylint
   - python3-ruamel-yaml
