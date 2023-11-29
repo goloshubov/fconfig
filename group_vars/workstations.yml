@@ -188,6 +188,7 @@ package_list:
   - python-xdot   # graphviz's dot viewer
   - grpcurl
   - python3-aiohttp  # dependency (ansible-rulebook, tftui)
+  - autofs
 
 package_absent_list:
   - nano
