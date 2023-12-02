@@ -5,22 +5,6 @@
     - dotfiles
     - configs
   block:
-    - name: Create repos local dirs
-      delegate_to: 127.0.0.1
-      ansible.builtin.file:
-        path: "{{ item.localpath }}"
-        state: directory
-      loop: "{{ files_repos }}"
-
-    - name: Get dotfiles from git repos
-      delegate_to: 127.0.0.1
-      git:
-        repo: "{{ item.repo }}"
-        dest: "{{ item.localpath }}"
-        force: yes
-        accept_hostkey: yes
-      loop: "{{ files_repos }}"
-  
     # group/<groupname>/{home,etc} dirs
     - name: Group specific configs
       include_tasks: group.yml

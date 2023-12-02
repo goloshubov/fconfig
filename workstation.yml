@@ -4,6 +4,7 @@
   hosts: workstations
   gather_facts: yes
   roles:
+    - filesrepos
     - dotfiles
     - union_vars  # merge package_list
     - packages
