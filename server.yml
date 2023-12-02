@@ -4,9 +4,9 @@
   hosts: servers
   gather_facts: yes
   roles:
+    - union_vars  # merge package_list
     - filesrepos
     - dotfiles
-    - union_vars  # merge package_list
     - packages
     - pip
 
