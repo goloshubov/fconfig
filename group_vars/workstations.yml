@@ -119,6 +119,7 @@ package_list:
   - rust
   - cargo
   - toolbox
+#  - distrobox
   - jq
   #- git-delta
   - mtr
