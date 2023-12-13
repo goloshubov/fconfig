@@ -359,5 +359,7 @@ dconf_settings:
   "/org/gnome/shell/extensions/just-perfection/workspace-wrap-around": "true"
   "/org/gnome/shell/extensions/just-perfection/world-clock": "false"
   "/org/gnome/desktop/a11y/always-show-universal-access-status": "false"
+  #"/org/gnome/mutter/check-alive-timeout": "0"
+  "/org/gnome/mutter/check-alive-timeout": "60000"
 
 ...
