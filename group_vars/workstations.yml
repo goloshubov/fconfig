@@ -190,6 +190,7 @@ package_list:
   - grpcurl
   - python3-aiohttp  # dependency (ansible-rulebook, tftui)
   - autofs
+  - clapper          # A GNOME media player (GJS,GTK4).  (good for live wallpaper best performance)
 
 package_absent_list:
   - nano
