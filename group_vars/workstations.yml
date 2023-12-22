@@ -113,7 +113,6 @@ package_list:
   - helm
   #- barrier
   - dnf-utils
-  - firefox-wayland
   - ffmpeg
   - golang
   - rust
@@ -190,10 +189,12 @@ package_list:
   - grpcurl
   - python3-aiohttp  # dependency (ansible-rulebook, tftui)
   - autofs
-  - clapper          # A GNOME media player (GJS,GTK4).  (good for live wallpaper best performance)
+  - clapper          # A GNOME media player (GJS,GTK4).  (installed for live wallpaper best performance)
+#  - waydroid         # Waydroid uses a container-based approach to boot a full Android system on a regular GNU/Linux system
 
 package_absent_list:
   - nano
+  - firefox-wayland     #not needed since firefox version 121
 
 
 flatpak_repos:
