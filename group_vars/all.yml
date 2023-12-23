@@ -20,23 +20,23 @@ yum_repos_tweaks_original:
       value: "https://mirrors.fedoraproject.org/metalink?repo=fedora-$releasever&arch=$basearch" }
   - { path: "/etc/yum.repos.d/fedora-updates.repo",
       section: "updates",
-      option: "metalink",  
+      option: "metalink",
       value: "https://mirrors.fedoraproject.org/metalink?repo=updates-released-f$releasever&arch=$basearch" }
-  - { path: "/etc/yum.repos.d/fedora-modular.repo",
-      section: "fedora-modular",
-      option: "metalink",  
-      value: "https://mirrors.fedoraproject.org/metalink?repo=fedora-modular-$releasever&arch=$basearch" }
-  - { path: "/etc/yum.repos.d/fedora-updates-modular.repo",
-      section: "updates-modular",
-      option: "metalink",  
-      value: "https://mirrors.fedoraproject.org/metalink?repo=updates-released-modular-f$releasever&arch=$basearch" }
+#  - { path: "/etc/yum.repos.d/fedora-modular.repo",
+#      section: "fedora-modular",
+#      option: "metalink",
+#      value: "https://mirrors.fedoraproject.org/metalink?repo=fedora-modular-$releasever&arch=$basearch" }
+#  - { path: "/etc/yum.repos.d/fedora-updates-modular.repo",
+#      section: "updates-modular",
+#      option: "metalink",
+#      value: "https://mirrors.fedoraproject.org/metalink?repo=updates-released-modular-f$releasever&arch=$basearch" }
   - { path: "/etc/yum.repos.d/rpmfusion-free.repo",
       section: "rpmfusion-free",
-      option: "metalink",  
+      option: "metalink",
       value: "https://mirrors.rpmfusion.org/metalink?repo=free-fedora-$releasever&arch=$basearch" }
   - { path: "/etc/yum.repos.d/rpmfusion-free-updates.repo",
       section: "rpmfusion-free-updates",
-      option: "metalink",  
+      option: "metalink",
       value: "https://mirrors.rpmfusion.org/metalink?repo=free-fedora-updates-released-$releasever&arch=$basearch" }
 
 # custom repos settings (yandex mirror)
@@ -50,14 +50,14 @@ yum_repos_tweaks_mirror:
       section: "updates",
       option: "baseurl",
       value: "{{ yum_repos_mirror }}/fedora/linux/updates/$releasever/Everything/$basearch/" }
-  - { path: "/etc/yum.repos.d/fedora-modular.repo",
-      section: "fedora-modular",
-      option: "baseurl",
-      value: "{{ yum_repos_mirror }}/fedora/linux/releases/$releasever/Modular/$basearch/os/" }
-  - { path: "/etc/yum.repos.d/fedora-updates-modular.repo",
-      section: "updates-modular",
-      option: "baseurl",
-      value: "{{ yum_repos_mirror }}/fedora/linux/updates/$releasever/Modular/$basearch/" }
+#  - { path: "/etc/yum.repos.d/fedora-modular.repo",
+#      section: "fedora-modular",
+#      option: "baseurl",
+#      value: "{{ yum_repos_mirror }}/fedora/linux/releases/$releasever/Modular/$basearch/os/" }
+#  - { path: "/etc/yum.repos.d/fedora-updates-modular.repo",
+#      section: "updates-modular",
+#      option: "baseurl",
+#      value: "{{ yum_repos_mirror }}/fedora/linux/updates/$releasever/Modular/$basearch/" }
   - { path: "/etc/yum.repos.d/rpmfusion-free.repo",
       section: "rpmfusion-free",
       option: "baseurl",

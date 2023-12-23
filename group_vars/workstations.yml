@@ -140,7 +140,6 @@ package_list:
   - the_silver_searcher
   - rdiff-backup
   - python3-pip
-  - python3-pytelegrambotapi
   - scrcpy    #from zeno/scrcpy copr
   - cockpit
   - cockpit-podman
@@ -195,6 +194,7 @@ package_list:
 package_absent_list:
   - nano
   - firefox-wayland     #not needed since firefox version 121
+  - python3-pytelegrambotapi
 
 
 flatpak_repos:
