@@ -248,7 +248,8 @@ flatpak_list:
   - rest.insomnia.Insomnia         # Open Source API Client (Postman alternative)
   - com.github.marhkb.Pods
 #  - net.nokyan.Resources
-#  - org.kiwix.desktop    #offline reader
+#  - org.kiwix.desktop          # offline reader (download wikipedia)
+#  - app.organicmaps.desktop    # offline maps - Hike, Bike, Drive Offline
 
 
 pip_list:
