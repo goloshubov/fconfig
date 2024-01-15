@@ -107,7 +107,7 @@ package_list:
   - apg
   - tango-icon-theme
   - parallel
-  - exa
+  - eza
   #- kubectl
   - kubernetes-client
   - helm
@@ -270,7 +270,7 @@ pip_list:
 
 cargo_list:
   - du-dust
-#  - exa
+#  - eza
   - tealdeer
 #  - httpie
 #  - xh
