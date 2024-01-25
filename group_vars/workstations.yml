@@ -144,7 +144,7 @@ package_list:
   - cockpit
   - cockpit-podman
   - cockpit-machines
-  - cockpit-pcp
+#  - cockpit-pcp
   - cockpit-selinux
   - vim-jedi
   - vim-go
