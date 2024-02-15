@@ -1,5 +1,5 @@
 # fconfig
-fconfig is my ansible implementation of dotfiles sync script. It helps me avoiding configuration drifts on a bunch of fedora linux workstations and (homelab) servers.
+fconfig is my ansible implementation of dotfiles sync scripts. It helps me avoiding configuration drifts on a bunch of fedora linux workstations and (homelab) servers.
 
 ## Features:
 - sync .dotfiles and configs
