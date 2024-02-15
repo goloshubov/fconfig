@@ -1,5 +1,5 @@
 # fconfig
-Ansible playbook that helps me avoiding configuration drifts on my fedora linux workstations and homelab servers.
+fconfig is my ansible implementation of dotfiles sync script. It helps me avoiding configuration drifts on a bunch of fedora linux workstations and (homelab) servers.
 
 ## Features:
 - sync .dotfiles and configs
@@ -49,9 +49,9 @@ $ ansible-playbook -i ./inventories workstation.yml --tags dotfiles
 $ ansible-playbook -i ./inventories workstation.yml --tags software --skip-tags flatpaks
 ```
 ```bash
-# bash aliases might be defined in dotfiles, e.g.: 
+# you can use fconfig to create bash aliases as well, e.g.: 
 # https://github.com/goloshubov/fconfig_files/blob/main/group/all/home/.bashrc.d/aliases.sh
-# and then, my most common use case (just sync dotfiles):
+# and then, my most common use case (just sync dotfiles), it's something like:
 $ fconfig_local --tags dotfiles
 ```
 
