@@ -36,27 +36,22 @@ $ git clone https://github.com/goloshubov/fconfig
 $ cd fconfig
 # edit inventory inventories/hosts* and variables group_vars/*, union_vars/*
 
-# apply configuration on local workstation (the most used case)
+# apply configuration on your local workstation (the most used case)
 $ ansible-playbook -i ./inventories workstation.yml -e ansible_connection=local --limit $(hostname)
 
-# or on whole group, 'servers' in this case
-$ ansible-playbook -i ./inventories server.yml
-
 # or apply it partialy, by using tags:
-# list all tags first
+# list all possible tags first
 $ ansible-playbook -i ./inventories server.yml --list-tags
-# or both tags and tasks
-# $ ansible-playbook -i ./inventories server.yml --list-tags --list-tasks
-# then dry-run
+# optionally dry-run to see what changes to expect
 $ ansible-playbook -i ./inventories server.yml --tags dotfiles --check --diff -vv
-# and run only what needed
+# and then run only what you need
 $ ansible-playbook -i ./inventories server.yml --tags dotfiles
 $ ansible-playbook -i ./inventories workstation.yml --tags software --skip-tags flatpaks
 ```
 ```bash
 # bash aliases might be defined in dotfiles, e.g.: 
 # https://github.com/goloshubov/fconfig_files/blob/main/group/all/home/.bashrc.d/aliases.sh
-# my most common use case (just sync dotfiles):
+# and then, my most common use case (just sync dotfiles):
 $ fconfig_local --tags dotfiles
 ```
 
