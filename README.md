@@ -52,12 +52,15 @@ $ ansible-playbook -i ./inventories server.yml --tags dotfiles --check --diff -v
 # and run only what needed
 $ ansible-playbook -i ./inventories server.yml --tags dotfiles
 $ ansible-playbook -i ./inventories workstation.yml --tags software --skip-tags flatpaks
-
+```
+```bash
 # bash aliases might be defined in dotfiles, e.g.: 
 # https://github.com/goloshubov/fconfig_files/blob/main/group/all/home/.bashrc.d/aliases.sh
-$ fconfig_local --list-tags
+# the most common case (just sync dotfiles):
+$ fconfig_local --tags dotfiles
+# or one of the following:
 $ fconfig_local --tags dotfiles,packages
-$ fconfig_local
+$ fconfig_local # everything
 ```
 
 ## files repos
