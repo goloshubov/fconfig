@@ -56,11 +56,8 @@ $ ansible-playbook -i ./inventories workstation.yml --tags software --skip-tags 
 ```bash
 # bash aliases might be defined in dotfiles, e.g.: 
 # https://github.com/goloshubov/fconfig_files/blob/main/group/all/home/.bashrc.d/aliases.sh
-# the most common case (just sync dotfiles):
+# my most common use case (just sync dotfiles):
 $ fconfig_local --tags dotfiles
-# or one of the following:
-$ fconfig_local --tags dotfiles,packages
-$ fconfig_local # everything
 ```
 
 ## files repos
