@@ -41,11 +41,11 @@ $ ansible-playbook -i ./inventories workstation.yml -e ansible_connection=local 
 
 # or apply it partialy, by using tags:
 # list all possible tags first
-$ ansible-playbook -i ./inventories server.yml --list-tags
+$ ansible-playbook -i ./inventories workstation.yml --list-tags
 # optionally dry-run to see what changes to expect
-$ ansible-playbook -i ./inventories server.yml --tags dotfiles --check --diff -vv
+$ ansible-playbook -i ./inventories workstation.yml --tags dotfiles --check --diff -vv
 # and then run only what you need
-$ ansible-playbook -i ./inventories server.yml --tags dotfiles
+$ ansible-playbook -i ./inventories workstation.yml --tags dotfiles
 $ ansible-playbook -i ./inventories workstation.yml --tags software --skip-tags flatpaks
 ```
 ```bash
