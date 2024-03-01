@@ -142,5 +142,7 @@ Pros: No duplication
 Cons: Different names. Extra tasks required
 
 union vars naming:
+```
 <varname>__union__g_<groupname>
 <varname>__union__h_<hostname>
+```
