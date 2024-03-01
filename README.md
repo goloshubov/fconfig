@@ -106,7 +106,11 @@ host/*/dconf/*
 
 
 ## vars, and the need of vars merge
+The problem - defining different package lists for hosts/groups/subgroups.
 
+Options:
+
+1. Standrad approach and ovverride issue.
 According to ansible documentation,
 'Here is the order of precedence from least to greatest (the last listed variables override all other variables)'
 ```
@@ -117,13 +121,21 @@ inventory file
 host_vars/*
 ...
 ```
+You have to be really carefull with precedence here. Also, there will be a lot of duplicated items in the lists for diffrent hosts/groups. For example, you have to re-define allmost identicall list for child groups here.
 
-The union_vars role adds merge option for some variables (package_list and copr_list for now).
-Meaning that the final package_list variable will be a merge of last listed variable from group_var or inventory and corresponding variables from 'union_vars/{group,host}/*
+2. different names
+To merge diffrent lists one could use the community.general.lists_union filter.
+
+3. dicts and hash_behaviour=merge
+it's not the best option for my use case
+
+4. manually merging list in run time. Extending standard approach.
+The union_vars role adds merge option for some variables - package_list and copr_list for now.
+It's extending vars by using extra variables with the same names defined in custom ./uion_vars/host/* and ./union_vars/group/* directories similarly to group_vars and host_vars in the standard approach. 
+For example, the final package_list variable here will be a merge of last listed variable from group_var,inventory,host_vars and corresponding variables from 'union_vars/{group,host}/*
 ```
 + union_vars/group/all.yml
 + union_vars/group/<groupname>.yml
 + union_vars/host/<hostname>.yml
 ```
-
-This might be useful to split package list by corresponding group or host files. Then variables will merged during run time.
+The variables will merged in run time. For example, you can define variables for top level groups in (standard) group_vars, and extend them in (custom) union_vars/group/.
