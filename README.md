@@ -29,7 +29,7 @@ fconfig is my ansible implementation of dotfiles type of scripts. It helps me av
 ```bash
 $ git clone https://github.com/goloshubov/fconfig
 $ cd fconfig
-# edit inventory inventories/hosts* and variables group_vars/*, union_vars/*
+# edit inventory inventories/hosts* and variables group_vars/* host_vars/*
 
 # apply configuration on your local workstation (the most used case)
 $ ansible-playbook -i ./inventories workstation.yml -e ansible_connection=local --limit $(hostname)
