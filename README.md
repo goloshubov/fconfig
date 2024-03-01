@@ -56,7 +56,18 @@ $ fconfig_local --tags dotfiles
 ```
 
 ## files repos
-files (configs and dotfiles) needs to be located in separate git repositories (one or many). The files_repos variable is defined in inventory/group_vars/all.yml. Here is expected repo directory structure, notice that all supported dirs (dconf, etc, home) are not mandatory:
+files (configs and dotfiles) needs to be located in separate git repositories (one or many). The files_repos variable is defined in inventory/group_vars/all.yml, e.g.:
+
+```yaml
+files_repos:
+  - { repo: 'git@github.com:username/fconfig_files.git',         localpath: '~/git/github/fconfig_files' }
+  - { repo: 'git@github.com:username/fconfig_files_private.git', localpath: '~/git/github/fconfig_files_private' }
+  - { repo: 'git@work-git:username/fconfig_files.git',           localpath: '~/git/work/fconfig_files' }
+  - { repo: 'git_repo_url', localpath: '<local_clone_path>' }
+  - ...
+```
+
+Here is expected repo directory structure, notice that all supported dirs (dconf, etc, home) are not mandatory:
 ```
 .
 ├── group
