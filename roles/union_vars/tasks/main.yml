@@ -5,6 +5,11 @@
     - software
     - packages
   block:
+    - name: Print vars
+      debug:
+        msg: "{{ item }}"
+      loop: "{{ print_vars }}"
+
     - name: Check files exist
       stat:
         path: "union_vars/group/{{ item }}.yml"
@@ -17,20 +22,31 @@
       register: union_vars_host
       delegate_to: 127.0.0.1
   
-    - name: Include groups vars to merge specific vars (package_list)
+    - name: Include groups vars to merge specific vars
       include_vars:
         file: "{{ item.stat.path }}"
         name: "{{ item.item }}"
       when: item.stat.exists
       loop: "{{ union_vars_group.results }}"
       delegate_to: 127.0.0.1
-    - name: Include host vars to merge specific vars (package_list)
+    - name: Include host vars to merge specific vars
       include_vars:
         file: "union_vars/host/{{ inventory_hostname }}.yml"
         name: "{{ inventory_hostname }}"
       when: union_vars_host.stat.exists
       delegate_to: 127.0.0.1
-  
+
+    # copr_list
+    - name: Merge copr_list (groups)
+      set_fact:
+        copr_list: "{{ copr_list | default([]) | union ( hostvars[inventory_hostname][item.item].copr_list ) }}"
+      when: item.stat.exists and hostvars[inventory_hostname][item.item].copr_list is defined
+      loop: "{{ union_vars_group.results }}"
+    - name: Merge copr_list (host)
+      set_fact:
+        copr_list: "{{ copr_list | default([]) | union( hostvars[inventory_hostname][inventory_hostname].copr_list ) }}"
+      when: union_vars_host.stat.exists and hostvars[inventory_hostname][inventory_hostname].copr_list is defined
+
     # package_list
     - name: Merge package_list (groups)
       set_fact:

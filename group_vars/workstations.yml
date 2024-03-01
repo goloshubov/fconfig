@@ -14,6 +14,8 @@ copr_list:
   - zeno/scrcpy
   - varlad/helix
   - kylegospo/webapp-manager
+#  - felfert/gitea
+
 
 # remove copr repos
 copr_absent_list:

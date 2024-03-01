@@ -6,8 +6,10 @@
     - packages
   become: true
   block:
-    - debug:
-        msg: "package_list:  {{ package_list }}"
+    - name: Print vars
+      debug:
+        msg: "{{ lookup('vars', item, default='') }}"
+      loop: "{{ print_vars }}"
 
     - name: Enable copr repos
       community.general.copr:

@@ -1,13 +1,20 @@
 ---
 
 - name: Add user to group
-  become: yes
-  ansible.builtin.user:
-    name: "{{ user_name }}"
-    groups: "{{ user_groups }}"
-    append: true
   tags:
     - groups
     - configs
+  block:
+    - name: Print vars
+      debug:
+        msg: "{{ lookup('vars', item, default='') }}"
+      loop: "{{ print_vars }}"
+
+    - name: Add user to group
+      become: yes
+      ansible.builtin.user:
+        name: "{{ user_name }}"
+        groups: "{{ user_groups }}"
+        append: true
 
 ...

@@ -6,6 +6,11 @@
     - configs
     - gnome
   block:
+    - name: Print vars
+      debug:
+        msg: "{{ lookup('vars', item, default='') }}"
+      loop: "{{ print_vars }}"
+
     - name: Create repos local dirs
       delegate_to: 127.0.0.1
       ansible.builtin.file:

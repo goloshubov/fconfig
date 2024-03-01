@@ -1,10 +1,17 @@
 ---
 
 - name: Install pip packages
-  pip:
-    name: "{{ pip_list }}"
   tags:
     - software
     - pip
+  block:
+    - name: Print vars
+      debug:
+        msg: "{{ lookup('vars', item, default='') }}"
+      loop: "{{ print_vars }}"
+
+    - name: Install pip packages
+      pip:
+        name: "{{ pip_list }}"
 
 ...

@@ -5,6 +5,11 @@
     - flatpaks
     - software
   block:
+    - name: Print vars
+      debug:
+        msg: "{{ lookup('vars', item, default='') }}"
+      loop: "{{ print_vars }}"
+
     - name: Flathub remotes
       become: yes
       flatpak_remote:
@@ -13,13 +18,13 @@
         flatpakrepo_url: '{{ item }}'
       loop: "{{ flatpak_repos }}"
       ignore_errors: true
-    
+
 #    # fix for fedora where the flathub repo is disabled and filtered by default.
 #    - name: Enable flathub remote
 #      become: yes
 #      command: flatpak remote-modify --enable --no-filter flathub
 #      changed_when: False
-    
+
     - name: Install flatpaks
       flatpak:
         name: '{{ item }}'

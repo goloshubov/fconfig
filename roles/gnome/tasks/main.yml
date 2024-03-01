@@ -5,6 +5,11 @@
     - configs
     - gnome
   block:
+    - name: Print vars
+      debug:
+        msg: "{{ lookup('vars', item, default='') }}"
+      loop: "{{ print_vars }}"
+
     - name: Find dconf dump files in 'group' dir
       ansible.builtin.find:
         paths: "{{ item[0].localpath }}/group/{{ item[1] }}/dconf/"
