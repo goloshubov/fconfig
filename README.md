@@ -138,4 +138,4 @@ For example, the final package_list variable here will be a merge of last listed
 + union_vars/group/<groupname>.yml
 + union_vars/host/<hostname>.yml
 ```
-The variables will merged in run time. For example, you can define variables for top level groups in (standard) group_vars, and extend them in (custom) union_vars/group/.
+The variables will merged in run time. For example, you can define variables for top level groups in (standard) group_vars, and extend them in (custom) union_vars/group/ for subgroups.
