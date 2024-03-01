@@ -55,13 +55,16 @@ prerequisite_packages_list:
 # package_list from this inventory will be merged with all corresponding union_vars/{group,host}/<name>.yml var files:
 # + union_vars/group/all.yml
 # + union_vars/group/workstations.yml
+package_list__union__h_x390yoga:
+  - nano-host
+package_list__union__g_laptops:
+  - nano-laptops
+
 package_list:
   - sshuttle
 #  - google-chrome-stable  # from google-chrome repo (fedora-workstation-repositories pkg)
   - wireguard-tools
-  - nmap-ncat
   - bind-utils
-  - rsync
   - tmux
   - screen
   - tilix
@@ -195,7 +198,7 @@ package_list:
   - micro             # a modern and intuitive terminal-based text editor
 
 package_absent_list:
-  - nano
+#  - nano
   - firefox-wayland     #not needed since firefox version 121
   - python3-pytelegrambotapi
 

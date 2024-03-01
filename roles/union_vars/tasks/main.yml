@@ -10,52 +10,22 @@
         msg: "{{ item }}"
       loop: "{{ print_vars }}"
 
-    - name: Check files exist
-      stat:
-        path: "union_vars/group/{{ item }}.yml"
-      register: union_vars_group
-      loop: "{{ ['all'] | union(group_names) }}"
-      delegate_to: 127.0.0.1
-    - name: Check files exist
-      stat:
-        path: "union_vars/host/{{ inventory_hostname }}.yml"
-      register: union_vars_host
-      delegate_to: 127.0.0.1
-  
-    - name: Include groups vars to merge specific vars
-      include_vars:
-        file: "{{ item.stat.path }}"
-        name: "{{ item.item }}"
-      when: item.stat.exists
-      loop: "{{ union_vars_group.results }}"
-      delegate_to: 127.0.0.1
-    - name: Include host vars to merge specific vars
-      include_vars:
-        file: "union_vars/host/{{ inventory_hostname }}.yml"
-        name: "{{ inventory_hostname }}"
-      when: union_vars_host.stat.exists
-      delegate_to: 127.0.0.1
+    #TODO: use union_vars with loop (avoi duplication)
 
-    # copr_list
-    - name: Merge copr_list (groups)
-      set_fact:
-        copr_list: "{{ copr_list | default([]) | union ( hostvars[inventory_hostname][item.item].copr_list ) }}"
-      when: item.stat.exists and hostvars[inventory_hostname][item.item].copr_list is defined
-      loop: "{{ union_vars_group.results }}"
     - name: Merge copr_list (host)
       set_fact:
-        copr_list: "{{ copr_list | default([]) | union( hostvars[inventory_hostname][inventory_hostname].copr_list ) }}"
-      when: union_vars_host.stat.exists and hostvars[inventory_hostname][inventory_hostname].copr_list is defined
-
-    # package_list
-    - name: Merge package_list (groups)
+        copr_list: "{{ copr_list | community.general.lists_union( hostvars[inventory_hostname]['copr_list__union__h_'+inventory_hostname ] | default([]) ) }}"
+    - name: Merge copr_list (groups)
       set_fact:
-        package_list: "{{ package_list | default([]) | union ( hostvars[inventory_hostname][item.item].package_list ) }}"
-      when: item.stat.exists and hostvars[inventory_hostname][item.item].package_list is defined
-      loop: "{{ union_vars_group.results }}"
+        copr_list: "{{ copr_list | community.general.lists_union( hostvars[inventory_hostname]['copr_list__union__g_'+item ] | default([]) ) }}"
+      loop: "{{ ['all'] | union(group_names) }}"
+
     - name: Merge package_list (host)
       set_fact:
-        package_list: "{{ package_list | default([]) | union( hostvars[inventory_hostname][inventory_hostname].package_list ) }}"
-      when: union_vars_host.stat.exists and hostvars[inventory_hostname][inventory_hostname].package_list is defined
+        package_list: "{{ package_list | community.general.lists_union( hostvars[inventory_hostname]['package_list__union__h_'+inventory_hostname ] | default([]) ) }}"
+    - name: Merge package_list (groups)
+      set_fact:
+        package_list: "{{ package_list | community.general.lists_union( hostvars[inventory_hostname]['package_list__union__g_'+item ] | default([]) ) }}"
+      loop: "{{ ['all'] | union(group_names) }}"
 
 ...

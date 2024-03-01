@@ -1,6 +1,6 @@
 ---
 
-package_list:
+package_list__union__g_lirc:
   - lirc
   #- xdotool   #Fake keyboard/mouse input for X11
   - ydotool   #Fake keyboard/mouse input for Wayland
