@@ -25,11 +25,6 @@ fconfig is my ansible implementation of dotfiles type of scripts. It helps me av
   - load dconf dump files
   - apply dconf key-value settings
 
-## TODO/consider:
-- complete package_list var separation: union_vars/group/all.yml(common) + group_vars/*(group specific)
-- configure other services/apps
-- merge support for other package lists (flatpak,pip,cargo,go)
-
 ## Usage:
 ```bash
 $ git clone https://github.com/goloshubov/fconfig
