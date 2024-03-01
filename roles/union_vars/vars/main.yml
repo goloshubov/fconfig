@@ -1,0 +1,7 @@
+---
+
+print_vars:
+  - copr_list
+  - package_list
+
+...

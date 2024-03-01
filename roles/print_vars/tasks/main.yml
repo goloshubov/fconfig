@@ -1,0 +1,12 @@
+---
+
+- name: Print variables
+  tags:
+    - debug
+  block:
+    - name: Print var (debug)
+      debug:
+        msg: "{{ lookup('vars', item) }}"
+      loop: "{{ print_vars }}"
+
+...

@@ -1,0 +1,6 @@
+---
+
+print_vars:
+  - ansible_galaxy_collection_list
+
+...
