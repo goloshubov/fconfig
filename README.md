@@ -146,3 +146,7 @@ union vars naming:
 <varname>__union__g_<groupname>
 <varname>__union__h_<hostname>
 ```
+Meaning that last listed (according to var precedence) package_list variable will be merged with all corresponding vars with name postfixes like
+```
+'package_list__union__h_<hostname>' and  'package_list__union__g_<groupname>'
+```
