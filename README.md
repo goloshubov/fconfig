@@ -127,7 +127,7 @@ inventory file
 host_vars/*
 ...
 ```
-You have to be really carefull with precedence here. Since you you to override the vars, there will be a lot of duplicated items in the lists for diffrent hosts/groups. For example, you have to re-define allmost identicall list for child groups here.
+You have to be really carefull with precedence here. Since you have to override the vars, there will be a lot of duplicated items in the lists for diffrent hosts/groups. For example, you have to re-define allmost identicall list for child groups here.
 
 Pros: Standard approach.
 Cons: Override order can be pure mess.
