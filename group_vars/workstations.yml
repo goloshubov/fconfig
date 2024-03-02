@@ -73,6 +73,7 @@ package_list:
   - tmux-powerline
   - vim-powerline
   - gnome-tweaks
+  - gnome-themes-extra      # adwaita-dark for legacy applications
   - gnome-extensions-app
   - gnome-shell-extension-apps-menu
   - gnome-shell-extension-just-perfection
