@@ -138,8 +138,8 @@ Cons: Dicts only, and it's officially not recommended.
 
 #### 3. Extending standard approach by manual overriding
 For example by using include_vars with name option + set_fact with it.
-Pros: The same soure var names.
-Cons: Custom vars sources. Extra tasks required.
+Pros: The same soure vars names.
+Cons: Custom source vars location. Extra tasks required.
 
 #### 4. different var names
 To merge diffrent lists one could use additionall tasks or merge them using for example the community.general.lists_union filter. It's my current implementation.
