@@ -11,6 +11,10 @@
       loop: "{{ print_vars }}"
 
     #TODO: use union_vars with loop (avoi duplication)
+#    - name: Merge
+#      set_fact:
+#        ITEM???: "{{ lookup('vars',item) | community.general.lists_union( hostvars[inventory_hostname][item+'__union__h_'+inventory_hostname] | default([]) ) }}"
+#      loop: "{{ union_vars }}"
 
     - name: Merge copr_list (host)
       set_fact:

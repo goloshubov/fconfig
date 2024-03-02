@@ -71,9 +71,10 @@ yum_repos_tweaks: "{{ yum_repos_tweaks_original }}"
 
 
 #TODO:
-union_vars:
-  - copr_list
-  - package_list
+#union_vars:
+#  - copr_list
+#  - package_list
+
 
 package_list__union__g_all:
   - nmap-ncat
