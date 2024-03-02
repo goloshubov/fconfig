@@ -141,8 +141,8 @@ For example by using include_vars with name option + set_fact with it.
 Pros: The same soure var names.
 Cons: Custom var dirs (for source vars). Extra tasks required.
 
-#### 4. different var names 
-To merge diffrent lists one could use additionall tasks or merge them using for example the community.general.lists_union filter
+#### 4. different var names
+To merge diffrent lists one could use additionall tasks or merge them using for example the community.general.lists_union filter. It's my current implementation.
 Pros: No duplication.
 Cons: Different names. Extra tasks required.
 
