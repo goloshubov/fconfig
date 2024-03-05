@@ -78,19 +78,18 @@ union_vars:
   - package_list
 
 
-#TODO:clean
+#TODO:clean, deduplicate
 # common packages for all groups
 package_list:
   - nmap-ncat
   - bind-utils
   - rsync
   - tmux
-  - screen
+#  - screen
   - git
   - vim-enhanced
   - vim-nerdtree
   - awesome-vim-colorschemes
-  - mc
   - curl
   - wget
   - htop
@@ -103,7 +102,7 @@ package_list:
   - powertop
   - apg
   - parallel
-  - exa
+#  - exa
   - dnf-utils
   - golang
   - rust
@@ -116,46 +115,25 @@ package_list:
   - bcc
   - sysstat
   - inotify-tools
-  #- podman
-  #- skopeo
-  - nethogs
+#  - nethogs
   - dnstop
-  - the_silver_searcher
-  - rdiff-backup
+#  - the_silver_searcher
+#  - rdiff-backup
   - python3-pip
   #- python3-pytelegrambotapi
   - cockpit
 #  - cockpit-podman
 #  - cockpit-machines
-  - cockpit-pcp
-  - cockpit-selinux
-  - vim-jedi
-  - vim-go
-  - golang-x-tools-gopls    #for vim-go
-  - vim-ansible
-  - ranger      # console file manager
-  #- terraform      # from mroche/cloud-native-utilities copr repo
-  #- golang-github-docker-slim    # docker-slim tool
-  - helix     # text editor. from varlad/helix copr repo
+#  - cockpit-pcp
+#  - cockpit-selinux
+#  - ranger      # console file manager
   - crudini   # A utility for manipulating ini files
   - pv        # monitor the progress of data through a pipe
   - progress  # Linux tool to show progress for cp, mv, dd, ... (formerly known as cv) 
-  - bat       # A cat(1) clone with wings. (Rust)
+#  - bat       # A cat(1) clone with wings. (Rust)
   #- go-task
-  - gcc
-  - java-17-openjdk 
-  - maven
-  - python3-devel
-  - python3-pip
-  - hadolint  # Dockerfile linter
-  - gitg   #git gui
-  - meld   #diff gui
-  - ShellCheck   # shell script static analysis tool (bash linter)
   - colorized-logs
-  - clide  # colorize ASCII text
-  - yamllint
-  - pylint
-  - python3-ruamel-yaml
+#  - clide  # colorize ASCII text
   - smartmontools
 #  - stunnel
 #  - chisel  # fast TCP/UDP tunnel, transported over HTTP, secured via SSH

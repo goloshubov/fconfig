@@ -65,6 +65,10 @@ package_list__union__g_workstations:
   - vim-enhanced
   - vim-nerdtree
   - awesome-vim-colorschemes
+  - vim-jedi
+  - vim-go
+  - golang-x-tools-gopls    #for vim-go
+  - vim-ansible
   - mc
   - curl
   - wget
@@ -72,6 +76,7 @@ package_list__union__g_workstations:
   - powerline
   - tmux-powerline
   - vim-powerline
+  - helix     # text editor. from varlad/helix copr repo
   - gnome-tweaks
   - gnome-themes-extra      # adwaita-dark for legacy applications
   - gnome-extensions-app
