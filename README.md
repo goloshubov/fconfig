@@ -7,7 +7,7 @@ fconfig is my ansible implementation of dotfiles type of scripts. It helps me av
   - separate dotfiles git repositories, public or private. An example is https://github.com/goloshubov/fconfig_files See files_repo's directory structure below.
 - install software:
   - rpm packages (dnf). 
-    - Merge (split) support for list variables (package_list, copr_list). See vars override / merge note below.
+    - Merge (split) support for list variables. See vars override / merge note below.
     - direct package urls
     - dnf proxy
     - repos configuration
