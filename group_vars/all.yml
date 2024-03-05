@@ -80,7 +80,7 @@ union_vars:
 
 #TODO:clean, deduplicate
 # common packages for all groups
-package_list:
+package_list__union__g_all:
   - nmap-ncat
   - bind-utils
   - rsync

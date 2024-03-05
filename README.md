@@ -155,7 +155,7 @@ Meaning that last listed (according to var precedence) package_list variable wil
 ```
 $ cat group_vars/all.yml
 ...
-package_list:
+package_list__union__g_all:
   - <pcakage1>
   - <package2>
 ...
