@@ -71,8 +71,8 @@ yum_repos_tweaks: "{{ yum_repos_tweaks_original }}"
 
 # variables to merge (in union_viars role)
 # naming:
-# <variable>__union_h_<hostanme>
-# <variable>__union_g_<groupname>
+# <variable>__union__h_<hostanme>
+# <variable>__union__g_<groupname>
 union_vars:
   - copr_list
   - package_list
