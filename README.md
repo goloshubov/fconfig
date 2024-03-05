@@ -151,7 +151,7 @@ union_vars naming:
 <varname>__union__g_<groupname>
 <varname>__union__h_<hostname>
 ```
-Meaning that last listed (according to var precedence) package_list variable will be merged with all corresponding vars like
+Meaning that last listed package_list variable, if any, will be merged with all corresponding vars like
 ```
 $ cat group_vars/all.yml
 ...
