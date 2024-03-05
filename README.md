@@ -153,9 +153,9 @@ union_vars naming:
 ```
 Meaning that last listed (according to var precedence) package_list variable will be merged with all corresponding vars like
 ```
-$ cat host_vars/x390yoga.yml
+$ cat group_vars/all.yml
 ...
-package_list__union__h_x390yoga:
+package_list:
   - <pcakage1>
   - <package2>
 ...
@@ -164,8 +164,16 @@ package_list__union__h_x390yoga:
 $ cat group_vars/workstations.yml
 ...
 package_list__union__g_workstations:
-  - <pcakage1>
-  - <package2>
+  - <pcakage3>
+  - <package4>
+...
+```
+```
+$ cat host_vars/x390yoga.yml
+...
+package_list__union__h_x390yoga:
+  - <pcakage5>
+  - <package6>
 ...
 ```
 
