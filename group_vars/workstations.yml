@@ -51,7 +51,7 @@ prerequisite_packages_list:
 #yum_repos_tweaks:
 
 
-package_list:
+package_list__union__g_workstations:
   - sshuttle
 #  - google-chrome-stable  # from google-chrome repo (fedora-workstation-repositories pkg)
   - wireguard-tools

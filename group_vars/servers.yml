@@ -36,12 +36,8 @@ direct_package_list:
 #    yum_repos_tweaks:
 
 
-# NOTE: package_list union (merge) in case union_vars role used
-# package_list from this inventory will be merged with all corresponding union_vars/{group,host}/<name>.yml var files:
-# + union_vars/group/all.yml
-# + union_vars/group/servers.yml
-#    package_list:
-#      - watchdog
+#TODO:
+#package_list__union__g_servers:
 
 
 pip_list:

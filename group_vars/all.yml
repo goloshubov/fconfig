@@ -78,7 +78,9 @@ union_vars:
   - package_list
 
 
-package_list__union__g_all:
+#TODO:clean
+# common packages for all groups
+package_list:
   - nmap-ncat
   - bind-utils
   - rsync
