@@ -127,19 +127,24 @@ inventory file
 host_vars/*
 ...
 ```
-You have to be really carefull with precedence here. Since you you have to override the vars, there will be a lot of duplicated items in the lists for diffrent hosts/groups. For example, you have to re-define allmost identicall list for child groups here.
+You have to be really carefull with precedence here. Since you have to override the vars, there will be a lot of duplicated items in the lists for diffrent hosts/groups. For example, you have to re-define allmost identicall list for child groups here.
 
-Pros: standard approach
-Cons: override order can be pure mess
+Pros: Standard approach.
+Cons: Override order can be pure mess.
 
 #### 2. dicts and hash_behaviour=merge
-Pros: the easiest way
-Cons: dicts only, and it's officially not recommended.
+Pros: The easiest way.
+Cons: Dicts only, and it's officially not recommended.
 
-#### 3. different var names
-To merge diffrent lists one could use additionall tasks or merge them using for example the community.general.lists_union filter.
-Pros: No duplication
-Cons: Different names. Extra tasks required
+#### 3. Extending standard approach by manual overriding
+For example by using include_vars with name option + set_fact with it.
+Pros: The same soure vars names.
+Cons: Custom source vars location. Extra tasks required.
+
+#### 4. different var names
+To merge diffrent lists one could use additionall tasks or merge them using for example the community.general.lists_union filter. It's my current implementation.
+Pros: No duplication.
+Cons: Different names. Extra tasks required.
 
 union vars naming:
 ```
@@ -151,3 +156,4 @@ Meaning that last listed (according to var precedence) package_list variable wil
 package_list__union__h_<hostname>
 package_list__union__g_<groupname>
 ```
+
