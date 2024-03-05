@@ -142,11 +142,11 @@ Pros: The same soure vars names.
 Cons: Custom source vars location. Extra tasks required.
 
 #### 4. different var names
-To merge diffrent lists one could use additionall tasks or merge them using for example the community.general.lists_union filter. It's my current implementation.
+To merge diffrent lists one could use additionall tasks or merge them using for example the community.general.lists_union filter. It's my current implementation, union_vars role.
 Pros: No duplication.
 Cons: Different names. Extra tasks required.
 
-union vars naming:
+union_vars naming:
 ```
 <varname>__union__g_<groupname>
 <varname>__union__h_<hostname>
