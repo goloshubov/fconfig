@@ -69,11 +69,13 @@ yum_repos_tweaks_mirror:
 
 yum_repos_tweaks: "{{ yum_repos_tweaks_original }}"
 
-
-#TODO:
-#union_vars:
-#  - copr_list
-#  - package_list
+# variables to merge (in union_viars role)
+# naming:
+# <variable>__union_h_<hostanme>
+# <variable>__union_g_<groupname>
+union_vars:
+  - copr_list
+  - package_list
 
 
 package_list__union__g_all:
