@@ -10,13 +10,13 @@
         msg: "{{ item }}"
       loop: "{{ union_vars }}"
 
-    - name: Merge union_vars (host)
-      set_fact:
-        "{{ item }}": "{{ lookup('vars',item) | community.general.lists_union( hostvars[inventory_hostname][item+'__union__h_'+inventory_hostname] | default([]) ) }}"
-      loop: "{{ union_vars }}"
     - name: Merge union_vars (group)
       set_fact:
         "{{ item[0] }}": "{{ lookup('vars',item[0]) | community.general.lists_union( hostvars[inventory_hostname][item[0]+'__union__g_'+item[1]] | default([]) ) }}"
       loop: "{{ union_vars | product ( ['all'] | union(group_names) ) | list }}"
+    - name: Merge union_vars (host)
+      set_fact:
+        "{{ item }}": "{{ lookup('vars',item) | community.general.lists_union( hostvars[inventory_hostname][item+'__union__h_'+inventory_hostname] | default([]) ) }}"
+      loop: "{{ union_vars }}"
 
 ...
