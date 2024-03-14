@@ -193,6 +193,7 @@ package_list__union__g_workstations:
   - clapper          # A GNOME media player (GJS,GTK4).  (installed for live wallpaper best performance)
 #  - waydroid         # Waydroid uses a container-based approach to boot a full Android system on a regular GNU/Linux system
   - micro             # a modern and intuitive terminal-based text editor
+#  - scalpel # file recovery / undo delete
 
 package_absent_list:
 #  - nano
