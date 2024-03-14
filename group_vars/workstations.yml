@@ -15,7 +15,7 @@ copr_list:
   - varlad/helix
   - kylegospo/webapp-manager
 #  - felfert/gitea
-#  - varlad/zellij
+#  - varlad/zellij    #A terminal workspace with batteries included. (tmux alternative)
 
 
 # remove copr repos
