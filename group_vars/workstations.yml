@@ -12,7 +12,6 @@ user_groups:
 copr_list:
   - mroche/cloud-native-utilities      # helm,knative-client,pack,packer,tektoncd-cli,terraform
   - zeno/scrcpy
-  - varlad/helix
   - kylegospo/webapp-manager
 #  - felfert/gitea
 #  - varlad/zellij    #A terminal workspace with batteries included. (tmux alternative)
@@ -21,6 +20,7 @@ copr_list:
 # remove copr repos
 copr_absent_list:
   - luya/xournalpp  # latest xournal++
+  - varlad/helix
 
 
 #third party repos
