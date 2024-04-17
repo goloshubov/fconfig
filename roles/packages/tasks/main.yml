@@ -4,98 +4,15 @@
   tags: 
     - software
     - packages
-  become: true
   block:
-    - name: Print vars
-      debug:
-        msg: "{{ lookup('vars', item, default='') }}"
-      loop: "{{ print_vars }}"
+    - name: Update packages on RHEL-based OS
+      import_tasks: redhat.yml
+      when: |
+        ansible_os_family == "RedHat"
 
-    - name: Enable copr repos
-      community.general.copr:
-        name: "{{ item }}"
-        state: enabled
-      loop:  "{{ copr_list }}"
-      tags:
-        - package-repos
-        - package-repos-copr
-      when: copr_list is defined
-
-    - name: Remove copr repos
-      community.general.copr:
-        name: "{{ item }}"
-        state: absent
-      loop:  "{{ copr_absent_list }}"
-      tags:
-        - package-repos
-        - package-repos-copr
-      when: copr_absent_list is defined
-
-    - name: Install other repos
-      command: dnf config-manager --add-repo '{{ item }}' -y
-      loop: "{{ other_repos_list }}"
-      tags: package-repos
-      when: other_repos_list is defined
-
-    - name: Install packages (direct link)
-      dnf:
-        state: latest
-        name: "{{ direct_package_list }}"
-        disable_gpg_check: true
-      tags: package-repos
-      when: direct_package_list is defined
-
-    - name: Install prerequisite packages (repos)
-      dnf:
-        state: latest
-        name: "{{ prerequisite_packages_list }}"
-      tags: package-repos
-      when: prerequisite_packages_list is defined
-
-    - name: Enable repos
-      command: dnf config-manager --set-enabled "{{ item }}"
-      loop: "{{ setenabled_repo_list }}"
-      tags: package-repos
-      when: setenabled_repo_list is defined
-
-    - name: repo_tweaks. delete mutually exclusive value (metalink|baseurl)
-      community.general.ini_file:
-        path: '{{ item.path }}'
-        section: '{{ item.section }}'
-        option: '{{ ( item.option == "baseurl" ) | ternary("metalink", "baseurl") }}'
-        state: absent
-        backup: true
-        no_extra_spaces: true
-      when: yum_repos_tweaks is defined and (item.option == "metalink" or item.option == "baseurl")
-      loop: "{{ yum_repos_tweaks }}"
-      tags:
-        - package-repos
-        - package-repos-tweaks
-
-    - name: repo_tweaks. set new value
-      community.general.ini_file:
-        path: '{{ item.path }}'
-        section: '{{ item.section }}'
-        option: '{{ item.option }}'
-        value: '{{ item.value }}'
-        backup: true
-        no_extra_spaces: true
-      loop: "{{ yum_repos_tweaks }}"
-      tags:
-        - package-repos
-        - package-repos-tweaks
-      when: yum_repos_tweaks is defined 
-
-    - name: Install packages
-      dnf:
-        state: latest
-        name: "{{ package_list }}"
-      when: package_list is defined
-
-    - name: Remove packages
-      dnf:
-        state: absent
-        name: "{{ package_absent_list }}"
-      when: package_absent_list is defined
+    - name: Update packets on Debian-based OS
+      import_tasks: debian.yml
+      when: |
+        ansible_os_family == "Debian"
 
 ...
