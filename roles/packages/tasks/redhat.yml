@@ -3,16 +3,6 @@
 - name: RedHat packages tasks
   become: true
   block:
-    - name: Update packages on RHEL-based OS
-      import_tasks: update-redhat.yml
-      when: |
-        ansible_os_family == "RedHat"
-
-    - name: Update packets on Debian-based OS
-      import_tasks: update-debian.yml
-      when: |
-        ansible_os_family == "Debian"
-
     - name: Print vars
       debug:
         msg: "{{ lookup('vars', item, default='') }}"
