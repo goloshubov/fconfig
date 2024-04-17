@@ -5,12 +5,12 @@
     - software
     - packages
   block:
-    - name: Update packages on RHEL-based OS
+    - name: Packages on RHEL-based OS
       import_tasks: redhat.yml
       when: |
         ansible_os_family == "RedHat"
 
-    - name: Update packets on Debian-based OS
+    - name: Packets on Debian-based OS
       import_tasks: debian.yml
       when: |
         ansible_os_family == "Debian"
