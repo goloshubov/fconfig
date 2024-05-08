@@ -294,6 +294,7 @@ go_list:
 # - github.com/ericchiang/pup    # html parser
   - golang.stackrox.io/kube-linter/cmd/kube-linter
 #  - github.com/gcla/termshark/v2/cmd/termshark     #A terminal user-interface for tshark
+  - github.com/kubecolor/kubecolor
 
 
 ansible_galaxy_collection_list:
