@@ -114,7 +114,6 @@ package_list__union__g_workstations:
   #- kubectl
   - kubernetes-client
   - helm
-  #- barrier
   - dnf-utils
   - ffmpeg
   - golang
@@ -241,7 +240,6 @@ flatpak_list:
 #  - org.jitsi.jitsi-meet
 #  - com.google.AndroidStudio
   - net.cozic.joplin_desktop
-#  - com.github.debauchee.barrier
   - de.haeckerfelix.Fragments      # bittorrent client
   - org.libreoffice.LibreOffice
 #  - com.belmoussaoui.Authenticator
