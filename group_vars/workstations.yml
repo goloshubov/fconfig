@@ -15,6 +15,7 @@ copr_list:
   - kylegospo/webapp-manager
 #  - felfert/gitea
 #  - varlad/zellij    #A terminal workspace with batteries included. (tmux alternative)
+  - getpagespeed/wrk  #modern HTTP benchmarking tool
 
 
 # remove copr repos
@@ -196,6 +197,7 @@ package_list__union__g_workstations:
 #  - scalpel # file recovery / undo delete
   - helvum  #patchbay for pipewire
   - hping3  #TCP/IP stack auditing
+  - wrk     #modern HTTP benchmarking tool (copr repo)
 
 package_absent_list:
 #  - nano
