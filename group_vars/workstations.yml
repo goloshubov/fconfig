@@ -195,6 +195,7 @@ package_list__union__g_workstations:
   - micro             # a modern and intuitive terminal-based text editor
 #  - scalpel # file recovery / undo delete
   - helvum  #patchbay for pipewire
+  - hping3  #TCP/IP stack auditing
 
 package_absent_list:
 #  - nano
