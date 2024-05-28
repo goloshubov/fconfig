@@ -272,6 +272,7 @@ pip_list:
   - powerline-k8s
   - awxkit
   - tftui    # Terraform textual UI
+  - terminaltexteffects   #tte (JFF)
 
 
 cargo_list:
