@@ -1,5 +1,5 @@
 ---
 
-lirc_device: /dev/usb/hiddev0
+lirc_device: /dev/usb/hiddev2
 
 ...
