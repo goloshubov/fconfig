@@ -198,6 +198,7 @@ package_list__union__g_workstations:
   - helvum  #patchbay for pipewire
   - hping3  #TCP/IP stack auditing
   - wrk     #modern HTTP benchmarking tool (copr repo)
+  - python-virtualenv
 
 package_absent_list:
 #  - nano
