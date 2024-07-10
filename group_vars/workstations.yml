@@ -6,6 +6,7 @@ user_primary_group: goloshubov
 user_groups:
   - libvirt
   - docker
+  - dialout
 
 
 #copr, third party repos
@@ -200,6 +201,9 @@ package_list__union__g_workstations:
   - wrk     #modern HTTP benchmarking tool (copr repo)
   - python-virtualenv
 #  - pipx  #Install and Run Python Applications in Isolated Environments
+  - flrig  #ham
+  - fldigi #ham
+  - wsjtx  #ham
 
 package_absent_list:
 #  - nano
