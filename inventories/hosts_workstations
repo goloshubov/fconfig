@@ -14,5 +14,5 @@ x13yoga1
 [k8s_cli:children]
 workstations
 
-
-# NOTE: check group_vars/, host_vars/ and union_vars/ for vars
+[ham:children]
+workstations
