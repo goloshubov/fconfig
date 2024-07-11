@@ -1,9 +1,9 @@
 ---
 
 package_list__union__g_ham:
-  - gqrx   #ham radio
-  - flrig  #ham radio
-  - fldigi #ham radio
-  - wsjtx  #ham radio
+  - gqrx
+  - flrig
+  - fldigi
+  - wsjtx
 
 ...
