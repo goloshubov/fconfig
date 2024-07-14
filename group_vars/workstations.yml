@@ -259,6 +259,7 @@ flatpak_list:
 #  - net.nokyan.Resources
 #  - org.kiwix.desktop          # offline reader (download wikipedia)
 #  - app.organicmaps.desktop    # offline maps - Hike, Bike, Drive Offline
+  - io.github.foldynl.QLog     # ham
 
 
 pip_list:
