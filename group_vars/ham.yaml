@@ -5,5 +5,6 @@ package_list__union__g_ham:
   - flrig
   - fldigi
   - wsjtx
+  - js8call
 
 ...
