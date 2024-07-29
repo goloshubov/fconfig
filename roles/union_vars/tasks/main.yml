@@ -4,6 +4,7 @@
   tags:
     - software
     - packages
+    - flatpaks
   block:
     - name: Print vars
       debug:
