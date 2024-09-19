@@ -260,6 +260,7 @@ flatpak_list:
 #  - org.kiwix.desktop          # offline reader (download wikipedia)
 #  - app.organicmaps.desktop    # offline maps - Hike, Bike, Drive Offline
   - dev.zed.Zed
+#  - net.nokyan.Resources
 
 
 pip_list:
