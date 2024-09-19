@@ -262,7 +262,7 @@ flatpak_list:
   - dev.zed.Zed
 #  - net.nokyan.Resources
 
-
+# TODO: pipx
 pip_list:
 #      - youtube-dl
   - yt-dlp
