@@ -3,7 +3,7 @@
   become: true
   block:
     - name: Print vars
-      ansible.builtin.debug
+      ansible.builtin.debug:
         msg: "{{ lookup('vars', item, default='') }}"
       loop:
         - copr_list

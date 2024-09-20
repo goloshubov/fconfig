@@ -5,7 +5,7 @@
     - gnome
   block:
     - name: Print vars
-      ansible.builtin.debug
+      ansible.builtin.debug:
         msg: "{{ lookup('vars', item, default='') }}"
       loop:
         - dconf_settings

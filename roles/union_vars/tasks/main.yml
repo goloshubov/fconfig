@@ -6,7 +6,7 @@
     - flatpaks
   block:
     - name: Print vars
-      ansible.builtin.debug
+      ansible.builtin.debug:
         msg: "{{ item }}"
       loop:
         - union_vars
