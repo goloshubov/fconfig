@@ -265,6 +265,7 @@ pipx_packages:
     - argcomplete
     - requests
     - kubernetes
+    - pip-system-certs
   yt-dlp:
   #youtube-dl:
   yq:
