@@ -249,7 +249,6 @@ flatpak_packages:
   #- org.kiwix.desktop          # offline reader (download wikipedia)
   #- app.organicmaps.desktop    # offline maps - Hike, Bike, Drive Offline
   - dev.zed.Zed
-  #- net.nokyan.Resources
 
 #NOTE: use pipx when possible
 pip_packages:
