@@ -5,6 +5,6 @@
   tags: always
   tasks:
     - name: This task will be skipped in check mode
-      ansible.buiting.debug:
+      ansible.builtin.debug
         msg: "{{ ansible_check_mode | ternary('DRY RUN', 'NOT A DRY RUN') }}"
       run_once: true

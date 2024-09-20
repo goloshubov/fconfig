@@ -5,7 +5,7 @@
     - cargo
   block:
     - name: Print vars
-      ansible.buiting.debug:
+      ansible.builtin.debug
         msg: "{{ lookup('vars', item, default='') }}"
       loop:
         - cargo_packages
