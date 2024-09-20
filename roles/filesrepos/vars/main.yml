@@ -1,6 +1,0 @@
----
-
-print_vars:
-  - files_repos
-
-...

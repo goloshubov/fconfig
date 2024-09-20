@@ -1,7 +1,6 @@
 ---
-
 - name: Packages tasks
-  tags: 
+  tags:
     - software
     - packages
   block:
@@ -14,5 +13,3 @@
       import_tasks: debian.yml
       when: |
         ansible_os_family == "Debian"
-
-...

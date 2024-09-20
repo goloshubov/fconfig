@@ -1,5 +1,4 @@
 ---
-
 - name: print info
   hosts: all
   gather_facts: false
@@ -22,5 +21,3 @@
       when: confirm_answer != "y" and confirm_answer != "Y"
       tags: always
       run_once: true
-
-...

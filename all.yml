@@ -1,5 +1,4 @@
 ---
-
 - import_playbook: dry-run-note.yml
 
 # interactive confirmation
@@ -7,11 +6,8 @@
 - name: confirmation
   import_playbook: confirmation.yml
 
-
 - name: workstations configuration
   import_playbook: workstation.yml
 
 - name: servers configuration
   import_playbook: server.yml
-
-...

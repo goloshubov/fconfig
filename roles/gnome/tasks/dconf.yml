@@ -1,7 +1,4 @@
 ---
-
 - name: Load dconf dump files
-  shell: "dconf load -f  /{{ item.path | basename | regex_replace('__','/') }}/ < {{ item.path }}" 
+  shell: "dconf load -f  /{{ item.path | basename | regex_replace('__','/') }}/ < {{ item.path }}"
   loop: "{{ item.files }}"
-
-...

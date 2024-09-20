@@ -1,5 +1,4 @@
 ---
-
 - name: install go packages
   tags:
     - software
@@ -8,10 +7,9 @@
     - name: Print vars
       debug:
         msg: "{{ lookup('vars', item, default='') }}"
-      loop: "{{ print_vars }}"
+      loop:
+        - go_list
 
     - name: install go packages
       command: go install '{{ item }}'@latest
       loop: "{{ go_list }}"
-
-...

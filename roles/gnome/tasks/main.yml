@@ -1,5 +1,4 @@
 ---
-
 - name: GNOME tasks
   tags:
     - configs
@@ -8,7 +7,8 @@
     - name: Print vars
       debug:
         msg: "{{ lookup('vars', item, default='') }}"
-      loop: "{{ print_vars }}"
+      loop:
+        - dconf_settings
 
     - name: Find dconf dump files in 'group' dir
       ansible.builtin.find:
@@ -22,8 +22,8 @@
 
     - name: Apply dconf key-value settings
       dconf:
-        key: '{{ item.key }}'
-        value: '{{ item.value }}'    
+        key: "{{ item.key }}"
+        value: "{{ item.value }}"
       loop: "{{ dconf_settings | dict2items }}"
 
     - name: Find dconf dump files in 'host' dir
@@ -35,5 +35,3 @@
     - name: Load dconf dumps, 'host' dir
       include_tasks: dconf.yml
       loop: "{{ host_dconfdumps.results }}"
-
-...

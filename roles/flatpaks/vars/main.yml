@@ -1,7 +1,0 @@
----
-
-print_vars:
-  - flatpak_repos
-  - flatpak_list
-
-...

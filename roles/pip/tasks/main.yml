@@ -1,5 +1,4 @@
 ---
-
 - name: Install pip packages
   tags:
     - software
@@ -8,10 +7,9 @@
     - name: Print vars
       debug:
         msg: "{{ lookup('vars', item, default='') }}"
-      loop: "{{ print_vars }}"
+      loop:
+        - pip_list
 
     - name: Install pip packages
       pip:
         name: "{{ pip_list }}"
-
-...

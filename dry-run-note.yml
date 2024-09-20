@@ -1,5 +1,4 @@
 ---
-
 - name: Dry-run notification
   hosts: all
   gather_facts: no
@@ -9,5 +8,3 @@
       debug:
         msg: "{{ ansible_check_mode | ternary('DRY RUN', 'NOT A DRY RUN') }}"
       run_once: true
-
-...

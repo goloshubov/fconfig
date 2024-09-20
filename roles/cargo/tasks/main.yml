@@ -1,5 +1,4 @@
 ---
-
 - name: Install cargo packages
   tags:
     - software
@@ -8,11 +7,10 @@
     - name: Print vars
       debug:
         msg: "{{ lookup('vars', item, default='') }}"
-      loop: "{{ print_vars }}"
+      loop:
+        - cargo_list
 
     - name: Install cargo packages
       community.general.cargo:
         state: latest
         name: "{{ cargo_list }}"
-
-...

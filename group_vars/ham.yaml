@@ -1,5 +1,4 @@
 ---
-
 package_list__union__g_ham:
   - gqrx
   - flrig
@@ -9,5 +8,3 @@ package_list__union__g_ham:
 
 flatpak_list__union__g_ham:
   - io.github.foldynl.QLog
-
-...

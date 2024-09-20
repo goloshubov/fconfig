@@ -1,5 +1,4 @@
 ---
-
 - name: Install ansible-galaxy collections
   tags:
     - software
@@ -8,12 +7,11 @@
     - name: Print vars
       debug:
         msg: "{{ lookup('vars', item, default='') }}"
-      loop: "{{ print_vars }}"
+      loop:
+        - ansible_galaxy_collection_list
 
     - name: Install ansible-galaxy collections
       community.general.ansible_galaxy_install:
         type: collection
-        name: '{{ item }}'
+        name: "{{ item }}"
       loop: "{{ ansible_galaxy_collection_list }}"
-
-...

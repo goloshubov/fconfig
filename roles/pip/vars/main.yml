@@ -1,6 +1,0 @@
----
-
-print_vars:
-  - pip_list
-
-...

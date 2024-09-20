@@ -1,5 +1,2 @@
 ---
-
 lirc_device: /dev/usb/hiddev0
-
-...

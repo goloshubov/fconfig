@@ -1,5 +1,4 @@
 ---
-
 - name: Pull files repos
   tags:
     - dotfiles
@@ -9,7 +8,8 @@
     - name: Print vars
       debug:
         msg: "{{ lookup('vars', item, default='') }}"
-      loop: "{{ print_vars }}"
+      loop:
+        - files_repos
 
     - name: Create repos local dirs
       delegate_to: 127.0.0.1
@@ -26,5 +26,3 @@
         force: yes
         accept_hostkey: yes
       loop: "{{ files_repos }}"
-
-...

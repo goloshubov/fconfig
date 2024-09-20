@@ -1,74 +1,92 @@
 ---
-
 fedora_version: 40
 
 files_repos:
-  - { repo: 'git@github.com:goloshubov/fconfig_files.git',         localpath: '~/git/github/fconfig_files' }
-  - { repo: 'git@github.com:goloshubov/fconfig_files_private.git', localpath: '~/git/github/fconfig_files_private' }
-
+  - {
+      repo: "git@github.com:goloshubov/fconfig_files.git",
+      localpath: "~/git/github/fconfig_files",
+    }
+  - {
+      repo: "git@github.com:goloshubov/fconfig_files_private.git",
+      localpath: "~/git/github/fconfig_files_private",
+    }
 
 dnf_proxy_protocol: http
 dnf_proxy_host: 192.168.35.1
 dnf_proxy_port: 3128
 
-
 # original repos settings
 yum_repos_tweaks_original:
-  - { path: "/etc/yum.repos.d/fedora.repo",
+  - {
+      path: "/etc/yum.repos.d/fedora.repo",
       section: "fedora",
       option: "metalink",
-      value: "https://mirrors.fedoraproject.org/metalink?repo=fedora-$releasever&arch=$basearch" }
-  - { path: "/etc/yum.repos.d/fedora-updates.repo",
+      value: "https://mirrors.fedoraproject.org/metalink?repo=fedora-$releasever&arch=$basearch",
+    }
+  - {
+      path: "/etc/yum.repos.d/fedora-updates.repo",
       section: "updates",
       option: "metalink",
-      value: "https://mirrors.fedoraproject.org/metalink?repo=updates-released-f$releasever&arch=$basearch" }
-#  - { path: "/etc/yum.repos.d/fedora-modular.repo",
-#      section: "fedora-modular",
-#      option: "metalink",
-#      value: "https://mirrors.fedoraproject.org/metalink?repo=fedora-modular-$releasever&arch=$basearch" }
-#  - { path: "/etc/yum.repos.d/fedora-updates-modular.repo",
-#      section: "updates-modular",
-#      option: "metalink",
-#      value: "https://mirrors.fedoraproject.org/metalink?repo=updates-released-modular-f$releasever&arch=$basearch" }
-  - { path: "/etc/yum.repos.d/rpmfusion-free.repo",
+      value: "https://mirrors.fedoraproject.org/metalink?repo=updates-released-f$releasever&arch=$basearch",
+    }
+  #  - { path: "/etc/yum.repos.d/fedora-modular.repo",
+  #      section: "fedora-modular",
+  #      option: "metalink",
+  #      value: "https://mirrors.fedoraproject.org/metalink?repo=fedora-modular-$releasever&arch=$basearch" }
+  #  - { path: "/etc/yum.repos.d/fedora-updates-modular.repo",
+  #      section: "updates-modular",
+  #      option: "metalink",
+  #      value: "https://mirrors.fedoraproject.org/metalink?repo=updates-released-modular-f$releasever&arch=$basearch" }
+  - {
+      path: "/etc/yum.repos.d/rpmfusion-free.repo",
       section: "rpmfusion-free",
       option: "metalink",
-      value: "https://mirrors.rpmfusion.org/metalink?repo=free-fedora-$releasever&arch=$basearch" }
-  - { path: "/etc/yum.repos.d/rpmfusion-free-updates.repo",
+      value: "https://mirrors.rpmfusion.org/metalink?repo=free-fedora-$releasever&arch=$basearch",
+    }
+  - {
+      path: "/etc/yum.repos.d/rpmfusion-free-updates.repo",
       section: "rpmfusion-free-updates",
       option: "metalink",
-      value: "https://mirrors.rpmfusion.org/metalink?repo=free-fedora-updates-released-$releasever&arch=$basearch" }
+      value: "https://mirrors.rpmfusion.org/metalink?repo=free-fedora-updates-released-$releasever&arch=$basearch",
+    }
 
 # custom repos settings (yandex mirror)
 yum_repos_mirror: "http://mirror.yandex.ru"
 yum_repos_tweaks_mirror:
-  - { path: "/etc/yum.repos.d/fedora.repo",
+  - {
+      path: "/etc/yum.repos.d/fedora.repo",
       section: "fedora",
       option: "baseurl",
-      value: "{{ yum_repos_mirror }}/fedora/linux/releases/$releasever/Everything/$basearch/os/" }
-  - { path: "/etc/yum.repos.d/fedora-updates.repo",
+      value: "{{ yum_repos_mirror }}/fedora/linux/releases/$releasever/Everything/$basearch/os/",
+    }
+  - {
+      path: "/etc/yum.repos.d/fedora-updates.repo",
       section: "updates",
       option: "baseurl",
-      value: "{{ yum_repos_mirror }}/fedora/linux/updates/$releasever/Everything/$basearch/" }
-#  - { path: "/etc/yum.repos.d/fedora-modular.repo",
-#      section: "fedora-modular",
-#      option: "baseurl",
-#      value: "{{ yum_repos_mirror }}/fedora/linux/releases/$releasever/Modular/$basearch/os/" }
-#  - { path: "/etc/yum.repos.d/fedora-updates-modular.repo",
-#      section: "updates-modular",
-#      option: "baseurl",
-#      value: "{{ yum_repos_mirror }}/fedora/linux/updates/$releasever/Modular/$basearch/" }
-  - { path: "/etc/yum.repos.d/rpmfusion-free.repo",
+      value: "{{ yum_repos_mirror }}/fedora/linux/updates/$releasever/Everything/$basearch/",
+    }
+  #  - { path: "/etc/yum.repos.d/fedora-modular.repo",
+  #      section: "fedora-modular",
+  #      option: "baseurl",
+  #      value: "{{ yum_repos_mirror }}/fedora/linux/releases/$releasever/Modular/$basearch/os/" }
+  #  - { path: "/etc/yum.repos.d/fedora-updates-modular.repo",
+  #      section: "updates-modular",
+  #      option: "baseurl",
+  #      value: "{{ yum_repos_mirror }}/fedora/linux/updates/$releasever/Modular/$basearch/" }
+  - {
+      path: "/etc/yum.repos.d/rpmfusion-free.repo",
       section: "rpmfusion-free",
       option: "baseurl",
-      value: "{{ yum_repos_mirror }}/fedora/rpmfusion/free/fedora/releases/$releasever/Everything/$basearch/os/" }
-  - { path: "/etc/yum.repos.d/rpmfusion-free-updates.repo",
+      value: "{{ yum_repos_mirror }}/fedora/rpmfusion/free/fedora/releases/$releasever/Everything/$basearch/os/",
+    }
+  - {
+      path: "/etc/yum.repos.d/rpmfusion-free-updates.repo",
       section: "rpmfusion-free-updates",
       option: "baseurl",
-      value: "{{ yum_repos_mirror }}/fedora/rpmfusion/free/fedora/updates/$releasever/$basearch/" }
+      value: "{{ yum_repos_mirror }}/fedora/rpmfusion/free/fedora/updates/$releasever/$basearch/",
+    }
 
 yum_repos_tweaks: "{{ yum_repos_tweaks_original }}"
-
 
 # variables to merge (in union_viars role)
 # naming:
@@ -79,7 +97,6 @@ union_vars:
   - package_list
   - flatpak_list
 
-
 #TODO:clean, deduplicate
 # common packages for all groups
 package_list__union__g_all:
@@ -87,7 +104,7 @@ package_list__union__g_all:
   - bind-utils
   - rsync
   - tmux
-#  - screen
+  #  - screen
   - git
   - vim-enhanced
   - vim-nerdtree
@@ -104,7 +121,7 @@ package_list__union__g_all:
   - powertop
   - apg
   - parallel
-#  - exa
+  #  - exa
   - dnf-utils
   - golang
   - rust
@@ -117,27 +134,25 @@ package_list__union__g_all:
   - bcc
   - sysstat
   - inotify-tools
-#  - nethogs
+  #  - nethogs
   - dnstop
-#  - the_silver_searcher
-#  - rdiff-backup
+  #  - the_silver_searcher
+  #  - rdiff-backup
   - python3-pip
   #- python3-pytelegrambotapi
   - cockpit
-#  - cockpit-podman
-#  - cockpit-machines
-#  - cockpit-pcp
-#  - cockpit-selinux
-#  - ranger      # console file manager
-  - crudini   # A utility for manipulating ini files
-  - pv        # monitor the progress of data through a pipe
-  - progress  # Linux tool to show progress for cp, mv, dd, ... (formerly known as cv) 
-#  - bat       # A cat(1) clone with wings. (Rust)
+  #  - cockpit-podman
+  #  - cockpit-machines
+  #  - cockpit-pcp
+  #  - cockpit-selinux
+  #  - ranger      # console file manager
+  - crudini # A utility for manipulating ini files
+  - pv # monitor the progress of data through a pipe
+  - progress # Linux tool to show progress for cp, mv, dd, ... (formerly known as cv)
+  #  - bat       # A cat(1) clone with wings. (Rust)
   #- go-task
   - colorized-logs
-#  - clide  # colorize ASCII text
+  #  - clide  # colorize ASCII text
   - smartmontools
 #  - stunnel
 #  - chisel  # fast TCP/UDP tunnel, transported over HTTP, secured via SSH
-
-...

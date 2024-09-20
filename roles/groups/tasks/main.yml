@@ -1,5 +1,4 @@
 ---
-
 - name: Add user to group
   tags:
     - groups
@@ -8,7 +7,8 @@
     - name: Print vars
       debug:
         msg: "{{ lookup('vars', item, default='') }}"
-      loop: "{{ print_vars }}"
+      loop:
+        - user_groups
 
     - name: Add user to group
       become: yes
@@ -16,5 +16,3 @@
         name: "{{ user_name }}"
         groups: "{{ user_groups }}"
         append: true
-
-...

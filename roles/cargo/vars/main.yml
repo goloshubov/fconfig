@@ -1,6 +1,0 @@
----
-
-print_vars:
-  - cargo_list
-
-...

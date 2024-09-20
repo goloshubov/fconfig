@@ -1,5 +1,4 @@
 ---
-
 - name: The dotfiles role's tasks
   tags:
     - dotfiles
@@ -8,7 +7,8 @@
     - name: Print vars
       debug:
         msg: "{{ lookup('vars', item, default='') }}"
-      loop: "{{ print_vars }}"
+      loop:
+        - files_repos
 
     # group/<groupname>/{home,etc} dirs
     - name: Group specific configs
@@ -20,5 +20,3 @@
     - name: Host specific configs
       include_tasks: host.yml
       loop: "{{ files_repos }}"
-
-...

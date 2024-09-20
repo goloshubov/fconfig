@@ -1,10 +1,9 @@
 ---
-
 - name: Apply workstation configuration
   hosts: workstations
   gather_facts: yes
   roles:
-    - union_vars  # merge package_list
+    - union_vars # merge package_list
     - filesrepos
     - dotfiles
     - packages
@@ -15,5 +14,3 @@
     - go
     - ansible
     - gnome
-
-...
