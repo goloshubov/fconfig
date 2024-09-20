@@ -31,6 +31,9 @@ $ git clone https://github.com/goloshubov/fconfig
 $ cd fconfig
 # edit inventory inventories/hosts* and variables group_vars/* host_vars/*
 
+# install ansible in case localhost first run
+$ sudo dnf install pipx
+$ pipx install --include-deps ansible
 # apply configuration on your local workstation (the most used case)
 $ ansible-playbook -i ./inventories workstation.yml -e ansible_connection=local --limit $(hostname)
 
