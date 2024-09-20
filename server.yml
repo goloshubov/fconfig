@@ -7,4 +7,5 @@
     - filesrepos
     - dotfiles
     - packages
-    - pip
+    #- pip
+    #- pipx

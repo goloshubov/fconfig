@@ -9,7 +9,7 @@
         msg: "{{ lookup('vars', item, default='') }}"
       loop:
         - flatpak_repos
-        - flatpak_list
+        - flatpak_packages
 
     - name: Flathub remotes
       become: yes
@@ -32,4 +32,4 @@
         state: present
         remote: flathub
       #    method: user
-      loop: "{{ flatpak_list }}"
+      loop: "{{ flatpak_packages }}"

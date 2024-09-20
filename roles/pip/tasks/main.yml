@@ -8,8 +8,8 @@
       debug:
         msg: "{{ lookup('vars', item, default='') }}"
       loop:
-        - pip_list
+        - pip_packages
 
     - name: Install pip packages
       pip:
-        name: "{{ pip_list }}"
+        name: "{{ pip_packages }}"

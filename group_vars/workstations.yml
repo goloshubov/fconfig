@@ -12,8 +12,8 @@ copr_list:
   - mroche/cloud-native-utilities # helm,knative-client,pack,packer,tektoncd-cli,terraform
   - zeno/scrcpy
   - kylegospo/webapp-manager
-  #  - felfert/gitea
-  #  - varlad/zellij    #A terminal workspace with batteries included. (tmux alternative)
+  #- felfert/gitea
+  #- varlad/zellij    #A terminal workspace with batteries included. (tmux alternative)
   - getpagespeed/wrk #modern HTTP benchmarking tool
 
 # remove copr repos
@@ -47,7 +47,7 @@ prerequisite_packages_list:
 
 package_list__union__g_workstations:
   - sshuttle
-  #  - google-chrome-stable  # from google-chrome repo (fedora-workstation-repositories pkg)
+  #- google-chrome-stable  # from google-chrome repo (fedora-workstation-repositories pkg)
   - wireguard-tools
   - bind-utils
   - tmux
@@ -88,7 +88,7 @@ package_list__union__g_workstations:
   - gnome-shell-extension-window-list
   - gnome-shell-extension-places-menu
   - gnome-shell-extension-argos
-  #  - gnome-shell-extension-pop-shell
+  #- gnome-shell-extension-pop-shell
   - gnome-shell-extension-system-monitor-applet
   - libdbusmenu # for dash-to-dock
   - virt-manager
@@ -139,7 +139,7 @@ package_list__union__g_workstations:
   - cockpit
   - cockpit-podman
   - cockpit-machines
-  #  - cockpit-pcp
+  #- cockpit-pcp
   - cockpit-selinux
   - vim-jedi
   - vim-go
@@ -176,7 +176,7 @@ package_list__union__g_workstations:
   - yamllint
   - pylint
   - transmission
-  #  - python3-testinfra
+  #- python3-testinfra
   - python3-pytest-testinfra
   - webapp-manager # from kylegospo/webapp-manage copr
   - python-xdot # graphviz's dot viewer
@@ -184,14 +184,14 @@ package_list__union__g_workstations:
   - python3-aiohttp # dependency (ansible-rulebook, tftui)
   - autofs
   - clapper # A GNOME media player (GJS,GTK4).  (installed for live wallpaper best performance)
-  #  - waydroid         # Waydroid uses a container-based approach to boot a full Android system on a regular GNU/Linux system
+  #- waydroid         # Waydroid uses a container-based approach to boot a full Android system on a regular GNU/Linux system
   - micro # a modern and intuitive terminal-based text editor
-  #  - scalpel # file recovery / undo delete
+  #- scalpel # file recovery / undo delete
   - helvum #patchbay for pipewire
   - hping3 #TCP/IP stack auditing
   - wrk #modern HTTP benchmarking tool (copr repo)
   - python-virtualenv
-#  - pipx  #Install and Run Python Applications in Isolated Environments
+  #- pipx  #Install and Run Python Applications in Isolated Environments
 
 package_absent_list:
   #  - nano
@@ -201,7 +201,7 @@ package_absent_list:
 flatpak_repos:
   - https://flathub.org/repo/flathub.flatpakrepo
 
-flatpak_list:
+flatpak_packages:
   - com.google.Chrome
   - com.github.tchx84.Flatseal
   - com.github.johnfactotum.Foliate
@@ -209,90 +209,93 @@ flatpak_list:
   - org.gimp.GIMP
   - org.inkscape.Inkscape
   - org.kde.kdenlive
-  #  - us.zoom.Zoom
+  #- us.zoom.Zoom
   - com.obsproject.Studio
-  #  - com.spotify.Client
-  #  - io.atom.Atom
+  #- com.spotify.Client
+  #- io.atom.Atom
   - com.jgraph.drawio.desktop
-  #  - com.valvesoftware.Steam
-  #  - com.github.gi_lom.dialect
-  #  - app.drey.Dialect
+  #- com.valvesoftware.Steam
+  #- com.github.gi_lom.dialect
+  #- app.drey.Dialect
   - org.videolan.VLC
-  #  - org.zotero.Zotero
-  #  - com.getpostman.Postman
-  #  - com.transmissionbt.Transmission   # have it in package_list
-  #  - net.xmind.XMind8
-  #  - net.xmind.ZEN
+  #- org.zotero.Zotero
+  #- com.getpostman.Postman
+  #- com.transmissionbt.Transmission   # have it in package_list
+  #- net.xmind.XMind8
+  #- net.xmind.ZEN
   - net.xmind.XMind
   - io.gitlab.news_flash.NewsFlash
-  #  - com.github.xournalpp.xournalpp
-  #  - com.getferdi.Ferdi
-  #  - com.skype.Client
-  #  - org.signal.Signal
+  #- com.github.xournalpp.xournalpp
+  #- com.getferdi.Ferdi
+  #- com.skype.Client
+  #- org.signal.Signal
   - org.telegram.desktop
-  #  - com.viber.Viber
-  #  - im.riot.Riot
-  #  - org.jitsi.jitsi-meet
-  #  - com.google.AndroidStudio
+  #- com.viber.Viber
+  #- im.riot.Riot
+  #- org.jitsi.jitsi-meet
+  #- com.google.AndroidStudio
   - net.cozic.joplin_desktop
   - de.haeckerfelix.Fragments # bittorrent client
   - org.libreoffice.LibreOffice
-  #  - com.belmoussaoui.Authenticator
+  # - com.belmoussaoui.Authenticator
   - re.sonny.Tangram
   - com.rafaelmardojai.Blanket
-  #  - com.slack.Slack
+  #- com.slack.Slack
   - org.cockpit_project.CockpitClient
   - com.github.jeromerobert.pdfarranger
   - rest.insomnia.Insomnia # Open Source API Client (Postman alternative)
   - com.github.marhkb.Pods
-  #  - net.nokyan.Resources
-  #  - org.kiwix.desktop          # offline reader (download wikipedia)
-  #  - app.organicmaps.desktop    # offline maps - Hike, Bike, Drive Offline
+  #- net.nokyan.Resources
+  #- org.kiwix.desktop          # offline reader (download wikipedia)
+  #- app.organicmaps.desktop    # offline maps - Hike, Bike, Drive Offline
   - dev.zed.Zed
-#  - net.nokyan.Resources
+  #- net.nokyan.Resources
 
-# TODO: pipx
-pip_list:
-  #      - youtube-dl
-  - yt-dlp
+#NOTE: use pipx when possible
+pip_packages:
   - Jinja2
-  - ansible
-  - ansible-runner
-  # - aiohttp   # required for ansible.eda plugins (event_source/webhook.py)  # replaced by package python3-aiohttp
-  - ansible-rulebook
   - wheel
-  - yq
-  - kubernetes
   - powerline-k8s
-  - awxkit
-  - tftui # Terraform textual UI
-  - terminaltexteffects #tte (JFF)
+  #- terminalteixteffects #tte (just for fun)
+  #- aiohttp # required for ansible.eda plugins (event_source/webhook.py)  # replaced by package python3-aiohttp
+  #- ansible-rulebook
 
-cargo_list:
+pipx_packages:
+  ansible:
+    - argcomplete
+    - requests
+    - kubernetes
+  yt-dlp:
+  #youtube-dl:
+  yq:
+  awxkit:
+  tftui: # Terraform textual UI
+
+cargo_packages:
   - du-dust
-  #  - eza
+  #- eza
   - tealdeer
-  #  - httpie
-  #  - xh
-  #  - git-delta
+  #- httpie
+  #- xh
+  #- git-delta
   - fd-find
-  #  - apkeep    # download APK packages (apkpure, googleplay)
-  #  - pup       # Command-line HTML parsing tool
-  #  - bat       # A cat(1) clone with wings. (Rust)      # already in package_list
+  #- apkeep    # download APK packages (apkpure, googleplay)
+  #- pup       # Command-line HTML parsing tool
+  #- bat       # A cat(1) clone with wings. (Rust)      # already in package_list
   - tomato-toml # crudini-like tool but for toml
-#  - coreutils
+  #- coreutils
 
-go_list:
-  #  - github.com/antonmedv/llama   # terminal file manager
-  #  - github.com/mikefarah/yq      # notice pip yq package
+go_packages:
+  #- github.com/antonmedv/llama   # terminal file manager
+  #- github.com/mikefarah/yq      # notice pip yq package
   - github.com/go-task/task/v3/cmd/task
-  # - github.com/ericchiang/pup    # html parser
+  #- github.com/ericchiang/pup    # html parser
   - golang.stackrox.io/kube-linter/cmd/kube-linter
-  #  - github.com/gcla/termshark/v2/cmd/termshark     #A terminal user-interface for tshark
+  #- github.com/gcla/termshark/v2/cmd/termshark     #A terminal user-interface for tshark
   - fortio.org/fortio #load testing tool
   - github.com/kubecolor/kubecolor
 
-ansible_galaxy_collection_list:
+ansible_galaxy_collections:
   - community.general
   - ansible.eda
   - kubernetes.core
@@ -300,26 +303,26 @@ ansible_galaxy_collection_list:
 # dash/dock panel favorite apps ($ dconf read /org/gnome/shell/favorite-apps)
 favorite_apps:
   - com.gexperts.Tilix.desktop
-  #  - org.gnome.Terminal.desktop
+  #- org.gnome.Terminal.desktop
   - net.cozic.joplin_desktop.desktop
-  #  - firefox-wayland.desktop
+  #- firefox-wayland.desktop
   - firefox.desktop
   - io.gitlab.news_flash.NewsFlash.desktop
-  #  - google-chrome.desktop
-  #  - com.google.Chrome.desktop
+  #- google-chrome.desktop
+  #- com.google.Chrome.desktop
   - com.github.xournalpp.xournalpp.desktop
   - net.xmind.XMind.desktop
   - org.telegram.desktop.desktop
-  #  - re.sonny.Tangram.desktop
-  #  - com.getferdi.Ferdi.desktop
-  #  - com.slack.Slack.desktop
+  #- re.sonny.Tangram.desktop
+  #- com.getferdi.Ferdi.desktop
+  #- com.slack.Slack.desktop
   - org.gnome.Nautilus.desktop
   - org.gnome.TextEditor.desktop
-  #  - org.gnome.gedit.desktop
+  #- org.gnome.gedit.desktop
   - org.gnome.Calculator.desktop
   - virt-manager.desktop
-  #  - org.cockpit_project.CockpitClient.desktop
-  #  - org.gnome.Calendar.desktop
+  #- org.cockpit_project.CockpitClient.desktop
+  #- org.gnome.Calendar.desktop
   - scrcpy.desktop
 
 # dconf dump files might be used as well (see README)

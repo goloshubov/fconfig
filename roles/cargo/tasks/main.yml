@@ -8,9 +8,9 @@
       debug:
         msg: "{{ lookup('vars', item, default='') }}"
       loop:
-        - cargo_list
+        - cargo_packages
 
     - name: Install cargo packages
       community.general.cargo:
         state: latest
-        name: "{{ cargo_list }}"
+        name: "{{ cargo_packages }}"

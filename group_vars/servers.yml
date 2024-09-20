@@ -32,7 +32,7 @@ direct_package_list:
 #TODO:
 #package_list__union__g_servers:
 
-pip_list:
+pip_packages:
   - Jinja2
   - ansible
   #  - ansible-rulebook

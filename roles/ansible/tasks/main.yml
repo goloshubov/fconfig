@@ -8,10 +8,10 @@
       debug:
         msg: "{{ lookup('vars', item, default='') }}"
       loop:
-        - ansible_galaxy_collection_list
+        - ansible_galaxy_collections
 
     - name: Install ansible-galaxy collections
       community.general.ansible_galaxy_install:
         type: collection
         name: "{{ item }}"
-      loop: "{{ ansible_galaxy_collection_list }}"
+      loop: "{{ ansible_galaxy_collections }}"

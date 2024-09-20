@@ -1,0 +1,30 @@
+---
+- name: Install pipx packages
+  tags:
+    - software
+    - pipx
+  block:
+    - name: Print vars
+      debug:
+        msg: "{{ lookup('vars', item, default='') }}"
+      loop:
+        - pipx_packages
+
+    - name: Install pipx packages
+      community.general.pipx:
+        name: "{{ item.key }}"
+        state: latest
+        include_injected: true
+        install_deps: true
+      loop: "{{ lookup('ansible.builtin.dict', pipx_packages, wantlist=True) }}"
+
+    - name: Inject pipx packages
+      community.general.pipx:
+        name: "{{ item.key }}"
+        state: inject
+        #force: true
+        #install_apps: true
+        install_deps: true
+        inject_packages: "{{ item.value }}"
+      when: item.value != None
+      loop: "{{ lookup('ansible.builtin.dict', pipx_packages, wantlist=True) }}"

@@ -8,8 +8,8 @@
       debug:
         msg: "{{ lookup('vars', item, default='') }}"
       loop:
-        - go_list
+        - go_packages
 
     - name: install go packages
       command: go install '{{ item }}'@latest
-      loop: "{{ go_list }}"
+      loop: "{{ go_packages }}"

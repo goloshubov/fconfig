@@ -95,7 +95,7 @@ yum_repos_tweaks: "{{ yum_repos_tweaks_original }}"
 union_vars:
   - copr_list
   - package_list
-  - flatpak_list
+  - flatpak_packages
 
 #TODO:clean, deduplicate
 # common packages for all groups

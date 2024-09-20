@@ -10,6 +10,7 @@
     - groups
     - flatpaks
     - pip
+    - pipx
     - cargo
     - go
     - ansible
