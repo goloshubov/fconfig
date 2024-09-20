@@ -5,7 +5,7 @@
     - configs
   block:
     - name: Print vars
-      debug:
+      ansible.buiting.debug:
         msg: "{{ lookup('vars', item, default='') }}"
       loop:
         - user_groups

@@ -5,7 +5,7 @@
     - gnome
   block:
     - name: Print vars
-      debug:
+      ansible.buiting.debug:
         msg: "{{ lookup('vars', item, default='') }}"
       loop:
         - dconf_settings
@@ -17,11 +17,11 @@
       register: type_dconfdumps
       loop: "{{ files_repos | product(['all']|union(group_names)) | list }}"
     - name: Load dconf dumps, 'group' dir
-      include_tasks: dconf.yml
+      ansible.builtin.include_tasks: dconf.yml
       loop: "{{ type_dconfdumps.results }}"
 
     - name: Apply dconf key-value settings
-      dconf:
+      community.general.dconf:
         key: "{{ item.key }}"
         value: "{{ item.value }}"
       loop: "{{ dconf_settings | dict2items }}"
@@ -33,5 +33,5 @@
       register: host_dconfdumps
       loop: "{{ files_repos }}"
     - name: Load dconf dumps, 'host' dir
-      include_tasks: dconf.yml
+      ansible.builtin.include_tasks: dconf.yml
       loop: "{{ host_dconfdumps.results }}"

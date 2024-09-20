@@ -5,7 +5,7 @@
     - pipx
   block:
     - name: Print vars
-      debug:
+      ansible.buitin.debug:
         msg: "{{ lookup('vars', item, default='') }}"
       loop:
         - pipx_packages

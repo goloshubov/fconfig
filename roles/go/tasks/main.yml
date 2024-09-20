@@ -5,11 +5,11 @@
     - go
   block:
     - name: Print vars
-      debug:
+      ansible.buiting.debug:
         msg: "{{ lookup('vars', item, default='') }}"
       loop:
         - go_packages
 
     - name: install go packages
-      command: go install '{{ item }}'@latest
+      ansible.builtin.command: go install '{{ item }}'@latest
       loop: "{{ go_packages }}"

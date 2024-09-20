@@ -1,4 +1,4 @@
 ---
 - name: Load dconf dump files
-  shell: "dconf load -f  /{{ item.path | basename | regex_replace('__','/') }}/ < {{ item.path }}"
+  ansible.builtin.shell: "dconf load -f  /{{ item.path | basename | regex_replace('__','/') }}/ < {{ item.path }}"
   loop: "{{ item.files }}"

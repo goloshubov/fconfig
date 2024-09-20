@@ -3,7 +3,7 @@
   become: true
   block:
     - name: Print vars
-      debug:
+      ansible.buiting.debug:
         msg: "{{ lookup('vars', item, default='') }}"
       loop:
         - copr_list
@@ -42,7 +42,7 @@
       when: other_repos_list is defined
 
     - name: Install packages (direct link)
-      dnf:
+      ansible.builtin.dnf:
         state: latest
         name: "{{ direct_package_list }}"
         disable_gpg_check: true
@@ -50,7 +50,7 @@
       when: direct_package_list is defined
 
     - name: Install prerequisite packages (repos)
-      dnf:
+      ansible.builtin.dnf:
         state: latest
         name: "{{ prerequisite_packages_list }}"
       tags: package-repos
@@ -91,13 +91,13 @@
       when: yum_repos_tweaks is defined
 
     - name: Install packages
-      dnf:
+      ansible.builtin.dnf:
         state: latest
         name: "{{ package_list }}"
       when: package_list is defined
 
     - name: Remove packages
-      dnf:
+      ansible.builtin.dnf:
         state: absent
         name: "{{ package_absent_list }}"
       when: package_absent_list is defined

@@ -266,6 +266,7 @@ pipx_packages:
     - requests
     - kubernetes
     - pip-system-certs
+  ansible-lint:
   yt-dlp:
   #youtube-dl:
   yq:

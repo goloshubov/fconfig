@@ -5,11 +5,11 @@
     - packages
   block:
     - name: Packages on RHEL-based OS
-      import_tasks: redhat.yml
+      ansible.builtin.import_tasks: redhat.yml
       when: |
         ansible_os_family == "RedHat"
 
     - name: Packets on Debian-based OS
-      import_tasks: debian.yml
+      ansible.builtin.import_tasks: debian.yml
       when: |
         ansible_os_family == "Debian"

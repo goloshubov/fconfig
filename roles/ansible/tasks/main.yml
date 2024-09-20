@@ -5,7 +5,7 @@
     - ansible
   block:
     - name: Print vars
-      debug:
+      ansible.buiting.debug:
         msg: "{{ lookup('vars', item, default='') }}"
       loop:
         - ansible_galaxy_collections
