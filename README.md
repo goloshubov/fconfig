@@ -6,7 +6,7 @@ fconfig is my ansible implementation of dotfiles type of scripts. It helps me av
   - files and templates support, recursively (filetree)
   - separate dotfiles git repositories, public or private. An example is https://github.com/goloshubov/fconfig_files See files_repo's directory structure below.
 - install software:
-  - rpm packages (dnf). 
+  - rpm packages (dnf).
     - Merge (split) support for list variables. See vars override / merge note below.
     - direct package urls
     - dnf proxy
@@ -16,12 +16,12 @@ fconfig is my ansible implementation of dotfiles type of scripts. It helps me av
       - direct repo urls
       - set mirror for particular repos
   - flatpaks
-  - pip packages
+  - pip, pipx packages
   - cargo packages
   - go packages
   - ansible-galaxy collections
 - add user to groups
-- configure GNOME desktop on workstations 
+- configure GNOME desktop on workstations
   - load dconf dump files
   - apply dconf key-value settings
 
@@ -44,7 +44,7 @@ $ ansible-playbook -i ./inventories workstation.yml --tags dotfiles
 $ ansible-playbook -i ./inventories workstation.yml --tags software --skip-tags flatpaks
 ```
 ```bash
-# you can use fconfig to create bash aliases as well, e.g.: 
+# you can use fconfig to create bash aliases as well, e.g.:
 # https://github.com/goloshubov/fconfig_files/blob/main/group/all/home/.bashrc.d/aliases.sh
 # and then, my most common use case (just sync dotfiles), it's something like:
 $ fconfig_local --tags dotfiles
@@ -176,4 +176,3 @@ package_list__union__h_x390yoga:
   - <package6>
 ...
 ```
-
