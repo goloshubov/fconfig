@@ -84,7 +84,6 @@ package_list__union__g_workstations:
   - gnome-shell-extension-user-theme
   - gnome-shell-extension-workspace-indicator
   - gnome-shell-extension-openweather
-  - gnome-shell-extension-openweather
   - gnome-shell-extension-window-list
   - gnome-shell-extension-places-menu
   - gnome-shell-extension-argos
@@ -191,7 +190,7 @@ package_list__union__g_workstations:
   - hping3 #TCP/IP stack auditing
   - wrk #modern HTTP benchmarking tool (copr repo)
   - python-virtualenv
-  #- pipx  #Install and Run Python Applications in Isolated Environments
+  - pipx #Install and Run Python Applications in Isolated Environments
 
 package_absent_list:
   #  - nano
