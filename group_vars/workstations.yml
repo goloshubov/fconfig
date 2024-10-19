@@ -264,7 +264,10 @@ pipx_packages:
     - requests
     - kubernetes
     - pip-system-certs
+  ansible-runner:
+    - ansible-runner-http
   ansible-lint:
+  #ansible-rulebook:
   yt-dlp:
   #youtube-dl:
   yq:
