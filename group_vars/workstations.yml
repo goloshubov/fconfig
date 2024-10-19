@@ -299,6 +299,7 @@ go_packages:
   - fortio.org/fortio #load testing tool
   - github.com/kubecolor/kubecolor
 
+# TODO: add requirements.yml file support
 ansible_galaxy_collections:
   - community.general
   - ansible.eda
