@@ -249,7 +249,7 @@ flatpak_packages:
   #- app.organicmaps.desktop    # offline maps - Hike, Bike, Drive Offline
   - dev.zed.Zed
 
-# TODO: add virtual env support
+# TODO: add virtual env support; add requirements.txt file support
 # NOTE: pipx is preferable for now
 pip_packages:
   - Jinja2
