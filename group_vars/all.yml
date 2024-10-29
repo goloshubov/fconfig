@@ -1,5 +1,5 @@
 ---
-fedora_version: 40
+fedora_version: 41
 
 files_repos:
   - {
