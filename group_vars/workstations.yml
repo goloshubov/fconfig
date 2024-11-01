@@ -127,6 +127,8 @@ package_list__union__g_workstations:
   - fatrace
   #- minder
   - podman
+  - podman-compose
+  - podman-docker # Emulate Docker CLI using podman
   - skopeo
   #- virtio-win
   - nethogs
@@ -153,7 +155,6 @@ package_list__union__g_workstations:
 #  - docker-ce-cli # docker-ce
 #  - containerd.io # docker-ce
 #  - docker-compose-plugin # docker-ce
-  - podman-docker # Emulate Docker CLI using podman
   - helix # text editor. from varlad/helix copr repo
   - crudini # A utility for manipulating ini files
   - pv # monitor the progress of data through a pipe
