@@ -194,6 +194,7 @@ package_list__union__g_workstations:
   - python-virtualenv
   - pipx #Install and Run Python Applications in Isolated Environments
   - fzf  #A command-line fuzzy finder 
+  - helvum #A GTK patchbay for pipewire
 
 package_absent_list:
   #  - nano
