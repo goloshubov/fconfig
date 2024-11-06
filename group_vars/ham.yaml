@@ -4,7 +4,9 @@ package_list__union__g_ham:
   - flrig
   - fldigi
   - wsjtx
-  - js8call
+#  - js8call
+  - cwdaemon
+  - unixcw
 
 flatpak_packages__union__g_ham:
   - io.github.foldynl.QLog
