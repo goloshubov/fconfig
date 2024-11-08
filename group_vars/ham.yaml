@@ -10,3 +10,4 @@ package_list__union__g_ham:
 
 flatpak_packages__union__g_ham:
   - io.github.foldynl.QLog
+  - org.wfview.wfview
