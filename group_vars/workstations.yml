@@ -127,7 +127,7 @@ package_list__union__g_workstations:
   - fatrace
   #- minder
   - podman
-  - podman-compose
+  #- podman-compose
   - podman-docker # Emulate Docker CLI using podman
   - skopeo
   #- virtio-win
