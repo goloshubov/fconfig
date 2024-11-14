@@ -142,6 +142,7 @@ package_list__union__g_workstations:
   - cockpit-machines
   #- cockpit-pcp
   - cockpit-selinux
+  - cockpit-files
   - vim-jedi
   - vim-go
   - golang-x-tools-gopls #for vim-go
