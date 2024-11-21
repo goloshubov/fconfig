@@ -155,8 +155,8 @@ Cons: Custom source vars location. Extra tasks required.
 
 #### 4. different var names
 To merge diffrent lists one could use additionall tasks or merge them using for example the community.general.lists_union filter. It's my current implementation, union_vars role.
-Pros: No duplication.
-Cons: Different names. Extra tasks required.
+Pros: No precedence issue and no duplication.
+Cons: Different names. Extra task/role required.
 
 1) Add union_vars role in playbook:
 2) Define union_vars variable - the list which variables to merge.
