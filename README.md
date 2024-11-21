@@ -117,11 +117,17 @@ host/*/dconf/*
 ```
 
 
-## vars, and the need of vars merge
-The problem - defining different package lists for hosts/groups/subgroups.
+## variables, merge/overwrite issue.
+The problem: to have (for example) package lists for different groups/hosts in group_vars/ and host_vars/i. I see the following options here:
+1) Standard merge/override vars way. You define the full list of packages for each group (and host if needed).
+Pros: it is clear what packages will be installed, but...
+Cons: the main problem here is group precedence (order) and as the result package list vars overwriting (last listed group wins), in case when host is member of several groups; also it might be too many intersecting packages in the lists (not a big deal though).
+2) Merge different vars way. You define only specific pakages for each group/host and then a) merge all package list from corresponding groups and host package lists and install it in one task or b) install all correspodning package lists in tasks for each groups and host.
+Pros: no precedence issue; only specific packages for group and host in the lists, annd it's clear that if the host is in the group then the group's packages will be definetly installed.
+Cons: it might be not that clear what packages (from all corresponding groups and the host) will be installed, you need check all host groups and host's package lists.
 
-Options:
 
+More details:
 #### 1. Standrad approach and override issue.
 According to ansible documentation,
 'Here is the order of precedence from least to greatest (the last listed variables override all other variables)'
@@ -152,6 +158,9 @@ To merge diffrent lists one could use additionall tasks or merge them using for 
 Pros: No duplication.
 Cons: Different names. Extra tasks required.
 
+1) Add union_vars role in playbook:
+2) Define union_vars variable - the list which variables to merge.
+3) Defince variables that will be merged:
 union_vars naming:
 ```
 <varname>__union__g_<groupname>
