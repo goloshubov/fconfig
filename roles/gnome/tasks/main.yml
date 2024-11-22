@@ -21,6 +21,8 @@
       loop: "{{ type_dconfdumps.results }}"
 
     - name: Apply dconf key-value settings
+      become: yes
+      become_user: "{{ user_name }}"
       community.general.dconf:
         key: "{{ item.key }}"
         value: "{{ item.value }}"
