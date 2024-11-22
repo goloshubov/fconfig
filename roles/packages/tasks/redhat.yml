@@ -2,6 +2,13 @@
 - name: RedHat packages tasks
   become: true
   block:
+    - name: Merge vars
+      ansible.builtin.set_fact:
+        "{{ item }}": "{{ lookup('community.general.merge_variables', item, pattern_type='prefix') }}"
+      loop:
+        - package_list
+        - copr_list
+
     - name: Print vars
       ansible.builtin.debug:
         msg: "{{ lookup('vars', item, default='') }}"

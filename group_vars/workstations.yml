@@ -8,7 +8,7 @@ user_groups:
   - dialout
 
 #copr, third party repos
-copr_list:
+copr_list__workstatsions:
   - mroche/cloud-native-utilities # helm,knative-client,pack,packer,tektoncd-cli,terraform
   - zeno/scrcpy
   - kylegospo/webapp-manager
@@ -45,7 +45,7 @@ prerequisite_packages_list:
 #yum_repos_mirror:
 #yum_repos_tweaks:
 
-package_list__union__g_workstations:
+package_list__workstations:
   - sshuttle
   #- google-chrome-stable  # from google-chrome repo (fedora-workstation-repositories pkg)
   - wireguard-tools
@@ -204,7 +204,7 @@ package_absent_list:
 flatpak_repos:
   - https://flathub.org/repo/flathub.flatpakrepo
 
-flatpak_packages:
+flatpak_packages__workstations:
   - com.google.Chrome
   - com.github.tchx84.Flatseal
   - com.github.johnfactotum.Foliate

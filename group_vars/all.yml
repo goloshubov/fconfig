@@ -88,18 +88,19 @@ yum_repos_tweaks_mirror:
 
 yum_repos_tweaks: "{{ yum_repos_tweaks_original }}"
 
-# variables to merge (in union_viars role)
-# naming:
-# <variable>__union__h_<hostanme>
-# <variable>__union__g_<groupname>
-union_vars:
-  - copr_list
-  - package_list
-  - flatpak_packages
+# replaced by merge_varialbes tasks
+## variables to merge (in union_viars role)
+## naming:
+## <variable>__union__h_<hostanme>
+## <variable>__union__g_<groupname>
+#union_vars:
+#  - copr_list
+#  - package_list
+#  - flatpak_packages
 
 #TODO:clean, deduplicate
 # common packages for all groups
-package_list__union__g_all:
+package_list__all:
   - nmap-ncat
   - bind-utils
   - rsync
