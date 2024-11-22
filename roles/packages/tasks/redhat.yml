@@ -6,8 +6,14 @@
       ansible.builtin.set_fact:
         "{{ item }}": "{{ lookup('community.general.merge_variables', item, pattern_type='prefix') }}"
       loop:
-        - package_list
         - copr_list
+        - copr_absent_list
+        - other_repos_list
+        - direct_package_list
+        - prerequisite_packages_list
+        - setenabled_repo_list
+        - package_list
+        - package_absent_list
 
     - name: Print vars
       ansible.builtin.debug:

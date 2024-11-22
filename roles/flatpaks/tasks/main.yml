@@ -8,6 +8,7 @@
       ansible.builtin.set_fact:
         "{{ item }}": "{{ lookup('community.general.merge_variables', item, pattern_type='prefix') }}"
       loop:
+        - flatpak_repos
         - flatpak_packages
 
     - name: Print vars
