@@ -1,5 +1,4 @@
 # # add user to groups (after installing packages)
-# user_name: goloshubov
 # user_groups:
 #   - libvirt
 #   - docker

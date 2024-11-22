@@ -3,6 +3,10 @@ ws
 x390yoga
 x13yoga1
 
+[workstations:vars]
+user_name=goloshubov
+user_primary_group=goloshubov
+
 [laptops]
 x390yoga
 x13yoga1

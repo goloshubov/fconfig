@@ -1,7 +1,5 @@
 ---
 # add user to groups (after installing packages)
-user_name: goloshubov
-user_primary_group: goloshubov
 user_groups:
   - libvirt
 #  - docker
