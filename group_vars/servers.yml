@@ -1,8 +1,3 @@
-# # add user to groups (after installing packages)
-# user_groups:
-#   - libvirt
-#   - docker
-
 #third party repos
 # copr_list:
 #   - mroche/cloud-native-utilities      # helm,knative-client,pack,packer,tektoncd-cli,terraform
