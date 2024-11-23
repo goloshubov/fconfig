@@ -1,4 +1,5 @@
 ---
+#FIXME: works only with localhost now. Dump files needs to be copied to remote host to be loaded
 - name: Load dconf dump files
   become: yes
   become_user: "{{ user_name }}"
