@@ -5,7 +5,7 @@
   become_user: "{{ user_name }}"
   ansible.builtin.copy:
     src: "{{ item.path }}"
-    dest: "/tmp/{{ item.path }}"
+    dest: "/tmp/{{ item.path | basename }}"
     #mode: '{{ item.mode }}'
   loop: "{{ item.files }}"
 
@@ -20,6 +20,6 @@
   become: yes
   become_user: "{{ user_name }}"
   ansible.builtin.file:
-    path: "/tmp/{{ item.path }}"
+    path: "/tmp/{{ item.path | basename }}"
     state: absent
   loop: "{{ item.files }}"
