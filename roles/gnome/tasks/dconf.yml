@@ -12,8 +12,8 @@
 - name: Load dconf dump files
   become: yes
   become_user: "{{ user_name }}"
-  become_method: machinectl
-  ansible.builtin.shell: "dconf load -f  /{{ item.path | basename | regex_replace('__','/') }}/ < {{ item.path }}"
+  #become_method: machinectl
+  ansible.builtin.shell: "dconf load -f  /{{ item.path | basename | regex_replace('__','/') }}/ < /tmp/{{ item.path | basename }}"
   loop: "{{ item.files }}"
 
 - name: Remove dumps from remote host
