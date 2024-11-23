@@ -13,6 +13,8 @@
   become: yes
   become_user: "{{ user_name }}"
   #become_method: machinectl
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: "unix:path=/run/user/{{ user_id }}/bus"
   ansible.builtin.shell: "dconf load -f  /{{ item.path | basename | regex_replace('__','/') }}/ < /tmp/{{ item.path | basename }}"
   loop: "{{ item.files }}"
 
