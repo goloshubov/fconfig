@@ -23,7 +23,7 @@
     - name: Apply dconf key-value settings
       become: yes
       become_user: "{{ user_name }}"
-      become_method: machinectl
+      #become_method: machinectl
       community.general.dconf:
         key: "{{ item.key }}"
         value: "{{ item.value }}"
