@@ -308,7 +308,7 @@ favorite_apps:
   - dev.zed.Zed.desktop
   - net.cozic.joplin_desktop.desktop
   #- firefox-wayland.desktop
-  - firefox.desktop
+  - org.mozilla.firefox.desktop
   - io.gitlab.news_flash.NewsFlash.desktop
   #- google-chrome.desktop
   #- com.google.Chrome.desktop
@@ -359,7 +359,7 @@ dconf_settings:
   #  "/org/gnome/shell/extensions/dash-to-dock/intellihide-mode": "'FOCUS_APPLICATION_WINDOWS'"
   "/org/gnome/shell/extensions/dash-to-dock/intellihide-mode": "'ALL_WINDOWS'"
   "/org/gnome/shell/extensions/dash-to-dock/show-trash": "false"
-  "/org/gnome/shell/extensions/dash-to-dock/apply-custom-theme": "false"
+  "/org/gnome/shell/extensions/dash-to-dock/apply-custom-theme": "true"
   "/org/gnome/shell/extensions/just-perfection/dash-icon-size": "32"
   "/org/gnome/shell/extensions/just-perfection/events-button": "false"
   "/org/gnome/shell/extensions/just-perfection/workspace-switcher-should-show": "true"
