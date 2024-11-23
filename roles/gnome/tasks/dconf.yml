@@ -1,8 +1,25 @@
 ---
-#FIXME: works only with localhost now. Dump files needs to be copied to remote host to be loaded
+
+- name: Copy dumps to remote host
+  become: yes
+  become_user: "{{ user_name }}"
+  ansible.builtin.copy:
+    src: "{{ item.path }}"
+    dest: "/tmp/{{ item.path }}"
+    #mode: '{{ item.mode }}'
+  loop: "{{ item.files }}"
+
 - name: Load dconf dump files
   become: yes
   become_user: "{{ user_name }}"
   become_method: machinectl
   ansible.builtin.shell: "dconf load -f  /{{ item.path | basename | regex_replace('__','/') }}/ < {{ item.path }}"
+  loop: "{{ item.files }}"
+
+- name: Remove dumps from remote host
+  become: yes
+  become_user: "{{ user_name }}"
+  ansible.builtin.file:
+    path: "/tmp/{{ item.path }}"
+    state: absent
   loop: "{{ item.files }}"

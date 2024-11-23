@@ -1,6 +1,8 @@
 ---
 # group/<group>/home/ dir
 - name: Create directories. group (home dir)
+  become: yes
+  become_user: "{{ user_name }}"
   ansible.builtin.file:
     path: ~/{{ item.path }}
     state: directory
@@ -9,6 +11,8 @@
   when: item.state == 'directory'
 
 - name: Render j2 template. group (home dir)
+  become: yes
+  become_user: "{{ user_name }}"
   ansible.builtin.template:
     src: "{{ item.src }}"
     dest: ~/{{ item.path | regex_replace('\.j2$','') }}
@@ -17,6 +21,8 @@
   when: item.state == 'file' and item.path | regex_search('.j2$')
 
 - name: Copy files. group (home dir)
+  become: yes
+  become_user: "{{ user_name }}"
   ansible.builtin.copy:
     src: "{{ item.src }}"
     dest: ~/{{ item.path }}

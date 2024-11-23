@@ -10,7 +10,7 @@
       loop:
         - dconf_settings
 
-    - name: Find dconf dump files in 'group' dir
+    - name: Find dconf dump files in 'group' dir (localhost)
       ansible.builtin.find:
         paths: "{{ item[0].localpath }}/group/{{ item[1] }}/dconf/"
         file_type: file
@@ -29,7 +29,7 @@
         value: "{{ item.value }}"
       loop: "{{ dconf_settings | dict2items }}"
 
-    - name: Find dconf dump files in 'host' dir
+    - name: Find dconf dump files in 'host' dir (loaclhost)
       ansible.builtin.find:
         paths: "{{ item.localpath }}/host/{{ inventory_hostname }}/dconf/"
         file_type: file
