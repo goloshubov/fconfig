@@ -1,13 +1,13 @@
 ---
-package_list__union__g_ham:
+package_list__ham:
   - gqrx
   - flrig
   - fldigi
   - wsjtx
-#  - js8call
+  - js8call
   - cwdaemon
   - unixcw
   - wfview
 
-flatpak_packages__union__g_ham:
+flatpak_packages__ham:
   - io.github.foldynl.QLog
