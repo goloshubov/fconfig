@@ -114,3 +114,7 @@ group/*/dconf/*
 inventory file (dconf_settings)
 host/*/dconf/*
 ```
+
+## TODO
+- Debian support
+- ALT Linux support
