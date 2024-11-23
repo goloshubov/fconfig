@@ -23,7 +23,6 @@
     - name: Apply dconf key-value settings
       become: yes
       become_user: "{{ user_name }}"
-      #become_method: machinectl
       environment:
         DBUS_SESSION_BUS_ADDRESS: "unix:path=/run/user/{{ user_id }}/bus"
       community.general.dconf:
