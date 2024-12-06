@@ -46,6 +46,7 @@ package_list__workstations:
   - screen
   - tilix
   - tilix-nautilus
+  - terminator
   - git
   - knock
   - vim-enhanced
