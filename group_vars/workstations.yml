@@ -39,10 +39,12 @@ setenabled_repo_list: []
 
 package_list__workstations:
   - sshuttle
+  - powerline
   #- google-chrome-stable  # from google-chrome repo (fedora-workstation-repositories pkg)
   - wireguard-tools
   - bind-utils
   - tmux
+  - tmux-powerline
   - screen
   - tilix
   - tilix-nautilus
@@ -54,16 +56,14 @@ package_list__workstations:
   - awesome-vim-colorschemes
   - vim-jedi
   - vim-go
-  - golang-x-tools-gopls #for vim-go
+  #- golang-x-tools-gopls #for vim-go
   - vim-ansible
+  - vim-powerline
+  - helix # text editor. from varlad/helix copr repo
   - mc
   - curl
   - wget
   - htop
-  - powerline
-  - tmux-powerline
-  - vim-powerline
-  - helix # text editor. from varlad/helix copr repo
   - gnome-tweaks
   - gnome-themes-extra # adwaita-dark for legacy applications
   - gnome-extensions-app
@@ -136,10 +136,6 @@ package_list__workstations:
   #- cockpit-pcp
   - cockpit-selinux
   - cockpit-files
-  - vim-jedi
-  - vim-go
-  - golang-x-tools-gopls #for vim-go
-  - vim-ansible
   - ranger # console file manager
   - perl-Image-ExifTool
   - terraform # from mroche/cloud-native-utilities copr repo
@@ -149,7 +145,6 @@ package_list__workstations:
 #  - docker-ce-cli # docker-ce
 #  - containerd.io # docker-ce
 #  - docker-compose-plugin # docker-ce
-  - helix # text editor. from varlad/helix copr repo
   - crudini # A utility for manipulating ini files
   - pv # monitor the progress of data through a pipe
   - progress # Linux tool to show progress for cp, mv, dd, ... (formerly known as cv)
@@ -160,7 +155,6 @@ package_list__workstations:
   - java-17-openjdk
   - maven
   - python3-devel
-  - python3-pip
   - python3-requests
   - hadolint # Dockerfile linter
   - gitg #git gui
