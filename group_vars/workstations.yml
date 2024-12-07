@@ -301,6 +301,7 @@ ansible_galaxy_collections:
 favorite_apps:
   - com.gexperts.Tilix.desktop
   #- org.gnome.Ptyxis.desktop
+  - terminator.desktop
   - dev.zed.Zed.desktop
   - net.cozic.joplin_desktop.desktop
   #- firefox-wayland.desktop
@@ -310,6 +311,7 @@ favorite_apps:
   #- com.google.Chrome.desktop
   - com.github.xournalpp.xournalpp.desktop
   - net.xmind.XMind.desktop
+  - org.freeplane.App.desktop
   - org.telegram.desktop.desktop
   #- re.sonny.Tangram.desktop
   #- com.getferdi.Ferdi.desktop
