@@ -50,7 +50,6 @@ package_list__workstations:
   - tilix-nautilus
   - terminator
   - git
-  - knock
   - vim-enhanced
   - vim-nerdtree
   - awesome-vim-colorschemes
@@ -63,6 +62,16 @@ package_list__workstations:
   - mc
   - curl
   - wget
+  - nmap
+  - nmap-ncat
+  - mtr
+  - knock
+  - openssl
+  - perf
+  - bpftrace
+  - bcc
+  - sysstat
+  - hwloc-gui #lstopo
   - htop
   - gnome-tweaks
   - gnome-themes-extra # adwaita-dark for legacy applications
@@ -108,14 +117,7 @@ package_list__workstations:
   #  - distrobox
   - jq
   #- git-delta
-  - mtr
   - wl-clipboard
-  - openssl
-  - perf
-  - bpftrace
-  - bcc
-  - sysstat
-  - hwloc-gui #lstopo
   - inotify-tools
   - fatrace
   #- minder
