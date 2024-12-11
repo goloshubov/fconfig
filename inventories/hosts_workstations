@@ -1,6 +1,6 @@
 [workstations]
 ws
-x390y
+x390yoga
 x13yoga1
 
 [workstations:vars]
@@ -11,7 +11,7 @@ user_groups=["libvirt", "dialout"]
 
 
 [laptops]
-x390y
+x390yoga
 x13yoga1
 
 [lirc]
@@ -22,4 +22,4 @@ x13yoga1
 workstations
 
 [ham]
-x390y
+x390yoga
