@@ -2,6 +2,7 @@
 ws
 x390yoga
 x13yoga1
+x13g5
 
 [workstations:vars]
 user_id=1000
@@ -13,6 +14,7 @@ user_groups=["libvirt", "dialout"]
 [laptops]
 x390yoga
 x13yoga1
+x13g5
 
 [lirc]
 ws
