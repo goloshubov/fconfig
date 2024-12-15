@@ -242,6 +242,8 @@ flatpak_packages__workstations:
   #- org.kiwix.desktop          # offline reader (download wikipedia)
   #- app.organicmaps.desktop    # offline maps - Hike, Bike, Drive Offline
   - dev.zed.Zed
+  - io.dbeaver.DBeaverCommunity
+  - io.dbeaver.DBeaverCommunity.Client.pgsql
 
 # TODO: add virtual env support; add requirements.txt file support
 # NOTE: pipx is preferable for now
