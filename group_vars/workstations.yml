@@ -271,6 +271,7 @@ pipx_packages:
   yq:
   awxkit:
   tftui: # Terraform textual UI
+  #bashate:   # automated style checker for bash scripts
 
 cargo_packages:
   - du-dust
