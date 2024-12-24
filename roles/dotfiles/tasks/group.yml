@@ -28,6 +28,7 @@
     dest: ~/{{ item.path }}
     #mode: '{{ item.mode }}'
     local_follow: false
+    follow: false
   with_community.general.filetree: "{{ item[0].localpath }}/group/{{ item[1] }}/home/"
   when: (item.state == 'file' or item.state == 'link') and not item.path | regex_search('.j2$')
 
@@ -58,5 +59,6 @@
     dest: /etc/{{ item.path }}
     #mode: '{{ item.mode }}'
     local_follow: false
+    follow: false
   with_community.general.filetree: "{{ item[0].localpath }}/group/{{ item[1] }}/etc/"
   when: (item.state == 'file' or item.state == 'link') and not item.path | regex_search('.j2$')
