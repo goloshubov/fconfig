@@ -27,6 +27,7 @@
     src: "{{ item.src }}"
     dest: ~/{{ item.path }}
     #mode: '{{ item.mode }}'
+    follow: true
   with_community.general.filetree: "{{ item.localpath }}/host/{{ inventory_hostname }}/home/"
   when: (item.state == 'file' or item.state == 'link') and not item.path | regex_search('.j2$')
 
@@ -55,5 +56,6 @@
     src: "{{ item.src }}"
     dest: /etc/{{ item.path }}
     #mode: '{{ item.mode }}'
+    follow: true
   with_community.general.filetree: "{{ item.localpath }}/host/{{ inventory_hostname }}/etc/"
   when: (item.state == 'file' or item.state == 'link') and not item.path | regex_search('.j2$')
