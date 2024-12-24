@@ -8,7 +8,6 @@ x13g5
 user_id=1000
 user_name=goloshubov
 user_primary_group=goloshubov
-user_groups=["libvirt", "dialout"]
 
 
 [laptops]

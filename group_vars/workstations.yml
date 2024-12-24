@@ -1,4 +1,9 @@
 ---
+
+user_groups__workstations:
+  - libvirt
+  - dialout
+
 #copr, third party repos
 copr_list__workstatsions:
   - mroche/cloud-native-utilities # helm,knative-client,pack,packer,tektoncd-cli,terraform

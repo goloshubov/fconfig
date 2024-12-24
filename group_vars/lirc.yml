@@ -3,3 +3,6 @@ package_list__lirc:
   - lirc
   #- xdotool   #Fake keyboard/mouse input for X11
   - ydotool #Fake keyboard/mouse input for Wayland
+
+user_groups__lirc:
+  - lirc
