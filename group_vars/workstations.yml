@@ -245,6 +245,7 @@ flatpak_packages__workstations:
   - dev.zed.Zed
   - io.dbeaver.DBeaverCommunity
   - io.dbeaver.DBeaverCommunity.Client.pgsql
+  - io.github.jeffshee.Hidamari  # Video wallpaper for Linux
 
 # TODO: add virtual env support; add requirements.txt file support
 # NOTE: pipx is preferable for now
