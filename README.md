@@ -4,7 +4,7 @@ fconfig is my ansible implementation of dotfiles type of scripts. It helps me av
 ## Features:
 - sync .dotfiles and configs
   - files and templates support, recursively (filetree)
-  - separate dotfiles git repositories, public or private. An example is https://github.com/goloshubov/fconfig_files See files_repo's directory structure below.
+  - external dotfiles git repositories, public or private. An example is https://github.com/goloshubov/fconfig_files See files_repo's directory structure below.
 - install software:
   - rpm packages (dnf).
     - direct package urls
