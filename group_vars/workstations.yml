@@ -314,7 +314,7 @@ ansible_galaxy_collections:
 favorite_apps:
   - com.gexperts.Tilix.desktop
   #- org.gnome.Ptyxis.desktop
-  - terminator.desktop
+  #- terminator.desktop
   - dev.zed.Zed.desktop
   - net.cozic.joplin_desktop.desktop
   #- firefox-wayland.desktop
