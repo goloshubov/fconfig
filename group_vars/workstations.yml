@@ -311,6 +311,7 @@ ansible_galaxy_collections:
   - kubernetes.core
 
 # dash/dock panel favorite apps ($ dconf read /org/gnome/shell/favorite-apps)
+# dconf read /org/gnome/shell/favorite-apps
 favorite_apps:
   - com.gexperts.Tilix.desktop
   #- org.gnome.Ptyxis.desktop
@@ -333,10 +334,15 @@ favorite_apps:
   - org.gnome.TextEditor.desktop
   #- org.gnome.gedit.desktop
   - org.gnome.Calculator.desktop
+  - org.cockpit_project.CockpitClient.desktop
+  - remote-viewer.desktop
   - virt-manager.desktop
   #- org.cockpit_project.CockpitClient.desktop
   #- org.gnome.Calendar.desktop
   - scrcpy.desktop
+  #- org.gnome.gitg.desktop
+  #- org.gnome.Meld.desktop
+  #- rest.insomnia.Insomnia.desktop
 
 # dconf dump files might be used as well (see README)
 dconf_settings:
