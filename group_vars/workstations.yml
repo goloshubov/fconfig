@@ -343,6 +343,7 @@ favorite_apps:
   #- org.gnome.gitg.desktop
   #- org.gnome.Meld.desktop
   #- rest.insomnia.Insomnia.desktop
+  - com.rafaelmardojai.Blanket.desktop
 
 # dconf dump files might be used as well (see README)
 dconf_settings:
