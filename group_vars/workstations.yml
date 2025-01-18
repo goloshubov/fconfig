@@ -125,7 +125,7 @@ package_list__workstations:
   - wl-clipboard
   - inotify-tools
   - fatrace
-  #- minder
+  - minder
   - podman
   #- podman-compose
   - podman-docker # Emulate Docker CLI using podman
@@ -324,8 +324,9 @@ favorite_apps:
   #- google-chrome.desktop
   #- com.google.Chrome.desktop
   - com.github.xournalpp.xournalpp.desktop
-  - net.xmind.XMind.desktop
-  - org.freeplane.App.desktop
+  #- net.xmind.XMind.desktop
+  #- org.freeplane.App.desktop
+  - com.github.phase1geo.minder.desktop
   - org.telegram.desktop.desktop
   #- re.sonny.Tangram.desktop
   #- com.getferdi.Ferdi.desktop
