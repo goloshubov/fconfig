@@ -222,7 +222,7 @@ flatpak_packages__workstations:
   #- net.xmind.XMind8
   #- net.xmind.ZEN
   - net.xmind.XMind
-  - org.freeplane.App
+  #- org.freeplane.App
   - io.gitlab.news_flash.NewsFlash
   #- com.github.xournalpp.xournalpp
   #- com.getferdi.Ferdi
