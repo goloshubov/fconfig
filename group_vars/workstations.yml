@@ -322,6 +322,8 @@ favorite_apps:
   #- firefox-wayland.desktop
   - org.mozilla.firefox.desktop
   #- net.thunderbird.Thunderbird.desktop
+  - org.gnome.Geary.desktop
+  - org.gnome.Calendar.desktop
   - io.gitlab.news_flash.NewsFlash.desktop
   #- google-chrome.desktop
   #- com.google.Chrome.desktop
