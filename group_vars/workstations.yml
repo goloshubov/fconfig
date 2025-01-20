@@ -190,7 +190,7 @@ package_list__workstations:
   - python-virtualenv
   - pipx #Install and Run Python Applications in Isolated Environments
   - fzf  #A command-line fuzzy finder 
-  - thunderbird
+  #- thunderbird
 
 package_absent_list:
   #  - nano
@@ -321,7 +321,7 @@ favorite_apps:
   - net.cozic.joplin_desktop.desktop
   #- firefox-wayland.desktop
   - org.mozilla.firefox.desktop
-  - net.thunderbird.Thunderbird.desktop
+  #- net.thunderbird.Thunderbird.desktop
   - io.gitlab.news_flash.NewsFlash.desktop
   #- google-chrome.desktop
   #- com.google.Chrome.desktop
