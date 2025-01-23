@@ -8,6 +8,7 @@ package_list__ham:
   - cwdaemon
   - unixcw
   - wfview
+  #- freedv
 
 flatpak_packages__ham:
   - io.github.foldynl.QLog
