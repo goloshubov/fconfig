@@ -13,3 +13,4 @@ package_list__ham:
 flatpak_packages__ham:
   - io.github.foldynl.QLog
 #  - org.wfview.wfview      # (rpm package instead)
+#  - edu.princeton.physics.WSJTX
