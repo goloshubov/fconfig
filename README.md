@@ -28,6 +28,8 @@ fconfig is my ansible playbook for dotfiles and a bit more. It helps me avoiding
 ```bash
 # Usualy I just run smth like:
 $ fconfig_local --tags dotfiles
+# or
+$ fconfig_local --tags dotfiles,gnome
 # when bash my aliases already applied https://github.com/goloshubov/fconfig_files/blob/main/group/all/home/.bashrc.d/aliases.sh
 ```
 
