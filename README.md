@@ -62,7 +62,7 @@ files_repos:
   - { repo: 'git@github.com:username/fconfig_files.git',         localpath: '~/git/github/fconfig_files' }
   - { repo: 'git@github.com:username/fconfig_files_private.git', localpath: '~/git/github/fconfig_files_private' }
   - { repo: 'git@work-git:username/fconfig_files.git',           localpath: '~/git/work/fconfig_files' }
-  - { repo: 'git_repo_url', localpath: '<local_clone_path>' }
+  - { repo: 'git_repo_url', localpath: '<controller_local_path>' }
   - ...
 ```
 
