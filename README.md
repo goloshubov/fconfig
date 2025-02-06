@@ -49,9 +49,9 @@ $ ansible-playbook -i ./inventories workstation.yml --tags dotfiles
 $ ansible-playbook -i ./inventories workstation.yml --tags software --skip-tags flatpaks
 ```
 ```bash
-# Usualy I just run smth like (when bash aliases already applied):
+# Usualy I just run smth like:
 $ fconfig_local --tags dotfiles
-# https://github.com/goloshubov/fconfig_files/blob/main/group/all/home/.bashrc.d/aliases.sh
+# when bash my aliases already applied https://github.com/goloshubov/fconfig_files/blob/main/group/all/home/.bashrc.d/aliases.sh
 ```
 
 ## files repos
