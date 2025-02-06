@@ -26,7 +26,7 @@ fconfig is my ansible playbook for dotfiles and a bit more. It helps me avoiding
 
 ## Usage:
 ```bash
-# Usualy I just run smth like:
+# Usually I just run smth like:
 $ fconfig_local --tags dotfiles
 # or
 $ fconfig_local --tags dotfiles,gnome
