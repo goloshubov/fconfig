@@ -12,6 +12,3 @@ k8s
 
 [k8s_cli:children]
 k8s
-
-
-# NOTE: check group_vars/ and union_vars/ for vars
