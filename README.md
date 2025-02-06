@@ -24,7 +24,7 @@ fconfig is my ansible playbook for dotfiles and a bit more. It helps me avoiding
   - load dconf dump files
   - apply dconf key-value settings
 
-## Usage:
+## Usage
 ```bash
 # Usually I just run smth like:
 $ fconfig_local --tags dotfiles
