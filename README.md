@@ -119,5 +119,7 @@ host/*/dconf/*
 ```
 
 ## TODO
-- add distr/version support:
-  - (?) Debian/Ubuntu, ALT Linux, etc
+- additional roles for services (e.g. with restart notifcations support). It might be usefull even for workstations/laptops.
+- other distr support:
+  - Debian/Ubuntu, ALT Linux, etc
+
