@@ -120,6 +120,6 @@ host/*/dconf/*
 
 ## TODO
 - additional roles for services (e.g. with restart notifcations support). It might be usefull even for workstations/laptops.
-- other distr support:
+- other distr support (it seems like variable/group naming should be reviewed in this case once again):
   - Debian/Ubuntu, ALT Linux, etc
 
