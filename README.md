@@ -26,6 +26,13 @@ fconfig is my ansible playbook for dotfiles and a bit more. It helps me avoiding
 
 ## Usage:
 ```bash
+# Usualy I just run smth like:
+$ fconfig_local --tags dotfiles
+# when bash my aliases already applied https://github.com/goloshubov/fconfig_files/blob/main/group/all/home/.bashrc.d/aliases.sh
+```
+
+```bash
+# on a new machine
 $ git clone https://github.com/goloshubov/fconfig
 $ cd fconfig
 # edit inventory inventories/hosts* and variables group_vars/* host_vars/*
@@ -47,11 +54,6 @@ $ ansible-playbook -i ./inventories workstation.yml --tags dotfiles --check --di
 # and then run only what you need
 $ ansible-playbook -i ./inventories workstation.yml --tags dotfiles
 $ ansible-playbook -i ./inventories workstation.yml --tags software --skip-tags flatpaks
-```
-```bash
-# Usualy I just run smth like:
-$ fconfig_local --tags dotfiles
-# when bash my aliases already applied https://github.com/goloshubov/fconfig_files/blob/main/group/all/home/.bashrc.d/aliases.sh
 ```
 
 ## files repos
