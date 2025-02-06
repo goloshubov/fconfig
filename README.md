@@ -119,5 +119,5 @@ host/*/dconf/*
 ```
 
 ## TODO
-- Debian support
-- ALT Linux support
+- add distr/version support:
+  - (?) Debian/Ubuntu, ALT Linux, etc
