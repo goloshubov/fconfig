@@ -1,10 +1,10 @@
 # fconfig
-fconfig is my ansible implementation of dotfiles type of scripts. It helps me avoiding configuration drifts on my fedora linux workstations.
+fconfig is my ansible playbook for dotfiles and a bit more. It helps me avoiding configuration drifts on my fedora linux workstations.
 
 ## Features:
-- sync .dotfiles and configs
-  - files and templates support, recursively (filetree)
-  - external dotfiles git repositories, public or private. An example is https://github.com/goloshubov/fconfig_files See files_repo's directory structure below.
+- apply dotfiles and system configs:
+  - plain files and jinja templates are supported
+  - store all config in (external) git repositories, public or private. An example is https://github.com/goloshubov/fconfig_files See files_repo's directory structure below.
 - install software:
   - rpm packages (dnf).
     - direct package urls
@@ -20,7 +20,7 @@ fconfig is my ansible implementation of dotfiles type of scripts. It helps me av
   - go packages
   - ansible-galaxy collections
 - add user to groups
-- configure GNOME desktop on workstations
+- configure GNOME desktop:
   - load dconf dump files
   - apply dconf key-value settings
 
@@ -49,10 +49,9 @@ $ ansible-playbook -i ./inventories workstation.yml --tags dotfiles
 $ ansible-playbook -i ./inventories workstation.yml --tags software --skip-tags flatpaks
 ```
 ```bash
-# you can use fconfig to create bash aliases as well, e.g.:
-# https://github.com/goloshubov/fconfig_files/blob/main/group/all/home/.bashrc.d/aliases.sh
-# and then, my most common use case (just sync dotfiles), it's something like:
+# Usualy I just run smth like (when bash aliases already applied):
 $ fconfig_local --tags dotfiles
+# https://github.com/goloshubov/fconfig_files/blob/main/group/all/home/.bashrc.d/aliases.sh
 ```
 
 ## files repos
