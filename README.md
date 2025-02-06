@@ -4,7 +4,7 @@ fconfig is my ansible playbook for dotfiles and a bit more. It helps me avoiding
 ## Features:
 - apply dotfiles and system configs:
   - plain files and jinja templates are supported
-  - store all config in (external) git repositories, public or private. An example is https://github.com/goloshubov/fconfig_files See files_repo's directory structure below.
+  - store configs in (external) git repositories, public or private. An example is https://github.com/goloshubov/fconfig_files See files_repo's directory structure below.
 - install software:
   - rpm packages (dnf).
     - direct package urls
