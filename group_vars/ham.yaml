@@ -6,7 +6,7 @@ package_list__ham:
   - wsjtx
   - js8call
   - cwdaemon
-  - unixcw
+  - unixcw   #cw, cwcp, cwgen
   - wfview
   #- freedv
 
