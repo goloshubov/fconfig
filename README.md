@@ -2,13 +2,13 @@
 fconfig is my ansible playbook for dotfiles and a bit more
 
 ## goals
-- avoid configuration drifts, primarily on (fedora) linux workstations and laptops. Meaning - switching to another laptop without noticing the difference.
+- avoid configuration drifts, primarily on (fedora) linux workstations and laptops. Meaning - switching to another laptop without noticing the difference
 - keep it as simple as possible
 
 ## features
 - apply dotfiles and system configs:
   - plain files and jinja templates are supported
-  - configs stored in (external) git repositories, public or private. An example is https://github.com/goloshubov/fconfig_files See files_repo's directory structure below.
+  - configs stored in (external) git repositories, public or private. files_repo's directory structure described below
 - install software:
   - rpm packages (dnf).
     - direct package urls
