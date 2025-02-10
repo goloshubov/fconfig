@@ -75,7 +75,6 @@ files_repos:
 
 Here is expected repo directory structure, notice that all supported dirs (dconf, etc, home) are not mandatory:
 ```
-.
 ├── group
 │   └── <groupname>
 │       ├── dconf
