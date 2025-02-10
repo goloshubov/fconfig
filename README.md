@@ -30,11 +30,10 @@ fconfig is my ansible playbook for dotfiles and a bit more
 
 ## usage
 ```bash
-# Usually I just run smth like:
+# Usually (when bash aliases already applied) I just run smth like
 $ fconfig_local --tags dotfiles
 # or
 $ fconfig_local --tags dotfiles,gnome
-# when bash aliases already applied https://github.com/goloshubov/fconfig_files/blob/main/group/all/home/.bashrc.d/aliases.sh
 ```
 
 ```bash
