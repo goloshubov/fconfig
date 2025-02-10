@@ -122,6 +122,7 @@ inventory file (dconf_settings)
 host/*/dconf/*
 ```
 
-## TODO
-- additional roles for services with restart notifcations support. It might be usefull even for workstations/laptops.
+## TODOs
+- additional roles for services with restart notifcations support. It might be usefull even for workstations/laptops, on other hand it will add some complexity.
 - other distr support (? Debian, ALT Linux)
+- import (additional) package lists from files
