@@ -1,0 +1,10 @@
+---
+files_repos:
+  - {
+      repo: "git@github.com:goloshubov/fconfig_files.git",
+      localpath: "~/git/github/fconfig_files",
+    }
+  - {
+      repo: "git@github.com:goloshubov/fconfig_files_private.git",
+      localpath: "~/git/github/fconfig_files_private",
+    }
