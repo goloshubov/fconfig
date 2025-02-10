@@ -2,6 +2,7 @@
 - name: Assign to additiionall groups (by distribution)
   tags:
     - always
+    - testx
   block:
     - name: Group by distribution
       ansible.builtin.group_by:
@@ -11,3 +12,6 @@
           - "{{ ansible_distribution | lower }}"
           - "{{ ansible_os_family | lower }}"
       loop: "{{ group_names }}"
+
+    - ansible.builtin.debug:
+        msg: "groups: {{ group_names }}"
