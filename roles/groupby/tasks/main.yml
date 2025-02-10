@@ -3,7 +3,7 @@
   tags:
     - always
   block:
-    - name: group by distribution
+    - name: Group by distribution
       ansible.builtin.group_by:
         key: "{{ ansible_distribution | lower }}_{{ item }}"
         parents:
