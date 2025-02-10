@@ -4,6 +4,12 @@
     - software
     - pip
   block:
+    - name: Merge vars
+      ansible.builtin.set_fact:
+        "{{ item }}": "{{ lookup('community.general.merge_variables', item, pattern_type='prefix') }}"
+      loop:
+        - pip_packages
+
     - name: Print vars
       ansible.builtin.debug:
         msg: "{{ lookup('vars', item, default='') }}"

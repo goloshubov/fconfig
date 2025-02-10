@@ -90,7 +90,7 @@ yum_repos_tweaks: "{{ yum_repos_tweaks_original }}"
 
 #TODO:clean, deduplicate
 # common packages for all groups
-package_list__all:
+package_list__fedora:
   - nmap-ncat
   - bind-utils
   - rsync

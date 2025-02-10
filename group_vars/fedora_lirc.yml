@@ -1,8 +1,8 @@
 ---
-package_list__lirc:
+package_list__fedora_lirc:
   - lirc
   #- xdotool   #Fake keyboard/mouse input for X11
   - ydotool #Fake keyboard/mouse input for Wayland
 
-user_groups__lirc:
+user_groups__fedora_lirc:
   - lirc

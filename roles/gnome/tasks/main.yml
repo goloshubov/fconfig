@@ -4,6 +4,13 @@
     - configs
     - gnome
   block:
+    - name: Merge vars
+      ansible.builtin.set_fact:
+        "{{ item }}": "{{ lookup('community.general.merge_variables', item, pattern_type='prefix') }}"
+      loop:
+        - favorite_apps
+        - dconf_settings
+
     - name: Print vars
       ansible.builtin.debug:
         msg: "{{ lookup('vars', item, default='') }}"

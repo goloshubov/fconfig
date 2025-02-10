@@ -8,7 +8,7 @@
 #   - ""
 
 #third party repos and packages
-direct_package_list:
+direct_package_list__fedora_servers:
   - "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_version }}.noarch.rpm"
 #  - "https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_version }}.noarch.rpm"
 
@@ -19,7 +19,7 @@ direct_package_list:
 # enable repo if needed
 #    setenabled_repo_list:
 
-pip_packages__servers:
+pip_packages__fedora_servers:
   - Jinja2
   - ansible
   #  - ansible-rulebook

@@ -1,5 +1,5 @@
 ---
-package_list__ham:
+package_list__fedora_ham:
   - gqrx
   - flrig
   - fldigi
@@ -10,7 +10,7 @@ package_list__ham:
   - wfview
   #- freedv
 
-flatpak_packages__ham:
+flatpak_packages__fedora_ham:
   - io.github.foldynl.QLog
 #  - org.wfview.wfview      # (rpm package instead)
 #  - edu.princeton.physics.WSJTX

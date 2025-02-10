@@ -1,11 +1,11 @@
 ---
 
-user_groups__workstations:
+user_groups__fedora_workstations:
   - libvirt
   - dialout
 
 #copr, third party repos
-copr_list__workstatsions:
+copr_list__fedora_workstatsions:
   - mroche/cloud-native-utilities # helm,knative-client,pack,packer,tektoncd-cli,terraform
   - zeno/scrcpy
   - kylegospo/webapp-manager
@@ -14,35 +14,35 @@ copr_list__workstatsions:
   - getpagespeed/wrk #modern HTTP benchmarking tool
 
 # remove copr repos
-copr_absent_list:
+copr_absent_list__fedora_workstations:
   - luya/xournalpp # latest xournal++
   - varlad/helix
 
 #third party repos
-other_repos_list: []
+other_repos_list__fedora_workstations: []
 #  - https://fedorapeople.org/groups/virt/virtio-win/virtio-win.repo
 #  - https://download.docker.com/linux/fedora/docker-ce.repo
 
 #third party repos and packages
-direct_package_list:
+direct_package_list__fedora_workstations:
   - "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_version }}.noarch.rpm"
 #  - "https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_version }}.noarch.rpm"
 #  - "http://repo.yandex.ru/yandex-disk/yandex-disk-latest.x86_64.rpm"    #yandex-disk repository
 #  - "https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm"
 
 #third party repos and packages
-prerequisite_packages_list:
+prerequisite_packages_list__fedora_workstations:
   - fedora-workstation-repositories
 
 # enable repo if needed
-setenabled_repo_list: []
+setenabled_repo_list__fedora_workstations: []
 #  - google-chrome
 
 #NOTE: already defined in group_vars/all.yml, re-define here to override
 #yum_repos_mirror:
 #yum_repos_tweaks:
 
-package_list__workstations:
+package_list__fedora_workstations:
   - sshuttle
   - powerline
   #- google-chrome-stable  # from google-chrome repo (fedora-workstation-repositories pkg)
@@ -192,15 +192,15 @@ package_list__workstations:
   - fzf  #A command-line fuzzy finder 
   #- thunderbird
 
-package_absent_list:
+package_absent_list__fedora_workstations:
   #  - nano
   - firefox-wayland #not needed since firefox version 121
   - python3-pytelegrambotapi
 
-flatpak_repos:
+flatpak_repos__fedora_workstations:
   - https://flathub.org/repo/flathub.flatpakrepo
 
-flatpak_packages__workstations:
+flatpak_packages__fedora_workstations:
   - com.google.Chrome
   - com.github.tchx84.Flatseal
   - com.github.johnfactotum.Foliate
@@ -256,7 +256,7 @@ flatpak_packages__workstations:
 
 # TODO: add virtual env support; add requirements.txt file support
 # NOTE: pipx is preferable for now
-pip_packages:
+pip_packages__fedora_workstations:
   - Jinja2
   - wheel
   - powerline-k8s
@@ -264,7 +264,7 @@ pip_packages:
   #- aiohttp # required for ansible.eda plugins (event_source/webhook.py)  # replaced by package python3-aiohttp
   #- ansible-rulebook
 
-pipx_packages:
+pipx_packages__fedora_workstations:
   ansible:
     - argcomplete
     - requests
@@ -281,7 +281,7 @@ pipx_packages:
   tftui: # Terraform textual UI
   #bashate:   # automated style checker for bash scripts
 
-cargo_packages:
+cargo_packages__fedora_workstations:
   - du-dust
   #- eza
   - tealdeer
@@ -295,7 +295,7 @@ cargo_packages:
   - tomato-toml # crudini-like tool but for toml
   #- coreutils
 
-go_packages:
+go_packages__fedora_workstations:
   #- github.com/antonmedv/llama   # terminal file manager
   #- github.com/mikefarah/yq      # notice pip yq package
   - github.com/go-task/task/v3/cmd/task
@@ -306,14 +306,14 @@ go_packages:
   - github.com/kubecolor/kubecolor
 
 # TODO: add requirements.yml file support
-ansible_galaxy_collections:
+ansible_galaxy_collections__fedora_workstations:
   - community.general
   - ansible.eda
   - kubernetes.core
 
 # dash/dock panel favorite apps ($ dconf read /org/gnome/shell/favorite-apps)
 # dconf read /org/gnome/shell/favorite-apps
-favorite_apps:
+favorite_apps__fedora_workstations:
   - com.gexperts.Tilix.desktop
   #- org.gnome.Ptyxis.desktop
   #- terminator.desktop
@@ -351,7 +351,7 @@ favorite_apps:
   - com.rafaelmardojai.Blanket.desktop
 
 # dconf dump files might be used as well (see README)
-dconf_settings:
+dconf_settings__fedora_workstations:
   "/org/gnome/shell/favorite-apps": "{{ favorite_apps }}"
   "/org/gnome/desktop/wm/preferences/focus-mode": "'sloppy'"
   "/org/gnome/desktop/wm/preferences/auto-raise": "true"
