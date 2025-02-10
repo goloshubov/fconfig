@@ -120,5 +120,4 @@ host/*/dconf/*
 
 ## TODO
 - additional roles for services (e.g. with restart notifcations support). It might be usefull even for workstations/laptops.
-- (?) consider adding other distr support
-
+- other distr support
