@@ -1,7 +1,11 @@
 # fconfig
-fconfig is my ansible playbook for dotfiles and a bit more. It helps me avoiding configuration drifts on my fedora linux workstations.
+fconfig is my ansible playbook for dotfiles and a bit more
 
-## Features:
+## goals
+- avoid configuration drifts, primarily on (fedora) linux workstations and laptops
+- keep it as simple as possible
+
+## features
 - apply dotfiles and system configs:
   - plain files and jinja templates are supported
   - configs stored in (external) git repositories, public or private. An example is https://github.com/goloshubov/fconfig_files See files_repo's directory structure below.
@@ -24,7 +28,7 @@ fconfig is my ansible playbook for dotfiles and a bit more. It helps me avoiding
   - load dconf dump files
   - apply dconf key-value settings
 
-## Usage
+## usage
 ```bash
 # Usually I just run smth like:
 $ fconfig_local --tags dotfiles
@@ -119,5 +123,5 @@ host/*/dconf/*
 ```
 
 ## TODO
-- additional roles for services (e.g. with restart notifcations support). It might be usefull even for workstations/laptops.
-- other distr support
+- additional roles for services with restart notifcations support. It might be usefull even for workstations/laptops.
+- other distr support (? Debian, ALT Linux)
