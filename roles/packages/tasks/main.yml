@@ -4,12 +4,17 @@
     - software
     - packages
   block:
-    - name: Packages on RHEL-based OS
+    - name: Packages on RedHat based distr
       ansible.builtin.import_tasks: redhat.yml
       when: |
         ansible_os_family == "RedHat"
 
-    - name: Packets on Debian-based OS
+    - name: Packages on Debian based distr
       ansible.builtin.import_tasks: debian.yml
       when: |
         ansible_os_family == "Debian"
+
+    - name: Packages on ALT Linux based distr
+      ansible.builtin.import_tasks: alt.yml
+      when: |
+        ansible_os_family == "Altlinux"
