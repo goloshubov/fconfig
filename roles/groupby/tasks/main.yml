@@ -1,0 +1,13 @@
+---
+- name: Assign to additiionall groups (by distribution)
+  tags:
+    - always
+  block:
+    - name: group by distribution
+      ansible.builtin.group_by:
+        key: "{{ ansible_distribution | lower }}_{{ item }}"
+        parents:
+          - "{{ ansible_distribution | lower }}_{{ ansible_distribution_major_version | lower }}"
+          - "{{ ansible_distribution | lower }}"
+          - "{{ ansible_distribution_file_variety | lower }}"
+      loop: "{{ group_names }}"

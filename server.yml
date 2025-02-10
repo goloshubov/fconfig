@@ -3,6 +3,7 @@
   hosts: servers
   gather_facts: yes
   roles:
+    - groupby
     - filesrepos
     - dotfiles
     - packages
