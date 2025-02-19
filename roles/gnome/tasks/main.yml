@@ -15,6 +15,7 @@
       ansible.builtin.debug:
         msg: "{{ lookup('vars', item, default='') }}"
       loop:
+        - favorite_apps
         - dconf_settings
 
     - name: Find dconf dump files in 'group' dir (localhost)

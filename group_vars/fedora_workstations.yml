@@ -313,7 +313,8 @@ ansible_galaxy_collections__fedora_workstations:
 
 # dash/dock panel favorite apps ($ dconf read /org/gnome/shell/favorite-apps)
 # dconf read /org/gnome/shell/favorite-apps
-favorite_apps__fedora_workstations:
+# __0__ - in order to be on the left side (start of the list), in case there are other favorite_apps__ variables
+favorite_apps__0__fedora_workstations:
   - com.gexperts.Tilix.desktop
   #- org.gnome.Ptyxis.desktop
   #- terminator.desktop
