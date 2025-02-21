@@ -10,11 +10,16 @@ package_list__fedora_ham:
   - unixcw   #cw, cwcp, cwgen
   - wfview
   #- freedv
+  #- kicad
+  #- kicad-packages3d
+  #- kicad-doc
 
 flatpak_packages__fedora_ham:
   - io.github.foldynl.QLog
-#  - org.wfview.wfview      # (rpm package instead)
-#  - edu.princeton.physics.WSJTX
+  #- org.wfview.wfview      # (rpm package instead)
+  #- edu.princeton.physics.WSJTX
+  #- org.kicad.KiCad
+  #- org.kicad.KiCad.Library.Packages3D
 
 # dash/dock panel favorite apps ($ dconf read /org/gnome/shell/favorite-apps)
 # dconf read /org/gnome/shell/favorite-apps
