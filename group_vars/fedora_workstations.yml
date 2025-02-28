@@ -146,6 +146,7 @@ package_list__fedora_workstations:
   - ranger # console file manager
   - perl-Image-ExifTool
 #  - terraform # from mroche/cloud-native-utilities copr repo
+  - opentofu
   - xournalpp # from luya/xournalpp copr repo, latest xournal++
 #  - golang-github-docker-slim # docker-slim tool
 #  - docker-ce # docker-ce
