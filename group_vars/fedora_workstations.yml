@@ -12,6 +12,7 @@ copr_list__fedora_workstatsions:
   #- felfert/gitea
   #- varlad/zellij    #A terminal workspace with batteries included. (tmux alternative)
   - getpagespeed/wrk #modern HTTP benchmarking tool
+  - pgdev/ghostty
 
 # remove copr repos
 copr_absent_list__fedora_workstations:
@@ -192,6 +193,7 @@ package_list__fedora_workstations:
   - pipx #Install and Run Python Applications in Isolated Environments
   - fzf  #A command-line fuzzy finder 
   #- thunderbird
+  - ghostty
 
 package_absent_list__fedora_workstations:
   #  - nano
