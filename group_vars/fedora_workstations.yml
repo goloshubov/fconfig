@@ -320,6 +320,7 @@ ansible_galaxy_collections__fedora_workstations:
 # __00__ -  to be on the left side (start of the list)
 # __99__ -  to be on the right side (end of the list)
 favorite_apps__50__fedora_workstations:
+  - com.mitchellh.ghostty.desktop
   - com.gexperts.Tilix.desktop
   #- org.gnome.Ptyxis.desktop
   #- terminator.desktop
