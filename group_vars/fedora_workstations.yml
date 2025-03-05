@@ -21,15 +21,15 @@ copr_absent_list__fedora_workstations:
 
 #third party repos
 other_repos_list__fedora_workstations: []
-#  - https://fedorapeople.org/groups/virt/virtio-win/virtio-win.repo
-#  - https://download.docker.com/linux/fedora/docker-ce.repo
+  #- https://fedorapeople.org/groups/virt/virtio-win/virtio-win.repo
+  #- https://download.docker.com/linux/fedora/docker-ce.repo
 
 #third party repos and packages
 direct_package_list__fedora_workstations:
   - "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_version }}.noarch.rpm"
-#  - "https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_version }}.noarch.rpm"
-#  - "http://repo.yandex.ru/yandex-disk/yandex-disk-latest.x86_64.rpm"    #yandex-disk repository
-#  - "https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm"
+  #- "https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_version }}.noarch.rpm"
+  #- "http://repo.yandex.ru/yandex-disk/yandex-disk-latest.x86_64.rpm"    #yandex-disk repository
+  #- "https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm"
 
 #third party repos and packages
 prerequisite_packages_list__fedora_workstations:
@@ -37,7 +37,7 @@ prerequisite_packages_list__fedora_workstations:
 
 # enable repo if needed
 setenabled_repo_list__fedora_workstations: []
-#  - google-chrome
+  #- google-chrome
 
 #NOTE: already defined in group_vars/all.yml, re-define here to override
 #yum_repos_mirror:
@@ -52,8 +52,8 @@ package_list__fedora_workstations:
   - tmux
   - tmux-powerline
   - screen
-  - tilix
-  - tilix-nautilus
+  #- tilix
+  #- tilix-nautilus
   - terminator
   - git
   - vim-enhanced
@@ -115,7 +115,7 @@ package_list__fedora_workstations:
   - kubernetes-client
   - helm
   - dnf-utils
-#  - ffmpeg
+  #- ffmpeg
   - golang
   - rust
   - cargo
@@ -146,14 +146,14 @@ package_list__fedora_workstations:
   - cockpit-files
   - ranger # console file manager
   - perl-Image-ExifTool
-#  - terraform # from mroche/cloud-native-utilities copr repo
+  #- terraform # from mroche/cloud-native-utilities copr repo
   - opentofu
   - xournalpp # from luya/xournalpp copr repo, latest xournal++
-#  - golang-github-docker-slim # docker-slim tool
-#  - docker-ce # docker-ce
-#  - docker-ce-cli # docker-ce
-#  - containerd.io # docker-ce
-#  - docker-compose-plugin # docker-ce
+  #- golang-github-docker-slim # docker-slim tool
+  #- docker-ce # docker-ce
+  #- docker-ce-cli # docker-ce
+  #- containerd.io # docker-ce
+  #- docker-compose-plugin # docker-ce
   - crudini # A utility for manipulating ini files
   - pv # monitor the progress of data through a pipe
   - progress # Linux tool to show progress for cp, mv, dd, ... (formerly known as cv)
