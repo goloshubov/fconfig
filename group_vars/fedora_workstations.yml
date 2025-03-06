@@ -12,7 +12,7 @@ copr_list__fedora_workstatsions:
   #- felfert/gitea
   #- varlad/zellij    #A terminal workspace with batteries included. (tmux alternative)
   - getpagespeed/wrk #modern HTTP benchmarking tool
-  - pgdev/ghostty
+  #- pgdev/ghostty
 
 # remove copr repos
 copr_absent_list__fedora_workstations:
@@ -52,8 +52,8 @@ package_list__fedora_workstations:
   - tmux
   - tmux-powerline
   - screen
-  #- tilix
-  #- tilix-nautilus
+  - tilix
+  - tilix-nautilus
   - terminator
   - git
   - vim-enhanced
@@ -193,7 +193,7 @@ package_list__fedora_workstations:
   - pipx #Install and Run Python Applications in Isolated Environments
   - fzf  #A command-line fuzzy finder 
   #- thunderbird
-  - ghostty
+  #- ghostty
 
 package_absent_list__fedora_workstations:
   #  - nano
@@ -320,10 +320,10 @@ ansible_galaxy_collections__fedora_workstations:
 # __00__ -  to be on the left side (start of the list)
 # __99__ -  to be on the right side (end of the list)
 favorite_apps__50__fedora_workstations:
-  - com.mitchellh.ghostty.desktop
-  #- com.gexperts.Tilix.desktop
+  - com.gexperts.Tilix.desktop
   #- org.gnome.Ptyxis.desktop
   #- terminator.desktop
+  #- com.mitchellh.ghostty.desktop
   - dev.zed.Zed.desktop
   - net.cozic.joplin_desktop.desktop
   #- firefox-wayland.desktop
