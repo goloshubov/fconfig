@@ -194,6 +194,7 @@ package_list__fedora_workstations:
   - fzf  #A command-line fuzzy finder 
   #- thunderbird
   #- ghostty
+  - fuse-sshfs
 
 package_absent_list__fedora_workstations:
   #  - nano
