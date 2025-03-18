@@ -298,6 +298,7 @@ cargo_packages__fedora_workstations:
   #- bat       # A cat(1) clone with wings. (Rust)      # already in package_list
   - tomato-toml # crudini-like tool but for toml
   #- coreutils
+  - gitlab-ci-ls  # for zed's plugin
 
 go_packages__fedora_workstations:
   #- github.com/antonmedv/llama   # terminal file manager
