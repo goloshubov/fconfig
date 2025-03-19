@@ -1,6 +1,17 @@
 ---
 fedora_version: 41
 
+# dotfiles and configs repos
+files_repos:
+  - {
+      repo: "git@github.com:goloshubov/fconfig_files.git",
+      localpath: "~/git/github/fconfig_files",
+    }
+  - {
+      repo: "git@github.com:goloshubov/fconfig_files_private.git",
+      localpath: "~/git/github/fconfig_files_private",
+    }
+
 dnf_proxy_protocol: http
 dnf_proxy_host: 192.168.35.1
 dnf_proxy_port: 3128
