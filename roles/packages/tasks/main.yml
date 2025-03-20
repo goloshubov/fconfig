@@ -5,16 +5,16 @@
     - packages
   block:
     - name: Packages on RedHat based distr
-      ansible.builtin.import_tasks: redhat.yml
+      ansible.builtin.import_tasks: fedora.yml
       when: |
         ansible_os_family == "RedHat"
 
     - name: Packages on Debian based distr
-      ansible.builtin.import_tasks: debian.yml
+      ansible.builtin.import_tasks: ubuntu.yml
       when: |
         ansible_os_family == "Debian"
 
-    - name: Packages on ALT Linux based distr
-      ansible.builtin.import_tasks: alt.yml
-      when: |
-        ansible_os_family == "Altlinux"
+    #- name: Packages on ALT Linux based distr
+    #  ansible.builtin.import_tasks: alt.yml
+    #  when: |
+    #    ansible_os_family == "Altlinux"

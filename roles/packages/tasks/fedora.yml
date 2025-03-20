@@ -103,6 +103,9 @@
         - package-repos-tweaks
       when: yum_repos_tweaks is defined
 
+    #- name: Packages
+    #  ansible.builtin.import_tasks: packages.yml
+
     - name: Install packages
       ansible.builtin.dnf:
         state: latest
