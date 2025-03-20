@@ -258,6 +258,7 @@ flatpak_packages__fedora_workstations:
   - io.github.jeffshee.Hidamari  # Video wallpaper for Linux
   - cc.arduino.IDE2
   - org.gnome.Chess   # classic chess game
+  - org.kde.kigo      # classic go game
 
 # TODO: add virtual env support; add requirements.txt file support
 # NOTE: pipx is preferable for now
