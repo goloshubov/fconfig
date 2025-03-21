@@ -10,7 +10,7 @@ fconfig is my ansible playbook to configure linux workstation
   - plain files and jinja templates are supported
   - configs stored in (external) git repositories, public or private. files_repo's directory structure described below
 - install software:
-  - rpm packages (dnf).
+  - fedora. rpm packages (dnf).
     - direct package urls
     - dnf proxy
     - repos configuration
