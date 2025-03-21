@@ -2,7 +2,7 @@
 fconfig is my ansible playbook to configure linux workstation
 
 ## goals
-- avoid configuration drifts. Meaning - switching to another laptop without noticing the difference
+- avoid configuration drifts on your machines. Meaning - switching to another laptop without noticing the difference
 - keep it as simple as possible
 
 ## features
