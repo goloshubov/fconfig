@@ -2,7 +2,7 @@
 fconfig is my ansible playbook for dotfiles and a bit more
 
 ## goals
-- avoid configuration drifts, primarily on (fedora) linux workstations and laptops. Meaning - switching to another laptop without noticing the difference
+- avoid configuration drifts on personal linux workstations and laptops. Meaning - switching to another laptop without noticing the difference
 - keep it as simple as possible
 
 ## features
