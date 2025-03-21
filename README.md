@@ -121,6 +121,6 @@ host/*/dconf/*
 ```
 
 ## TODOs
+- distrs support: Debian, Ubuntu, ALT Linux
 - additional roles for services with restart notifcations support. It might be usefull even for workstations/laptops, on other hand it will add some complexity.
-- other distrs support (Debian, Ubuntu, ALT Regular Gnome)
 - import (additional) package lists from files
