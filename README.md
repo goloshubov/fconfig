@@ -1,8 +1,8 @@
 # fconfig
-fconfig is my ansible playbook for dotfiles and a bit more
+fconfig is my ansible playbook to configure linux workstation
 
 ## goals
-- avoid configuration drifts on your linux workstations and laptops. Meaning - switching to another laptop without noticing the difference
+- avoid configuration drifts. Meaning - switching to another laptop without noticing the difference
 - keep it as simple as possible
 
 ## features
