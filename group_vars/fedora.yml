@@ -149,3 +149,4 @@ package_list__fedora:
 #  - stunnel
 #  - chisel  # fast TCP/UDP tunnel, transported over HTTP, secured via SSH
 #  - proxychains-ng    # ProxyChains NG hooks network-related (TCP only) libc functions
+  - colordiff
