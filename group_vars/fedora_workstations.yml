@@ -195,6 +195,7 @@ package_list__fedora_workstations:
   #- thunderbird
   #- ghostty
   - fuse-sshfs
+  - keepassxc
 
 package_absent_list__fedora_workstations:
   #  - nano
@@ -360,6 +361,7 @@ favorite_apps__50__fedora_workstations:
   #- org.gnome.Meld.desktop
   #- rest.insomnia.Insomnia.desktop
   - com.rafaelmardojai.Blanket.desktop
+  - org.keepassxc.KeePassXC.desktop
 
 # dconf dump files might be used as well (see README)
 dconf_settings__fedora_workstations:
