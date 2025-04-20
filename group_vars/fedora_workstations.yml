@@ -94,7 +94,7 @@ package_list__fedora_workstations:
   - gnome-shell-extension-openweather
   - gnome-shell-extension-window-list
   - gnome-shell-extension-places-menu
-  - gnome-shell-extension-argos
+  #- gnome-shell-extension-argos
   #- gnome-shell-extension-pop-shell
   - gnome-shell-extension-system-monitor-applet
   - libdbusmenu # for dash-to-dock
