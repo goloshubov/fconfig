@@ -372,6 +372,7 @@ dconf_settings__fedora_workstations:
   "/org/gnome/desktop/peripherals/touchpad/tap-to-click": "true"
   "/org/gtk/Settings/FileChooser/show-hidden": "true"
   "/org/gnome/nautilus/preferences/show-delete-permanently": "true"
+  "/org/gnome/nautilus/preferences/show-create-link": "true"
   "/org/gtk/Settings/FileChooser/sort-directories-first": "true"
   #  "/org/gnome/nautilus/icon-view/default-zoom-level": "'small'"
   "/org/gnome/nautilus/icon-view/default-zoom-level": "'small-plus'"
