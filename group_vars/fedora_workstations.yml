@@ -332,8 +332,8 @@ favorite_apps__50__fedora_workstations:
   - dev.zed.Zed.desktop
   - net.cozic.joplin_desktop.desktop
   #- firefox-wayland.desktop
-  - org.mozilla.firefox.desktop
   - net.thunderbird.Thunderbird.desktop
+  - org.mozilla.firefox.desktop
   #- org.gnome.Geary.desktop
   #- org.gnome.Calendar.desktop
   - io.gitlab.news_flash.NewsFlash.desktop
