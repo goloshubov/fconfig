@@ -337,18 +337,18 @@ favorite_apps__50__fedora_workstations:
   #- org.gnome.Geary.desktop
   #- org.gnome.Calendar.desktop
   - io.gitlab.news_flash.NewsFlash.desktop
+  - org.telegram.desktop.desktop
   #- google-chrome.desktop
   #- com.google.Chrome.desktop
   - com.github.xournalpp.xournalpp.desktop
   #- net.xmind.XMind.desktop
   #- org.freeplane.App.desktop
   - com.github.phase1geo.minder.desktop
-  - org.telegram.desktop.desktop
   #- re.sonny.Tangram.desktop
   #- com.getferdi.Ferdi.desktop
   #- com.slack.Slack.desktop
   - org.gnome.Nautilus.desktop
-  - org.gnome.TextEditor.desktop
+  #- org.gnome.TextEditor.desktop
   #- org.gnome.gedit.desktop
   - org.gnome.Calculator.desktop
   - org.cockpit_project.CockpitClient.desktop
