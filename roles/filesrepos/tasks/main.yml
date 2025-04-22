@@ -23,6 +23,6 @@
       git:
         repo: "{{ item.repo }}"
         dest: "{{ item.localpath }}"
-        force: yes
-        accept_hostkey: yes
+        force: true
+        accept_hostkey: true
       loop: "{{ files_repos }}"

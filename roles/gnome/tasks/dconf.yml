@@ -1,7 +1,7 @@
 ---
 
 - name: Copy dumps to remote host
-  become: yes
+  become: true
   become_user: "{{ user_name }}"
   ansible.builtin.copy:
     src: "{{ item.path }}"
@@ -10,7 +10,7 @@
   loop: "{{ item.files }}"
 
 - name: Load dconf dump files
-  become: yes
+  become: true
   become_user: "{{ user_name }}"
   environment:
     DBUS_SESSION_BUS_ADDRESS: "unix:path=/run/user/{{ user_id }}/bus"
@@ -18,7 +18,7 @@
   loop: "{{ item.files }}"
 
 - name: Remove dumps from remote host
-  become: yes
+  become: true
   become_user: "{{ user_name }}"
   ansible.builtin.file:
     path: "/tmp/{{ item.path | basename }}"

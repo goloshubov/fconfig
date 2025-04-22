@@ -29,7 +29,7 @@
       loop: "{{ type_dconfdumps.results }}"
 
     - name: Apply dconf key-value settings
-      become: yes
+      become: true
       become_user: "{{ user_name }}"
       environment:
         DBUS_SESSION_BUS_ADDRESS: "unix:path=/run/user/{{ user_id }}/bus"
