@@ -12,7 +12,7 @@
   hosts: all
   gather_facts: false
   vars_prompt:
-    - name: Confirm_answer
+    - name: confirm_answer
       prompt: "run plays on correspoding hosts/groups above?\ncontinue (y/n)?"
       private: false
   tasks:
