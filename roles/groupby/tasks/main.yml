@@ -13,5 +13,6 @@
           - "{{ ansible_os_family | lower }}"
       loop: "{{ group_names }}"
 
-    - ansible.builtin.debug:
+    - name: Groups
+      ansible.builtin.debug:
         msg: "groups: {{ group_names }}"

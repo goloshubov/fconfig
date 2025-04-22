@@ -191,7 +191,7 @@ package_list__fedora_workstations:
   - wrk #modern HTTP benchmarking tool (copr repo)
   - python-virtualenv
   - pipx #Install and Run Python Applications in Isolated Environments
-  - fzf  #A command-line fuzzy finder 
+  - fzf  #A command-line fuzzy finder
   #- thunderbird
   #- ghostty
   - fuse-sshfs
