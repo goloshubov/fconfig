@@ -28,6 +28,7 @@
         paths: "{{ pip_virtualenv_dir }}"
         file_type: file
       register: virtualenvs
+      when: pip_virtualenv_dir is defined
 
     - name: Install virtualenv pip packages
       tags:
@@ -36,3 +37,4 @@
         virtualenv: "{{ item.path | regex_replace('.requirements.txt$', '') }}"
         requirements: "{{ item.path }}"
       loop: "{{ virtualenvs.files }}"
+      when: virtualenvs.files is defined
