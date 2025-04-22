@@ -191,7 +191,7 @@ package_list__fedora_workstations:
   - wrk #modern HTTP benchmarking tool (copr repo)
   - python-virtualenv
   - pipx #Install and Run Python Applications in Isolated Environments
-  - fzf  #A command-line fuzzy finder 
+  - fzf  #A command-line fuzzy finder
   #- thunderbird
   #- ghostty
   - fuse-sshfs
@@ -261,8 +261,6 @@ flatpak_packages__fedora_workstations:
   - org.gnome.Chess   # classic chess game
   - org.kde.kigo      # classic go game
 
-# TODO: add virtual env support; add requirements.txt file support
-# NOTE: pipx is preferable for now
 pip_packages__fedora_workstations:
   - Jinja2
   - wheel
@@ -270,6 +268,9 @@ pip_packages__fedora_workstations:
   #- terminalteixteffects #tte (just for fun)
   #- aiohttp # required for ansible.eda plugins (event_source/webhook.py)  # replaced by package python3-aiohttp
   #- ansible-rulebook
+
+# dir with <virtualenv>.requirements.txt
+pip_virtualenv_dir: "~/python_virtualenv"
 
 pipx_packages__fedora_workstations:
   ansible:

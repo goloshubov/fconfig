@@ -9,6 +9,7 @@
         "{{ item }}": "{{ lookup('community.general.merge_variables', item, pattern_type='prefix') }}"
       loop:
         - pip_packages
+#        - pip_virtualenv_packages
 
     - name: Print vars
       ansible.builtin.debug:
@@ -19,3 +20,19 @@
     - name: Install pip packages
       ansible.builtin.pip:
         name: "{{ pip_packages }}"
+
+    - name: Find virtualenv requirements
+      tags:
+        - pip_virtualenv
+      ansible.builtin.find:
+        paths: "{{ pip_virtualenv_dir }}"
+        file_type: file
+      register: virtualenvs
+
+    - name: Install virtualenv pip packages
+      tags:
+        - pip_virtualenv
+      ansible.builtin.pip:
+        virtualenv: "{{ item.path | regex_replace('.requirements.txt$', '') }}"
+        requirements: "{{ item.path }}"
+      loop: "{{ virtualenvs.files }}"
