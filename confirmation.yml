@@ -1,13 +1,14 @@
 ---
-- name: print info
+- name: Print info
   hosts: all
   gather_facts: false
   tasks:
-    - ansible.builtin.debug:
+    - name: Info
+      ansible.builtin.debug:
         msg: "host: {{ inventory_hostname }}; groups: {{ group_names }}; ansible_run_tags: {{ hostvars[inventory_hostname].ansible_run_tags }}"
       tags: always
 
-- name: confirmation
+- name: Confirmation
   hosts: all
   gather_facts: false
   vars_prompt:
@@ -15,7 +16,7 @@
       prompt: "run plays on correspoding hosts/groups above?\ncontinue (y/n)?"
       private: false
   tasks:
-    - name: check confirmation
+    - name: Check confirmation
       fail:
         msg: "not y/Y"
       when: confirm_answer != "y" and confirm_answer != "Y"

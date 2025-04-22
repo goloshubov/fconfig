@@ -75,11 +75,11 @@
       tags: package-repos
       when: setenabled_repo_list is defined
 
-    - name: repo_tweaks. delete mutually exclusive value (metalink|baseurl)
+    - name: Apply repo_tweaks. delete mutually exclusive value (metalink|baseurl)
       community.general.ini_file:
         path: "{{ item.path }}"
         section: "{{ item.section }}"
-        option: '{{ ( item.option == "baseurl" ) | ternary("metalink", "baseurl") }}'
+        option: '{{ (item.option == "baseurl") | ternary("metalink", "baseurl") }}'
         state: absent
         backup: true
         no_extra_spaces: true
@@ -89,7 +89,7 @@
         - package-repos
         - package-repos-tweaks
 
-    - name: repo_tweaks. set new value
+    - name: Apply repo_tweaks. set new value
       community.general.ini_file:
         path: "{{ item.path }}"
         section: "{{ item.section }}"
