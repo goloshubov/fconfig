@@ -1,0 +1,13 @@
+profile: production
+
+skip_list:
+  - yaml[comments]
+  - yaml[indentation]
+  - fqcn[action-core]
+  - var-naming[no-jinja]
+  - risky-file-permissions
+  - package-latest
+  - no-changed-when
+  - latest[git]
+  - ignore-errors
+  - run-once[task]
