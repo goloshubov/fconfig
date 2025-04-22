@@ -273,14 +273,14 @@ pip_packages__fedora_workstations:
 pip_virtualenv_dir: "~/python_virtualenv"
 
 pipx_packages__fedora_workstations:
-  ansible:
-    - argcomplete
-    - requests
-    - kubernetes
-    - pip-system-certs
-  ansible-runner:
-    - ansible-runner-http
-  ansible-lint:
+  #ansible:
+  #  - argcomplete
+  #  - requests
+  #  - kubernetes
+  #  - pip-system-certs
+  #ansible-runner:
+  #  - ansible-runner-http
+  #ansible-lint:
   #ansible-rulebook:
   yt-dlp:
   #youtube-dl:
