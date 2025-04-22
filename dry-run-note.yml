@@ -1,7 +1,7 @@
 ---
 - name: Dry-run notification
   hosts: all
-  gather_facts: no
+  gather_facts: false
   tags: always
   tasks:
     - name: This task will be skipped in check mode
