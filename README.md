@@ -80,6 +80,9 @@ $ fconfig_local --tags dotfiles --check --diff -vv
 # and then run only what you need
 $ fconfig_local --tags dotfiles
 $ fconfig_local --tags software --skip-tags flatpaks
+
+# or apply configuration to a remote machine
+$ ansible-playbook -i ./inventories workstation.yml --limit laptop-02 --tags dotfiles
 ```
 
 ## files repos
