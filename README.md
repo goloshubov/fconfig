@@ -39,7 +39,7 @@ $ fconfig_local --tags dotfiles,gnome
 ```bash
 # on a new machine
 
-# ansible bootstrap
+# install ansible
 # venv way (preferable)
 $ mkdir ~/python-venv
 $ cd !$
@@ -48,7 +48,6 @@ $ source ansible/bin/activate
 $ python3 -m pip install --upgrade pip
 $ python3 -m pip install ansible
 $ ansible --version
-
 ## pipx way
 #$ sudo dnf install pipx
 ## for fedora 41+
