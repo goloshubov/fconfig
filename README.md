@@ -69,7 +69,7 @@ $ cd fconfig
 $ ansible-playbook -i ./inventories workstation.yml -e ansible_connection=local --limit $(hostname) --tags dotfiles,pyvenv
 ## for pipx ansible installation
 #$ ansible-playbook -i ./inventories workstation.yml -e ansible_connection=local --limit $(hostname) --tags dotfiles,pipx
-## for package way of ansible installation it might be needed to install additionall dependecies (see playbook output in case any errors)
+## for package way of ansible installation it might be needed to install additionall dependencies (see playbook output in case any errors)
 
 # from now on it is possible to use short fconfig_local alias
 # for example apply all configs to your local workstation
