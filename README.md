@@ -30,7 +30,7 @@ fconfig is my ansible playbook to configure a (fedora) linux workstation
 
 ## usage
 ```bash
-# Usually (when bash aliases already applied) I just run smth like
+# Usually (when dotfiles and bash aliases in it are already applied) I just run smth like
 $ fconfig_local --tags dotfiles
 # or
 $ fconfig_local --tags dotfiles,gnome
