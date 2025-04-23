@@ -3,7 +3,7 @@ fconfig is my ansible playbook to configure a (fedora) linux workstation in repr
 
 ## goals
 - avoid configuration drifts. Meaning - switching to another laptop without even noticing the difference
-- configure local or remote machine(s)
+- configure local and remote, personal and work(?) machine(s)
 - keep it as simple as possible
 
 ## features
