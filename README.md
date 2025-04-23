@@ -161,3 +161,4 @@ host/*/dconf/*
 - additional roles for services with restart notifcations support. It might be usefull even for workstations/laptops, on other hand it will add some complexity.
 - ansible-pull automation
 - rename fconfig to smth else (?): \*profile\*, ...
+- COSMIC desktop support (?)
