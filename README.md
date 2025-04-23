@@ -63,16 +63,16 @@ $ cd fconfig
 # - commit changes, and optionaly move it to your own repository if not already
 # - prepare your dotfiles repository, one or many, see 'files repos' section in README for details, as an example https://github.com/goloshubov/fconfig_files
 
-# apply configuration to your local workstation
 # complete ansible installation,
-# by setting up ansible venv with requirements that will found in {{ python-venv-dir }}/ansible.requirements.txt after tasks with dotfiles tag applied
-# for venv ansible installation
+# for venv ansible installation by setting up ansible venv with requirements that will found in
+# {{ python-venv-dir }}/ansible.requirements.txt after tasks with dotfiles tag applied
 $ ansible-playbook -i ./inventories workstation.yml -e ansible_connection=local --limit $(hostname) --tags dotfiles,pyvenv
-## or for pipx ansible installation
+## for pipx ansible installation
 #$ ansible-playbook -i ./inventories workstation.yml -e ansible_connection=local --limit $(hostname) --tags dotfiles,pipx
+## for package way of ansible installation it might be needed to install additionall dependecies (see playbook output in case any errors)
 
 # from now on it is possible to use short fconfig_local alias
-# for example apply all configs
+# for example apply all configs to your local workstation
 $ alias fconfig_local  # check alias
 $ fconfig_local
 
