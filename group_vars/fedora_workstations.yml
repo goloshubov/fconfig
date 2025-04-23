@@ -315,10 +315,10 @@ go_packages__fedora_workstations:
   - github.com/kubecolor/kubecolor
 
 # TODO: add requirements.yml file support
-ansible_galaxy_collections__fedora_workstations:
-  - community.general
-  - ansible.eda
-  - kubernetes.core
+ansible_galaxy_collections__fedora_workstations: []
+#  - community.general
+#  - ansible.eda
+#  - kubernetes.core
 
 # dash/dock panel favorite apps ($ dconf read /org/gnome/shell/favorite-apps)
 # dconf read /org/gnome/shell/favorite-apps
