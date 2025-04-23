@@ -54,6 +54,8 @@ $ ansible --version
 #$ sudo dnf install python3-libdnf5
 #$ pipx install --include-deps ansible
 
+$ mkdir -p ~/git/github
+$ cd !$
 $ git clone https://github.com/goloshubov/fconfig
 $ cd fconfig
 # edit inventory inventories/hosts* and variables group_vars/* host_vars/*
