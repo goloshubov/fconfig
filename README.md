@@ -56,10 +56,11 @@ $ ansible --version
 
 $ mkdir -p ~/git/github
 $ cd !$
-$ git clone https://github.com/goloshubov/fconfig
+$ git clone https://github.com/goloshubov/fconfig   # or fork
 $ cd fconfig
-# edit inventory inventories/hosts* and variables group_vars/* host_vars/*
-# optionally commit changes and move repository to your own
+# - edit inventory and variables (inventories/, group_vars/, host_vars/)
+# - commit changes, and optionaly move it to your own repository if not already
+# - prepare your dotfiles repository, one or many, see 'files repos' section in README for details, as an example https://github.com/goloshubov/fconfig_files
 
 # apply configuration to your local workstation
 # complete ansible installation,
