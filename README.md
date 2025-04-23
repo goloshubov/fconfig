@@ -59,21 +59,25 @@ $ cd !$
 $ git clone https://github.com/goloshubov/fconfig
 $ cd fconfig
 # edit inventory inventories/hosts* and variables group_vars/* host_vars/*
+# optionally commit changes and move repository to your own
 
-# apply configuration on your local workstation
-# complete ansible installation
+# apply configuration to your local workstation
+# complete ansible installation,
+# by configuring ansible venv requirements that will found in {{ python-venv-dir }}/ansible.requirements.txt after tasks with dotfiles tag applied
 $ ansible-playbook -i ./inventories workstation.yml -e ansible_connection=local --limit $(hostname) --tags dotfiles,pyvenv
-# apply all configs
-$ ansible-playbook -i ./inventories workstation.yml -e ansible_connection=local --limit $(hostname)
+# from now on it is possible to use short fconfig_local alias
+# for example apply all configs
+$ alias fconfig_local  # check alias
+$ fconfig_local
 
-# or apply it partialy, by using tags:
+# or apply it partially
 # list all possible tags first
-$ ansible-playbook -i ./inventories workstation.yml --list-tags
-# optionally dry-run to see what changes to expect
-$ ansible-playbook -i ./inventories workstation.yml --tags dotfiles --check --diff -vv
+$ fconfig_local --list-tags
+# optionally dry-run to see what will be changed
+$ fconfig_local --tags dotfiles --check --diff -vv
 # and then run only what you need
-$ ansible-playbook -i ./inventories workstation.yml --tags dotfiles
-$ ansible-playbook -i ./inventories workstation.yml --tags software --skip-tags flatpaks
+$ fconfig_local --tags dotfiles
+$ fconfig_local --tags software --skip-tags flatpaks
 ```
 
 ## files repos
