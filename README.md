@@ -1,5 +1,5 @@
 # fconfig
-fconfig is my ansible playbook to configure linux workstation
+fconfig is my ansible playbook to configure a (fedora) linux workstation
 
 ## goals
 - avoid configuration drifts on your machines. Meaning - switching to another laptop without noticing the difference
@@ -133,6 +133,6 @@ host/*/dconf/*
 ```
 
 ## TODOs
-- distrs support: Debian, Ubuntu, ALT Linux
+- add other distrs support: Debian, Ubuntu, ALT Linux
 - import (additional) package lists from files (requirement lists)
 - additional roles for services with restart notifcations support. It might be usefull even for workstations/laptops, on other hand it will add some complexity.
