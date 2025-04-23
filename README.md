@@ -53,6 +53,7 @@ $ ansible --version
 ## for fedora 41+
 #$ sudo dnf install python3-libdnf5
 #$ pipx install --include-deps ansible
+# package way of ansible installation is not recommended, possible though
 
 $ mkdir -p ~/git/github
 $ cd !$
