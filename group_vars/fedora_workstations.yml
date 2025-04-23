@@ -270,7 +270,7 @@ pip_packages__fedora_workstations:
   #- ansible-rulebook
 
 # dir with <virtualenv>.requirements.txt
-pip_virtualenv_dir: "~/python_virtualenv"
+python_venv_dir: "~/python-venv"
 
 pipx_packages__fedora_workstations:
   #ansible:

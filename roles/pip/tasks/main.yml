@@ -23,16 +23,16 @@
 
     - name: Find virtualenv requirements
       tags:
-        - pip_virtualenv
+        - pyvenv
       ansible.builtin.find:
-        paths: "{{ pip_virtualenv_dir }}"
+        paths: "{{ python_venv_dir }}"
         file_type: file
       register: virtualenvs
-      when: pip_virtualenv_dir is defined
+      when: python_venv_dir is defined
 
     - name: Install virtualenv pip packages
       tags:
-        - pip_virtualenv
+        - pyvenv
       ansible.builtin.pip:
         virtualenv: "{{ item.path | regex_replace('.requirements.txt$', '') }}"
         requirements: "{{ item.path }}"
