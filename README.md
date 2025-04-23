@@ -1,8 +1,9 @@
 # fconfig
-fconfig is my ansible playbook to configure a (fedora) linux workstation
+fconfig is my ansible playbook to configure a (fedora) linux workstation in reproducible way.
 
 ## goals
-- avoid configuration drifts on your machines. Meaning - switching to another laptop without noticing the difference
+- avoid configuration drifts. Meaning - switching to another laptop without even noticing the difference
+- configure local or remote machine(s)
 - keep it as simple as possible
 
 ## features
