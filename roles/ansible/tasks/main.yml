@@ -17,6 +17,11 @@
         - ansible_galaxy_collections
 
     - name: Install ansible-galaxy collections
+      environment:
+        ANSIBLE_COLLECTIONS_PATH: '{{ ansible_galaxy_venv is defined | ternary(
+          "{{ python_venv_dir }}/{{ ansible_galaxy_venv }}/lib/python{{ python_version }}/site-packages/ansible_collections", 
+          "~/.local/lib/python{{ python_version }}/site-packages/ansible_collections"
+        ) }}'
       community.general.ansible_galaxy_install:
         type: collection
         name: "{{ item }}"

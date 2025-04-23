@@ -271,6 +271,7 @@ pip_packages__fedora_workstations:
 
 # dir with <virtualenv>.requirements.txt
 python_venv_dir: "~/python-venv"
+python_version: "3.13"
 
 pipx_packages__fedora_workstations:
   #ansible:
@@ -314,10 +315,11 @@ go_packages__fedora_workstations:
   - fortio.org/fortio #load testing tool
   - github.com/kubecolor/kubecolor
 
-# TODO: add requirements.yml file support, support python virtenv
-ansible_galaxy_collections__fedora_workstations: []
+# TODO: add requirements.yml file support
+ansible_galaxy_venv: "ansible"
+ansible_galaxy_collections__fedora_workstations:
 #  - community.general
-#  - ansible.eda
+  - ansible.eda
 #  - kubernetes.core
 
 # dash/dock panel favorite apps ($ dconf read /org/gnome/shell/favorite-apps)
