@@ -66,6 +66,7 @@ $ cd fconfig
 # complete ansible installation,
 # by setting up ansible venv with requirements that will found in {{ python-venv-dir }}/ansible.requirements.txt after tasks with dotfiles tag applied
 $ ansible-playbook -i ./inventories workstation.yml -e ansible_connection=local --limit $(hostname) --tags dotfiles,pyvenv
+
 # from now on it is possible to use short fconfig_local alias
 # for example apply all configs
 $ alias fconfig_local  # check alias
