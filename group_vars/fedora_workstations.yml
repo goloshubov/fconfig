@@ -314,7 +314,7 @@ go_packages__fedora_workstations:
   - fortio.org/fortio #load testing tool
   - github.com/kubecolor/kubecolor
 
-# TODO: add requirements.yml file support
+# TODO: add requirements.yml file support, support python virtenv
 ansible_galaxy_collections__fedora_workstations: []
 #  - community.general
 #  - ansible.eda
