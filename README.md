@@ -19,7 +19,7 @@ fconfig is my ansible playbook to configure linux workstation
       - direct repo urls
       - set mirror for particular repos
   - flatpaks
-  - pip, pipx packages
+  - pip, pipx packages, virtualenvs
   - cargo packages
   - go packages
   - ansible-galaxy collections
