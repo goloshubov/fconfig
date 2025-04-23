@@ -76,7 +76,7 @@ $ ansible-playbook -i ./inventories workstation.yml -e ansible_connection=local 
 
 # from now on it is possible to use short fconfig_local alias
 # for example apply all configs to your local workstation
-$ alias fconfig_local  # check alias
+$ alias fconfig_local  # check alias, change it if needed
 $ fconfig_local
 
 # or apply it partially
