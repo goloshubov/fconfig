@@ -8,7 +8,7 @@ repos:
         name: Ansible-lint
         description: This hook runs ansible-lint.
         entry: ansible-lint -v --force-color
-        language: python
+        language: system
         pass_filenames: false
         always_run: true
         verbose: true
