@@ -196,6 +196,7 @@ package_list__fedora_workstations:
   #- ghostty
   - fuse-sshfs
   - keepassxc
+  - pre-commit
 
 package_absent_list__fedora_workstations:
   #  - nano
