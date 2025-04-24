@@ -1,14 +1,19 @@
 ---
 repos:
-#  - repo: https://github.com/ansible/ansible-lint.git
-#    rev: v25.2.1
-  - repo: local
+  - repo: https://github.com/ansible/ansible-lint.git
+    rev: v25.2.1
     hooks:
       - id: ansible-lint
-        name: Ansible-lint
-        description: This hook runs ansible-lint.
-        entry: ansible-lint -v --force-color
-        language: system
-        pass_filenames: false
-        always_run: true
         verbose: true
+        additional_dependencies:
+          - ansible
+#  - repo: local
+#    hooks:
+#      - id: ansible-lint
+#        name: Ansible-lint
+#        description: This hook runs ansible-lint.
+#        entry: ansible-lint -v --force-color
+#        language: system
+#        pass_filenames: false
+#        always_run: true
+#        verbose: true
