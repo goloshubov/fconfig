@@ -267,7 +267,6 @@ pip_requirements: "~/.pip.requirements.txt"
 pip_packages__fedora_workstations:
   - powerline-k8s
   #- terminalteixteffects #tte (just for fun)
-# additionall
 
 # venv pip
 # to create venvs and install {{ python_venv_dir }}/<virtualenv>.requirements.txt
