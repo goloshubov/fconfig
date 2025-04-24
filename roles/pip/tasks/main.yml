@@ -5,36 +5,56 @@
     - pip
   block:
     - name: Merge vars
+      tags:
+        - pip-novenv
+        - pip-venv
       ansible.builtin.set_fact:
         "{{ item }}": "{{ lookup('community.general.merge_variables', item, pattern_type='prefix') }}"
       loop:
         - pip_packages
-#        - pip_virtualenv_packages
+        - pip_venv_packages
 
     - name: Print vars
       ansible.builtin.debug:
         msg: "{{ lookup('vars', item, default='') }}"
       loop:
         - pip_packages
+        - pip_venv_packages
 
-    - name: Install pip packages
+    - name: Install pip requirements (local, no venv)
+      tags:
+        - pip-novenv
+      ansible.builtin.pip:
+        requirements: "{{ pip_requirements }}"
+
+    - name: Install pip packages (local, no venv)
+      tags:
+        - pip-novenv
       ansible.builtin.pip:
         name: "{{ pip_packages }}"
 
-    - name: Find virtualenv requirements
+    - name: Find venvs requirement files
       tags:
-        - pyvenv
+        - pip-venv
       ansible.builtin.find:
         paths: "{{ python_venv_dir }}"
         file_type: file
       register: virtualenvs
       when: python_venv_dir is defined
 
-    - name: Install virtualenv pip packages
+    - name: Create venvs and install requirements
       tags:
-        - pyvenv
+        - pip-venv
       ansible.builtin.pip:
         virtualenv: "{{ item.path | regex_replace('.requirements.txt$', '') }}"
         requirements: "{{ item.path }}"
       loop: "{{ virtualenvs.files }}"
       when: virtualenvs.files is defined
+
+    - name: Add pip packages to venvs
+      tags:
+        - pip-venv
+      ansible.builtin.pip:
+        virtualenv: '{{ python_venv_dir }}/{{ (item.key == "default") | ternary(pip_default_venv | d("default"), item.key) }}'
+        name: "{{ item.value }}"
+      loop: "{{ lookup('ansible.builtin.dict', pip_venv_packages, wantlist=True) }}"

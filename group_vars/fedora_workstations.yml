@@ -261,16 +261,25 @@ flatpak_packages__fedora_workstations:
   - org.gnome.Chess   # classic chess game
   - org.kde.kigo      # classic go game
 
-# local pip
-# TODO: requirements.txt support
+# pip (no venv)
+pip_requirements: "~/.pip.requirements.txt"
+# additional pip packages
 pip_packages__fedora_workstations:
   - powerline-k8s
   #- terminalteixteffects #tte (just for fun)
+# additionall
 
 # venv pip
-# dir with <virtualenv>.requirements.txt
+# to create venvs and install {{ python_venv_dir }}/<virtualenv>.requirements.txt
 python_venv_dir: "~/python-venv"
 python_version: "3.13"
+# additional pip packages for venvs
+pip_default_venv: "py"
+pip_venv_packages__fedora_workstations: {}
+#  default:   # pip_default_venv
+#    - pip_package
+#  venv_name:
+#    - pip_package
 
 pipx_packages__fedora_workstations:
   #ansible:
