@@ -70,7 +70,7 @@ $ cd fconfig
 # for venv ansible installation by setting up ansible venv with requirements that will found in
 # {{ python-venv-dir }}/ansible.requirements.txt after tasks with dotfiles tag applied
 $ ansible-playbook -i ./inventories workstation.yml -e ansible_connection=local \
-    --limit $(hostname) --tags dotfiles,pyvenv
+    --limit $(hostname) --tags dotfiles,pip-venv
 ## for pipx ansible installation
 #$ ansible-playbook -i ./inventories workstation.yml -e ansible_connection=local --limit $(hostname) --tags dotfiles,pipx
 ## for package way of ansible installation it might be needed to install additionall dependencies (see playbook output in case any errors)
