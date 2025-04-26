@@ -32,7 +32,7 @@ fconfig is my ansible playbook to configure a (fedora) linux workstation in a re
 ## usage
 ```bash
 # Usually when dotfiles and bash aliases in it are already applied I just run smth like this
-$ fconfig_local --tags dotfiles   # run it on the exact machine where you want to apply it
+$ fconfig_local --tags dotfiles
 # or
 $ fconfig_local --tags dotfiles,gnome  # or other tags
 ```
