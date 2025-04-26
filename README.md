@@ -38,7 +38,7 @@ $ fconfig_local --tags dotfiles,gnome  # or other tags
 ```
 
 ```bash
-# on a new (daily driver) machine
+# on a new machine
 
 # install ansible
 # venv way (preferable)
