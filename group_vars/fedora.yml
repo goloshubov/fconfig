@@ -141,7 +141,9 @@ package_list__fedora:
   - crudini # A utility for manipulating ini files
   - pv # monitor the progress of data through a pipe
   - progress # Linux tool to show progress for cp, mv, dd, ... (formerly known as cv)
-  #  - bat       # A cat(1) clone with wings. (Rust)
+  - bat       # A cat(1) clone with wings. (Rust)
+  - fzf  #A command-line fuzzy finder
+  - fd-find  # alternative to find
   #- go-task
   - colorized-logs
   #  - clide  # colorize ASCII text

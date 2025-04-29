@@ -54,7 +54,7 @@ package_list__fedora_workstations:
   - screen
   - tilix
   - tilix-nautilus
-  - terminator
+  #- terminator
   - git
   - vim-enhanced
   - vim-nerdtree
@@ -157,7 +157,7 @@ package_list__fedora_workstations:
   - crudini # A utility for manipulating ini files
   - pv # monitor the progress of data through a pipe
   - progress # Linux tool to show progress for cp, mv, dd, ... (formerly known as cv)
-  - bat # A cat(1) clone with wings. (Rust)
+  - bat # A cat(1) clone with wings. (Rust)  --- in all group
   #- grafana
   #- go-task
   - gcc
@@ -191,7 +191,7 @@ package_list__fedora_workstations:
   - wrk #modern HTTP benchmarking tool (copr repo)
   - python-virtualenv
   - pipx #Install and Run Python Applications in Isolated Environments
-  - fzf  #A command-line fuzzy finder
+  - fzf  #A command-line fuzzy finder  --- in all group
   #- thunderbird
   #- ghostty
   - fuse-sshfs
@@ -301,11 +301,11 @@ pipx_packages__fedora_workstations:
 cargo_packages__fedora_workstations:
   - du-dust
   #- eza
-  - tealdeer
+  - tealdeer   #tldr
   #- httpie
   #- xh
   #- git-delta
-  - fd-find
+  #- fd-find  # alternative to find                     #already in packages_list
   #- apkeep    # download APK packages (apkpure, googleplay)
   #- pup       # Command-line HTML parsing tool
   #- bat       # A cat(1) clone with wings. (Rust)      # already in package_list
