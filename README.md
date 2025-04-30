@@ -49,7 +49,6 @@ $ python3 -m venv ansible
 $ source ansible/bin/activate
 $ python3 -m pip install --upgrade pip
 $ python3 -m pip install ansible
-
 ## pipx way
 #$ sudo dnf install pipx
 #$ pipx install --include-deps ansible
@@ -68,13 +67,15 @@ $ cd fconfig
 #   see 'files repos' section in README for details, as an example https://github.com/goloshubov/fconfig_files
 
 # complete ansible installation,
-# for venv ansible installation by setting up ansible venv with requirements that will be found in
-# {{ python-venv-dir }}/ansible.requirements.txt after tasks with dotfiles tag applied
+# for venv ansible installation by setting up ansible venv
+# with requirements that will be # found in # {{ python-venv-dir }}/ansible.requirements.txt
+# after tasks with dotfiles tag applied
 $ ansible-playbook -i ./inventories workstation.yml -e ansible_connection=local \
     --limit $(hostname) --tags dotfiles,pip-venv
 ## for pipx ansible installation
-#$ ansible-playbook -i ./inventories workstation.yml -e ansible_connection=local --limit $(hostname) --tags dotfiles,pipx
-## for package way of ansible installation it might be needed to install additionall dependencies (see playbook output in case any errors)
+#$ ansible-playbook -i ./inventories workstation.yml -e ansible_connection=local \
+#   --limit $(hostname) --tags dotfiles,pipx
+## for package way of ansible installation it might be needed to install additionall dependencies
 
 # from now on it is possible to use short fconfig_local alias
 # for example apply all configs to your local workstation
