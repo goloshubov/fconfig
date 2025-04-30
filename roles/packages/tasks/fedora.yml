@@ -54,6 +54,9 @@
       tags: package-repos
       when: other_repos_list is defined
 
+    - name: Install requirement for ansible dnf module
+      command: dnf install python3-libdnf5 -y
+
     - name: Install packages (direct link)
       ansible.builtin.dnf:
         state: latest

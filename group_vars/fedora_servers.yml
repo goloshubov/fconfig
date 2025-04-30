@@ -1,31 +1,10 @@
-##third party repos
-## copr_list:
-##   - mroche/cloud-native-utilities      # helm,knative-client,pack,packer,tektoncd-cli,terraform
-##   - varlad/helix
-#
-##third party repos
-## other_repos_list:
-##   - ""
-#
-##third party repos and packages
-#direct_package_list__fedora_servers:
-#  - "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_version }}.noarch.rpm"
-##  - "https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_version }}.noarch.rpm"
-#
-##third party repos and packages
-##    prerequisite_packages_list:
-##      - ""
-#
-## enable repo if needed
-##    setenabled_repo_list:
-#
-#pip_packages__fedora_servers:
-#  - Jinja2
-#  - ansible
-#  #  - ansible-rulebook
-#  #  - ansible-runner
-#  #  - wheel
-#  #  - aiohttp   # required for ansible.eda plugins (event_source/webhook.py)
-#  - yq
-#  - kubernetes
-#  - powerline-k8s
+copr_list__fedora_servers: []
+copr_absent_list__fedora_servers: []
+other_repos_list__fedora_serversworkstations: []
+direct_package_list__fedora_servers:
+  - "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_version }}.noarch.rpm"
+#  - "https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_version }}.noarch.rpm"
+prerequisite_packages_list__fedora_servers: []
+setenabled_repo_list__fedora_servers: []
+package_list__fedora_servers: []
+package_absent_list__fedora_servers: []
