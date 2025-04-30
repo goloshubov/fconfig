@@ -41,6 +41,7 @@ $ fconfig_local --tags dotfiles,gnome  # or other tags
 # on a new machine
 
 # install ansible
+
 # venv way (preferable)
 $ mkdir ~/python-venv
 $ cd !$
@@ -48,13 +49,13 @@ $ python3 -m venv ansible
 $ source ansible/bin/activate
 $ python3 -m pip install --upgrade pip
 $ python3 -m pip install ansible
-$ ansible --version
+
 ## pipx way
 #$ sudo dnf install pipx
-## for fedora 41+
-#$ sudo dnf install python3-libdnf5
 #$ pipx install --include-deps ansible
 # package way of ansible installation is not recommended, possible though
+
+$ ansible --version
 
 $ mkdir -p ~/git/github
 $ cd !$
