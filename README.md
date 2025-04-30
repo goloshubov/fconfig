@@ -64,7 +64,8 @@ $ cd fconfig
 #   do not use file extension for inventories (in order to be able to use the whole directory)
 # - commit changes, and optionaly move it to your own repository if not already
 # - prepare your dotfiles repository, one or many
-#   see 'files repos' section in README for details, as an example https://github.com/goloshubov/fconfig_files
+#   see 'files repos' section in README for details
+#   as an example https://github.com/goloshubov/fconfig_files
 
 # complete ansible installation,
 # for venv ansible installation by setting up ansible venv
