@@ -68,7 +68,7 @@ $ cd fconfig
 #   see 'files repos' section in README for details, as an example https://github.com/goloshubov/fconfig_files
 
 # complete ansible installation,
-# for venv ansible installation by setting up ansible venv with requirements that will found in
+# for venv ansible installation by setting up ansible venv with requirements that will be found in
 # {{ python-venv-dir }}/ansible.requirements.txt after tasks with dotfiles tag applied
 $ ansible-playbook -i ./inventories workstation.yml -e ansible_connection=local \
     --limit $(hostname) --tags dotfiles,pip-venv
