@@ -144,11 +144,13 @@ $ dconf dump <path> > dumpfile
 ```
 dump files supposed to be located in the 'files_repo' directories, where 'group/\<groupname\>/dconf/' and 'host/\<hostname\>/dconf/' contain files with names like dconf '\<path\>' but '/' replaced with '__' (double underscore) and without the first and the last '/'\, e.g. 'org__gnome__shell__extensions__dash-to-dock'.
 ```
-$ dconf dump /org/gnome/shell/extensions/dash-to-dock/ > ~/<files_dir>/group/workstation/dconf/org__gnome__shell__extensions__dash-to-dock
+$ dconf dump /org/gnome/shell/extensions/dash-to-dock/ > \
+  ~/<files_dir>/group/workstation/dconf/org__gnome__shell__extensions__dash-to-dock
 ```
 It will be loaded in 'gnome' role:
 ```
-$ dconf load -f /org/gnome/shell/extensions/dash-to-dock/ < ~/<files_dir>/group/workstation/dconf/org__gnome__shell__extensions__dash-to-dock
+$ dconf load -f /org/gnome/shell/extensions/dash-to-dock/ < \
+  ~/<files_dir>/group/workstation/dconf/org__gnome__shell__extensions__dash-to-dock
 ```
 The playbook applies dconf settings in the following order:
 ```
