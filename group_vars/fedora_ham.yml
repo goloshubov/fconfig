@@ -13,10 +13,12 @@ package_list__fedora_ham:
   #- kicad
   #- kicad-packages3d
   #- kicad-doc
-  #- chirp+wx    # tool for programming your radio
+  - chirp+wx    # tool for programming your radio
+  #- sdrangel  # flatpak instead, a lot of dependencies
 
 flatpak_packages__fedora_ham:
   - io.github.foldynl.QLog
+  - org.sdrangel.SDRangel
   #- org.wfview.wfview      # (rpm package instead)
   #- edu.princeton.physics.WSJTX
   #- org.kicad.KiCad
