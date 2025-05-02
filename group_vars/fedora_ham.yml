@@ -5,7 +5,7 @@ package_list__fedora_ham:
   - flrig
   - fldigi
   - wsjtx
-  - js8call
+  #- js8call
   - cwdaemon
   - unixcw   #cw, cwcp, cwgen
   - wfview
@@ -13,6 +13,7 @@ package_list__fedora_ham:
   #- kicad
   #- kicad-packages3d
   #- kicad-doc
+  #- chirp+wx    # tool for programming your radio
 
 flatpak_packages__fedora_ham:
   - io.github.foldynl.QLog
