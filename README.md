@@ -1,9 +1,6 @@
 # fconfig
 fconfig is my ansible playbook to configure a (fedora) linux workstation in a reproducible way.
 
-## why?
-I didn't find a solution that solves all my requirements, but I should admit that there are plenty of other good ones out there.
-
 ## goals
 - avoid configuration drifts. Meaning - switching to another laptop without even noticing the difference
 - configure local and remote, personal and work(?) machine(s)
