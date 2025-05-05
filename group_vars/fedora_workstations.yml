@@ -373,6 +373,7 @@ favorite_apps__50__fedora_workstations:
   #- rest.insomnia.Insomnia.desktop
   - com.rafaelmardojai.Blanket.desktop
   - org.keepassxc.KeePassXC.desktop
+  - WebApp-CoridorCamera0001.desktop
 
 # dconf dump files might be used as well (see README)
 dconf_settings__fedora_workstations:
