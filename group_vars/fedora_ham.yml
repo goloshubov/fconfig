@@ -32,3 +32,4 @@ flatpak_packages__fedora_ham:
 #favorite_apps__99__fedora_ham:
 #  - edu.princeton.physics.WSJTX.desktop
 #  - io.github.foldynl.QLog.desktop
+#  - WebApp-HAMSolar0001.desktop
