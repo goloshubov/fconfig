@@ -48,13 +48,13 @@ package_list__fedora_workstations:
   - tilix          # main terminal
   - tilix-nautilus
   #- terminator
+  #- ghostty
   - cosmic-term    # next terminal (?)
   - powerline
   - tmux
   - tmux-powerline
   - screen
   - mc
-  - git
   # ----- editors -----
   - vim-enhanced
   - vim-nerdtree
@@ -101,107 +101,107 @@ package_list__fedora_workstations:
   - webapp-manager # from kylegospo/webapp-manage copr
   - helvum #patchbay for pipewire
   - keepassxc
+  #- thunderbird   # outdated version
   # ----- tools -----
-  - bind-utils
-  - curl
-  - wget
-  - nmap
-  - nmap-ncat
-  - mtr
-  - knock
-  - openssl
-  - dnf-utils
-  - wireguard-tools
-  - sshuttle
-  - perf
-  - bpftrace
-  - bcc
-  - sysstat
-  - hwloc-gui #lstopo
-  - htop
-  - lm_sensors
-  - python3-psutil
-  - tuned
-  - powertop
   - apg
-  - tango-icon-theme
-  - parallel
-  - eza
-  #- kubectl
-  - kubernetes-client
-  - helm
-  #- ffmpeg
-  - golang
-  - rust
+  - autofs
+  - bat # A cat(1) clone with wings. (Rust)  --- in all group
+  - bcc
+  - bind-utils
+  - bpftrace
   - cargo
-  - toolbox
-  #  - distrobox
-  - jq
-  #- git-delta
-  - inotify-tools
-  - fatrace
-  - podman
-  #- podman-compose
-  - podman-docker # Emulate Docker CLI using podman
-  - skopeo
-  #- virtio-win
-  - nethogs
-  - dnstop
-  - the_silver_searcher
-  - rdiff-backup
-  - python3-pip
+  - clide # colorize ASCII text
   - cockpit
-  - cockpit-podman
-  - cockpit-machines
-  #- cockpit-pcp
-  - cockpit-selinux
   - cockpit-files
-  #- ranger # console file manager
-  - perl-Image-ExifTool
-  #- terraform # from mroche/cloud-native-utilities copr repo
-  - opentofu
-  #- golang-github-docker-slim # docker-slim tool
+  - cockpit-machines
+  - cockpit-podman
+  - cockpit-selinux
+  - colorized-logs
+  #- cockpit-pcp
+  #- containerd.io # docker-ce
+  - crudini # A utility for manipulating ini files
+  - curl
+  #- distrobox
+  - dnf-utils
+  - dnstop
   #- docker-ce # docker-ce
   #- docker-ce-cli # docker-ce
-  #- containerd.io # docker-ce
   #- docker-compose-plugin # docker-ce
-  - crudini # A utility for manipulating ini files
-  - pv # monitor the progress of data through a pipe
-  - progress # Linux tool to show progress for cp, mv, dd, ... (formerly known as cv)
-  - bat # A cat(1) clone with wings. (Rust)  --- in all group
-  #- grafana
-  #- go-task
-  - gcc
-  - java-17-openjdk
-  - maven
-  - python3-devel
-  - python3-requests
-  - hadolint # Dockerfile linter
-  - gitg #git gui
-  - meld #diff gui
-  - ShellCheck # shell script static analysis tool (bash linter)
-  - python3-bashate   # automated style checker for bash scripts
-  - colorized-logs
-  - clide # colorize ASCII text
-  - yamllint
-  - pylint
-  #- python3-testinfra
-  - python3-pytest-testinfra
-  - python-xdot # graphviz's dot viewer
-  - grpcurl
-  - python3-aiohttp # dependency (ansible-rulebook, tftui)
-  - autofs
-  #- waydroid         # Waydroid uses a container-based approach to boot a full Android system on a regular GNU/Linux system
-  #- scalpel # file recovery / undo delete
-  - hping3 #TCP/IP stack auditing
-  - wrk #modern HTTP benchmarking tool (copr repo)
-  - python-virtualenv
-  - pipx #Install and Run Python Applications in Isolated Environments
-  - fzf  #A command-line fuzzy finder  --- in all group
-  #- thunderbird
-  #- ghostty
+  - eza
+  - fatrace
+  #- ffmpeg
   - fuse-sshfs
+  - fzf  #A command-line fuzzy finder  --- in all group
+  - gcc
+  - git
+  #- git-delta
+  - gitg #git gui
+  - golang
+  #- go-task
+  #- golang-github-docker-slim # docker-slim tool
+  #- grafana
+  - grpcurl
+  - hadolint # Dockerfile linter
+  - helm
+  - hping3 #TCP/IP stack auditing
+  - htop
+  - hwloc-gui #lstopo
+  - inotify-tools
+  - java-17-openjdk
+  - jq
+  - knock
+  - kubernetes-client
+  #- kubectl
+  - lm_sensors
+  - maven
+  - meld #diff gui
+  - mtr
+  - nethogs
+  - nmap
+  - nmap-ncat
+  - openssl
+  - opentofu    # terraform alt.
+  - parallel
+  - perf
+  - perl-Image-ExifTool
+  - pipx #Install and Run Python Applications in Isolated Environments
+  - podman
+  - podman-docker # Emulate Docker CLI using podman
+  #- podman-compose
+  - powertop
   - pre-commit
+  - progress # Linux tool to show progress for cp, mv, dd, ... (formerly known as cv)
+  - pv # monitor the progress of data through a pipe
+  - pylint
+  - python-virtualenv
+  - python-xdot # graphviz's dot viewer
+  - python3-aiohttp # dependency (ansible-rulebook, tftui)
+  - python3-bashate   # automated style checker for bash scripts
+  - python3-devel
+  - python3-pip
+  - python3-psutil
+  - python3-pytest-testinfra
+  - python3-requests
+  #- python3-testinfra
+  #- ranger # console file manager
+  - rdiff-backup
+  - rust
+  #- scalpel # file recovery / undo delete
+  - ShellCheck # shell script static analysis tool (bash linter)
+  - skopeo
+  - sshuttle
+  - sysstat
+  - tango-icon-theme
+  - the_silver_searcher
+  #- terraform # from mroche/cloud-native-utilities copr repo  # repl. by opentofu
+  - toolbox
+  - tuned
+  #- virtio-win
+  #- waydroid         # Waydroid uses a container-based approach to boot a full Android system on a regular GNU/Linux system
+  - wget
+  - wireguard-tools
+  - wrk #modern HTTP benchmarking tool (copr repo)
+  - yamllint
 
 package_absent_list__fedora_workstations:
   #  - nano
