@@ -263,9 +263,11 @@ flatpak_packages__fedora_workstations:
   - io.dbeaver.DBeaverCommunity
   - io.dbeaver.DBeaverCommunity.Client.pgsql
   - io.github.jeffshee.Hidamari  # Video wallpaper for Linux
+  #- org.gnome.Chess   # classic chess game
+  #- org.kde.kigo      # classic go game
   - cc.arduino.IDE2
-  - org.gnome.Chess   # classic chess game
-  - org.kde.kigo      # classic go game
+  - com.google.AndroidStudio
+  #- com.gexperts.Tilix    # package instead
 
 # pip (no venv)
 pip_requirements: "~/.pip.requirements.txt"
