@@ -72,21 +72,24 @@ package_list__fedora_workstations:
   - gnome-tweaks
   - gnome-themes-extra # adwaita-dark for legacy applications
   - gnome-extensions-app
-  - gnome-shell-extension-apps-menu
-  - gnome-shell-extension-just-perfection
-  - gnome-shell-extension-background-logo
-  - gnome-shell-extension-dash-to-dock
-  - gnome-shell-extension-pomodoro
   - gnome-shell-extension-appindicator
+  - gnome-shell-extension-apps-menu
+  - gnome-shell-extension-argos
+  - gnome-shell-extension-background-logo
+  - gnome-shell-extension-blur-my-shell
+  - gnome-shell-extension-dash-to-dock
+  - gnome-shell-extension-just-perfection
+  - gnome-shell-extension-just-perfection
   - gnome-shell-extension-launch-new-instance
-  - gnome-shell-extension-user-theme
-  - gnome-shell-extension-workspace-indicator
   - gnome-shell-extension-openweather
-  - gnome-shell-extension-window-list
   - gnome-shell-extension-places-menu
-  #- gnome-shell-extension-argos
   #- gnome-shell-extension-pop-shell
+  - gnome-shell-extension-pomodoro
+  - gnome-shell-extension-screen-autorotate
   - gnome-shell-extension-system-monitor-applet
+  - gnome-shell-extension-user-theme
+  - gnome-shell-extension-window-list
+  - gnome-shell-extension-workspace-indicator
   - libdbusmenu # for dash-to-dock
   - virt-manager
   - virt-viewer
