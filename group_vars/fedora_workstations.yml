@@ -97,6 +97,7 @@ package_list__fedora_workstations:
   - libvirt-client
   - minder
   - scrcpy #from zeno/scrcpy copr
+  - showtime  # Modern video player built using GTK4
   - wl-clipboard
   - xournalpp # from luya/xournalpp copr repo, latest xournal++
   - transmission
