@@ -115,6 +115,7 @@ package_list__fedora_workstations:
   - bcc
   - bind-utils
   - bpftrace
+  - bpftool
   - cargo
   - clide # colorize ASCII text
   - cockpit
