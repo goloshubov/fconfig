@@ -92,63 +92,62 @@ yum_repos_tweaks: "{{ yum_repos_tweaks_original }}"
 #TODO:clean, deduplicate
 # common packages for all groups
 package_list__fedora:
-  - nmap-ncat
+  #- the_silver_searcher    # ag
+  - awesome-vim-colorschemes
+  - bat       # A cat(1) clone with wings. (Rust)
+  - bcc
   - bind-utils
-  - rsync
-  - tmux
-  #  - screen
+  - bpftrace
+  - cargo
+  - cockpit
+  #- cockpit-machines
+  #- cockpit-pcp
+  #- cockpit-podman
+  #- cockpit-selinux
+  - colordiff
+  - colorized-logs
+  - crudini # A utility for manipulating ini files
+  #- clide  # colorize ASCII text
+  - curl
+  - dnf-utils
+  - dnstop
+  #- exa
+  - fd-find  # alternative to find
+  - fzf  #A command-line fuzzy finder
   - git
+  #- go-task
+  - golang
+  - htop
+  - inotify-tools
+  - jq
+  - lm_sensors
+  - mtr
+  #- nethogs
+  - nmap-ncat
+  - openssl
+  - parallel
+  - perf
+  - powerline
+  - powertop
+  - progress # Linux tool to show progress for cp, mv, dd, ... (formerly known as cv)
+  - pv # monitor the progress of data through a pipe
+  - python3-pip
+  - python3-psutil
+  #- python3-pytelegrambotapi
+  #- ranger      # console file manager
+  #- rdiff-backup
+  - rsync
+  - rust
+  #- screen
+  - smartmontools
+  - sysstat
+  - tmux
+  - tmux-powerline
+  - tuned
   - vim-enhanced
   - vim-nerdtree
-  - awesome-vim-colorschemes
-  - curl
-  - wget
-  - htop
-  - powerline
-  - tmux-powerline
   - vim-powerline
-  - lm_sensors
-  - python3-psutil
-  - tuned
-  - powertop
-  - apg
-  - parallel
-  #  - exa
-  - dnf-utils
-  - golang
-  - rust
-  - cargo
-  - jq
-  - mtr
-  - openssl
-  - perf
-  - bpftrace
-  - bcc
-  - sysstat
-  - inotify-tools
-  #  - nethogs
-  - dnstop
-  #  - the_silver_searcher
-  #  - rdiff-backup
-  - python3-pip
-  #- python3-pytelegrambotapi
-  - cockpit
-  #  - cockpit-podman
-  #  - cockpit-machines
-  #  - cockpit-pcp
-  #  - cockpit-selinux
-  #  - ranger      # console file manager
-  - crudini # A utility for manipulating ini files
-  - pv # monitor the progress of data through a pipe
-  - progress # Linux tool to show progress for cp, mv, dd, ... (formerly known as cv)
-  - bat       # A cat(1) clone with wings. (Rust)
-  - fzf  #A command-line fuzzy finder
-  - fd-find  # alternative to find
-  #- go-task
-  - colorized-logs
-  #  - clide  # colorize ASCII text
-  - smartmontools
-#  - stunnel
-#  - chisel  # fast TCP/UDP tunnel, transported over HTTP, secured via SSH
-#  - proxychains-ng    # ProxyChains NG hooks network-related (TCP only) libc functions
-  - colordiff
+  - wget
+  #- chisel  # fast TCP/UDP tunnel, transported over HTTP, secured via SSH
+  #- proxychains-ng    # ProxyChains NG hooks network-related (TCP only) libc functions
+  #- stunnel
