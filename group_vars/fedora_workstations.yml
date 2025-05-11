@@ -13,6 +13,7 @@ copr_list__fedora_workstatsions:
   #- varlad/zellij    #A terminal workspace with batteries included. (tmux alternative)
   - getpagespeed/wrk #modern HTTP benchmarking tool
   #- pgdev/ghostty
+  - trixieua/morewaita-icon-theme
 
 # remove copr repos
 copr_absent_list__fedora_workstations:
@@ -96,6 +97,7 @@ package_list__fedora_workstations:
   - virt-what
   - libvirt-client
   - minder
+  - morewaita-icon-theme
   - scrcpy #from zeno/scrcpy copr
   - showtime  # Modern video player built using GTK4
   - wl-clipboard
