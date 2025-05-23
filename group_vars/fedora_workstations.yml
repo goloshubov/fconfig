@@ -154,7 +154,7 @@ package_list__fedora_workstations:
   - htop
   - hwloc-gui #lstopo
   - inotify-tools
-  - java-17-openjdk
+  - java-21-openjdk
   - jq
   - knock
   - kubernetes-client

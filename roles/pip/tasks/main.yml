@@ -6,8 +6,8 @@
   block:
     - name: Merge vars
       tags:
-        - pip-novenv
-        - pip-venv
+        - pip_novenv
+        - pip_venv
       ansible.builtin.set_fact:
         "{{ item }}": "{{ lookup('community.general.merge_variables', item, pattern_type='prefix') }}"
       loop:
@@ -23,19 +23,19 @@
 
     - name: Install pip requirements (local, no venv)
       tags:
-        - pip-novenv
+        - pip_novenv
       ansible.builtin.pip:
         requirements: "{{ pip_requirements }}"
 
     - name: Install pip packages (local, no venv)
       tags:
-        - pip-novenv
+        - pip_novenv
       ansible.builtin.pip:
         name: "{{ pip_packages }}"
 
     - name: Find venvs requirement files
       tags:
-        - pip-venv
+        - pip_venv
       ansible.builtin.find:
         paths: "{{ python_venv_dir }}"
         file_type: file
@@ -44,7 +44,7 @@
 
     - name: Create venvs and install requirements
       tags:
-        - pip-venv
+        - pip_venv
       ansible.builtin.pip:
         virtualenv: "{{ item.path | regex_replace('.requirements.txt$', '') }}"
         requirements: "{{ item.path }}"
@@ -53,7 +53,7 @@
 
     - name: Add pip packages to venvs
       tags:
-        - pip-venv
+        - pip_venv
       ansible.builtin.pip:
         virtualenv: '{{ python_venv_dir }}/{{ (item.key == "default") | ternary(pip_default_venv | d("default"), item.key) }}'
         name: "{{ item.value }}"

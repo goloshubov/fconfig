@@ -3,6 +3,11 @@
   become: true
   block:
     - name: Merge vars
+      tags:
+        - install
+        - packages_install
+        - update
+        - packages_update
       ansible.builtin.set_fact:
         "{{ item }}": "{{ lookup('community.general.merge_variables', item, pattern_type='prefix') }}"
       loop:
@@ -16,6 +21,11 @@
         - package_absent_list
 
     - name: Print vars
+      tags:
+        - install
+        - packages_install
+        - update
+        - packages_update
       ansible.builtin.debug:
         msg: "{{ lookup('vars', item, default='') }}"
       loop:
@@ -29,56 +39,71 @@
         - package_absent_list
 
     - name: Enable copr repos
+      tags:
+        - package_repos
+        - package_repos_copr
       community.general.copr:
         name: "{{ item }}"
         state: enabled
       loop: "{{ copr_list }}"
-      tags:
-        - package-repos
-        - package-repos-copr
       when: copr_list is defined
 
     - name: Remove copr repos
+      tags:
+        - package_repos
+        - package_repos_copr
       community.general.copr:
         name: "{{ item }}"
         state: absent
       loop: "{{ copr_absent_list }}"
-      tags:
-        - package-repos
-        - package-repos-copr
       when: copr_absent_list is defined
 
     - name: Install other repos
+      tags:
+        - package_repos
       command: dnf config-manager --add-repo '{{ item }}' -y
       loop: "{{ other_repos_list }}"
-      tags: package-repos
       when: other_repos_list is defined
 
     - name: Install requirement for ansible dnf module
       command: dnf install python3-libdnf5 -y
 
     - name: Install packages (direct link)
+      tags:
+        - packages_direct
+        - package_repos
+        - install
+        - packages_install
+        - update
+        - packages_update
       ansible.builtin.dnf:
         state: latest
         name: "{{ direct_package_list }}"
         disable_gpg_check: true
-      tags: package-repos
       when: direct_package_list is defined
 
     - name: Install prerequisite packages (repos)
+      tags:
+        - package_repos
+        - install
+        - packages_install
+        - update
+        - packages_update
       ansible.builtin.dnf:
         state: latest
         name: "{{ prerequisite_packages_list }}"
-      tags: package-repos
       when: prerequisite_packages_list is defined
 
     - name: Enable repos
+      tags: package_repos
       command: dnf config-manager --set-enabled "{{ item }}"
       loop: "{{ setenabled_repo_list }}"
-      tags: package-repos
       when: setenabled_repo_list is defined
 
     - name: Apply repo_tweaks. delete mutually exclusive value (metalink|baseurl)
+      tags:
+        - package_repos
+        - package_repos_tweaks
       community.general.ini_file:
         path: "{{ item.path }}"
         section: "{{ item.section }}"
@@ -88,11 +113,11 @@
         no_extra_spaces: true
       when: yum_repos_tweaks is defined and (item.option == "metalink" or item.option == "baseurl")
       loop: "{{ yum_repos_tweaks }}"
-      tags:
-        - package-repos
-        - package-repos-tweaks
 
     - name: Apply repo_tweaks. set new value
+      tags:
+        - package_repos
+        - package_repos_tweaks
       community.general.ini_file:
         path: "{{ item.path }}"
         section: "{{ item.section }}"
@@ -101,15 +126,17 @@
         backup: true
         no_extra_spaces: true
       loop: "{{ yum_repos_tweaks }}"
-      tags:
-        - package-repos
-        - package-repos-tweaks
       when: yum_repos_tweaks is defined
 
     #- name: Packages
     #  ansible.builtin.import_tasks: packages.yml
 
     - name: Install packages
+      tags:
+        - install
+        - packages_install
+        - update
+        - packages_update
       ansible.builtin.dnf:
         state: latest
         name: "{{ package_list }}"
