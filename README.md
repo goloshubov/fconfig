@@ -85,7 +85,7 @@ $ fconfig_local
 
 # or apply it partially
 # list all possible tags first
-$ fconfig_local --list-tags
+$ fconfig_local --list-tags #--list-tasks --list-hosts
 # optionally dry-run to see what will be changed
 $ fconfig_local --tags dotfiles --check --diff -vv
 # and then run only what you need
