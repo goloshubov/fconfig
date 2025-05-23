@@ -2,17 +2,17 @@
 - name: Packages tasks
   tags:
     - software
-    - packages
+    - pkg
   block:
     - name: Packages on RedHat based distr
       ansible.builtin.import_tasks: fedora.yml
       when: |
         ansible_os_family == "RedHat"
 
-    - name: Packages on Debian based distr
-      ansible.builtin.import_tasks: ubuntu.yml
-      when: |
-        ansible_os_family == "Debian"
+    #- name: Packages on Debian based distr
+    #  ansible.builtin.import_tasks: ubuntu.yml
+    #  when: |
+    #    ansible_os_family == "Debian"
 
     #- name: Packages on ALT Linux based distr
     #  ansible.builtin.import_tasks: alt.yml

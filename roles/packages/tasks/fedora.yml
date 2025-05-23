@@ -4,10 +4,8 @@
   block:
     - name: Merge vars
       tags:
-        - install
-        - packages_install
-        - update
-        - packages_update
+        - up
+        - pkg_up
       ansible.builtin.set_fact:
         "{{ item }}": "{{ lookup('community.general.merge_variables', item, pattern_type='prefix') }}"
       loop:
@@ -22,10 +20,8 @@
 
     - name: Print vars
       tags:
-        - install
-        - packages_install
-        - update
-        - packages_update
+        - up
+        - pkg_up
       ansible.builtin.debug:
         msg: "{{ lookup('vars', item, default='') }}"
       loop:
@@ -40,8 +36,8 @@
 
     - name: Enable copr repos
       tags:
-        - package_repos
-        - package_repos_copr
+        - pkg_repos
+        - pkg_repos_copr
       community.general.copr:
         name: "{{ item }}"
         state: enabled
@@ -50,8 +46,8 @@
 
     - name: Remove copr repos
       tags:
-        - package_repos
-        - package_repos_copr
+        - pkg_repos
+        - pkg_repos_copr
       community.general.copr:
         name: "{{ item }}"
         state: absent
@@ -60,7 +56,7 @@
 
     - name: Install other repos
       tags:
-        - package_repos
+        - pkg_repos
       command: dnf config-manager --add-repo '{{ item }}' -y
       loop: "{{ other_repos_list }}"
       when: other_repos_list is defined
@@ -70,12 +66,10 @@
 
     - name: Install packages (direct link)
       tags:
-        - packages_direct
-        - package_repos
-        - install
-        - packages_install
-        - update
-        - packages_update
+        - pkg_direct
+        - pkg_repos
+        - up
+        - pkg_up
       ansible.builtin.dnf:
         state: latest
         name: "{{ direct_package_list }}"
@@ -84,26 +78,24 @@
 
     - name: Install prerequisite packages (repos)
       tags:
-        - package_repos
-        - install
-        - packages_install
-        - update
-        - packages_update
+        - pkg_repos
+        - up
+        - pkg_up
       ansible.builtin.dnf:
         state: latest
         name: "{{ prerequisite_packages_list }}"
       when: prerequisite_packages_list is defined
 
     - name: Enable repos
-      tags: package_repos
+      tags: pkg_repos
       command: dnf config-manager --set-enabled "{{ item }}"
       loop: "{{ setenabled_repo_list }}"
       when: setenabled_repo_list is defined
 
     - name: Apply repo_tweaks. delete mutually exclusive value (metalink|baseurl)
       tags:
-        - package_repos
-        - package_repos_tweaks
+        - pkg_repos
+        - pkg_repos_tweaks
       community.general.ini_file:
         path: "{{ item.path }}"
         section: "{{ item.section }}"
@@ -116,8 +108,8 @@
 
     - name: Apply repo_tweaks. set new value
       tags:
-        - package_repos
-        - package_repos_tweaks
+        - pkg_repos
+        - pkg_repos_tweaks
       community.general.ini_file:
         path: "{{ item.path }}"
         section: "{{ item.section }}"
@@ -133,10 +125,8 @@
 
     - name: Install packages
       tags:
-        - install
-        - packages_install
-        - update
-        - packages_update
+        - up
+        - pkg_up
       ansible.builtin.dnf:
         state: latest
         name: "{{ package_list }}"
@@ -147,3 +137,14 @@
         state: absent
         name: "{{ package_absent_list }}"
       when: package_absent_list is defined
+
+    - name: Upgrade packages
+      tags:
+        - up_all
+        - pkg_up_all
+      ansible.builtin.dnf:
+        name: "*"
+        state: latest
+        update_cache: true
+        security: "{{ packages_upgrade_security_only | d(false) }}"
+      when: packages_upgrade

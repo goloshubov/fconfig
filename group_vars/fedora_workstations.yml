@@ -215,6 +215,10 @@ package_absent_list__fedora_workstations:
   - firefox-wayland #not needed since firefox version 121
   - python3-pytelegrambotapi
 
+# package upgrade
+packages_upgrade: true
+#packages_upgrade_security_only: false
+
 flatpak_repos__fedora_workstations:
   - https://flathub.org/repo/flathub.flatpakrepo
 
