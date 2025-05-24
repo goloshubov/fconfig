@@ -218,7 +218,7 @@ package_absent_list__fedora_workstations:
 # upgrade packages
 packages_upgrade: false
 packages_upgrade_all: false
-#packages_upgrade_security_only: false
+##packages_upgrade_security_only: false
 
 flatpak_repos__fedora_workstations:
   - https://flathub.org/repo/flathub.flatpakrepo

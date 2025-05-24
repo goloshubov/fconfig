@@ -121,39 +121,5 @@
       loop: "{{ yum_repos_tweaks }}"
       when: yum_repos_tweaks is defined
 
-    #- name: Packages
-    #  ansible.builtin.import_tasks: packages.yml
-
-    - name: Install packages
-      ansible.builtin.dnf:
-        name: "{{ package_list }}"
-        state: present
-        update_cache: true
-      when: package_list is defined
-
-    - name: Remove packages
-      ansible.builtin.dnf:
-        state: absent
-        name: "{{ package_absent_list }}"
-      when: package_absent_list is defined
-
-    - name: Upgrade listed packages
-      tags:
-        - up
-        - pkg_up
-      ansible.builtin.dnf:
-        name: "{{ package_list }}"
-        state: latest
-        update_cache: true
-      when: package_list is defined and packages_upgrade
-
-    - name: Upgrade all packages
-      tags:
-        - up_all
-        - pkg_up_all
-      ansible.builtin.dnf:
-        name: "*"
-        state: latest
-        update_cache: true
-        security: "{{ packages_upgrade_security_only | d(false) }}"
-      when: packages_upgrade_all
+    - name: Packages
+      ansible.builtin.import_tasks: packages.yml
