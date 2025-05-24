@@ -71,19 +71,20 @@
         - up
         - pkg_up
       ansible.builtin.dnf:
-        state: latest
+        state: present
         name: "{{ direct_package_list }}"
         disable_gpg_check: true
       when: direct_package_list is defined
 
-    - name: Install prerequisite packages (repos)
+    - name: Install (upgrade) prerequisite packages (repos)
       tags:
         - pkg_repos
         - up
         - pkg_up
       ansible.builtin.dnf:
-        state: latest
         name: "{{ prerequisite_packages_list }}"
+        state: latest
+        update_cache: true
       when: prerequisite_packages_list is defined
 
     - name: Enable repos
@@ -124,12 +125,10 @@
     #  ansible.builtin.import_tasks: packages.yml
 
     - name: Install packages
-      tags:
-        - up
-        - pkg_up
       ansible.builtin.dnf:
-        state: latest
         name: "{{ package_list }}"
+        state: present
+        update_cache: true
       when: package_list is defined
 
     - name: Remove packages
@@ -138,7 +137,17 @@
         name: "{{ package_absent_list }}"
       when: package_absent_list is defined
 
-    - name: Upgrade packages
+    - name: Upgrade listed packages
+      tags:
+        - up
+        - pkg_up
+      ansible.builtin.dnf:
+        name: "{{ package_list }}"
+        state: latest
+        update_cache: true
+      when: package_list is defined and packages_upgrade
+
+    - name: Upgrade all packages
       tags:
         - up_all
         - pkg_up_all
@@ -147,4 +156,4 @@
         state: latest
         update_cache: true
         security: "{{ packages_upgrade_security_only | d(false) }}"
-      when: packages_upgrade
+      when: packages_upgrade_all
