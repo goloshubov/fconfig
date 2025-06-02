@@ -280,6 +280,7 @@ flatpak_packages__fedora_workstations:
   - cc.arduino.IDE2
   - com.google.AndroidStudio
   #- com.gexperts.Tilix    # package instead
+  #- com.rustdesk.RustDesk # remote desktop / assistant
 
 # pip (no venv)
 pip_requirements: "~/.pip.requirements.txt"
