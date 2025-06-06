@@ -18,7 +18,7 @@ package_list__fedora_ham:
 
 flatpak_packages__fedora_ham:
   - io.github.foldynl.QLog
-  - org.sdrangel.SDRangel
+  #- org.sdrangel.SDRangel
   #- org.wfview.wfview      # (rpm package instead)
   #- edu.princeton.physics.WSJTX
   #- org.kicad.KiCad
