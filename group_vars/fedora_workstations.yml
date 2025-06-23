@@ -141,6 +141,7 @@ package_list__fedora_workstations:
   - fzf  #A command-line fuzzy finder  --- in all group
   - gcc
   - git
+  - git-extras
   #- git-delta
   - gitg #git gui
   - golang
