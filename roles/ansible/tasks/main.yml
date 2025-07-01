@@ -24,4 +24,7 @@
       community.general.ansible_galaxy_install:
         type: collection
         name: "{{ item }}"
+        #FIXME add dest for non local runs in order to install collections in a proper venv directory,
+        # and probably convert the collections list var to dict with venv key and collection list as its value
+        #dest: "/home/USER/python-venv/ansible/lib64/python3.13/site-packages/ansible_collections"
       loop: "{{ ansible_galaxy_collections }}"
