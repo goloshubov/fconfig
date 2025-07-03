@@ -211,6 +211,7 @@ package_list__fedora_workstations:
   - wireguard-tools
   - wrk #modern HTTP benchmarking tool (copr repo)
   - yamllint
+  - papers   #document viewer
 
 package_absent_list__fedora_workstations:
   #  - nano
@@ -283,7 +284,7 @@ flatpak_packages__fedora_workstations:
   - com.google.AndroidStudio
   #- com.gexperts.Tilix    # package instead
   #- com.rustdesk.RustDesk # remote desktop / assistant
-  - org.gnome.Papers
+  #- org.gnome.Papers
 
 # pip (no venv)
 pip_requirements: "~/.pip.requirements.txt"
