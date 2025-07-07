@@ -113,6 +113,7 @@ package_list__fedora_workstations:
   - autofs
   - bat # A cat(1) clone with wings. (Rust)  --- in all group
   - bcc
+  - buildah  # building oci container images
   - bind-utils
   - bpftrace
   - bpftool
