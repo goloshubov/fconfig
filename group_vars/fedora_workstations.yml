@@ -169,6 +169,7 @@ package_list__fedora_workstations:
   - nethogs
   - nmap
   - nmap-ncat
+  - ollama
   - openssl
   - opentofu    # terraform alt.
   - parallel
