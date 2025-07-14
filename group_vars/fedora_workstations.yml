@@ -169,7 +169,7 @@ package_list__fedora_workstations:
   - nethogs
   - nmap
   - nmap-ncat
-  - ollama
+  #- ollama   # outdated version in repo, install manually
   - openssl
   - opentofu    # terraform alt.
   - parallel
