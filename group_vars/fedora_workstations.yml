@@ -287,6 +287,8 @@ flatpak_packages__fedora_workstations:
   #- com.gexperts.Tilix    # package instead
   #- com.rustdesk.RustDesk # remote desktop / assistant
   #- org.gnome.Papers
+  #- app.freelens.Freelens
+  #- org.pgadmin.pgadmin4
 
 # pip (no venv)
 pip_requirements: "~/.pip.requirements.txt"
