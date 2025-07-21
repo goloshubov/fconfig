@@ -32,9 +32,9 @@ fconfig is my ansible playbook to configure a (fedora) linux workstation in a re
 ## usage
 ```bash
 # Usually when dotfiles and bash aliases in it are already applied I just run smth like this
-$ fconfig_local --tags dotfiles
+$ fconfig --tags dotfiles
 # or
-$ fconfig_local --tags dotfiles,gnome  # or other tags
+$ fconfig --tags dotfiles,gnome  # or other tags
 ```
 
 ```bash
@@ -78,19 +78,19 @@ $ ansible-playbook -i ./inventories workstation.yml -e ansible_connection=local 
 #   --limit $(hostname) --tags dotfiles,pipx
 ## for package way of ansible installation it might be needed to install additionall dependencies
 
-# from now on it is possible to use short fconfig_local alias
-# for example apply all configs to your local workstation
-$ alias fconfig_local  # check alias, change it if needed
-$ fconfig_local
+# from now on it is possible to use short 'fconfig' alias
+# for example to apply all configs on this (local) workstation
+#$ alias fconfig  # check alias, change it if needed
+$ fconfig
 
 # or apply it partially
 # list all possible tags first
-$ fconfig_local --list-tags #--list-tasks --list-hosts
+$ fconfig --list-tags #--list-tasks --list-hosts
 # optionally dry-run to see what will be changed
-$ fconfig_local --tags dotfiles --check --diff -vv
+$ fconfig --tags dotfiles --check --diff -vv
 # and then run only what you need
-$ fconfig_local --tags dotfiles
-$ fconfig_local --tags software --skip-tags flatpaks
+$ fconfig --tags dotfiles
+$ fconfig --tags software --skip-tags flatpaks
 
 # or apply configuration to a remote machine
 $ ansible-playbook -i ./inventories workstation.yml --limit laptop-02 --tags dotfiles

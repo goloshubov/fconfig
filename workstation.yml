@@ -13,5 +13,5 @@
     - pipx
     - cargo
     - go
-    - ansible-galaxy
+    - ansible_galaxy
     - gnome

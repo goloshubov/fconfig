@@ -3,7 +3,7 @@
   tags:
     - software
     - ansible
-    - ansible-galaxy
+    - ansible_galaxy
   block:
     - name: Merge vars
       ansible.builtin.set_fact:
