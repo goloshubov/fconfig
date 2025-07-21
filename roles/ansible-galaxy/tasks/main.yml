@@ -3,6 +3,7 @@
   tags:
     - software
     - ansible
+    - ansible-galaxy
   block:
     - name: Merge vars
       ansible.builtin.set_fact:
@@ -18,13 +19,12 @@
 
     - name: Install ansible-galaxy collections
       environment:
+        PATH: "$PATH:{{ python_venv_dir }}/{{ ansible_galaxy_venv }}/bin"
         ANSIBLE_COLLECTIONS_PATH: '{{ ansible_galaxy_venv is defined |
-          ternary("{{ python_venv_dir }}/{{ ansible_galaxy_venv }}/lib/python{{ python_version }}/site-packages/ansible_collections",
-                  "~/.local/lib/python{{ python_version }}/site-packages/ansible_collections") }}'
+          ternary("{{ python_venv_dir }}/{{ ansible_galaxy_venv }}/lib/python{{ python_venv_python_version }}/site-packages/ansible_collections",
+                  "~/.local/lib/python{{ python_venv_python_version }}/site-packages/ansible_collections") }}'
       community.general.ansible_galaxy_install:
         type: collection
         name: "{{ item }}"
-        #FIXME add dest for non local runs in order to install collections in a proper venv directory,
-        # and probably convert the collections list var to dict with venv key and collection list as its value
-        #dest: "/home/USER/python-venv/ansible/lib64/python3.13/site-packages/ansible_collections"
+        #dest: "{{ python_venv_dir }}/{{ ansible_galaxy_venv }}/lib/python{{ python_venv_python_version }}/site-packages/ansible_collections"
       loop: "{{ ansible_galaxy_collections }}"

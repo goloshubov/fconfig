@@ -299,8 +299,8 @@ pip_packages__fedora_workstations:
 
 # venv pip
 # to create venvs and install {{ python_venv_dir }}/<virtualenv>.requirements.txt
-python_venv_dir: "~/python-venv"
-python_version: "3.13"
+python_venv_dir: "/home/{{ user_name }}/python-venv"
+python_venv_python_version: "3.13"
 # additional pip packages for venvs
 pip_default_venv: "py"
 pip_venv_packages__fedora_workstations: {}
