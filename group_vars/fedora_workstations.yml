@@ -65,6 +65,7 @@ package_list__fedora_workstations:
   #- golang-x-tools-gopls #for vim-go
   - vim-ansible
   - vim-powerline
+  - vim-trailing-whitespace
   - micro # a modern and intuitive terminal-based text editor
   - helix # text editor. from varlad/helix copr repo
   # ----- desktop -----
