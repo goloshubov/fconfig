@@ -232,8 +232,8 @@ flatpak_repos__fedora_workstations:
 flatpak_packages__fedora_workstations:
   - com.google.Chrome
   - com.github.tchx84.Flatseal
-  - com.github.johnfactotum.Foliate
-  - org.gnome.Geary
+  #- com.github.johnfactotum.Foliate
+  #- org.gnome.Geary
   - org.gimp.GIMP
   - org.inkscape.Inkscape
   - org.kde.kdenlive
@@ -251,7 +251,7 @@ flatpak_packages__fedora_workstations:
   #- com.transmissionbt.Transmission   # have it in package_list
   #- net.xmind.XMind8
   #- net.xmind.ZEN
-  - net.xmind.XMind
+  #- net.xmind.XMind
   #- org.freeplane.App
   - io.gitlab.news_flash.NewsFlash
   #- com.github.xournalpp.xournalpp
@@ -264,7 +264,7 @@ flatpak_packages__fedora_workstations:
   #- org.jitsi.jitsi-meet
   #- com.google.AndroidStudio
   - net.cozic.joplin_desktop
-  - de.haeckerfelix.Fragments # bittorrent client
+  #- de.haeckerfelix.Fragments # bittorrent client
   - org.libreoffice.LibreOffice
   # - com.belmoussaoui.Authenticator
   - re.sonny.Tangram
@@ -273,7 +273,7 @@ flatpak_packages__fedora_workstations:
   - org.cockpit_project.CockpitClient
   - com.github.jeromerobert.pdfarranger
   - rest.insomnia.Insomnia # Open Source API Client (Postman alternative)
-  - com.github.marhkb.Pods
+  #- com.github.marhkb.Pods
   #- net.nokyan.Resources
   #- org.kiwix.desktop          # offline reader (download wikipedia)
   #- app.organicmaps.desktop    # offline maps - Hike, Bike, Drive Offline
