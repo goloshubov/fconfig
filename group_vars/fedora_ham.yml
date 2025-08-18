@@ -29,7 +29,7 @@ flatpak_packages__fedora_ham:
 # in case there are other favorite_apps__ variables the __NN__ suffix controlls position, i.e.
 # __00__ -  to be on the left side (start of the list)
 # __99__ -  to be on the right side (end of the list)
-#favorite_apps__99__fedora_ham:
-#  - edu.princeton.physics.WSJTX.desktop
-#  - io.github.foldynl.QLog.desktop
-#  - WebApp-HAMSolar0001.desktop
+favorite_apps__99__fedora_ham:
+  - edu.princeton.physics.WSJTX.desktop
+  - io.github.foldynl.QLog.desktop
+  - WebApp-HAMSolar0001.desktop
