@@ -13,8 +13,3 @@
     #  ansible.builtin.import_tasks: ubuntu.yml
     #  when: |
     #    ansible_os_family == "Debian"
-
-    #- name: Packages on ALT Linux based distr
-    #  ansible.builtin.import_tasks: alt.yml
-    #  when: |
-    #    ansible_os_family == "Altlinux"
