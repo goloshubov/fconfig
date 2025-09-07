@@ -1,6 +1,7 @@
 ---
 package_list__fedora_ham:
   - minicom
+  - gnuradio
   - gqrx
   - flrig
   - fldigi
