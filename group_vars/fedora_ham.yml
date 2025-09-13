@@ -17,6 +17,7 @@ package_list__fedora_ham:
   - chirp+wx    # tool for programming your radio
   #- sdrangel  # flatpak instead, a lot of dependencies
   - qsstv
+  #- trustedqsl   # already in QLog flatpak
 
 flatpak_packages__fedora_ham:
   - io.github.foldynl.QLog
