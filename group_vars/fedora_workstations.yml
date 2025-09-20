@@ -69,7 +69,8 @@ package_list__fedora_workstations:
   - micro # a modern and intuitive terminal-based text editor
   - helix # text editor. from varlad/helix copr repo
   # ----- desktop -----
-  - firewall-applet
+  #- firewall-config
+  #- firewall-applet
   #- google-chrome-stable  # from google-chrome repo (fedora-workstation-repositories pkg)
   - dconf-editor
   - gnome-tweaks
