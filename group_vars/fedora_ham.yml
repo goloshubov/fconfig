@@ -6,10 +6,10 @@ package_list__fedora_ham:
   - flrig
   - fldigi
   - wsjtx
-  #- js8call
+  #- js8call  # TODO
   - cwdaemon
-  - unixcw   #cw, cwcp, cwgen
-  - wfview
+  - unixcw   # cw, cwcp, cwgen
+  - wfview   # for X6200
   #- freedv
   #- kicad
   #- kicad-packages3d
@@ -21,7 +21,7 @@ package_list__fedora_ham:
 
 flatpak_packages__fedora_ham:
   - io.github.foldynl.QLog
-  #- org.sdrangel.SDRangel
+  #- org.sdrangel.SDRangel  # TODO
   #- org.wfview.wfview      # (rpm package instead)
   #- edu.princeton.physics.WSJTX
   #- org.kicad.KiCad
