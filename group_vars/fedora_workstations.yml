@@ -364,6 +364,7 @@ ansible_galaxy_collections__fedora_workstations:
 #  - community.general
   - ansible.eda
 #  - kubernetes.core
+#  - fedora.linux_system_roles
 
 # dash/dock panel favorite apps ($ dconf read /org/gnome/shell/favorite-apps)
 # dconf read /org/gnome/shell/favorite-apps
