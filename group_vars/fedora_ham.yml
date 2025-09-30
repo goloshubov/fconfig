@@ -16,6 +16,7 @@ package_list__fedora_ham:
   #- kicad-doc
   - chirp+wx    # tool for programming your radio
   #- sdrangel  # flatpak instead, a lot of dependencies
+  #- sdrpp     # sdr++
   - qsstv
   #- trustedqsl   # already in QLog flatpak
 
