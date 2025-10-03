@@ -38,7 +38,6 @@ prerequisite_packages_list__fedora_workstations:
 
 # enable repo if needed
 setenabled_repo_list__fedora_workstations: []
-  #- google-chrome
 
 #NOTE: already defined in group_vars/all.yml, re-define here to override
 #yum_repos_mirror:
@@ -71,7 +70,6 @@ package_list__fedora_workstations:
   # ----- desktop -----
   #- firewall-config
   #- firewall-applet
-  #- google-chrome-stable  # from google-chrome repo (fedora-workstation-repositories pkg)
   - dconf-editor
   - gnome-tweaks
   - gnome-themes-extra # adwaita-dark for legacy applications
@@ -232,7 +230,6 @@ flatpak_repos__fedora_workstations:
   - https://flathub.org/repo/flathub.flatpakrepo
 
 flatpak_packages__fedora_workstations:
-  - com.google.Chrome
   - com.github.tchx84.Flatseal
   #- com.github.johnfactotum.Foliate
   #- org.gnome.Geary
@@ -296,6 +293,8 @@ flatpak_packages__fedora_workstations:
   #- com.jeffser.Alpaca.Plugins.Ollama
   #- com.jeffser.Alpaca.Plugins.AMD
   - org.gnome.Showtime   # GNOME video player
+
+#TODO flatpak absent list
 
 # pip (no venv)
 pip_requirements: "~/.pip.requirements.txt"
@@ -385,8 +384,7 @@ favorite_apps__50__fedora_workstations:
   #- org.gnome.Calendar.desktop
   - io.gitlab.news_flash.NewsFlash.desktop
   - org.telegram.desktop.desktop
-  #- google-chrome.desktop
-  #- com.google.Chrome.desktop
+  - org.chromium.Chromium
   #- com.github.xournalpp.xournalpp.desktop
   #- net.xmind.XMind.desktop
   #- org.freeplane.App.desktop
