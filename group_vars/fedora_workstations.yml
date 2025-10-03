@@ -241,6 +241,7 @@ flatpak_packages__fedora_workstations:
   #- com.spotify.Client
   #- io.atom.Atom
   - com.jgraph.drawio.desktop
+  - org.chromium.Chromium
   #- com.valvesoftware.Steam
   #- com.github.gi_lom.dialect
   #- app.drey.Dialect
@@ -384,7 +385,6 @@ favorite_apps__50__fedora_workstations:
   #- org.gnome.Calendar.desktop
   - io.gitlab.news_flash.NewsFlash.desktop
   - org.telegram.desktop.desktop
-  - org.chromium.Chromium
   #- com.github.xournalpp.xournalpp.desktop
   #- net.xmind.XMind.desktop
   #- org.freeplane.App.desktop
