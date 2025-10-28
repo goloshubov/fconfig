@@ -294,6 +294,7 @@ flatpak_packages__fedora_workstations:
   #- com.jeffser.Alpaca.Plugins.Ollama
   #- com.jeffser.Alpaca.Plugins.AMD
   - org.gnome.Showtime   # GNOME video player
+  - me.iepure.devtoolbox
 
 #TODO flatpak absent list
 
