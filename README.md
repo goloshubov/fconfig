@@ -161,6 +161,7 @@ host/*/dconf/*
 ```
 
 ## TODOs
+- test first run on a new machine. the goal is minimal re-runs, no missed dependecies, complete how-to.
 - import (additional) package lists from files (requirements lists)
 - additional roles for services with restart notifcations support. It might be usefull even for workstations/laptops, on other hand it will add some complexity.
 - ansible-pull automation
