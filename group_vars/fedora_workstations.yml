@@ -351,11 +351,11 @@ cargo_packages__fedora_workstations:
 go_packages__fedora_workstations:
   #- github.com/antonmedv/llama   # terminal file manager
   #- github.com/mikefarah/yq      # notice pip yq package
-  - github.com/go-task/task/v3/cmd/task
+  #- github.com/go-task/task/v3/cmd/task
   #- github.com/ericchiang/pup    # html parser
   #- golang.stackrox.io/kube-linter/cmd/kube-linter
   #- github.com/gcla/termshark/v2/cmd/termshark     #A terminal user-interface for tshark
-  - fortio.org/fortio #load testing tool
+  #- fortio.org/fortio #load testing tool
   - github.com/kubecolor/kubecolor
 
 # TODO: add requirements.yml file support
