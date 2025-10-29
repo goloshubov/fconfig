@@ -7,7 +7,7 @@
     path: ~/{{ item.path }}
     state: directory
     #mode: '{{ item.mode }}'
-  with_community.general.filetree: "{{ item[0].localpath }}/group/{{ item[1] }}/home/"
+  with_community.general.filetree: "{{ outer_item[0].localpath }}/group/{{ outer_item[1] }}/home/"
   when: item.state == 'directory'
 
 - name: Render j2 template. group (home dir)
@@ -17,8 +17,8 @@
     src: "{{ item.src }}"
     dest: "~/{{ item.path | regex_replace('.j2$', '') }}"
     #mode: '{{ item.mode }}'
-  with_community.general.filetree: "{{ item[0].localpath }}/group/{{ item[1] }}/home/"
-  when: item.state == 'file' and item.path | regex_search('.j2$')
+  with_community.general.filetree: "{{ outer_item[0].localpath }}/group/{{ outer_item[1] }}/home/"
+  when: item.state == 'file' and (item.path | regex_search('.j2$')) != None
 
 - name: Copy files. group (home dir)
   become: true
@@ -27,8 +27,8 @@
     src: "{{ item.src }}"
     dest: ~/{{ item.path }}
     #mode: '{{ item.mode }}'
-  with_community.general.filetree: "{{ item[0].localpath }}/group/{{ item[1] }}/home/"
-  when: item.state == 'file' and not item.path | regex_search('.j2$')
+  with_community.general.filetree: "{{ outer_item[0].localpath }}/group/{{ outer_item[1] }}/home/"
+  when: item.state == 'file' and (item.path | regex_search('.j2$')) == None
 
 - name: Recreate links. group (home dir)
   become: true
@@ -39,7 +39,7 @@
     state: link
     force: true
     #mode: '{{ item.mode }}'
-  with_community.general.filetree: "{{ item[0].localpath }}/group/{{ item[1] }}/home/"
+  with_community.general.filetree: "{{ outer_item[0].localpath }}/group/{{ outer_item[1] }}/home/"
   when: item.state == 'link'
 
 # group/<group>/etc/ dir
@@ -49,7 +49,7 @@
     path: /etc/{{ item.path }}
     state: directory
     #mode: '{{ item.mode }}'
-  with_community.general.filetree: "{{ item[0].localpath }}/group/{{ item[1] }}/etc/"
+  with_community.general.filetree: "{{ outer_item[0].localpath }}/group/{{ outer_item[1] }}/etc/"
   when: item.state == 'directory'
 
 - name: Render j2 templates. group (etc dir)
@@ -58,9 +58,9 @@
     src: "{{ item.src }}"
     dest: "/etc/{{ item.path | regex_replace('.j2$', '') }}"
     #mode: '{{ item.mode }}'
-  with_community.general.filetree: "{{ item[0].localpath }}/group/{{ item[1] }}/etc/"
+  with_community.general.filetree: "{{ outer_item[0].localpath }}/group/{{ outer_item[1] }}/etc/"
   #when: item.state == 'file'
-  when: item.state == 'file' and item.path | regex_search('.j2$')
+  when: item.state == 'file' and (item.path | regex_search('.j2$')) != None
 
 - name: Copy files and links. group (etc dir)
   become: true
@@ -68,8 +68,8 @@
     src: "{{ item.src }}"
     dest: /etc/{{ item.path }}
     #mode: '{{ item.mode }}'
-  with_community.general.filetree: "{{ item[0].localpath }}/group/{{ item[1] }}/etc/"
-  when: item.state == 'file' and not item.path | regex_search('.j2$')
+  with_community.general.filetree: "{{ outer_item[0].localpath }}/group/{{ outer_item[1] }}/etc/"
+  when: item.state == 'file' and (item.path | regex_search('.j2$')) == None
 
 - name: Recreate symlinks. group (etc dir)
   become: true
@@ -79,5 +79,5 @@
     state: link
     force: true
     #mode: '{{ item.mode }}'
-  with_community.general.filetree: "{{ item[0].localpath }}/group/{{ item[1] }}/etc/"
+  with_community.general.filetree: "{{ outer_item[0].localpath }}/group/{{ outer_item[1] }}/etc/"
   when: item.state == 'link'
