@@ -136,7 +136,7 @@ package_list__fedora_workstations:
   #- docker-ce # docker-ce
   #- docker-ce-cli # docker-ce
   #- docker-compose-plugin # docker-ce
-  - eza
+  #- eza
   - fatrace
   #- ffmpeg
   - fuse-sshfs
