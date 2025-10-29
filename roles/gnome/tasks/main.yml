@@ -27,6 +27,8 @@
     - name: Load dconf dumps, 'group' dir
       ansible.builtin.include_tasks: dconf.yml
       loop: "{{ type_dconfdumps.results }}"
+      loop_control:
+        loop_var: outer_item
 
     - name: Apply dconf key-value settings
       become: true
@@ -47,3 +49,5 @@
     - name: Load dconf dumps, 'host' dir
       ansible.builtin.include_tasks: dconf.yml
       loop: "{{ host_dconfdumps.results }}"
+      loop_control:
+        loop_var: outer_item

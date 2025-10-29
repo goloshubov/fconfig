@@ -7,7 +7,7 @@
     src: "{{ item.path }}"
     dest: "/tmp/{{ item.path | basename }}"
     #mode: '{{ item.mode }}'
-  loop: "{{ item.files }}"
+  loop: "{{ outer_item.files }}"
 
 - name: Load dconf dump files
   become: true
@@ -15,7 +15,7 @@
   environment:
     DBUS_SESSION_BUS_ADDRESS: "unix:path=/run/user/{{ user_id }}/bus"
   ansible.builtin.shell: "dconf load -f  /{{ item.path | basename | regex_replace('__', '/') }}/ < /tmp/{{ item.path | basename }}"
-  loop: "{{ item.files }}"
+  loop: "{{ outer_item.files }}"
 
 - name: Remove dumps from remote host
   become: true
@@ -23,4 +23,4 @@
   ansible.builtin.file:
     path: "/tmp/{{ item.path | basename }}"
     state: absent
-  loop: "{{ item.files }}"
+  loop: "{{ outer_item.files }}"
