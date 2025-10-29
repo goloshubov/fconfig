@@ -1,5 +1,5 @@
 ---
-fedora_version: 42
+fedora_version: 43
 
 # dotfiles and configs repos
 files_repos:
