@@ -284,7 +284,6 @@ flatpak_packages__fedora_workstations:
   #- org.gnome.Chess   # classic chess game
   #- org.kde.kigo      # classic go game
   - cc.arduino.IDE2
-  - com.google.AndroidStudio
   #- com.gexperts.Tilix    # package instead
   #- com.rustdesk.RustDesk # remote desktop / assistant
   #- org.gnome.Papers
