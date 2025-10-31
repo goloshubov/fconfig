@@ -275,7 +275,7 @@ flatpak_packages__fedora_workstations:
   - rest.insomnia.Insomnia # Open Source API Client (Postman alternative)
   #- com.github.marhkb.Pods
   #- net.nokyan.Resources
-  #- org.kiwix.desktop          # offline reader (download wikipedia)
+  #- org.kiwix.desktop          # offline wikipedia
   #- app.organicmaps.desktop    # offline maps - Hike, Bike, Drive Offline
   - dev.zed.Zed
   - io.dbeaver.DBeaverCommunity
