@@ -280,7 +280,7 @@ flatpak_packages__fedora_workstations:
   - dev.zed.Zed
   - io.dbeaver.DBeaverCommunity
   - io.dbeaver.DBeaverCommunity.Client.pgsql
-  - io.github.jeffshee.Hidamari  # Video wallpaper for Linux
+  #- io.github.jeffshee.Hidamari  # Video wallpaper for Linux
   #- org.gnome.Chess   # classic chess game
   #- org.kde.kigo      # classic go game
   - cc.arduino.IDE2
