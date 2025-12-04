@@ -1,5 +1,18 @@
 ---
 
 package_list__fedora_k8s:
-  - kubernetes
+  #- kubernetes
+  - kubernetes-client
   - kind
+  - helm
+  - opentofu
+  - docker-cli
+  - docker-compose
+  - podman
+  #- podman-docker
+  #- podman-compose
+  - buildah
+  - skopeo
+
+user_groups__fedora_k8s:
+  - docker
