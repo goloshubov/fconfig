@@ -6,14 +6,13 @@ user_groups__fedora_workstations:
 
 #copr, third party repos
 copr_list__fedora_workstatsions:
-  - mroche/cloud-native-utilities # helm,knative-client,pack,packer,tektoncd-cli,terraform
+  #- mroche/cloud-native-utilities # helm,knative-client,pack,packer,tektoncd-cli,terraform
   - zeno/scrcpy
   - kylegospo/webapp-manager
   #- felfert/gitea
-  #- varlad/zellij    #A terminal workspace with batteries included. (tmux alternative)
   - getpagespeed/wrk #modern HTTP benchmarking tool
   #- pgdev/ghostty
-  - trixieua/morewaita-icon-theme
+  #- trixieua/morewaita-icon-theme
 
 # remove copr repos
 copr_absent_list__fedora_workstations:
@@ -49,7 +48,7 @@ package_list__fedora_workstations:
   - tilix-nautilus
   #- terminator
   #- ghostty
-  - cosmic-term    # next terminal (?)
+  #- cosmic-term    # next terminal (?)
   - powerline
   - tmux
   - tmux-powerline
@@ -114,7 +113,6 @@ package_list__fedora_workstations:
   - autofs
   - bat # A cat(1) clone with wings. (Rust)  --- in all group
   - bcc
-  - buildah  # building oci container images
   - bind-utils
   - bpftrace
   - bpftool
@@ -152,7 +150,6 @@ package_list__fedora_workstations:
   #- grafana
   - grpcurl
   - hadolint # Dockerfile linter
-  - helm
   - hping3 #TCP/IP stack auditing
   - htop
   - hwloc-gui #lstopo
@@ -161,8 +158,6 @@ package_list__fedora_workstations:
   - java-21-openjdk-headless
   - jq
   - knock
-  - kubernetes-client
-  #- kubectl
   - lm_sensors
   - maven
   - meld #diff gui
@@ -172,14 +167,10 @@ package_list__fedora_workstations:
   - nmap-ncat
   #- ollama   # outdated version in repo, install manually
   - openssl
-  - opentofu    # terraform alt.
   - parallel
   - perf
   - perl-Image-ExifTool
   - pipx #Install and Run Python Applications in Isolated Environments
-  - podman
-  - podman-docker # Emulate Docker CLI using podman
-  #- podman-compose
   - powertop
   - pre-commit
   - progress # Linux tool to show progress for cp, mv, dd, ... (formerly known as cv)
@@ -200,12 +191,10 @@ package_list__fedora_workstations:
   - rust
   #- scalpel # file recovery / undo delete
   - ShellCheck # shell script static analysis tool (bash linter)
-  - skopeo
   - sshuttle
   - sysstat
   - tango-icon-theme
   - the_silver_searcher
-  #- terraform # from mroche/cloud-native-utilities copr repo  # repl. by opentofu
   - toolbox
   - tuned
   #- virtio-win

@@ -8,3 +8,8 @@ prerequisite_packages_list__fedora_servers: []
 setenabled_repo_list__fedora_servers: []
 package_list__fedora_servers: []
 package_absent_list__fedora_servers: []
+
+# upgrade packages
+packages_upgrade: false
+packages_upgrade_all: false
+##packages_upgrade_security_only: false
