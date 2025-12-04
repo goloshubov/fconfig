@@ -14,5 +14,9 @@ package_list__fedora_k8s:
   - buildah
   - skopeo
 
+go_packages__fedora_k8s:
+  #- golang.stackrox.io/kube-linter/cmd/kube-linter
+  - github.com/kubecolor/kubecolor
+
 user_groups__fedora_k8s:
   - docker

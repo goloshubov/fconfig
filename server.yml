@@ -8,3 +8,4 @@
     - dotfiles
     - packages
     - groups
+    - go
