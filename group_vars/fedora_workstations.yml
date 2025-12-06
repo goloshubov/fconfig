@@ -96,6 +96,7 @@ package_list__fedora_workstations:
   - virt-viewer
   - virt-what
   - libvirt-client
+  - guestfs-tools
   - minder
   - morewaita-icon-theme
   - scrcpy #from zeno/scrcpy copr
