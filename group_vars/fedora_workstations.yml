@@ -440,7 +440,7 @@ dconf_settings__fedora_workstations:
   "/org/gnome/shell/extensions/just-perfection/events-button": "false"
   "/org/gnome/shell/extensions/just-perfection/workspace-switcher-should-show": "true"
   "/org/gnome/shell/extensions/just-perfection/workspace-switcher-size": "15"
-  "/org/gnome/shell/extensions/just-perfection/workspace-wrap-around": "true"
+  "/org/gnome/shell/extensions/just-perfection/workspace-wrap-around": "false"
   "/org/gnome/shell/extensions/just-perfection/world-clock": "false"
   #"/org/gnome/mutter/check-alive-timeout": "0"
   "/org/gnome/mutter/check-alive-timeout": "60000"
