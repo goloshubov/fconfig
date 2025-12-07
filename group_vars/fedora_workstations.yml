@@ -108,7 +108,7 @@ package_list__fedora_workstations:
   - webapp-manager # from kylegospo/webapp-manage copr
   - helvum #patchbay for pipewire
   - keepassxc
-  #- thunderbird   # outdated version
+  - thunderbird
   # ----- tools -----
   - apg
   - autofs
