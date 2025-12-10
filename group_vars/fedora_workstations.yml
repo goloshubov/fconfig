@@ -97,7 +97,7 @@ package_list__fedora_workstations:
   - virt-what
   - libvirt-client
   - guestfs-tools
-  - minder
+  #- minder
   - morewaita-icon-theme
   - scrcpy #from zeno/scrcpy copr
   - showtime  # Modern video player built using GTK4
@@ -243,6 +243,7 @@ flatpak_packages__fedora_workstations:
   #- net.xmind.ZEN
   #- net.xmind.XMind
   #- org.freeplane.App
+  - com.github.phase1geo.minder
   - io.gitlab.news_flash.NewsFlash
   #- com.github.xournalpp.xournalpp
   #- com.getferdi.Ferdi
