@@ -161,5 +161,5 @@ host/*/dconf/*
 ```
 
 ## TODOs
-- support Atomic Desktops (Silverblue, Cosmic Atomic)
+- support Atomic Desktops (Silverblue, COSMIC Atomic)
 - ansible-pull automation
