@@ -161,5 +161,6 @@ host/*/dconf/*
 ```
 
 ## TODOs
+- dnf group install
 - support Atomic Desktops (Silverblue, COSMIC Atomic)
 - ansible-pull automation

@@ -256,7 +256,7 @@ flatpak_packages__fedora_workstations:
   #- com.google.AndroidStudio
   - net.cozic.joplin_desktop
   #- de.haeckerfelix.Fragments # bittorrent client
-  - org.libreoffice.LibreOffice
+  #- org.libreoffice.LibreOffice
   # - com.belmoussaoui.Authenticator
   - re.sonny.Tangram
   - com.rafaelmardojai.Blanket
