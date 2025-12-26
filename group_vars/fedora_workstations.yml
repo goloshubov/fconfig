@@ -364,38 +364,20 @@ ansible_galaxy_collections__fedora_workstations:
 # __99__ -  to be on the right side (end of the list)
 favorite_apps__50__fedora_workstations:
   - com.gexperts.Tilix.desktop
-  #- org.gnome.Ptyxis.desktop
-  #- terminator.desktop
-  #- com.mitchellh.ghostty.desktop
   - dev.zed.Zed.desktop
   - net.cozic.joplin_desktop.desktop
-  #- firefox-wayland.desktop
   - net.thunderbird.Thunderbird.desktop
   - org.mozilla.firefox.desktop
-  #- org.gnome.Geary.desktop
-  #- org.gnome.Calendar.desktop
   - io.gitlab.news_flash.NewsFlash.desktop
   - org.telegram.desktop.desktop
-  #- com.github.xournalpp.xournalpp.desktop
-  #- net.xmind.XMind.desktop
-  #- org.freeplane.App.desktop
-  - com.github.phase1geo.minder.desktop
-  #- re.sonny.Tangram.desktop
-  #- com.getferdi.Ferdi.desktop
-  #- com.slack.Slack.desktop
   - org.gnome.Nautilus.desktop
-  #- org.gnome.TextEditor.desktop
-  #- org.gnome.gedit.desktop
+  - com.github.xournalpp.xournalpp.desktop
+  - com.github.phase1geo.minder.desktop
   - org.gnome.Calculator.desktop
   - org.cockpit_project.CockpitClient.desktop
   - remote-viewer.desktop
   - virt-manager.desktop
-  #- org.cockpit_project.CockpitClient.desktop
-  #- org.gnome.Calendar.desktop
   - scrcpy.desktop
-  #- org.gnome.gitg.desktop
-  #- org.gnome.Meld.desktop
-  #- rest.insomnia.Insomnia.desktop
   - com.rafaelmardojai.Blanket.desktop
   - org.keepassxc.KeePassXC.desktop
   - WebApp-CoridorCamera0001.desktop
