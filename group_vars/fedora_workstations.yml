@@ -156,6 +156,7 @@ package_list__fedora_workstations:
   - hwloc-gui #lstopo
   - inotify-tools
   - java-25-openjdk
+  - java-25-openjdk-devel
   - jq
   - knock
   - lm_sensors
