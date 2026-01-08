@@ -363,8 +363,8 @@ ansible_galaxy_collections__fedora_workstations:
 # __00__ -  to be on the left side (start of the list)
 # __99__ -  to be on the right side (end of the list)
 favorite_apps__50__fedora_workstations:
-  #- com.gexperts.Tilix.desktop
-  - com.system76.CosmicTerm.desktop
+  - com.gexperts.Tilix.desktop
+  #- com.system76.CosmicTerm.desktop
   - dev.zed.Zed.desktop
   - net.cozic.joplin_desktop.desktop
   - net.thunderbird.Thunderbird.desktop
