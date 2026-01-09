@@ -97,8 +97,7 @@ $ ansible-playbook -i ./inventories workstation.yml --limit laptop-02 --tags dot
 ```
 
 ## files repos
-Note that it is possible to keep playbook/roles and dotfiles/configs together in one (and the only) repository, in different repos, or combination of both.
-The only repository is probably more convenient for ansible-pull (full automation) use case. Anyway, it is recommended that playbook and files (configs and dotfiles) are located in separate git repositories.
+Dotfiles/configs can be in one (and the only) repository, in different repos, or combination of both.
 
 The files_repos variable might be defined in group_vars/all.yml, e.g.:
 
@@ -111,7 +110,7 @@ files_repos:
   - ...
 ```
 
-Here is expected repo directory structure, notice that all supported dirs (dconf, etc, home) are not mandatory:
+Here is expected repo directory structure. dconf, etc, home dirs are not mandatory.
 ```
 ├── group
 │   └── <groupname>
