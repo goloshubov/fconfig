@@ -97,9 +97,9 @@ $ ansible-playbook -i ./inventories workstation.yml --limit laptop-02 --tags dot
 ```
 
 ## files repos
-Dotfiles/configs can be in one (and the only) repository, in different repos, or combination of both.
+Dotfiles/configs can be in one (and the only) repository or in different repos, public and private mix for example.
 
-The files_repos variable might be defined in group_vars/all.yml, e.g.:
+The files_repos variable might be defined in group_vars/all.yml:
 
 ```yaml
 files_repos:
