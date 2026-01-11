@@ -161,5 +161,5 @@ host/*/dconf/*
 
 ## TODOs
 - dnf group install
-- support Atomic Desktops (Silverblue, COSMIC Atomic)
+- support Atomic Desktops (Fedora Silverblue)
 - ansible-pull automation
