@@ -190,6 +190,8 @@ package_list__fedora_workstations:
   #- ranger # console file manager
   - rdiff-backup
   - rust
+  - rust-src
+  - rustfmt
   #- scalpel # file recovery / undo delete
   - ShellCheck # shell script static analysis tool (bash linter)
   - sshuttle
