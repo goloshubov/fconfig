@@ -188,6 +188,7 @@ package_list__fedora_workstations:
   - python3-requests
   #- python3-testinfra
   #- ranger # console file manager
+  - remmina
   - rdiff-backup
   - rust
   - rust-src
