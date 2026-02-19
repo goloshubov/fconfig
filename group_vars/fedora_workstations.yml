@@ -380,11 +380,9 @@ favorite_apps__50__fedora_workstations:
   - com.github.xournalpp.xournalpp.desktop
   - com.github.phase1geo.minder.desktop
   - org.gnome.Calculator.desktop
-  - org.cockpit_project.CockpitClient.desktop
-  - remote-viewer.desktop
+  #- org.cockpit_project.CockpitClient.desktop
   - virt-manager.desktop
   - scrcpy.desktop
-  - com.rafaelmardojai.Blanket.desktop
   - org.keepassxc.KeePassXC.desktop
   - WebApp-CoridorCamera0001.desktop
 
