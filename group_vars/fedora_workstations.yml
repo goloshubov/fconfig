@@ -282,7 +282,8 @@ flatpak_packages__fedora_workstations:
   #- com.gexperts.Tilix    # package instead
   #- com.rustdesk.RustDesk # remote desktop / assistant
   #- org.gnome.Papers
-  #- app.freelens.Freelens
+  #- app.freelens.Freelens   #k8s ui
+  - io.kinvolk.Headlamp     #k8s ui
   #- org.pgadmin.pgadmin4
   #- com.jeffser.Alpaca
   #- com.jeffser.Alpaca.Plugins.Ollama
