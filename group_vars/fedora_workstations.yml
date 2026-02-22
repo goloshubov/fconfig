@@ -355,7 +355,6 @@ go_packages__fedora_workstations:
   - github.com/kubecolor/kubecolor
 
 # TODO: add requirements.yml file support
-ansible_galaxy_venv: "ansible"
 ansible_galaxy_collections__fedora_workstations:
 #  - community.general
   - ansible.eda

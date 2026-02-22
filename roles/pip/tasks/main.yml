@@ -39,7 +39,7 @@
       ansible.builtin.find:
         paths: "{{ python_venv_dir }}"
         file_type: file
-      register: virtualenvs
+      register: pip_virtualenvs
       when: python_venv_dir is defined
 
     - name: Create venvs and install requirements
@@ -48,8 +48,8 @@
       ansible.builtin.pip:
         virtualenv: "{{ item.path | regex_replace('.requirements.txt$', '') }}"
         requirements: "{{ item.path }}"
-      loop: "{{ virtualenvs.files }}"
-      when: virtualenvs.files is defined
+      loop: "{{ pip_virtualenvs.files }}"
+      when: pip_virtualenvs.files is defined
 
     - name: Add pip packages to venvs
       tags:
