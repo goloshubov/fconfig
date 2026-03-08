@@ -115,13 +115,13 @@ Here is expected repo directory structure. dconf, etc, home dirs are not mandato
 ├── group
 │   └── <groupname>
 │       ├── dconf
-│       ├── etc
-│       └── home
+│       ├── etc
+│       └── home
 └── host
-    └── <hostname>
+    └── <hostname>
         ├── dconf
-        ├── etc
-        └── home
+        ├── etc
+        └── home
 ```
 The content of etc/* and home/* dirs will be recursively copied (or templated, for .j2 files) to /etc/* and ~/* dirs respectively on destination hosts according to hostnames and groups.\
 Templates are stored with .j2 extension, deployed without it.\
