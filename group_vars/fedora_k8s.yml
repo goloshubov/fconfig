@@ -1,8 +1,10 @@
 ---
 
+k8s_ver: "1.35"
+
 package_list__fedora_k8s:
   #- kubernetes
-  - kubernetes-client
+  #- kubernetes-client  #latest available
   - kind
   - helm
   - opentofu
@@ -13,6 +15,9 @@ package_list__fedora_k8s:
   #- podman-compose
   - buildah
   - skopeo
+
+package_allowerasing_list__fedora_k8s:
+  - kubernetes{{ k8s_ver }}-client
 
 go_packages__fedora_k8s:
   #- golang.stackrox.io/kube-linter/cmd/kube-linter
