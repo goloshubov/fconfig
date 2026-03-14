@@ -4,6 +4,7 @@
     - dotfiles
     - configs
     - gnome
+    - filesrepos
   block:
     - name: Print vars
       ansible.builtin.debug:
