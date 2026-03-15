@@ -12,7 +12,7 @@ copr_list__fedora_workstatsions:
   #- felfert/gitea
   - getpagespeed/wrk #modern HTTP benchmarking tool
   #- trixieua/morewaita-icon-theme
-  - scottames/ghostty
+  #- scottames/ghostty
 
 # remove copr repos
 copr_absent_list__fedora_workstations:
@@ -46,8 +46,7 @@ package_list__fedora_workstations:
   # ----- termiinal -----
   - tilix          # main terminal
   - tilix-nautilus
-  #- terminator
-  #- ghostty
+  #- ghostty        # copr repo: scottames/ghostty
   #- cosmic-term    # next terminal (?)
   - powerline
   - tmux
