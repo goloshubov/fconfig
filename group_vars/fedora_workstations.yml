@@ -47,7 +47,7 @@ package_list__fedora_workstations:
   - tilix          # main terminal
   - tilix-nautilus
   #- terminator
-  - ghostty
+  #- ghostty
   #- cosmic-term    # next terminal (?)
   - powerline
   - tmux
