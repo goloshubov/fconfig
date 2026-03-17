@@ -37,4 +37,4 @@ favorite_apps__99__fedora_ham:
   #- edu.princeton.physics.WSJTX.desktop  #flatpak
   - wsjtx.desktop   # package
   - io.github.foldynl.QLog.desktop
-  - org.chromium.Chromium.chromium-wah-NhhkvNsO.desktop  # HAMSolar
+  - org.mozilla.firefox.firefox-wah-NhhkvNsO.desktop  # HAMSolar
