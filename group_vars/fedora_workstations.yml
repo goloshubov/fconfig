@@ -382,7 +382,7 @@ favorite_apps__50__fedora_workstations:
   - virt-manager.desktop
   - scrcpy.desktop
   - org.keepassxc.KeePassXC.desktop
-  - org.chromium.Chromium.chromium-wah-Aa87bc06.desktop # Coridor Camera
+  - org.mozilla.firefox.firefox-wah-Aa87bc06.desktop  #Coridor Camera
 
 # dconf dump files might be used as well (see README)
 dconf_settings__fedora_workstations:
