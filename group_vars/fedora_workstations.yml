@@ -261,7 +261,6 @@ flatpak_packages__fedora_workstations:
   #- de.haeckerfelix.Fragments # bittorrent client
   #- org.libreoffice.LibreOffice
   # - com.belmoussaoui.Authenticator
-  - re.sonny.Tangram
   - com.rafaelmardojai.Blanket
   #- com.slack.Slack
   - org.cockpit_project.CockpitClient
