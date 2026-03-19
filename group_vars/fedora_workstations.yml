@@ -289,6 +289,7 @@ flatpak_packages__fedora_workstations:
   - org.gnome.Showtime   # GNOME video player
   - me.iepure.devtoolbox
   - org.pvermeer.WebAppHub
+  - be.alexandervanhee.gradia  # Annotate your screenshots
 
 #TODO flatpak absent list
 
