@@ -269,7 +269,8 @@ flatpak_packages__fedora_workstations:
   #- com.github.marhkb.Pods
   #- net.nokyan.Resources
   #- org.kiwix.desktop          # offline wikipedia
-  #- app.organicmaps.desktop    # offline maps - Hike, Bike, Drive Offline
+  #- app.organicmaps.desktop    # offline maps
+  - app.comaps.comaps  # offline maps
   - dev.zed.Zed
   - io.dbeaver.DBeaverCommunity
   - io.dbeaver.DBeaverCommunity.Client.pgsql
