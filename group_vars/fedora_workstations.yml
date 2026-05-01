@@ -161,6 +161,7 @@ package_list__fedora_workstations:
   - maven
   - meld #diff gui
   - mtr
+  - mutter-devkit  # for nested gnome-shell sessions (extensions debugging)
   - nethogs
   - nmap
   - nmap-ncat
