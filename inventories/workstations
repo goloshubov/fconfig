@@ -1,5 +1,4 @@
 [workstations]
-ws
 x390yoga
 x13yoga1
 x132i1g5
@@ -16,7 +15,6 @@ x13yoga1
 x132i1g5
 
 [lirc]
-ws
 x13yoga1
 
 [k8s:children]
