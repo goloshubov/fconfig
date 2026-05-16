@@ -70,7 +70,9 @@ package_list__fedora_workstations:
   #- firewall-applet
   - dconf-editor
   - gnome-tweaks
-  - gnome-themes-extra # adwaita-dark for legacy applications
+  #- gnome-themes-extra # adwaita-dark for legacy applications. Not in repo since F44, see other options below:
+  - adw-gtk3-theme    # dark theme for legacy apps: Adw-gtk3-dark
+  - yaru-theme        # dark theme for legacy apps: yaru-blue-dark
   - gnome-extensions-app
   - gnome-shell-extension-appindicator
   - gnome-shell-extension-apps-menu
