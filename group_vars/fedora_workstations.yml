@@ -76,7 +76,7 @@ package_list__fedora_workstations:
   - gnome-extensions-app
   - gnome-shell-extension-appindicator
   - gnome-shell-extension-apps-menu
-  - gnome-shell-extension-argos
+  #- gnome-shell-extension-argos
   - gnome-shell-extension-background-logo
   - gnome-shell-extension-blur-my-shell
   - gnome-shell-extension-dash-to-dock
