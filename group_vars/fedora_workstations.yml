@@ -295,6 +295,7 @@ flatpak_packages__fedora_workstations:
   - me.iepure.devtoolbox
   - org.pvermeer.WebAppHub
   - be.alexandervanhee.gradia  # Annotate your screenshots
+  - io.github.vmkspv.netsleuth # IP calculator
 
 #TODO flatpak absent list
 
