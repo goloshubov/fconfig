@@ -211,6 +211,7 @@ package_list__fedora_workstations:
   - wrk #modern HTTP benchmarking tool (copr repo)
   - yamllint
   - papers   #document viewer
+  #- podlet   #Generate Podman Quadlet files
 
 package_absent_list__fedora_workstations:
   #  - nano
