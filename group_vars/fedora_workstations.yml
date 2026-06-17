@@ -22,7 +22,6 @@ copr_absent_list__fedora_workstations:
 #third party repos
 other_repos_list__fedora_workstations: []
   #- https://fedorapeople.org/groups/virt/virtio-win/virtio-win.repo
-  #- https://download.docker.com/linux/fedora/docker-ce.repo
 
 #third party repos and packages
 direct_package_list__fedora_workstations: []
@@ -126,15 +125,11 @@ package_list__fedora_workstations:
   - cockpit-selinux
   - colorized-logs
   #- cockpit-pcp
-  #- containerd.io # docker-ce
   - crudini # A utility for manipulating ini files
   - curl
   #- distrobox
   - dnf-utils
   - dnstop
-  #- docker-ce # docker-ce
-  #- docker-ce-cli # docker-ce
-  #- docker-compose-plugin # docker-ce
   #- eza
   - fatrace
   #- ffmpeg
@@ -147,7 +142,6 @@ package_list__fedora_workstations:
   - gitg #git gui
   - golang
   #- go-task
-  #- golang-github-docker-slim # docker-slim tool
   #- grafana
   - grpcurl
   - hadolint # Dockerfile linter
@@ -211,7 +205,6 @@ package_list__fedora_workstations:
   - wrk #modern HTTP benchmarking tool (copr repo)
   - yamllint
   - papers   #document viewer
-  #- podlet   #Generate Podman Quadlet files
 
 package_absent_list__fedora_workstations:
   #  - nano
