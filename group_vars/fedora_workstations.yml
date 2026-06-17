@@ -377,11 +377,11 @@ favorite_apps__50__fedora_workstations:
   - io.gitlab.news_flash.NewsFlash.desktop
   #- org.telegram.desktop.desktop
   - org.gnome.Nautilus.desktop
-  - com.github.xournalpp.xournalpp.desktop
-  - com.github.phase1geo.minder.desktop
-  - org.gnome.Calculator.desktop
+  #- com.github.xournalpp.xournalpp.desktop
+  #- com.github.phase1geo.minder.desktop
+  #- org.gnome.Calculator.desktop
   #- org.cockpit_project.CockpitClient.desktop
-  - virt-manager.desktop
+  #- virt-manager.desktop
   - scrcpy.desktop
   - org.keepassxc.KeePassXC.desktop
   - org.mozilla.firefox.firefox-wah-Aa87bc06.desktop  #Coridor Camera
