@@ -18,6 +18,7 @@ package_list__fedora_k8s:
   - podlet   #Generate Podman Quadlet files
   - umoci    #Open Container Image manipulation tool
   - trivy
+  - golang-oras  #OCI registry client
 
 package_allowerasing_list__fedora_k8s:
   - kubernetes{{ k8s_ver }}-client
