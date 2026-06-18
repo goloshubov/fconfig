@@ -17,6 +17,7 @@ package_list__fedora_k8s:
   - skopeo
   - podlet   #Generate Podman Quadlet files
   - umoci    #Open Container Image manipulation tool
+  - trivy
 
 package_allowerasing_list__fedora_k8s:
   - kubernetes{{ k8s_ver }}-client
