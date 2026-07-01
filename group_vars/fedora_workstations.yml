@@ -183,6 +183,7 @@ package_list__fedora_workstations:
   - python3-pytest-testinfra
   - python3-requests
   #- python3-testinfra
+  - qrencode
   #- ranger # console file manager
   - remmina
   - rdiff-backup
