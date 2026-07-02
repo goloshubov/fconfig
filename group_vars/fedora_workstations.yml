@@ -376,6 +376,7 @@ favorite_apps__50__fedora_workstations:
   - net.cozic.joplin_desktop.desktop
   - net.thunderbird.Thunderbird.desktop
   - org.mozilla.firefox.desktop
+  - org.chromium.Chromium.desktop
   - io.gitlab.news_flash.NewsFlash.desktop
   #- org.telegram.desktop.desktop
   - org.gnome.Nautilus.desktop
