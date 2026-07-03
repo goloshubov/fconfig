@@ -29,3 +29,6 @@ go_packages__fedora_k8s:
 
 user_groups__fedora_k8s:
   - docker
+
+favorite_apps__99__fedora_k8s:
+  - io.kinvolk.Headlamp.desktop
