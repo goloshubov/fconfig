@@ -381,7 +381,7 @@ favorite_apps__50__fedora_workstations:
   #- org.telegram.desktop.desktop
   - org.gnome.Nautilus.desktop
   #- com.github.xournalpp.xournalpp.desktop
-  #- com.github.phase1geo.minder.desktop
+  - com.github.phase1geo.minder.desktop
   #- org.gnome.Calculator.desktop
   #- org.cockpit_project.CockpitClient.desktop
   #- virt-manager.desktop
