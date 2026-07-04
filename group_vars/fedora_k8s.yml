@@ -32,3 +32,8 @@ user_groups__fedora_k8s:
 
 #favorite_apps__99__fedora_k8s:
 #  - io.kinvolk.Headlamp.desktop
+
+#third party repos
+#other_repos_list__fedora_k8s:
+#  - https://rpm.releases.hashicorp.com/fedora/hashicorp.repo
+
