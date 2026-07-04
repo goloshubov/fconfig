@@ -8,6 +8,8 @@ package_list__fedora_k8s:
   - kind
   - helm
   - opentofu
+  #- terraform   #hashicorp repo
+  #- vault       #hashicorp repo
   - docker-cli
   - docker-compose
   - podman
