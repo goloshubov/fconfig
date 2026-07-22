@@ -161,6 +161,7 @@ host/*/dconf/*
 
 ## TODOs
 - dnf group install
+- add COSMIC support
 - support Atomic Desktops (Fedora Silverblue)
 - ansible-pull automation
 - replace pip, pipx and virtualenv with uv, or add it as an option
