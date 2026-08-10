@@ -125,7 +125,6 @@ package_list__fedora_workstations:
   - cockpit-podman
   - cockpit-selinux
   - colorized-logs
-  #- cockpit-pcp
   - crudini # A utility for manipulating ini files
   - curl
   #- distrobox
@@ -143,7 +142,8 @@ package_list__fedora_workstations:
   - gitg #git gui
   - golang
   #- go-task
-  #- grafana
+  - grafana
+  - grafana-pcp
   - grpcurl
   - hadolint # Dockerfile linter
   - hping3 #TCP/IP stack auditing
@@ -165,6 +165,9 @@ package_list__fedora_workstations:
   #- ollama   # outdated version in repo, install manually
   - openssl
   - parallel
+  - pcp
+  - pcp-pmda-smart
+  - pcp-system-tools
   - perf
   - perl-Image-ExifTool
   - pipx #Install and Run Python Applications in Isolated Environments
@@ -192,6 +195,7 @@ package_list__fedora_workstations:
   - rustfmt
   #- scalpel # file recovery / undo delete
   - ShellCheck # shell script static analysis tool (bash linter)
+  - smartmontools
   - sshuttle
   - sysstat
   - tango-icon-theme
