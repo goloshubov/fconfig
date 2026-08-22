@@ -296,6 +296,7 @@ flatpak_packages__fedora_workstations:
   - org.pvermeer.WebAppHub
   - be.alexandervanhee.gradia  # Annotate your screenshots
   - io.github.vmkspv.netsleuth # IP calculator
+  - io.github.nokse22.asciidraw
 
 #TODO flatpak absent list
 
