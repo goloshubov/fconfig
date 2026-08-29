@@ -91,7 +91,7 @@ package_list__fedora_workstations:
   - gnome-shell-extension-user-theme
   - gnome-shell-extension-window-list
   - gnome-shell-extension-workspace-indicator
-  - gnome-shell-extension-pop-shell.noarch  # tiling manager
+  - gnome-shell-extension-pop-shell
   - libdbusmenu # for dash-to-dock
   - virt-manager
   - virt-viewer
