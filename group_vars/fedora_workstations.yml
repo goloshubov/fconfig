@@ -172,6 +172,7 @@ package_list__fedora_workstations:
   - perf
   - perl-Image-ExifTool
   - pipx #Install and Run Python Applications in Isolated Environments
+  #- pi-coding-agent # F45
   - powertop
   - pre-commit
   - progress # Linux tool to show progress for cp, mv, dd, ... (formerly known as cv)
