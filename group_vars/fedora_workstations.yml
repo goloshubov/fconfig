@@ -85,7 +85,6 @@ package_list__fedora_workstations:
   #- gnome-shell-extension-openweather
   - gnome-shell-extension-places-menu
   #- gnome-shell-extension-pop-shell
-  - gnome-shell-extension-pomodoro
   - gnome-shell-extension-screen-autorotate
   - gnome-shell-extension-system-monitor-applet
   - gnome-shell-extension-user-theme
@@ -214,6 +213,7 @@ package_list__fedora_workstations:
   - wrk #modern HTTP benchmarking tool (copr repo)
   - yamllint
   - papers   #document viewer
+  - focus-timer   #pomodoro
 
 package_absent_list__fedora_workstations:
   #  - nano
