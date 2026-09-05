@@ -2,7 +2,6 @@
 x390yoga
 x13yoga1
 x132i1g5
-mbpm2p user_id=60046
 
 [workstations:vars]
 user_id=1000
@@ -14,7 +13,6 @@ user_primary_group=goloshubov
 x390yoga
 x13yoga1
 x132i1g5
-mbpm2p
 
 [lirc]
 x13yoga1

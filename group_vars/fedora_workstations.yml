@@ -5,13 +5,13 @@ user_groups__fedora_workstations:
   - dialout
 
 #copr, third party repos
-copr_list__fedora_workstatsions: []
+copr_list__fedora_workstatsions:
   #- mroche/cloud-native-utilities # helm,knative-client,pack,packer,tektoncd-cli,terraform
-  #- zeno/scrcpy   #no_aarch64
+  - zeno/scrcpy
   #- felfert/gitea
-  #- getpagespeed/wrk #modern HTTP benchmarking tool   #no_aarch64
+  - getpagespeed/wrk #modern HTTP benchmarking tool
   #- trixieua/morewaita-icon-theme
-  #- scottames/ghostty   #no_aarch64
+  - scottames/ghostty
 
 # remove copr repos
 copr_absent_list__fedora_workstations:
@@ -45,7 +45,7 @@ package_list__fedora_workstations:
   # ----- termiinal -----
   - tilix          # main terminal
   - tilix-nautilus
-  #- ghostty        # copr repo: scottames/ghostty   #no_aarch64
+  - ghostty        # copr repo: scottames/ghostty
   #- cosmic-term    # next terminal (?)
   - powerline
   - tmux
@@ -96,8 +96,8 @@ package_list__fedora_workstations:
   - libvirt-client
   - guestfs-tools
   #- minder
-  #- morewaita-icon-theme   #no_aarch64
-  #- scrcpy #from zeno/scrcpy copr   #no_aarch64
+  - morewaita-icon-theme
+  - scrcpy #from zeno/scrcpy copr
   - showtime  # Modern video player built using GTK4
   - wl-clipboard
   - xournalpp # from luya/xournalpp copr repo, latest xournal++
@@ -208,7 +208,7 @@ package_list__fedora_workstations:
   - wget
   - wireshark
   - wireguard-tools
-  #- wrk #modern HTTP benchmarking tool (copr repo)   #no_aarch64
+  - wrk #modern HTTP benchmarking tool (copr repo)
   - yamllint
   - papers   #document viewer
   - focus-timer   #pomodoro
@@ -235,7 +235,7 @@ flatpak_packages__fedora_workstations:
   - org.inkscape.Inkscape
   - org.kde.kdenlive
   #- us.zoom.Zoom
-  #- com.obsproject.Studio   #no_aarch64
+  - com.obsproject.Studio
   #- com.spotify.Client
   #- io.atom.Atom
   - com.jgraph.drawio.desktop
@@ -270,7 +270,7 @@ flatpak_packages__fedora_workstations:
   #- com.slack.Slack
   - org.cockpit_project.CockpitClient
   - com.github.jeromerobert.pdfarranger
-  #- rest.insomnia.Insomnia # Open Source API Client (Postman alternative)   #no_aarch64
+  - rest.insomnia.Insomnia # Open Source API Client (Postman alternative)
   #- com.github.marhkb.Pods
   #- net.nokyan.Resources
   #- org.kiwix.desktop          # offline wikipedia
@@ -278,11 +278,11 @@ flatpak_packages__fedora_workstations:
   - app.comaps.comaps  # offline maps
   - dev.zed.Zed
   - io.dbeaver.DBeaverCommunity
-  #- io.dbeaver.DBeaverCommunity.Client.pgsql   #no_aarch64
+  - io.dbeaver.DBeaverCommunity.Client.pgsql
   #- io.github.jeffshee.Hidamari  # Video wallpaper for Linux
   #- org.gnome.Chess   # classic chess game
   #- org.kde.kigo      # classic go game
-  #- cc.arduino.IDE2   #no_aarch64
+  - cc.arduino.IDE2
   #- com.gexperts.Tilix    # package instead
   #- com.rustdesk.RustDesk # remote desktop / assistant
   #- org.gnome.Papers
