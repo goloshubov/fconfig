@@ -145,6 +145,7 @@ package_list__fedora_workstations:
   - grpcurl
   - hadolint # Dockerfile linter
   - hping3 #TCP/IP stack auditing
+  - httpie
   - htop
   - hwloc-gui #lstopo
   - inotify-tools
@@ -270,7 +271,8 @@ flatpak_packages__fedora_workstations:
   #- com.slack.Slack
   - org.cockpit_project.CockpitClient
   - com.github.jeromerobert.pdfarranger
-  - rest.insomnia.Insomnia # Open Source API Client (Postman alternative)
+  #- rest.insomnia.Insomnia
+  - io.httpie.Httpie
   #- com.github.marhkb.Pods
   #- net.nokyan.Resources
   #- org.kiwix.desktop          # offline wikipedia
