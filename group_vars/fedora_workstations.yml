@@ -343,7 +343,6 @@ cargo_packages__fedora_workstations:
   - du-dust
   #- eza
   - tealdeer   #tldr
-  #- httpie
   #- xh
   #- git-delta
   #- fd-find  # alternative to find                     #already in packages_list
