@@ -344,7 +344,7 @@ cargo_packages__fedora_workstations:
   - du-dust
   #- eza
   - tealdeer   #tldr
-  #- xh
+  - xh
   #- git-delta
   #- fd-find  # alternative to find                     #already in packages_list
   #- apkeep    # download APK packages (apkpure, googleplay)
