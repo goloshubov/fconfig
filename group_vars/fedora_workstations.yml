@@ -213,6 +213,7 @@ package_list__fedora_workstations:
   - yamllint
   - papers   #document viewer
   - focus-timer   #pomodoro
+  #- deskflow      #synergy/barrier
 
 package_absent_list__fedora_workstations:
   #  - nano
