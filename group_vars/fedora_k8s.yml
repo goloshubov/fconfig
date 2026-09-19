@@ -28,6 +28,7 @@ package_allowerasing_list__fedora_k8s:
 go_packages__fedora_k8s:
   #- golang.stackrox.io/kube-linter/cmd/kube-linter
   - github.com/kubecolor/kubecolor
+  - sigs.k8s.io/cloud-provider-kind
 
 user_groups__fedora_k8s:
   - docker
