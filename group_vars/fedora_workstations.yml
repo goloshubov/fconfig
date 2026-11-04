@@ -189,7 +189,7 @@ package_list__fedora_workstations:
   #- python3-testinfra
   - qrencode
   #- ranger # console file manager
-  - remmina
+  #- remmina
   - rdiff-backup
   - rust
   - rust-src
