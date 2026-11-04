@@ -189,7 +189,6 @@ package_list__fedora_workstations:
   #- python3-testinfra
   - qrencode
   #- ranger # console file manager
-  #- remmina
   - rdiff-backup
   - rust
   - rust-src
@@ -220,6 +219,7 @@ package_absent_list__fedora_workstations:
   - firefox-wayland #not needed since firefox version 121
   - python3-pytelegrambotapi
   - webapp-manager # from kylegospo/webapp-manage copr
+  - remmina
 
 # upgrade packages
 packages_upgrade: false
