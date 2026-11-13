@@ -5,13 +5,13 @@ k8s_ver: "1.36"
 package_list__fedora_k8s:
   #- kubernetes
   #- kubernetes-client  #latest available
-  - kind
+  #- kind   # it depends on docker, use local install or install from podman desktop instead
   - helm
   - opentofu
   #- terraform   #hashicorp repo
   #- vault       #hashicorp repo
-  - docker-cli
-  - docker-compose
+  #- docker-cli
+  #- docker-compose
   - podman
   #- podman-docker
   #- podman-compose
@@ -30,8 +30,8 @@ go_packages__fedora_k8s:
   - github.com/kubecolor/kubecolor
   - sigs.k8s.io/cloud-provider-kind
 
-user_groups__fedora_k8s:
-  - docker
+user_groups__fedora_k8s: []
+  #- docker
 
 #favorite_apps__99__fedora_k8s:
 #  - io.kinvolk.Headlamp.desktop
